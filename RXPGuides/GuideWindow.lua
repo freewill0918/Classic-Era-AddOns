@@ -321,7 +321,10 @@ local CheckStepCompletion = function(self,initialCheck)
     for _,element in pairs(self.elements) do
         if initialCheck then
             --print('ok1',GetTime())
-            element.container:callback()
+            -- element.container:callback()
+            if element.container.callback then
+              element.container:callback()
+            end
         end
         stepCompleted = stepCompleted and element.completed
     end
