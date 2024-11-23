@@ -107,19 +107,19 @@ function addon.UpdateArrow(self)
         if dist ~= self.distance then
             self.distance = dist
             local step = element.step
-            local title = step and (step.title or step.index and ("Step "..step.index))
+            local title = step and (step.title or step.index and ("步骤 "..step.index))
             if element.title then
                 for RXP_ in string.gmatch(element.title, "RXP_[A-Z]+_") do
                     element.title = element.title:gsub(RXP_, addon.guideTextColors[RXP_] or
                                                  addon.guideTextColors.default["error"])
                 end
                 --self.text:SetText(string.format("%s\n(%dyd)",element.title, dist))
-                self.text:SetText(string.format("%s\n(%dyd)",element.title, dist))
+                self.text:SetText(string.format("%s\n(%d码)",element.title, dist))
             elseif title then
                 for RXP_ in string.gmatch(title, "RXP_[A-Z]+_") do
                     title = title:gsub(RXP_, addon.guideTextColors[RXP_] or addon.guideTextColors.default["error"])
                 end
-                self.text:SetText(string.format("%s\n(%dyd)", title, dist))
+                self.text:SetText(string.format("%s\n(%d码)", title, dist))
             else
                 self.text:SetText(string.format("(%dyd)", dist))
             end
