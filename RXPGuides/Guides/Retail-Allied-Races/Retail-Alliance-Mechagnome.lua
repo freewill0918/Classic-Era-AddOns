@@ -2,12 +2,11 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP Allied Race Unlocks
-#groupweight 5
--- #subgroup Mechagnome
+#subgroup Mechagnome
 #name 1) Mechagnome Questline
-#displayname Mechagnome
+#displayname Final Chapter
 
-<< Alliance !Mechagnome
+<<Alliance
 
 step
     #completewith next

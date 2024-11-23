@@ -1,13 +1,12 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Allied Race Unlocks
-#groupweight 5
--- #subgroup Vulpera
+#group Allied Race Unlocks
+#subgroup Vulpera
 #name 1) Vulpera Questline
-#displayname Vulpera
+#displayname Vulpera Questline
 
-<< Horde !Vulpera
+<< Horde
 
 step
     #completewith VulperaStartQuestline
@@ -146,14 +145,7 @@ step
     .goto 241,45.34,67.78,30,0
     .goto 241,50.10,74.37,30,0
     .goto 241,53.75,71.69,30,0
-#loop
-	.line 241,48.40,65.62,46.62,63.33,44.39,67.00,45.34,67.78,50.10,74.37,53.75,71.69
-	.goto 241,48.40,65.62,35,0
-	.goto 241,46.62,63.33,35,0
-	.goto 241,44.39,67.00,35,0
-	.goto 241,45.34,67.78,35,0
-	.goto 241,50.10,74.37,35,0
-	.goto 241,53.75,71.69,35,0
+    .loop 35,241,48.40,65.62,46.62,63.33,44.39,67.00,45.34,67.78,50.10,74.37,53.75,71.69
     .complete 53893,1 --100/100 Saber Flank
     .complete 53893,2 --100/100 Worg Meat
     .complete 53893,3 --100/100 Clucker Tidbits
@@ -165,11 +157,7 @@ step
     .goto 241,51.13,68.58,30,0
     .goto 241,48.60,70.24,30,0
     .goto 241,46.42,72.89,30,0
-#loop
-	.line 241,51.13,68.58,48.60,70.24,46.42,72.89
-	.goto 241,51.13,68.58,30,0
-	.goto 241,48.60,70.24,30,0
-	.goto 241,46.42,72.89,30,0
+    .loop 30,241,51.13,68.58,48.60,70.24,46.42,72.89
     .complete 53894,1 --15/15 Twilight Ore
 step
     .goto 241,46.81,66.23
@@ -316,12 +304,7 @@ step
     .goto 862,75.11,66.23,20,0
     .goto 862,76.92,66.23,25,0
     .goto 862,77.14,63.93,25,0
-#loop
-	.line 862,74.18,65.41,75.11,66.23,76.92,66.23,77.14,63.93
-	.goto 862,74.18,65.41,30,0
-	.goto 862,75.11,66.23,30,0
-	.goto 862,76.92,66.23,30,0
-	.goto 862,77.14,63.93,30,0
+    .loop 30,862,74.18,65.41,75.11,66.23,76.92,66.23,77.14,63.93
     .complete 53900,1 --10/10 Nazeshi Weaponry collected
     .mob Nazeshi Tempest-Wielder
     .mob Nazeshi Overseer
@@ -475,12 +458,7 @@ step
     .goto 680,62.87,59.77,25,0
     .goto 680,61.06,57.61,25,0
     .goto 680,62.03,55.66,25,0
-#loop
-	.line 680,63.97,57.97,62.87,59.77,61.06,57.61,62.03,55.66
-	.goto 680,63.97,57.97,25,0
-	.goto 680,62.87,59.77,25,0
-	.goto 680,61.06,57.61,25,0
-	.goto 680,62.03,55.66,25,0
+    .loop 25,680,63.97,57.97,62.87,59.77,61.06,57.61,62.03,55.66
     .complete 53906,1 --20/20 Silkwing Fibers
     .mob Tattered Silkwing
 step

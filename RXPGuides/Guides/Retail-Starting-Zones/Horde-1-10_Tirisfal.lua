@@ -2,14 +2,13 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#groupweight 8
 #subgroup Undead Starting Zones
 #name 1 Undead Starting Zone
 #displayname Chapter 1 - Deathknell
 #next 2 Undead Eversong Woods
-#defaultfor Undead !DK
+#defaultfor Undead
 
-<< Horde
+<< Horde !DK
 
 step << Undead
     .zoneskip 1727
@@ -255,14 +254,13 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#groupweight 8
 #name 2 Undead Eversong Woods
 #displayname Chapter 2 - Eversong Woods
-#next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H)
+#next RestedXP Horde 10-60\1 BfA Intro
 #subgroup Undead Starting Zones
-#defaultfor Undead !DK
+#defaultfor Undead
 
-<< Horde
+<< Horde !DK
 
 step
     .itemcount 132516,1

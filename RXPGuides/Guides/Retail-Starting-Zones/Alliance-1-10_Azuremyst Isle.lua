@@ -2,14 +2,14 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#groupweight 8
 #subgroup Draenei Starting Zones
+#groupweight 8
 #name 2Retail-Alliance-Draenei_Ammen Vale
 #displayname Chapter 1 - Ammen Vale
 #next 3Retail-Alliance-Draenei_Azuremyst Isle
-#defaultfor Draenei !DK
+#defaultfor Draenei
 
-<< Alliance
+<<Alliance !DK
 
 step
     #completewith next
@@ -31,12 +31,7 @@ step
     .goto 468,50.96,26.54,25,0
     .goto 468,49.20,26.20,25,0
     .goto 468,44.84,30.01,25,0
-#loop
-	.line 468,52.47,31.08,50.96,26.54,49.20,26.20,44.84,30.01
-	.goto 468,52.47,31.08,15,0
-	.goto 468,50.96,26.54,15,0
-	.goto 468,49.20,26.20,15,0
-	.goto 468,44.84,30.01,15,0
+    .loop 15,468,52.47,31.08,50.96,26.54,49.20,26.20,44.84,30.01
     >>Kill |cRXP_ENEMY_Vale Moths|r and loot them for |cRXP_LOOT_Vial of Moth Blood.|r
     .complete 9280,1 --6/6 Vial of Moth Blood
 	.mob Vale Moth
@@ -81,12 +76,7 @@ step
 	.goto 468,50.96,26.54,25,0
 	.goto 468,49.20,26.20,25,0
 	.goto 468,44.84,30.01,25,0
-#loop
-	.line 468,52.47,31.08,50.96,26.54,49.20,26.20,44.84,30.01
-	.goto 468,52.47,31.08,15,0
-	.goto 468,50.96,26.54,15,0
-	.goto 468,49.20,26.20,15,0
-	.goto 468,44.84,30.01,15,0
+	.loop 15,468,52.47,31.08,50.96,26.54,49.20,26.20,44.84,30.01
     >>Kill |cRXP_ENEMY_Volatile Mutations.|r
     .complete 10302,1 --8/8 Volatile Mutation slain
 	.mob Volatile Mutation
@@ -100,7 +90,7 @@ step
 	.target Botanist Taerix
     .target Apprentice Vishael
 step
-    #completewith next
+    #completewith next 
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Corrupted Flowers.|r
     .complete 9799,1 --3/3 Corrupted Flower
 step
@@ -109,24 +99,12 @@ step
     .goto 468,37.59,51.92,15,0
     .goto 468,35.66,52.75,15,0
     .goto 468,39.6,50.1,15,0
-#loop
-	.line 468,40.41,42.32,37.51,44.62,33.22,49.4,37.59,51.92,35.66,52.75,39.6,50.1
-	.goto 468,40.41,42.32,15,0
-	.goto 468,37.51,44.62,15,0
-	.goto 468,33.22,49.40,15,0
-	.goto 468,37.59,51.92,15,0
-	.goto 468,35.66,52.75,15,0
-	.goto 468,39.60,50.10,15,0
+    .loop 15,468,40.41,42.32,37.51,44.62,33.22,49.4,37.59,51.92,35.66,52.75,39.6,50.1
     >>Kill |cRXP_ENEMY_Mutated Root Lashers|r and loot them for their |cRXP_LOOT_Lasher Samples.|r
     .complete 9293,1 --10/10 Lasher Sample
 	.mob Root Lasher
 step
-#loop
-	.line 468,40.77,42.25,39,50.27,34.95,37.36,35.24,52.45
-	.goto 468,40.77,42.25,15,0
-	.goto 468,39.00,50.27,15,0
-	.goto 468,34.95,37.36,15,0
-	.goto 468,35.24,52.45,15,0
+    .loop 15,468,40.77,42.25,39,50.27,34.95,37.36,35.24,52.45
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Corrupted Flowers.|r
     .complete 9799,1 --3/3 Corrupted Flower
 step
@@ -156,7 +134,7 @@ step
     .isOnQuest 9294
     #completewith next
     +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r
-    *[1] Press the |cRXP_WARN_Escape key.|r
+    *[1] Press the |cRXP_WARN_Escape key.|r 
     *[2] Select |cRXP_WARN_Options.|r
     *[3] Navigate to |cRXP_WARN_Keybindings.|r
     *[4] Within |cRXP_WARN_Keybindings|r, find |cRXP_WARN_RestedXP Guides.|r
@@ -169,14 +147,14 @@ step
 step
     #completewith next
     >>Use the |T22962:0|t[Inoculating Crystal] on |cRXP_ENEMY_Nestlewood Owlkins.|r
-    .use 22962
+    .use 22962 
     .complete 37444,1 --6/6 Nestlewood Owlkin inoculated
 	.mob Nestlewood Owlkin
 step
     .goto 468,55.91,66.37,10,0
     .goto 468,58.26,70.67,10,0
     .goto 468,61.21,78.37
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Spare Parts.|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Spare Parts.|r 
     .complete 37445,1 --4/4 Emitter Spare Part
 step
     .goto 468,55.91,66.37,10,0
@@ -235,7 +213,7 @@ step
 step
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blood Elf Plans.|r
     .accept 9798 >>Accept Blood Elf Plans
-    .use 24414
+    .use 24414 
 	.target Surveyor Candress
 step
     .isOnQuest 9311
@@ -243,7 +221,7 @@ step
 step
     .goto 468,50.66,48.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Aldar.|r
-    .turnin 9311 >>Turn in Blood Elf Spy
+    .turnin 9311 >>Turn in Blood Elf Spy 
     .turnin 9798 >>Turn in Blood Elf Plans
     .accept 9312 >>Accept The Emitter
 	.target Vindicator Aldar
@@ -259,14 +237,13 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#groupweight 8
 #subgroup Draenei Starting Zones
 #name 3Retail-Alliance-Draenei_Azuremyst Isle
 #displayname Chapter 2 - Azuremyst Isle
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A)
-#defaultfor Draenei !DK
+#next RestedXP Alliance 10-60\1A_Elwynn Forest
+#defaultfor Draenei
 
-<< Alliance
+<<Alliance !DK
 
 step
     .goto 97,64.5,54.04
@@ -284,7 +261,7 @@ step
     .goto 97,49.78,51.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acteon.|r
     .accept 9454 >>Accept The Great Moongraze Hunt
-	.target Acteon
+	.target Acteon	
 step
 	#completewith next
     .goto 97,48.68,52.41
@@ -342,7 +319,7 @@ step
     .accept 9604 >>Accept On the Wings of a Hippogryph
 	.target Zaldaan
 step
-    #completewith roottenders
+    #completewith roottenders	
     >>Kill |cRXP_ENEMY_Moongraze Stags|r and |cRXP_ENEMY_Moongraze Buck|r and loot them for |cRXP_LOOT_Moongraze Stag Tenderloin.|r
     .complete 9454,1 --6/6 Moongraze Stag Tenderloin
 	.mob Moongraze Stag
@@ -492,7 +469,7 @@ step
 	.mob Wrathscale Myrmidon
 	.mob Wrathscale Naga
 	.mob Wrathscale Siren
-    .use 23759
+    .use 23759 
 step
     .goto 97,39.11,75.21,35,0
     .goto 97,35.21,80.17,35,0
@@ -628,7 +605,7 @@ step
     .turnin 9605 >>Turn in Hippogryph Master Stephanos
 	.target Stephanos
 step
-    .nodmf
+    .nodmf 
     .goto 103,48.34,62.9,5 >> |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormwind Portal|r
     .zoneskip 84
 step

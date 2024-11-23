@@ -2,14 +2,14 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#groupweight 8
 #subgroup Tauren Starting Zones
 #name 1 Tauren Starting Zone
 #displayname Chapter 1 - Camp Narache
 #next 2 Tauren Mulgore
-#defaultfor Tauren !DK
+#defaultfor Tauren
 
-<< Horde
+<< Horde !DK
+
 step << Tauren
     .zoneskip 1727
     #completewith MulgoreFirstQuestCheck
@@ -195,14 +195,13 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#groupweight 8
 #name 2 Tauren Mulgore
 #displayname Chapter 2 - Mulgore
-#next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H)
+#next RestedXP Horde 10-60\1 BfA Intro
 #subgroup Tauren Starting Zones
-#defaultfor Tauren !DK
+#defaultfor Tauren
 
-<< Horde
+<< Horde !DK
 
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur Raincaller|r

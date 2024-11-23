@@ -2,12 +2,11 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP Allied Race Unlocks
-#groupweight 5
--- #subgroup Dark Iron Dwarf
+#subgroup Dark Iron Dwarf
 #name 9) Dark Iron Dwarf Questline
-#displayname Dark Iron Dwarf
+#displayname Final Chapter
 
-<< Alliance !DarkIronDwarf
+<< Alliance
 
 step
     #completewith next

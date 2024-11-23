@@ -1,24 +1,23 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Gloves
-#name Penance - 3 (Elwynn Forest)
-#title Penance
+#group RestedXP Rune Guide符文指南
+#subgroup Gloves手套
+#name Penance苦修 - 3 (Elwynn Forest)艾尔文森林
 
 step << Priest
     #season 2
     .goto Elwynn Forest,48.61,27.63
-    >>Kill |cRXP_ENEMY_Kobold Laborers|r. Loot them for a |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r]
+    >>杀死 |cRXP_ENEMY_狗头人劳工|r. 掠夺他们并拾取 |T136222:0|t[|cRXP_FRIENDLY_忧虑助祭的回忆|r]
     .collect 205951,1 -- Memory of a Troubled Acolyte (1)
     .mob Kobold Laborer
     .train 402862,1
 step << Priest
     #season 2
     .goto Elwynn Forest,49.808,39.489
-    >>|cRXP_WARN_Type /kneel in your chatbox while inside of Northshire Abbey|r
-    >>|cRXP_WARN_You will receive the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
-    .cast 410958 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] |cRXP_WARN_while you have the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_在北郡修道院内输入 /kneel|r
+    >>|cRXP_WARN_你将获得|r |T135934:0|t[圣光之思] |cRXP_WARN_增益|r
+    .cast 410958 >> |cRXP_WARN_在|r |T135934:0|t[|cRXP_FRIENDLY_忧虑助祭的回忆|r] |cRXP_WARN_当你拥有|r |T135934:0|t[圣光之思] |cRXP_WARN_增益|r
     .use 205951
     .itemcount 205951,1
     .train 402862,1
@@ -27,67 +26,64 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Gloves
-#name Penance - 1 (Dun Morogh)
-#title Penance
-
+#group RestedXP Rune Guide符文指南
+#subgroup Gloves手套
+#name Penance苦修 - 1 (Dun Morogh)丹莫罗
 
 step << Priest
     #season 2
     .goto Dun Morogh,26.733,72.552
-    >>Open the |cRXP_PICK_Rockjaw Footlocker|r on the ground. Loot it for the |T136222:0|t|cRXP_LOOT_[Memory of a Troubled Acolyte]|r
+    >>打开 |cRXP_PICK_Rockjaw Footlocker|r. 掠夺它并拾取 |T136222:0|t[|cRXP_FRIENDLY_忧虑助祭的回忆|r]
     .collect 205951,1 -- Memory of a Troubled Acolyte (1)
     .train 402862,1
 step << Priest
     #season 2
-    .goto 1426,28.922,66.378
-    .aura 410935 >>|cRXP_WARN_Target the |cRXP_FRIENDLY_Altar of the Light|r inside to receive the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
-    >>|cRXP_WARN_If this doesn't work, type /kneel with the |cRXP_FRIENDLY_Altar of the Light|r targetted|r
+    .goto Dun Morogh,28.923,66.372
+    .aura 410935 >>|cRXP_WARN_将 |cRXP_FRIENDLY_光明祭坛|r 设为目标将自动跪拜|r
+    .emote KNEEL,208565 >>|cRXP_WARN_如果不起作用，请在聊天框中将 |cRXP_FRIENDLY_光明祭坛|r 设为目标并输入 /kneel|r
+    >>|cRXP_WARN_你将获得|r |T135934:0|t[圣光之思] |cRXP_WARN_增益|r
     .target Altar of the Light
-    .emote KNEEL,208565
     .train 402862,1
 step << Priest
     #season 2
-    .train 402862 >> |cRXP_WARN_Use the|r |T136222:0|t|cRXP_LOOT_[Memory of a Troubled Acolyte]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Penance]
-    .aura -410935
+    .cast 410958 >> |cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_忧虑助祭的回忆|r] |cRXP_WARN_当你拥有|r |T135934:0|t[圣光之思] |cRXP_WARN_增益|r
     .use 205951
+    .train 402862,1
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << NightElf Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Gloves
-#name Penance - 2 (Shadowglen)
-#title Penance
+#group RestedXP Rune Guide符文指南
+#subgroup Gloves手套
+#name Penance苦修 - 2 (Shadowglen)幽影谷
 
 step << NightElf Priest
     #season 2
     .goto Teldrassil,59.92,41.74,20,0
     .goto Teldrassil,59.174,40.442
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shanda|r upstairs
-    .accept 77574 >> Accept Meditation on Elune
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t对话于 |cRXP_FRIENDLY_珊达|r upstairs
+    .accept 77574 >> 接受《月光冥想》
     .target Shanda
     .train 402862,1
 step << NightElf Priest
     #season 2
     #completewith next
     .isOnQuest 77574
-    .goto Teldrassil,59.940,33.052,10 >> Travel to the moonwell in Shadowglen
+    .goto Teldrassil,59.940,33.052,10 >> 前往影林中的月井
     .train 402862,1
 step << NightElf Priest
     #season 2
     .isOnQuest 77574
     .goto Teldrassil,59.940,33.052
-    .aura 419307 >>|cRXP_WARN_Once you are at the moonwell, type /kneel in your chatbox|r
-    >>|cRXP_WARN_You will receive the|r |T136057:0|t[Meditation on Elune] |cRXP_WARN_buff|r
+    .aura 419307 >>|cRXP_WARN_一旦你到达月井，请在聊天框中输入 /kneel|r
+    >>|cRXP_WARN_你将获得|r |T136057:0|t[艾露恩之思] |cRXP_WARN_增益|r
     .train 402862,1
 step << NightElf Priest
     #season 2
     #label PenanceRune
     .isOnQuest 77574
-    .use 205951 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] |cRXP_WARN_while you have the|r |T136057:0|t[Meditation on Elune] |cRXP_WARN_buff|r
+    .use 205951 >>|cRXP_WARN_当你拥有|r |T136057:0|t[艾露恩之思] |cRXP_WARN_增益|r 时 |cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_陷入困境的侍僧的记忆|r] 
     .complete 77574,1 -- Learn: Engrave Gloves - Penance
     .target Altar of the Light
     .train 402862,1
@@ -95,19 +91,19 @@ step << NightElf Priest
     #season 2
     .goto Teldrassil,59.92,41.74,20,0
     .goto Teldrassil,59.174,40.442
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shanda|r upstairs
-    .turnin 77574 >> Turn in Meditation on Elune
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t对话于 |cRXP_FRIENDLY_珊达|r upstairs
+    .turnin 77574 >> 完成任务《月光冥想》
     .target Shanda
     .train 402862,1
 ]])
 
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Troll Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Gloves
-#name Penance - 2 (Durotar)
-#title Penance
+#group RestedXP Rune Guide符文指南
+#subgroup Gloves手套
+#name Penance苦修 - 2 (Durotar)杜隆塔尔
 
 
     --Rune of Penance
@@ -115,32 +111,33 @@ RXPGuides.RegisterGuide([[
 step << Priest
     #season 2
     .goto Durotar,42.36,68.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
-    .accept 77642 >>Accept Wisdom of the Loa
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t对话于 |cRXP_FRIENDLY_肯杰|r
+    .accept 77642 >>接受《卢亚神灵的智慧》
     .target Ken'jai
 step << Priest
     #season 2
     .goto Durotar,55.41,72.84
-    >>Travel to the |cRXP_PICK_Loa Altar|r at Sen'Jin Village and type /kneel
-    .use 205951 >>Talk to |cRXP_FRIENDLY_Serpent Loa|r as he appears, then use |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r]
+    >>前往森金村的 |cRXP_PICK_Loa祭坛|r 并输入 /kneel
+    .use 205951 >>当 |cRXP_FRIENDLY_毒蛇神灵|r 出现时与其对话，然后使用 |T136222:0|t[|cRXP_FRIENDLY_陷入困境的侍僧的记忆|r]
     .complete 77642,1 --Learn Spell: Engrave Gloves - Penance
     .target Serpent Loa
     .skipgossip
 step << Priest
     #season 2
     .goto Durotar,42.36,68.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
-    .turnin 77642 >>Turn in Wisdom of the Loa
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t对话于 |cRXP_FRIENDLY_肯杰|r
+    .turnin 77642 >>完成任务《卢亚神灵的智慧》
     .target Ken'jai
-]])
 
+    ]])
+
+    
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Undead Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Gloves
-#name Penance - 2 (Tirisfal)
-#title Penance
+#group RestedXP Rune Guide符文指南
+#subgroup Gloves手套
+#name Penance苦修 - 2 (Tirisfal)提瑞斯法林地
 
 
     --Rune of Penance
@@ -148,46 +145,45 @@ RXPGuides.RegisterGuide([[
 step << Priest
     #season 2
     .goto Tirisfal Glades,31.11,66.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duesten|r
-    .accept 77670 >>Accept Meditation on Undeath
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t对话于 |cRXP_FRIENDLY_暗牧师杜斯滕|r
+    .accept 77670 >>接受《亡者冥想》
     .target Dark Cleric Duesten
 step << Priest
     #season 2
     .goto Tirisfal Glades,31.06,64.80
-    >>Enter the graveyard and type /kneel
-    .use 205951 >>Use |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] as you gain the |T237569:0|t[Meditation on Undeath] buff
+    >>进入墓地并输入 /kneel
+    .use 205951 >>Use |T136222:0|t[|cRXP_FRIENDLY_忧虑助祭的回忆|r] as you gain the |T237569:0|t[亡灵之思] buff
     .complete 77670,1 >>Learn Spell: Engrave Gloves - Penance
 step << Priest
     #season 2
     .goto Tirisfal Glades,31.11,66.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duesten|r
-    .turnin 77670 >>Turn in Meditation on Undeath
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_暗牧师杜斯滕|r
+    .turnin 77670 >>完成任务《亡者冥想》
     .target Dark Cleric Duesten
 
-]])
+    ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Legs
-#name Homunculi - 8 (Durotar)
-#title Homunculi
+#group RestedXP Rune Guide符文指南
+#subgroup Legs腿
+#name Homunculi裂魂魔 - 8 (Durotar)杜隆塔尔
 
 step
     .train 402852,1
     #completewith next
-    .zone Durotar >>Travel to Durotar
+    .zone Durotar >>前往杜隆塔尔
 step
     .train 402852,1
     .goto Durotar,55.32,72.66
     .emote KNEEL,208309
-    .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to |cRXP_FRIENDLY_Serpent Loa|r
+    .aura 417316 >>跪拜 |cRXP_PICK_Loa祭坛|r 并与 |cRXP_FRIENDLY_毒蛇神灵|r 对话
     .skipgossip 208307,1
     .target Serpent Loa
 step
     .train 402852,1
-    >>Kill the |cRXP_ENEMY_Voodoo Trolls|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    >>杀死 |cRXP_ENEMY_巫术巨魔|r. 掠夺并拾取 |T135975:0|t[cRXP_FRIENDLY_亵渎城堡的预言|r]
     .goto Durotar,67.6,86.4
     .collect 205947,1
     .mob Voodoo Troll
@@ -196,41 +192,40 @@ step << Troll
     .emote KNEEL,208309
     .goto Durotar,55.32,72.66
     .skipgossip 208307,1
-    .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to the |cRXP_FRIENDLY_Serpent Loa|r to get the |T136077:0|t[Meditation on the Loa] buff
+    .aura 417316 >>跪拜 |cRXP_PICK_Loa祭坛|r 并与 |cRXP_FRIENDLY_毒蛇神灵|r 对话以获得 |T136077:0|t[洛阿神灵之思] buff
 step << Troll
     .train 402852,1
-    .aura 418459 >>|cRXP_WARN_Now you have to find an Undead Priest with a Loa buff. You have to kneel before him and he has to /pray for you.|r
+    .aura 418459 >>|cRXP_WARN_现在你需要找到一个带有亡灵之思增益效果的不死族祭司。你需要跪拜他，然后他为你/r祈祷。|r
 step << Undead
     .train 402852,1
     .emote KNEEL,208309
     .goto Durotar,55.32,72.66
     .skipgossip 208307,1
-    .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to the |cRXP_FRIENDLY_Serpent Loa|r to get the |T136077:0|t[Meditation on the Loa] buff
+    .aura 417316 >>跪拜 |cRXP_PICK_Loa祭坛|r 并与 |cRXP_FRIENDLY_毒蛇神灵|r 对话以获得 |T136077:0|t[洛阿神灵之思] buff
 step << Undead
     .train 402852,1
     .goto Durotar,55.32,72.66
-    .aura 418459 >>|cRXP_WARN_Kneel at the Sen'jin graveyard|r to get the |T237569:0|t[Meditation on Undeath] buff
+    .aura 418459 >>|cRXP_WARN_在森金墓地跪拜|r 以获得 |T237569:0|t[亡灵之思] buff
 step
     .use 205947
     .itemcount 205947,1
-    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
+    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t[cRXP_FRIENDLY_亵渎城堡的预言|r] |cRXP_WARN_去学习|r |T237570:0|t[裂魂魔]
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Legs
-#name Homunculi - 7 (Tirisfal Glades)
-#title Homunculi
+#group RestedXP Rune Guide符文指南
+#subgroup Legs腿
+#name Homunculi裂魂魔 - 7 (Tirisfal Glades)提瑞斯法林地
 
 step
     .train 402852,1
     #completewith next
-    .zone Tirisfal Glades >>Travel to Tirisfal Glades
+    .zone Tirisfal Glades >>前往提瑞斯法林地
 step
     .train 402852,1
-    >>Kill the |cRXP_ENEMY_Scarlet Warriors|r or the |cRXP_ENEMY_Scarlet Missionaries|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    >>杀死 |cRXP_ENEMY_血色战士|r 或 |cRXP_ENEMY_血色传教士|r. 掠夺并拾取 |T135975:0|t[cRXP_FRIENDLY_亵渎城堡的预言|r]
     .goto Tirisfal Glades,50.6,67.8,0
     .goto Tirisfal Glades,32.6,48.6
     .collect 205947,1
@@ -238,121 +233,118 @@ step
     .mob Scarlet Missionary
 step << Troll
     .train 402852,1
-    .aura 418459 >>|cRXP_WARN_Now you have to find an Undead Priest with a Loa buff. You have to kneel before him and he has to /pray for you to get the |T237569:0|t[Meditation on Undeath] buff.|r
+    .aura 418459 >>|cRXP_WARN_现在你需要找到一个带有亡灵之思增益效果的不死族祭司。你需要跪拜他，然后他为你/r祈祷以获得 |T237569:0|t[亡灵之思] buff.|r
 step << Troll
     #completewith next
-    .zone Durotar >>Travel to Durotar (take the zeppelin to Orgrimmar)
+    .zone Durotar >>前往杜隆塔尔（乘坐飞艇前往奥格瑞玛）
 step << Troll
     .train 402852,1
     .emote KNEEL,208309
     .goto Durotar,55.32,72.66
     .skipgossip 208307,1
-    .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to the |cRXP_FRIENDLY_Serpent Loa|r to get the |T136077:0|t[Meditation on the Loa] buff
+    .aura 417316 >>跪拜 |cRXP_PICK_Loa祭坛|r 并与 |cRXP_FRIENDLY_毒蛇神灵|r 对话以获得 |T136077:0|t[洛阿神灵之思] buff
 step << Undead
     #completewith next
-    .zone Durotar >>Travel to Durotar (take the zeppelin to Orgrimmar)
+    .zone Durotar >>前往杜隆塔尔（乘坐飞艇前往奥格瑞玛）
 step << Undead
     .train 402852,1
     .emote KNEEL,208309
     .goto Durotar,55.32,72.66
     .skipgossip 208307,1
-    .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to the |cRXP_FRIENDLY_Serpent Loa|r to get the |T136077:0|t[Meditation on the Loa] buff
-    *|cRXP_WARN_You can also find a Troll Priest with the |T136077:0|t[Meditation on the Loa] buff. Kneel before him and he has to /pray for you|r.
+    .aura 417316 >>跪拜 |cRXP_PICK_Loa祭坛|r 并与 |cRXP_FRIENDLY_毒蛇神灵|r 对话以获得 |T136077:0|t[洛阿神灵之思] buff
+    *|cRXP_WARN_You can also find a Troll Priest with the |T136077:0|t[洛阿神灵之思] buff. Kneel before him and he has to /pray for you|r.
 step << Undead
     .train 402852,1
     .goto Durotar,57.15,73.36
-    .aura 418459 >>|cRXP_WARN_Kneel at the Sen'jin graveyard|r to get the |T237569:0|t[Meditation on Undeath] buff
+    .aura 418459 >>|cRXP_WARN_在森金墓地跪拜|r 以获得 |T237569:0|t[亡灵之思] buff
 step
     .use 205947
     .itemcount 205947,1
-    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
+    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t[cRXP_FRIENDLY_亵渎城堡的预言|r] |cRXP_WARN_去学习|r |T237570:0|t[裂魂魔]
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Legs
-#name Shared Pain - 13 (Durotar)
-#title Shared Pain
+#group RestedXP Rune Guide符文指南
+#subgroup Legs腿
+#name Shared Pain分担痛苦 - 13 (Durotar)杜隆塔尔
 
 step
     #completewith next
-    .zone Durotar >>Travel to Durotar
+    .zone Durotar >>前往杜隆塔尔
 step
-    .train 402854,1
-    >>Kill |cRXP_ENEMY_Makasgar|r or |cRXP_ENEMY_Gazz'uz|r (in the cave), whichever is closest to you (the waypoint leads you to the closest one). Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r]
+    .train 402854,1 
+    >>杀死 |cRXP_ENEMY_Makasgar|r 或 |cRXP_ENEMY_Gazz'uz|r（在洞穴内），无论哪个距离你更近（航点会指引你到最近的那个）。掠夺并拾取 |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r]
     .goto Durotar,52.6,8.8,-1
     .goto Durotar,62.0,66.2,-1
     .collect 205945,1
     .mob Makasgar
     .mob Gazz'uz
 step
-    .train 402854,1
+    .train 402854,1 
     .goto Durotar,55.32,72.66
     .emote KNEEL,208309
-    .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to the |cRXP_FRIENDLY_Serpent Loa|r to get the |T136077:0|t[Meditation on the Loa] buff
+    .aura 417316 >>跪拜 |cRXP_PICK_Loa祭坛|r 并与 |cRXP_FRIENDLY_毒蛇神灵|r 对话以获得 |T136077:0|t[洛阿神灵之思] buff
     .skipgossip 208307,1
     .target Serpent Loa
 step
     .use 205945
     .itemcount 205945,1
-    .train 402854 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r] |cRXP_WARN_to train|r |T136160:0|t[Shared Pain]
+    .train 402854 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_去学习|r |T136160:0|t[Shared Pain]
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Legs
-#name Shared Pain - 6 (Tirisfal Glades)
-#title Shared Pain
+#group RestedXP Rune Guide符文指南
+#subgroup Legs腿
+#name Shared Pain分担痛苦 - 6 (Tirisfal Glades)提瑞斯法林地
 
 step
     #completewith next
-    .zone Tirisfal Glades >>Travel to Tirisfal Glades
+    .zone Tirisfal Glades >>前往提瑞斯法林地
 step
     .train 402854,1
-    >>Kill the |cRXP_ENEMY_Tirisfal Farmers|r. Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r]
+    >>杀死 |cRXP_ENEMY_Tirisfal Farmers|r. 掠夺并拾取 |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r]
     .goto Tirisfal Glades,36.2,50.4
     .collect 205945,1
     .mob Tirisfal Farmer
 step << Undead
     .train 402854,1
     .goto Tirisfal Glades,56.39,49.39
-    .aura 418459 >>Kneel at the graveyard until you get the buff |T237569:0|t[Meditation on Undeath]
+    .aura 418459 >>在墓地跪拜直到获得 |T237569:0|t[亡灵之思]
 step << Troll
     #completewith SharedPainTirisfalA
-    .zone Durotar >>Travel to Durotar (take the zeppelin to Orgrimmar)
+    .zone Durotar >>前往杜隆塔尔（乘坐飞艇前往奥格瑞玛）
 step << Troll
     #label SharedPainTirisfalA
     .train 402854,1
     .emote KNEEL,208309
     .goto Durotar,55.32,72.66
-    .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to the |cRXP_FRIENDLY_Serpent Loa|r to get the |T136077:0|t[Meditation on the Loa] buff
-    .aura -418459
-    >>|cRXP_WARN_You can also find an Undead Priest with a Loa buff. You have to kneel before him and he has to /pray for you to get the |T237569:0|t[Meditation on Undeath] buff.|r
+    .aura 417316 >>跪拜 |cRXP_PICK_Loa祭坛|r 并与 |cRXP_FRIENDLY_毒蛇神灵|r 对话以获得 |T136077:0|t[洛阿神灵之思] buff
+    .aura 418459 
+    >>|cRXP_WARN_你也可以找到一个带有亡灵之思增益效果的不死族祭司。你需要跪拜他，然后他为你/r祈祷，以获得 |T237569:0|t[亡灵之思] buff.|r
     .skipgossip 208307,1
 step
     .use 205945
     .itemcount 205945,1
-    .train 402854 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r] |cRXP_WARN_to train|r |T136160:0|t[Shared Pain]
+    .train 402854 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_去学习|r |T136160:0|t[Shared Pain]
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Chest
-#name Void Plague - 5 (Durotar)
-#title Void Plague
+#group RestedXP Rune Guide符文指南
+#subgroup Chest胸
+#name Void Plague虚空疫病 - 5 (Durotar)杜隆塔尔
 
 step
     #completewith next
-    .zone Durotar >>Travel to Durotar
+    .zone Durotar >>前往杜隆塔尔
 step
     .train 425216,1
-    >>Kill the |cRXP_ENEMY_Sailors|r and |cRXP_ENEMY_Marines|r. Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
+    >>杀死 |cRXP_ENEMY_Sailors|r 和 |cRXP_ENEMY_Marines|r. 掠夺并拾取 |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
     .goto Durotar,57.6,55.4
     .collect 205940,1
     .mob Kul Tiras Sailor
@@ -361,63 +353,62 @@ step
     .train 425216,1
     .goto Durotar,55.32,72.66
     .emote KNEEL,208309
-    .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to the |cRXP_FRIENDLY_Serpent Loa|r to get the |T136077:0|t[Meditation on the Loa] buff
+    .aura 417316 >>跪拜 |cRXP_PICK_Loa祭坛|r 并与 |cRXP_FRIENDLY_毒蛇神灵|r 对话以获得 |T136077:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
     .skipgossip 208307,1
     .target Serpent Loa
 step
     .use 205940
     .itemcount 205940,1
-    .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
+    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] |cRXP_WARN_去学习|r |T237514:0|t[Void Plague]
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Chest
-#name Void Plague - 6 (Tirisfal Glades)
-#title Void Plague
+#group RestedXP Rune Guide符文指南
+#subgroup Chest胸
+#name Void Plague虚空疫病 - 6 (Tirisfal Glades)提瑞斯法林地
 
 step
     #completewith next
-    .zone Tirisfal Glades >>Travel to Tirisfal Glades
+    .zone Tirisfal Glades >>前往提瑞斯法林地
 step
     .train 425216,1
-    >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r]
+    >>杀死 |cRXP_ENEMY_Gillgar|r. 掠夺并拾取 |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r]
     .goto Tirisfal Glades,25.6,48.2
     .collect 205940,1
     .mob Gillgar
 step << Undead
     .train 425216,1
     .goto Tirisfal Glades,56.39,49.39
-    .aura 418459 >>Kneel at the graveyard until you get the buff |T237569:0|t[Meditation on Undeath]
+    .aura 418459 >>跪拜在墓地直到获得 |T237569:0|t[亡灵之思]
 step << Troll
     #completewith next
-    .zone Durotar >>Travel to Durotar (take the zeppelin to Orgrimmar)
+    .zone Durotar >>前往杜隆塔尔（乘坐飞艇前往奥格瑞玛）
 step << Troll
     .train 402854,1
     .emote KNEEL,208309
     .goto Durotar,55.32,72.66
-    .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to the |cRXP_FRIENDLY_Serpent Loa|r to get the |T136077:0|t[Meditation on the Loa] buff
+    .aura 417316 >>跪拜 |cRXP_PICK_Loa祭坛|r 并与 |cRXP_FRIENDLY_毒蛇神灵|r 对话以获得 |T136077:0|t[洛阿神灵之思] buff
     .skipgossip 208307,1
 step
     .use 205940
     .itemcount 205940,1
-    .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
+    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] |cRXP_WARN_去学习|r |T237514:0|t[Void Plague]
 ]])
+
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Legs
-#name Prayer of Mending - 6 (Durotar)
-#title Prayer of Mending
+#group RestedXP Rune Guide符文指南
+#subgroup Legs腿
+#name Prayer of Mending愈合祷言 - 6 (Durotar)杜隆塔尔
 
 step
     .goto Durotar,48.04,79.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adventurer's Spirit|r inside Kolkar Crag
-    >>|cRXP_WARN_Another player (Priest or Shaman) needs to click the portal. Loot the|r |cRXP_FRIENDLY_Adventurer's Spirit|r |cRXP_WARN_afterwards for|r |T135791:0|t[|cRXP_FRIENDLY_Reciprocal Epiphany|r]
+    >>与 |cRXP_FRIENDLY_鬼魂|r 在科尔卡山谷内交谈
+    >>|cRXP_WARN_另一个玩家（牧师或萨满祭司）需要点击传送门。之后拾取 |cRXP_FRIENDLY_鬼魂|r 并获得 |T135791:0|t[|cRXP_FRIENDLY_相互顿悟|r]
     .collect 205944,1 --Reciprocal Epiphany (1)
     .target Adventurer's Spirit
     .skipgossip
@@ -425,21 +416,21 @@ step
 step
     .use 205944
     .itemcount 205944,1
-    .train 402848 >>|cRXP_WARN_Use the|r |T135791:0|t[|cRXP_FRIENDLY_Reciprocal Epiphany|r] |cRXP_WARN_to train|r |T135944:0|t[Prayer of Mending]
+    .train 402848 >>|cRXP_WARN_使用|r |T135791:0|t[|cRXP_FRIENDLY_相互顿悟|r] |cRXP_WARN_去学习|r |T135944:0|t[愈合祷言]
 ]])
+
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Legs
-#name Prayer of Mending - 10 (Mulgore)
-#title Prayer of Mending
+#group RestedXP Rune Guide符文指南
+#subgroup Legs腿
+#name Prayer of Mending愈合祷言 - 10 (Mulgore)莫高雷
 
 step
     .goto Mulgore,60.39,33.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adventurer's Spirit|r outside of the Venture Co. Mine
-    >>|cRXP_WARN_Another player (Priest or Shaman) needs to click the portal. Loot the|r |cRXP_FRIENDLY_Adventurer's Spirit|r |cRXP_WARN_afterwards for|r |T135791:0|t[|cRXP_FRIENDLY_Reciprocal Epiphany|r]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_鬼魂|r outside of the Venture Co. Mine
+    >>|cRXP_WARN_Another player (Priest or Shaman) needs to click the portal. Loot the|r |cRXP_FRIENDLY_鬼魂|r |cRXP_WARN_afterwards for|r |T135791:0|t[|cRXP_FRIENDLY_相互顿悟|r]
     .collect 205944,1 --Reciprocal Epiphany (1)
     .target Adventurer's Spirit
     .skipgossip
@@ -447,36 +438,35 @@ step
 step
     .use 205944
     .itemcount 205944,1
-    .train 402848 >>|cRXP_WARN_Use the|r |T135791:0|t[|cRXP_FRIENDLY_Reciprocal Epiphany|r] |cRXP_WARN_to train|r |T135944:0|t[Prayer of Mending]
+    .train 402848 >>|cRXP_WARN_使用|r |T135791:0|t[|cRXP_FRIENDLY_相互顿悟|r] |cRXP_WARN_去学习|r |T135944:0|t[愈合祷言]
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Chest
-#name Twisted Faith - 10 (Loch Modan)
-#title Twisted Faith
+#group RestedXP Rune Guide符文指南
+#subgroup Chest胸
+#name Twisted Faith扭曲信仰 - 10 (Loch Modan)洛克莫丹
 
 step << Priest
     #completewith MinerGear
-    .goto Loch Modan,35.50,18.97,20 >> Enter the Silver Stream Mine
+    .goto Loch Modan,35.50,18.97,20 >> 进入银溪矿坑
     .train 425215,1
 step << Priest
     .goto Loch Modan,35.6,20.6
-    >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for an |T237281:0|t[|cRXP_LOOT_Offering Coin|r]
+    >>杀死 |cRXP_ENEMY_坑道鼠们|r. 搜寻并拾取 |T237281:0|t[|cRXP_LOOT_供品硬币|r]
     .collect 208823,1 -- Offering Coin (1)
     .mob Tunnel Rat Scout
     .mob Tunnel Rat Geomancer
     .train 425215,1
 step << Priest
     .goto Loch Modan,36.689,20.964
-    .use 208823 >> |cRXP_WARN_Use the|r |T237281:0|t[|cRXP_LOOT_Offering Coin|r] |cRXP_WARN_at the well inside of the Silverstream Mine|r |cRXP_WARN_to receive the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r]
+    .use 208823 >> 在银溪矿坑内的井边 |cRXP_WARN_使用|r |T237281:0|t[|cRXP_LOOT_供品硬币|r] |cRXP_WARN_在银流矿井内的井边|r |T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r]
     .collect 205905,1 -- Memory of a Devout Champion (1)
     .train 425215,1
 step << Priest
-    .train 425215 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r] |cRXP_WARN_to train|r |T237566:0|t[Twisted Faith]
-    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .train 425215 >> |cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r] |cRXP_WARN_去学习|r |T237566:0|t[扭曲信仰]
+    >>|cRXP_WARN_你必须在一个神圣区域（比如诺森郡修道院、暴风城大教堂、安威玛尔的光之祭坛、洛克莫丹或铁炉堡的秘术区）输入“/kneel”以获得 |T135934:0|t|T136057:0|t[冥想]
     .use 205905
     .itemcount 205905,1
 ]])
@@ -484,25 +474,24 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Chest
-#name Twisted Faith - 14 (Westfall)
-#title Twisted Faith
+#group RestedXP Rune Guide符文指南
+#subgroup Chest胸
+#name Twisted Faith扭曲信仰 - 14 (Westfall)西部荒野
 
 step << Priest
     .goto Westfall,32.6,43.2,60,0
     .goto Westfall,29.8,46.6,60,0
     .goto Westfall,45.0,26.0,60,0
     .goto Westfall,45.6,21.2
-    >>Kill the |cRXP_ENEMY_Undying Laborer|r. Loot it for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r]
-    >>|cRXP_WARN_You must use a Holy spell in order to finish off the|r |cRXP_ENEMY_Undying Laborer|r
-    >>|cRXP_WARN_The |cRXP_ENEMY_Undying Laborer|r can spawn at the Gold Coast Quarry and Jangolode Mine|r
+    >>杀死 |cRXP_ENEMY_不死劳工|r 并拾取 |T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r]
+    >>|cRXP_WARN_你必须使用一种神圣法术来终结 |cRXP_ENEMY_不死劳工|r
+    >>|cRXP_WARN_ |cRXP_ENEMY_不死劳工|r 可能在金海岸采石场和詹戈洛德矿洞出现|r
     .collect 205905,1 -- Memory of a Devout Champion (1)
     .unitscan Undying Laborer
     .train 425215,1
 step << Priest
-    .train 425215 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r] |cRXP_WARN_to train|r |T237566:0|t[Twisted Faith]
-    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .train 425215 >> |cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r] |cRXP_WARN_去学习|r |T237566:0|t[扭曲信仰]
+    >>|cRXP_WARN_你必须在一个神圣区域（比如诺森郡修道院、暴风城大教堂、安威玛尔的光之祭坛、洛克莫丹或铁炉堡的秘术区）输入“/kneel”以获得 |T135934:0|t|T136057:0|t[冥想]
     .use 205905
     .itemcount 205905,1
 ]])
@@ -510,15 +499,14 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Chest
-#name Twisted Faith - 18 (Darkshore)
-#title Twisted Faith
+#group RestedXP Rune Guide符文指南
+#subgroup Chest胸
+#name Twisted Faith扭曲信仰 - 18 (Darkshore)黑海岸
 
 step << Priest
     .goto Darkshore,59.2,23.4,60,0
     .goto Darkshore,60.0,15.4
-    >>Kill |cRXP_ENEMY_Stormscale Myrmidons|r, |cRXP_ENEMY_Stormscale Warriors|r and |cRXP_ENEMY_Stormscale Sorceresses|r. Loot them for a |T236364:0|t[|cRXP_LOOT_Shatterspear Offering|r]
+    >>杀死 |cRXP_ENEMY_雷鳞侍从|r、|cRXP_ENEMY_雷鳞战士|r 和 |cRXP_ENEMY_雷鳞巫师|r。搜寻并拾取 |T236364:0|t[|cRXP_LOOT_碎矛供品|r]
     .collect 211482,1 -- Shatterspear Offering (1)
     .mob Stormscale Myrmidon
     .mob Stormscale Warrior
@@ -526,12 +514,12 @@ step << Priest
     .train 425215,1
 step << Priest
     .goto Darkshore,59.2,22.6
-    .use 211482 >> |cRXP_WARN_Use the|r |T236364:0|t[|cRXP_LOOT_Shatterspear Offering|r] |cRXP_WARN_at the Shatterspear Idol underwater to receive the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r]
+    .use 211482 >> |cRXP_WARN_使用|r |T236364:0|t[|cRXP_LOOT_扭曲的信仰|r] |cRXP_WARN_在玛塞斯特拉废墟中水下的雕像上使用|r |T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r]
     .collect 205905,1 -- Memory of a Devout Champion (1)
     .train 425215,1
 step << Priest
-    .train 425215 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r] |cRXP_WARN_to train|r |T237566:0|t[Twisted Faith]
-    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .train 425215 >> |cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r] |cRXP_WARN_去学习|r |T237566:0|t[扭曲信仰]
+    >>|cRXP_WARN_警告_你必须拥有|r |T135934:0|t|T136057:0|t[冥想] |cRXP_WARN_在诺森郡修道院、暴风城大教堂、安威玛尔的光之祭坛、洛克莫丹或铁炉堡的秘术区等圣地键入 /kneel 以获得冥想。|r
     .use 205905
     .itemcount 205905,1
 ]])
@@ -539,20 +527,19 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Legs
-#name Shared Pain - 10 (Dun Morogh)
-#title Shared Pain
+#group RestedXP Rune Guide符文指南
+#subgroup Legs腿
+#name Shared Pain分担痛苦 - 10 (Dun Morogh)丹莫罗
 
 step << Priest
     .goto Loch Modan,77.894,62.236
-    >>Kill |cRXP_ENEMY_Captain Beld|r downstairs inside the building. Loot him for the |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r]
+    >> 杀死 |cRXP_ENEMY_Captain Beld|r 楼下的敌人。从他们身上搜刮获得 |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r]
     .collect 205945,1 -- Memory of an Imprisoned Savior (1)
     .mob Captain Beld
     .train 402854,1
 step << Priest
-    .train 402854 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r] |cRXP_WARN_to train|r |T136160:0|t[Shared Pain]
-    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .train 402854 >> |cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_去学习|r |T136160:0|t[Shared Pain]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[冥想] |cRXP_WARN_在诺森郡修道院、暴风城大教堂、安威玛尔的光之祭坛、洛克莫丹或铁炉堡的秘术区等圣地键入 /kneel 以获得冥想。|r
     .use 205945
     .itemcount 205945,1
 ]])
@@ -560,20 +547,19 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Legs
-#name Shared Pain - 6 (Elwynn Forest)
-#title Shared Pain
+#group RestedXP Rune Guide符文指南
+#subgroup Legs腿
+#name Shared Pain分担痛苦 - 6 (Elwynn Forest)艾尔文森林
 
 step << Priest
     .goto Elwynn Forest,40.6,81.8
-    >>Kill |cRXP_ENEMY_Kobold Miners|r. Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r]
-    .collect 205945,1 -- Memory of an Imprisoned Savior (1)
+    >> 杀死 |cRXP_ENEMY_狗头人|r。从他们身上搜刮获得 |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆]|r]
+    .collect 205945,1 -- 落难救世主的回忆 (1)
     .mob Kobold Miner
     .train 402854,1
 step << Priest
-    .train 402854 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r] |cRXP_WARN_to train|r |T136160:0|t[Shared Pain]
-    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .train 402854 >> |cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_去学习|r |T136160:0|t[铭刻裤子 - 分担痛苦]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[冥想] |cRXP_WARN_在诺森郡修道院、暴风城大教堂、安威玛尔的光之祭坛、洛克莫丹或铁炉堡的秘术区等圣地键入 /kneel 以获得冥想。|r
     .use 205945
     .itemcount 205945,1
 ]])
@@ -581,21 +567,20 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Legs
-#name Homunculi - 8 (Dun Morogh)
-#title Homunculi
+#group RestedXP Rune Guide符文指南
+#subgroup Legs腿
+#name Homunculi裂魂魔 - 8 (Dun Morogh)丹莫罗
 
 step << Priest
     .goto Dun Morogh,42.0,44.6,50,0
     .goto Dun Morogh,42.4,35.8
-    >>Kill |cRXP_ENEMY_Frostmane Seers|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    >> 杀死 |cRXP_ENEMY_霜鬃先知|r。从他们身上搜刮获得 |T135975:0|t[|cRXP_FRIENDLY_亵渎城堡的预言|r]
     .collect 205947,1 -- Prophecy of a Desecrated Citadel (1)
     .mob Frostmane Seer
     .train 402852,1
 step << Priest
-    .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
-    >>|cRXP_WARN_You must have 2|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .train 402852 >> |cRXP_WARN_使用|r |T135975:0|t[|cRXP_FRIENDLY_亵渎城堡的预言|r] |cRXP_WARN_去学习|r |T237570:0|t[裂魂魔]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[冥想] |cRXP_WARN_在诺森郡修道院、暴风城大教堂、安威玛尔的光之祭坛、洛克莫丹或铁炉堡的秘术区等圣地键入 /kneel 以获得冥想。|r
     .use 205947
     .itemcount 205947,1
 ]])
@@ -603,20 +588,19 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Legs
-#name Homunculi - 8 (Elwynn Forest)
-#title Homunculi
+#group RestedXP Rune Guide符文指南
+#subgroup Legs腿
+#name Homunculi裂魂魔 - 8 (Elwynn Forest)艾尔文森林
 
 step << Priest
     .goto Elwynn Forest,74.0,51.8
-    >>Kill |cRXP_ENEMY_Defias Rogue Wizards|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    >> 杀死 |cRXP_ENEMY_迪菲亚流浪巫师|r。从他们身上搜刮获得 |T135975:0|t[|cRXP_FRIENDLY_亵渎城堡的预言|r]
     .collect 205947,1 -- Prophecy of a Desecrated Citadel (1)
     .mob Defias Rogue Wizard
     .train 402852,1
 step << Priest
-    .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
-    >>|cRXP_WARN_You must have 2|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .train 402852 >> 使用|T135975:0|t[|cRXP_FRIENDLY_亵渎城堡的预言|r] |cRXP_WARN_来学习|r |T237570:0|t[裂魂魔]
+    >>获得圣光之思，你必须通过在诸如诺森德修道院、暴风城大教堂、安威玛尔的光之祭坛、洛克莫丹或铁炉堡的秘法区域输入/kneel&/下跪，来获得|T135934:0|t|T136057:0|t[圣光之思]，之后找一个暗夜牧师，交替一人下跪，一人祈祷，交换艾露恩之思，获得两种BUFF之后使用道具|cRXP_FRIENDLY_亵渎城堡的预言|r]。
     .use 205947
     .itemcount 205947,1
 ]])
@@ -624,27 +608,26 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Legs
-#name Homunculi - 8 (Teldrassil)
-#title Homunculi
+#group RestedXP Rune Guide符文指南
+#subgroup Legs腿
+#name Homunculi裂魂魔 - 8 (Teldrassil)泰达希尔
 
 step << Priest
     #completewith next
     .goto Teldrassil,54.68,52.84,20,0
-    .goto Teldrassil,54.42,51.19,15 >> Travel to Fel Rock
+    .goto Teldrassil,54.42,51.19,15 >>前往恶魔岩
     .train 402852,1
 step << Priest
-    .goto Teldrassil,77.86,61.66
-    >>Kill |cRXP_ENEMY_Vicious Grells|r, |cRXP_ENEMY_Rascal Sprites|r and |cRXP_ENEMY_Shadow Sprites|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    .goto Teldrassil,77.86,61.66 
+    >>击败|cRXP_ENEMY_邪恶劣魔|r，|cRXP_ENEMY_恶灵劣魔|r和|cRXP_ENEMY_影魂劣魔|r。搜寻他们以获得|T135975:0|t[|cRXP_FRIENDLY_亵渎城堡的预言|r]
     .collect 205947,1 -- Prophecy of a Desecrated Citadel (1)
     .mob Vicious Grell
     .mob Rascal Sprite
     .mob Shadow Sprite
     .train 402852,1
 step << Priest
-    .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
-    >>|cRXP_WARN_You must have 2|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs by typing /kneel in a holy area such as, a moonwell, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .train 402852 >> |cRXP_WARN_使用|r |T135975:0|t[|cRXP_FRIENDLY_亵渎城堡的预言|r] |cRXP_WARN_去学习|r |T237570:0|t[裂魂魔]
+    >>你必须在月亮井、诺森德修道院、暴风城大教堂、安威玛尔的光之祭坛、洛克莫丹或铁炉堡的秘法区域输入/kneel来获得|T135934:0|t|T136057:0|t[冥想] 
     .use 205947
     .itemcount 205947,1
 ]])
@@ -652,17 +635,16 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Legs
-#name Prayer of Mending - 6 (Elwynn Forest)
-#title Prayer of Mending
+#group RestedXP Rune Guide符文指南
+#subgroup Legs腿
+#name Prayer of Mending愈合祷言 - 6 (Elwynn Forest)艾尔文森林
 
 step << Priest
     .goto Elwynn Forest,52.28,84.56
-    >>|cRXP_WARN_Join a group with another Priest or Paladin standing over the |cRXP_FRIENDLY_Adventurer's Remains|r, or look for help from a Paladin or Priest in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Adventurer's Remains|r on the ground to begin the ritual, OR click the other player's|r |T136223:0|t[Spirit Ritual] |cRXP_WARN_(whilst in their group)|r
-    >>|cRXP_WARN_An |cRXP_FRIENDLY_Adventurer's Spirit|r will spawn and die after completing the ritual. Loot it for the|r |T135791:0|t[|cRXP_FRIENDLY_Reciprocal Epiphany|r]
-    .train 402848 >>|cRXP_WARN_Use the|r |T135791:0|t[|cRXP_FRIENDLY_Reciprocal Epiphany|r] |cRXP_WARN_to learn|r |T135944:0|t[Prayer of Mending]
+    >>与另一名牧师或圣骑士组队站在|cRXP_FRIENDLY_冒险家的遗骸|r上，或者在综合聊天中寻求圣骑士或牧师的帮助（在聊天中输入/1）
+    >>与地上的|cRXP_FRIENDLY_冒险家的遗骸|r交谈以开始仪式，或者点击其他玩家的|T136223:0|t[传送门] |cRXP_WARN_(在小组内时)|r
+    >>一个|cRXP_FRIENDLY_鬼魂|r将出现并在完成仪式后死亡。搜寻它以获得|T135791:0|t[|cRXP_FRIENDLY_相互顿悟|r]
+    .train 402848 >>|cRXP_WARN_使用|r |T135791:0|t[|cRXP_FRIENDLY_相互顿悟|r] |cRXP_WARN_去领悟|r |T135944:0|t[愈合祷言]
     .use 205942
     .use 205944
     .skipgossip
@@ -673,17 +655,16 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Legs
-#name Prayer of Mending - 8 (Teldrassil)
-#title Prayer of Mending
+#group RestedXP Rune Guide符文指南
+#subgroup Legs腿
+#name Prayer of Mending愈合祷言 - 8 (Teldrassil)泰达希尔
 
 step << Priest
     .goto Teldrassil,33.610,35.732
-    >>|cRXP_WARN_Join a group with another Priest or Druid standing over the |cRXP_FRIENDLY_Adventurer's Remains|r, or look for help from a Druid or Priest in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Adventurer's Remains|r on the ground to begin the ritual, OR click the other player's|r |T136223:0|t[Spirit Ritual] |cRXP_WARN_(whilst in their group)|r
-    >>|cRXP_WARN_An |cRXP_FRIENDLY_Adventurer's Spirit|r will spawn and die after completing the ritual. Loot it for the|r |T135791:0|t[|cRXP_FRIENDLY_Reciprocal Epiphany|r]
-    .train 402848 >>|cRXP_WARN_Use the|r |T135791:0|t[|cRXP_FRIENDLY_Reciprocal Epiphany|r] |cRXP_WARN_to learn|r |T135944:0|t[Prayer of Mending]
+    >>与另一名牧师或德鲁伊组队站在|cRXP_FRIENDLY_冒险家的遗骸|r上，或者在综合聊天中寻求德鲁伊或牧师的帮助（在聊天中输入/1）
+    >>与地上的|cRXP_FRIENDLY_冒险家的遗骸|r交谈以开始仪式，或者点击其他玩家的|T136223:0|t[传送门] |cRXP_WARN_(在小组内时)|r
+    >>一个|cRXP_FRIENDLY_鬼魂|r将出现并在完成仪式后死亡。搜寻它以获得|T135791:0|t[|cRXP_FRIENDLY_相互顿悟|r]
+    .train 402848 >>|cRXP_WARN_使用|r |T135791:0|t[|cRXP_FRIENDLY_相互顿悟|r] |cRXP_WARN_去领悟|r |T135944:0|t[愈合祷言]
     .use 205942
     .use 205944
     .skipgossip
@@ -694,17 +675,16 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Legs
-#name Prayer of Mending - 6 (Dun Morogh)
-#title Prayer of Mending
+#group RestedXP Rune Guide符文指南
+#subgroup Legs腿
+#name Prayer of Mending愈合祷言 - 6 (Dun Morogh)丹莫罗
 
 step << Priest
     .goto Dun Morogh,43.0,49.6
-    >>|cRXP_WARN_Join a group with another Priest or Paladin standing over the |cRXP_FRIENDLY_Adventurer's Remains|r, or look for help from a Paladin or Priest in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Adventurer's Remains|r on the ground to begin the ritual, OR click the other player's|r |T136223:0|t[Spirit Ritual] |cRXP_WARN_(whilst in their group)|r
-    >>|cRXP_WARN_An |cRXP_FRIENDLY_Adventurer's Spirit|r will spawn and die after completing the ritual. Loot it for the|r |T135791:0|t[|cRXP_FRIENDLY_Reciprocal Epiphany|r]
-    .train 402848 >>|cRXP_WARN_Use the|r |T135791:0|t[|cRXP_FRIENDLY_Reciprocal Epiphany|r] |cRXP_WARN_to learn|r |T135944:0|t[Prayer of Mending]
+    >>与另一名牧师或圣骑士组队站在|cRXP_FRIENDLY_冒险家的遗骸|r上（|cRXP_FRIENDLY_冒险家的遗骸|r在灰色洞穴内，洞的入口在42.2，53.0附近），或者在综合聊天中寻求圣骑士或牧师的帮助（在聊天中输入/1）
+    >>与地上的|cRXP_FRIENDLY_冒险家的遗骸|r交谈以开始仪式，或者点击其他玩家的|T136223:0|t[传送门] |cRXP_WARN_(在小组内时)|r
+    >>一个|cRXP_FRIENDLY_鬼魂|r将出现并在完成仪式后死亡。搜寻它以获得|T135791:0|t[|cRXP_FRIENDLY_相互顿悟|r]
+    .train 402848 >>|cRXP_WARN_使用|r |T135791:0|t[|cRXP_FRIENDLY_相互顿悟|r] |cRXP_WARN_去领悟|r |T135944:0|t[愈合祷言]
     .use 205942
     .use 205944
     .skipgossip
@@ -715,21 +695,20 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Gloves
-#name Shadow Word: Death - 10 (Darkshore)
-#title Shadow Word: Death
+#group RestedXP Rune Guide符文指南
+#subgroup Gloves手套
+#name Shadow Word - Death暗言术：灭 - 10 (Darkshore)黑海岸
 
 step << Priest
     .goto Darkshore,30.5,47.5
-    >>Click the |cRXP_PICK_Remnant|r on the small island. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r]
+    >>点击小岛上的|cRXP_PICK_残迹|r（残存建筑物可以跳上去，墙拐角处的光点）。搜寻它以获得|T135975:0|t[|cRXP_FRIENDLY_帝王消陨的预言|r]
     .collect 205932,1 -- Prophecy of a King's Demise (1)
     .train 402849,1
 step << Priest
-    >>You must now obtain two |T135934:0|t|T136057:0|t[Meditation] buffs
-    >>You must /kneel inside one of the following places: A moonwell, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge
-    >>In order to receive your second |T135934:0|t|T136057:0|t[Meditation] buff this requires you to /kneel infront of a Priest who has a different |T135934:0|t|T136057:0|t[Meditation] to yours, and they must /pray while targeting you
-    .train 402849 >> |cRXP_WARN_Once you have both|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise]|r |cRXP_WARN_to learn|r |T136149:0|t[Shadow Word: Death]
+    >>你必须拥有两种不同的|T135934:0|t|T136057:0|t[冥想] 增益
+    >>你必须在月亮井、诺森德修道院、暴风城大教堂、安威玛尔的光之祭坛、洛克莫丹或铁炉堡的秘法区域输入/kneel来获得
+    >>为了收到你的第二个 |T135934:0|t|T136057:0|t[冥想] 增益 这需要你/下跪在一个牧师面前，他有一个不同的冥想增益 |T135934:0|t|T136057:0|t[冥想] 传播给你，他们必须/祈祷，同时选中你
+    .train 402849 >> |cRXP_WARN_一旦你两者兼而有之|r |T135934:0|t|T136057:0|t[冥想] |cRXP_WARN_增益时 使用|r |T135975:0|t[|cRXP_FRIENDLY_帝王消陨的预言]|r |cRXP_WARN_去领悟|r |T136149:0|t[暗言术：灭]
     .use 205932
     .itemcount 205932,1
 ]])
@@ -737,28 +716,27 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Gloves
-#name Shadow Word - Death - 12 (Loch Modan)
-#title Shadow Word: Death
+#group RestedXP Rune Guide符文指南
+#subgroup Gloves手套
+#name Shadow Word - Death暗言术：灭 - 12 (Loch Modan)莫丹湖
 
 step << Priest
     #completewith next
     .goto Loch Modan,71.8,27.6
-    .subzone 143 >> Travel to the Mo'grosh Stronghold in Loch Modan
+    .subzone 143 >> 前往洛克莫丹的莫格罗什要塞
 step << Priest
     #season 2
-    .goto Loch Modan,71.8,27.6
-    .aura 410935 >>|cRXP_WARN_Target the |cRXP_FRIENDLY_Heretic Idol|r to automatically /kneel|r
-    .emote KNEEL,208565 >>|cRXP_WARN_If it does not work, type /kneel in your chatbox with the |cRXP_FRIENDLY_Heretic Idol|r targeted|r
-    >>|cRXP_WARN_You will receive the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r]
+    .goto Dun Morogh,71.8,27.6
+    .aura 410935 >> 对|cRXP_FRIENDLY_异端神像|r（坐标在洛克莫丹的莫格罗什要塞71.8 ，27.1）有个小山坡上去蛇型雕像，使用/下跪
+    .emote KNEEL,208565 >> 如果不起作用，请在聊天框中对准|cRXP_FRIENDLY_异端神像|r输入/kneel
+    >> 你将获得|T135975:0|t[|cRXP_FRIENDLY_帝王消陨的预言|r]
     .collect 205932,1 -- Prophecy of a King's Demise (1)
     .target Heretic Idol
 step << Priest
-    >>You must now obtain two |T135934:0|t|T136057:0|t[Meditation] buffs
-    >>You must /kneel inside one of the following places: A moonwell, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge
-    >>In order to receive your second |T135934:0|t|T136057:0|t[Meditation] buff this requires you to /kneel infront of a Priest who has a different |T135934:0|t|T136057:0|t[Meditation] to yours, and they must /pray while targeting you
-    .train 402849 >> |cRXP_WARN_Once you have both|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise]|r |cRXP_WARN_to learn|r |T136149:0|t[Shadow Word: Death]
+    >>你必须拥有两种 |T135934:0|t|T136057:0|t[冥想] 增益
+    >>你必须在诺森德修道院、暴风城大教堂、安威玛尔的光之祭坛、洛克莫丹或铁炉堡的秘法区域输入/kneel来获得|T135934:0|t|T136057:0|t[冥想] 
+    >>为了收到你的第二个 |T135934:0|t|T136057:0|t[冥想] 增益 这需要你/下跪在一个牧师面前，他有一个不同的冥想增益 |T135934:0|t|T136057:0|t[冥想] 传播给你，他们必须/祈祷，同时选中你
+    .train 402849 >> |cRXP_WARN_一旦你两者兼而有之|r |T135934:0|t|T136057:0|t[冥想] |cRXP_WARN_增益时 使用|r |T135975:0|t[|cRXP_FRIENDLY_帝王消陨的预言]|r |cRXP_WARN_去领悟|r |T136149:0|t[暗言术：灭]
     .use 205932
     .itemcount 205932,1
 ]])
@@ -766,41 +744,40 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Gloves
-#name Shadow Word: Death - 20 (The Barrens)
-#title Shadow Word: Death
+#group RestedXP Rune Guide符文指南
+#subgroup Gloves手套
+#name Shadow Word: Death暗言术：灭 - 20 (The Barrens)贫瘠之地
 
 step
     #completewith next
-    .zone The Barrens >> Trave to The Barrens
+    .zone The Barrens >> 前往贫瘠之地
 step
     #loop
     .goto The Barrens,54.8,35.6,40,0
     .goto The Barrens,58.8,37.6,40,0
-    >>Use |T135894:0|t[Dispel Magic] on the |cRXP_ENEMY_Desert Mirage|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r]
+    >>Use |T135894:0|t[Dispel Magic] on the |cRXP_ENEMY_Desert Mirage|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_帝王消陨的预言|r]
     *|cRXP_WARN_It's a green ghost which patrolls around. Use the RestedXP target macro to target it.|r
     .collect 205932,1 -- Prophecy of a King's Demise (1)
     .train 402849,1
     .mob Desert Mirage
 step << Troll
-    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs
-    >>You must |cRXP_WARN_/kneel|r at one of the following places in front of the altar and talk to the spirit afterwards: Sen'jin or Crossroads |cRXP_WARN_(the shrine locations are marked on your map, you can also find any priest with the buff that can copy them to you)|r
+    >>你现在必须获得两个|T237569:0|t|T136077:0|t[冥想] buffs
+    >>你必须在祭坛前的以下地点之一|cRXP_WARN_/kneel|r，并随后与灵魂交谈
     .emote KNEEL,208309
     .goto Durotar,55.32,72.66,0
     .goto The Barrens,51.5,29.5,0
-    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff this requires you to |cRXP_WARN_/kneel|r infront of a Undead Priest who has |T237569:0|t[Meditation on Undeath], and they must /pray while targeting you
-    .train 402849 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise]|r |cRXP_WARN_to learn|r |T136149:0|t[Shadow Word: Death]
+    >>为了获得第二个|T237569
+    .train 402849 >> 一旦你获得了两个|T237569:0|t|T136077:0|t[冥想] buff this requires you to |cRXP_WARN_/kneel|r infront of a Undead Priest who has |T237569:0|t[亡灵之思], and they must /pray while targeting you
     .use 205932
     .itemcount 205932,1
 step << Undead
-    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs
-    >>You must |cRXP_WARN_/kneel|r at one of the following places in front of the altar and talk to the spirit afterwards: Sen'jin or Crossroads
+    >>你现在必须获得两个|T237569:0|t|T136077:0|t[冥想] buffs
+    >>你必须在祭坛前的以下地点之一|cRXP_WARN_/kneel|r，并随后与灵魂交谈
     .emote KNEEL,208309
     .goto The Barrens,51.5,29.5,0
     .goto The Barrens,50.7,32.7,0
-    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff |cRXP_WARN_/kneel|r at a graveyard to get the |T237569:0|t[Meditation on Undeath] buff |cRXP_WARN_(the shrine and a graveyard are marked on your map, you can also find any priest with the buff that can copy them to you)|r
-    .train 402849 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise]|r |cRXP_WARN_to learn|r |T136149:0|t[Shadow Word: Death]
+    >>为了获得第二个|T237569
+    .train 402849 >> 一旦你获得了两个|T237569:0|t|T136077:0|t[冥想] buff |cRXP_WARN_/kneel|r at a graveyard to get the |T237569:0|t[亡灵之思] buff |cRXP_WARN_(the shrine and a graveyard are marked on your map, you can also find any priest with the buff that can copy them to you)|r
     .use 205932
     .itemcount 205932,1
 ]])
@@ -808,39 +785,38 @@ step << Undead
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Gloves
-#name Shadow Word: Death - 24 (Silverpine Forest)
-#title Shadow Word: Death
+#group RestedXP Rune Guide符文指南
+#subgroup Gloves手套
+#name Shadow Word: Death暗言术：灭 - 24 (Silverpine Forest)银松森林
 
 step
     #completewith next
-    .zone Silverpine Forest >> Trave to the Silverpine Forest
+    .zone Silverpine Forest >> 前往银松森林
 step
     .goto Silverpine Forest,65.8,23.6
-    >>Pick up the |cRXP_PICK_Scroll|r behind |cRXP_ENEMY_Thule Ravenclaw|r (lvl 24 elite) for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r]
+    >> 在 |cRXP_ENEMY_Thule Ravenclaw|r (24级 精英) 背后拾取 |cRXP_PICK_Scroll|r，以获得 |T135975:0|t[|cRXP_FRIENDLY_帝王消陨的预言|r]
     *|cRXP_WARN_The scroll is one the second floor. It's easier in a group.|r
     .collect 205932,1 -- Prophecy of a King's Demise (1)
     .train 402849,1
 step << Troll
-    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs
-    >>You must |cRXP_WARN_/kneel|r at one of the following places in front of the altar and talk to the spirit afterwards: Sen'jin or Crossroads |cRXP_WARN_(the shrine locations are marked on your map, you can also find any priest with the buff that can copy them to you)|r
+    >> 现在你必须获得两个 |T237569:0|t|T136077:0|t[冥想] buffs
+    >> 你必须在祭坛前的以下地点之一 |cRXP_WARN_/kneel|r，并之后与灵魂交谈
     .emote KNEEL,208309
     .goto Durotar,55.32,72.66,0
     .goto The Barrens,51.5,29.5,0
-    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff this requires you to |cRXP_WARN_/kneel|r infront of a Undead Priest who has |T237569:0|t[Meditation on Undeath], and they must /pray while targeting you
-    .train 402849 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise]|r |cRXP_WARN_to learn|r |T136149:0|t[Shadow Word: Death]
+    >> 为了获得第二个 |T237569:0|t|T136077:0|t[冥想] buff this requires you to |cRXP_WARN_/kneel|r infront of a Undead Priest who has |T237569:0|t[亡灵之思], and they must /pray while targeting you
+    .train 402849 >> |cRXP_WARN_当你获得两个|r |T237569:0|t|T136077:0|t[冥想] |cRXP_WARN_增益时 使用|r |T135975:0|t[|cRXP_FRIENDLY_帝王消陨的预言]|r |cRXP_WARN_去领悟|r |T136149:0|t[暗言术：灭]
     .use 205932
     .itemcount 205932,1
 step << Undead
-    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs
-    >>You must |cRXP_WARN_/kneel|r at one of the following places in front of the altar and talk to the spirit afterwards: Sen'jin or Crossroads
+    >> 现在你必须获得两个 |T237569:0|t|T136077:0|t[冥想] buffs
+    >> 你必须在祭坛前的以下地点之一 |cRXP_WARN_/kneel|r，并之后与灵魂交谈
     .emote KNEEL,208309
     .goto Durotar,55.32,72.66,0
     .goto The Barrens,51.5,29.5,0
     .goto Silverpine Forest,44.2,42.7,0
-    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff |cRXP_WARN_/kneel|r at a graveyard to get the |T237569:0|t[Meditation on Undeath] buff |cRXP_WARN_(the shrine and a graveyard are marked on your map, you can also find any priest with the buff that can copy them to you)|r
-    .train 402849 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise]|r |cRXP_WARN_to learn|r |T136149:0|t[Shadow Word: Death]
+    >> 为了获得第二个 |T237569:0|t|T136077:0|t[冥想] buff |cRXP_WARN_/kneel|r at a graveyard to get the |T237569:0|t[亡灵之思] buff |cRXP_WARN_(the shrine and a graveyard are marked on your map, you can also find any priest with the buff that can copy them to you)|r
+    .train 402849 >> |cRXP_WARN_当你获得两个|r |T237569:0|t|T136077:0|t[冥想] |cRXP_WARN_增益时 使用|r |T135975:0|t[|cRXP_FRIENDLY_帝王消陨的预言]|r |cRXP_WARN_去领悟|r |T136149:0|t[暗言术：灭]
     .use 205932
     .itemcount 205932,1
 ]])
@@ -848,24 +824,157 @@ step << Undead
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Chest
-#name Twisted Fate - 10 (Silverpine Forest)
-#title Twisted Fate
+#group RestedXP Rune Guide符文指南
+#subgroup Gloves手套
+#name Circle of Healing治疗之环 - 24 (Duskwood)暮色森林
 
 step
     #completewith next
-    .zone Silverpine Forest >> Travel to the Silverpine Forest
+    .zone Duskwood >> 前往暮色森林（例如，从拉文凯斯到藏宝海湾的船，然后向北前行）
+step
+    .train 402859,1
+    >> 在这个区域杀死 |cRXP_ENEMY_迪菲亚-系列怪都会掉落任务品|r |cRXP_WARN_(地图上标记了第二个地点)|r。搜寻他们身上的 |T135736:0|t[黑暗洞察]
+    .goto Duskwood,50.2,74.0
+    .goto Duskwood,22.8,65.6,0
+    .collect 211528,1
+    .mob Defias Night Runner
+    .mob Defias Night Blade
+    .mob Defias Enchanter
+step
+    .train 402859,1
+    >> 前往 |cRXP_PICK_僻静坟墓|r 并使用 |T135736:0|t[黑暗洞察]
+    *|cRXP_WARN_Avoid the high level ghouls|r
+    .collect 211490,1
+    .goto Duskwood,90,30
+step << Troll
+    >> 现在你必须获得两个 |T237569:0|
+    >>你必须在以下任一地点的祭坛前 |cRXP_WARN_/kneel|r（下跪），然后与灵魂交谈
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    >>为了获得你的第二个 |T237569:0|
+    .train 402859 >> |cRXP_WARN_一旦你拥有两个|r |T237569:0|
+    .use 211490
+    .itemcount 211490,1
+step << Undead
+    >>你现在必须获得两个 |T237569:0|
+    >>你必须在以下任一地点的祭坛前 |cRXP_WARN_/kneel|r（下跪），然后与灵魂交谈
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    .goto Duskwood,75.0,58.9
+    >>为了获得你的第二个 |T237569:0|
+    .train 402859 >> |cRXP_WARN_一旦你拥有两个|r |T237569:0|
+    .use 211490
+    .itemcount 211490,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Priest SoD
+#group RestedXP Rune Guide符文指南
+#subgroup Legs腿
+#name Power Word: Barrier真言术：障 - 23 (Redrige Mountains)赤脊山
+
+step
+    #completewith next
+    .zone Redridge Mountains >> 前往红石山脉（例如，从棘齿城乘船到 booty Bay，然后向北走）
+step
+    .train 425213,1
+    >>杀死 |cRXP_ENEMY_黑石暗影法师|r（|cRXP_WARN_建议寻找队伍|r）。从他们身上获取 |T135975:0|t[奴役都市的预言]
+    .goto Redrige Mountains,67.4,56.0
+    .collect 211530,1
+    .mob Blackrock Shadowcaster
+step << Troll
+    >>你现在必须获得两个 |T237569
+    >>你必须在祭坛前的以下地点之一|cRXP_WARN_/下跪|r，然后与灵魂交谈
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    >>为了获得你的第二个|T237569
+    .train 425213 >> 一旦你拥有了|r |T237569:0|t[|cRXP_FRIENDLY_真言术：障符文|r]学习它。
+    .use 211530
+    .itemcount 211530,1
+step << Undead
+    >>你现在必须获得两个|T237569
+    >>你必须在祭坛前的以下地点之一|cRXP_WARN_/下跪|r，然后与灵魂交谈
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    .goto Redrige Mountains,20.8,56.6
+    >>为了获得你的第二个|T237569:0|
+    .train 425213 >> 一旦你拥有了|r |T237569:0|t[|cRXP_FRIENDLY_真言术：障符文|r]学习它。
+    .use 211530
+    .itemcount 211530,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Priest SoD
+#group RestedXP Rune Guide符文指南
+#subgroup Chest胸
+#name Strength of Soul灵魂之力 - 23 (Ashenvale)灰谷
+
+step
+    #completewith next
+    .zone Ashenvale >> 前往灰谷
+step
+    .train 415997,1
+    >>击败|cRXP_ENEMY_刺枝萨满|r和|cRXP_ENEMY_刺枝图腾师|r。搜刮它们，获得|T135736:0|
+    .goto Ashenvale,33.6,38.0
+    .collect 211534,1
+    .mob Thistlefur Shaman
+    .mob Thistlefur Totemic
+step
+    .train 415997,1
+    >>攀爬到悬挂在树枝上的|cRXP_PICK_捕梦网|r。使用|T135736:0|
+    .goto Ashenvale,38,26
+    .use 211534
+    .collect 211531,1
+step << Troll
+    >>你现在必须获得两个|T237569
+    >>你必须在祭坛前的以下地点之一|cRXP_WARN_/下跪|r，然后与灵魂交谈
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    >>为了获得你的第二个|T237569
+    .train 415997 >> 一旦你拥有了|r |T237569:0|
+    .use 211531
+    .itemcount 211531,1
+step << Undead
+    >>你现在必须获得两个|T237569
+    >>你必须在祭坛前的以下地点之一|cRXP_WARN_/下跪|r，然后与灵魂交谈
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    .goto Ashenvale,40.5,52.8,0
+    .goto Ashenvale,80.7,58.6,0
+    >>为了获得你的第二个|T237569
+    .train 415997 >> 一旦你拥有了|r |T237569:0|
+    .use 211531
+    .itemcount 211531,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Priest SoD
+#group RestedXP Rune Guide符文指南
+#subgroup Chest胸
+#name Twisted Fate扭曲信仰 - 10 (Silverpine Forest)银松森林
+
+step
+    #completewith next
+    .zone Silverpine Forest >> 前往银松森林
 step
     .train 425215,1
-    >>Kill the |cRXP_ENEMY_Wailing Spirit|r. Loot it for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion]
+    >>击败|cRXP_ENEMY_哀嚎之魂|r。搜刮它，获得|T136222:0|
     .goto Silverpine Forest,57.9,71.5
     .collect 205905,1
     .mob Wailing Spirit
 step
-    .train 425215 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion] |cRXP_WARN_to train|r |T237566:0|t[Twisted Fate]
-    >>|cRXP_WARN_You must have a|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buff by typing|r /kneel |cRXP_WARN_in front of |cRXP_PICK_Loa Shrine|r (in Durotar or The Barrens) or by kneeling in front of another priest with the buff when they /pray for you|r << Troll
-    >>|cRXP_WARN_You must have a|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buff by typing|r /kneel |cRXP_WARN_at a graveyard or by kneeling in front of another priest with the buff when they /pray for you|r << Undead
+    .train 425215 >> 使用 |T136222:0|
+    >> 你必须通过在多洛塔或贫瘠之地的洛阿神龛前 /下跪 或在其他具有该增益的牧师 /祈祷 时 /下跪 来获得 |T237569:0|
+    >> 你必须通过在墓地 /下跪 或在其他具有该增益的牧师 /祈祷 时 /下跪 来获得 |T237569
     .goto Durotar,55.32,72.66,0
     .goto The Barrens,51.5,29.5,0
     .goto Silverpine Forest,55.6,73.3 << Undead
@@ -876,17 +985,16 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Chest
-#name Twisted Fate - 10 (The Barrens)
-#title Twisted Fate
+#group RestedXP Rune Guide符文指南
+#subgroup Chest胸
+#name Twisted Fate扭曲信仰 - 10 (The Barrens)贫瘠之地
 
 step
     #completewith next
-    .zone The Barrens >> Travel to The Barrens
+    .zone The Barrens >> 前往贫瘠之地
 step
     .train 425215,1
-    >>Kill the |cRXP_ENEMY_Razormanes|r. Loot them for the |T236248:0|t[|cRXP_FRIENDLY_Helping Hand]
+    >> 击败 |cRXP_ENEMY_刺刃豺狼人|r。搜刮它们，获得 |T236248:0|
     .goto The Barrens,54.6,25.6
     .collect 208765,1
     .mob Razormane Thornweaver
@@ -895,86 +1003,34 @@ step
     .mob Razormane Defender
 step
     .train 425215,1
-    >>|cRXP_WARN_Find a dead player or pet that you can ressurect (with |T135955:0|t[Ressurection]) to get the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion]
+    >> 找到一个可以复活的死亡玩家或宠物（使用 |T135955:0|
     .collect 205905,1
 step
-    .train 425215 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion] |cRXP_WARN_to train|r |T237566:0|t[Twisted Fate]
-    >>|cRXP_WARN_You must have a|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buff by typing|r /kneel |cRXP_WARN_in front of |cRXP_PICK_Loa Shrine|r (in Durotar or The Barrens) or by kneeling in front of another priest with the buff when they /pray for you|r << Troll
-    >>|cRXP_WARN_You must have a|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buff by typing|r /kneel |cRXP_WARN_at a graveyard or by kneeling in front of another priest with the buff when they /pray for you|r << Undead
+    .train 425215 >> 使用 |T136222
+    >> 你必须通过在多洛塔或贫瘠之地的洛阿神龛前 /下跪 或在其他具有该增益的牧师 /祈祷 时 /下跪 来获得 |T237569:0|
+    >> 你必须通过在墓地 /下跪 或在其他具有该增益的牧师 /祈祷 时 /下跪 来获得 |T237569:0|
     .goto Durotar,55.32,72.66,0
     .goto The Barrens,51.5,29.5,0
-    .goto The Barrens,50.7,32.8 << Undead
+    .goto The Barrent,50.7,32.8 << Undead
     .use 205905
     .itemcount 205905,1
 ]])
 
-RXPGuides.RegisterGuide([[
-#classic
-<< Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Chest
-#name Void Plague - 6 (Elwynn Forest)
-#title Void Plague
-
-step << Priest
-    #season 2
-    #completewith next
-    .goto Elwynn Forest,38.34,81.54,20 >> Enter Fargodeep Mine
-    .train 425216,1
-step << Priest
-    #season 2
-    .goto Elwynn Forest,41.7,78.1
-    >>Kill |cRXP_ENEMY_Goldtooth|r. Loot him for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
-    .collect 205940,1 -- Memory of a Dark Purpose (1)
-    .mob Goldtooth
-    .train 425216,1
-step << Priest
-    #season 2
-    .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
-    .use 205940
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
-<< Alliance Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Chest
-#name Void Plague - 6 (Dun Morogh)
-#title Void Plague
-
-
-step << Priest
-    #season 2
-    .goto Dun Morogh,27.2,43.0,60,0
-    .goto Dun Morogh,24.8,39.3,60,0
-    .goto Dun Morogh,25.6,43.4,60,0
-    .goto Dun Morogh,24.3,44.0,60,0
-    .goto Dun Morogh,25.4,45.4,60,0
-    .goto Dun Morogh,25.00,43.50
-    >>Kill |cRXP_ENEMY_Leper Gnomes|r. Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
-    .collect 205940,1 -- Memory of a Dark Purpose (1)
-    .mob Leper Gnome
-    .train 425216,1
-step << Priest
-    #season 2
-    .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
-    .use 205940
-]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Belt
-#name Empowered Renew - 27 (Thousand Needles)
-#title Empowered Renew
+#group RestedXP Rune Guide符文指南
+#subgroup Belt腰带
+#name Empowered Renew恢复增效 - 27 (Thousand Needles)千针石林
+#title Empowered Renew恢复增效 
 
 
 -- Empowered Renew
 
 step
     .train 425309,1
-    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+    .zone Thousand Needles >>前往 |cFFfa9602千针石林|r
 step
     .train 425309,1
     .goto Thousand Needles,31.33,37.05,10,0
@@ -983,30 +1039,30 @@ step
     .goto Thousand Needles,33.04,27.61,30,0
     .goto Thousand Needles,35.20,31.09,30,0
     .goto Thousand Needles,34.17,38.81
-    >>Kill |cRXP_ENEMY_Grimtotem Geomancers|r, |cRXP_ENEMY_Grimtotem Bandits|r, |cRXP_ENEMY_Grimtotem Reavers|r and |cRXP_ENEMY_Grimtotem Stompers|r. Loot them for the |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r]
+    >>上去的路在31.4 ，36.8附近，击杀 |cRXP_ENEMY_恐怖图腾地卜师|r、|cRXP_ENEMY_恐怖图腾抢夺者|r、|cRXP_ENEMY_恐怖图腾强盗|r 和 |cRXP_ENEMY_恐怖图腾践踏者|r。搜刮它们获取 |T135975:0|t[|cRXP_LOOT_迅捷天途的预言|r]
     .collect 213140,1
     .mob Grimtotem Geomancer
     .mob Grimtotem Bandit
     .mob Grimtotem Reaver
     .mob Grimtotem Stomper
 step
-    .train 425309 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r] |cRXP_WARN_to train|r |T236254:0|t[Empowered Renew]
+    .train 425309 >>使用 |T135975:0|t[|cRXP_LOOT_迅捷天途的预言|r] 去学习 |T236254:0|t[恢复增效]
     .use 213140
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Belt
-#name Empowered Renew - 33 (Alterac Mountains)
-#title Empowered Renew
+#group RestedXP Rune Guide符文指南
+#subgroup Belt腰带
+#name Empowered Renew恢复增效 - 33 (Alterac Mountains)奥特兰克山脉
+#title Empowered Renew恢复增效 
 
 -- Empowered Renew
 
 step
     .train 425309,1
-    .zone Alterac Mountains >>Travel to |cFFfa9602Alterac Mountains|r
+    .zone Alterac Mountains >>前往 |cFFfa9602奥特兰克山脉|r
 step
     .train 425309,1
     #loop
@@ -1015,38 +1071,38 @@ step
     .goto Alterac Mountains,45.19,33.91,70,0
     .goto Alterac Mountains,51.46,53.84,70,0
     .goto Alterac Mountains,48.54,40.72,70,0
-    >>Kill |cRXP_ENEMY_Crushridge Ogres|r and |cRXP_ENEMY_Crushridge Brutes|r. Loot them for the |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r]
+    >>击杀 |cRXP_ENEMY_破碎岭食人魔|r 和 |cRXP_ENEMY_破碎岭蛮兵|r。搜刮它们获取 |T135975:0|t[|cRXP_LOOT_迅捷天途的预言|r]
     .collect 213140,1
     .mob Crushridge Ogre
     .mob Crushridge Brute
 step
-    .train 425309 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r] |cRXP_WARN_to train|r |T236254:0|t[Empowered Renew]
+    .train 425309 >>使用 |T135975:0|t[|cRXP_LOOT_迅捷天途的预言|r] 去训练 |T236254:0|t[恢复增效 ]
     .use 213140
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Belt
-#name Renewed Hope - 31 (Desolace)
-#title Renewed Hope
+#group RestedXP Rune Guide符文指南
+#subgroup Belt腰带
+#name Renewed Hope新生希望 - 31 (Desolace)凄凉之地
+#title Renewed Hope新生希望
 
 -- Renewed Hope
 
 step
     #optional
     .train 425310,1
-    .train 605 >> |cRXP_WARN_You must have|r |T136206:0|t[Mind Control] |cRXP_WARN_trained in order to aquire the|r |T135923:0|t[Renewed Hope] |cRXP_WARN_rune|r
+    .train 605 >> |cRXP_WARN_你必须已经训练了|r |T136206:0|t[心灵控制] 才能获取 |T135923:0|t[重生的希望] 符文
 step
     #optional
-    .train 425310,1
+    .train 425310,1解译的巨魔卷轴
     .xp 31
-    >>|cRXP_WARN_You must be at least level 31 in order to cast|r |T136206:0|t[Mind Control] |cRXP_WARN_on a level 33 |cRXP_ENEMY_Slitherblade Tide Priestess|r later|r
+    >>|cRXP_WARN_你必须至少是31级才能对一个33级的|r |cRXP_ENEMY_滑刃海潮女祭司|r 使用 |T136206:0|t[心灵控制]
 step
     .train 425310,1
     #completewith next
-    .zone Desolace >>Travel to |cFFfa9602Desolace|r
+    .zone Desolace >>前往 |cFFfa9602凄凉之地|r
 step
     #loop
     .goto Desolace,35.4,29.6,60,0
@@ -1054,7 +1110,7 @@ step
     .goto Desolace,40.0,17.4,60,0
     .goto Desolace,38.6,23.6,60,0
     .train 425310,1
-    >>Kill |cRXP_ENEMY_Slitherblade Nagas|r. Loot them for the |T136222:0|t[|cRXP_LOOT_Unsettling Vision|r]
+    >>击杀 |cRXP_ENEMY_滑刃纳迦|r。搜刮它们直到你获取 |T136222:0|t[|cRXP_LOOT_不安的幻象|r]
     .collect 213599,1
     .mob Slitherblade Naga
     .mob Slitherblade Warrior
@@ -1062,10 +1118,10 @@ step
     .mob Slitherblade Myrmidon
     .mob Slitherblade Sea Witch
     .mob Slitherblade Tide Priestess
-step -- step shows for players that are only level 31
+step -- 为只有 31 级的玩家显示步骤
     #optional
     #completewith next
-    +|cRXP_WARN_NOTE: You may only cast|r |T136206:0|t[Mind Control] |cRXP_WARN_on a level 33 |cRXP_ENEMY_Slitherblade Tide Priestess|r. The cast will fail on ones that are level 34|r
+    +|cRXP_WARN_注意：您只能施放|r |T136206:0|t[心灵控制] |cRXP_WARN_在33级 |cRXP_ENEMY_滑刃海潮女祭司|r. 对 34 级的人施放会失败|r
     .xp >32,1
     .xp <31,1
     .train 425310,1
@@ -1075,230 +1131,230 @@ step
     .goto Desolace,38.8,24.0,60,0
     .goto Desolace,34.6,30.0,60,0
     .goto Desolace,34.6,20.2,60,0
-    .aura 435117 >> |cRXP_WARN_Cast|r |T136206:0|t[Mind Control] |cRXP_WARN_on a|r |cRXP_ENEMY_Slitherblade Tide Priestess|r
-    >>|cRXP_WARN_While it is under the affects of|r |T136206:0|t[Mind Control]|cRXP_WARN_, target YOURSELF and cast|r |T136077:0|t[Meditation on the Abyss] |cRXP_WARN_from the pet action bar|r
-    >>|cRXP_WARN_Press Escape afterwards to cancel the|r |T136206:0|t[Mind Control] |cRXP_WARN_and kill the|r |cRXP_ENEMY_Slitherblade Tide Priestess|r
+    .aura 435117 >> 对 |cRXP_ENEMY_滑刃海潮女祭司|r 施放 |T136206:0|t[心灵控制]
+    >>当它受到 |T136206:0|t[心灵控制] 影响时，以你自己为目标，从宠物动作条上施放 |T136077:0|t[深渊之思]，增益仅持续30秒
+    >>再取消 |T136206:0|t[心灵控制] 并杀死 |cRXP_ENEMY_滑刃海潮女祭司|r 后按下 Escape 键
     .mob Slitherblade Tide Priestess
     .train 425310,1
 step
-    .train 425310 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_LOOT_Unsettling Vision|r] |cRXP_WARN_to train|r |T135923:0|t[Renewed Hope]
+    .train 425310 >> 使用 |T136222:0|t[|cRXP_LOOT_不安的幻象|r] 去训练 |T135923:0|t[新生希望]
     .use 213599
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Boots
-#name Dispersion 40 (Stranglethorn Vale)
-#title Dispersion
+#group RestedXP Rune Guide符文指南
+#subgroup Boots靴子
+#name Dispersion消散 40 (Stranglethorn Vale)荆棘谷
+#title Dispersion消散
 
 -- Dispersion
 
 step
     .train 425314,1
-    >>|cRXP_WARN_Find a Rogue with the|r |T132299:0|t[Master of Subtlety] |cRXP_WARN_rune and|r |T338666:0|t[Jani's Charm] |cRXP_WARN_trinket to|r |T133644:0|t[Pick Pocket] |cRXP_WARN_any |cRXP_ENEMY_Bloodscalp Troll|r in Stranglethorn Vale for the|r |T237446:0|t[Mysterious Troll Scroll]|cRXP_WARN_. A Mage must then use a|r |T135933:0|t[Comprehension Charm] |cRXP_WARN_to decipher it for it to become a |T134938:0|t[|cRXP_LOOT_Deciphered Troll Scroll|r]|r
-    >>|cRXP_WARN_Alternatively buy a|r |T237446:0|t[Mysterious Troll Scroll]|r |cRXP_WARN_from the Auction House and have a Mage decipher it, or buy the already |T134938:0|t[|cRXP_LOOT_Deciphered Troll Scroll|r]|r
-    .use 216880 >>|cRXP_WARN_Use the |T134938:0|t[|cRXP_LOOT_Deciphered Troll Scroll|r] to start the quest|r
-    >>|cRXP_WARN_You may also look for a Priest to share the quest with you|r
+    >>找一个带有 |T132299:0|t[敏锐大师] 符文和 佩戴|T338666:0|t[加尼的护符] 饰品的潜行者在荆棘谷里偷窃 |cRXP_ENEMY_血顶巨魔|r ，直到获取|T237446:0|t[|cRXP_LOOT_神秘的巨魔卷轴|r]，然后一个法师必须使用 |T135933:0|t[理解魔符] 来解读它，才能变成一个 |T134938:0|t[|cRXP_LOOT_解译的巨魔卷轴|r]。你也可以从拍卖行购买 |T237446:0|t[神秘巨魔卷轴] 并请一个法师解读它，或者购买已解读的 |T134938:0|t[|cRXP_LOOT_解译的巨魔卷轴|r]。
+    >>使用 |T134938:0|t[|cRXP_LOOT_解译的巨魔卷轴|r] 开始任务，在拍卖行能直接买到
+    >>你也可以寻找一个牧师与你分享任务，来跳过前两个步骤
+    >>|cRXP_WARN_您也可以寻找一位牧师与您共同完成任务|r
     .collect 216880,1
     .disablecheckbox
-    .accept 79731 >> Accept The Troll Scroll
+    .accept 79731 >> 接受 巨魔卷轴 任务
 step
     .train 425314,1
     #completewith next
-    .zone Stranglethorn Vale >>Travel to |cFFfa9602Stranglethorn Vale|r
-    >>|cRXP_WARN_Ensure you have 2 active running|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs before heading there|r
+    .zone Stranglethorn Vale >>前往 |cFFfa9602荆棘谷|r
+    >>确保在前往那里之前有两个活跃的 |T135934:0|t|T136057:0|t[冥想] 效果
 step
     .train 425314,1
     .goto Stranglethorn Vale,28.961,61.931
-    >>Click |cRXP_PICK_The Holy Spring|r. Loot it for the |T134712:0|t[|cRXP_LOOT_Holy Spring Water|r]
-    >>|cRXP_WARN_You may need to kill |cRXP_ENEMY_Lord Sakrasis|r (level 45 Rare) who guards in front of|r |cRXP_PICK_The Holy Spring|r
+    >>点击 |cRXP_PICK_圣泉|r。搜刮它获取 |T134712:0|t[|cRXP_LOOT_圣泉之水|r]
+    >>你可能需要击败守卫在 |cRXP_PICK_圣泉|r 前的45级稀有怪物 |cRXP_ENEMY_甘祖拉恩|r
     .collect 737,1 --Holy Spring Water
     .mob Lord Sakrasis
 step
     #completewith next
-    .subzone 102 >> Travel to the Ruins of Zul'Kunda
+    .subzone 102 >> 前往祖尔坎达废墟
 step
     .train 425314,1
     .goto Stranglethorn Vale,23.569,7.955
-    .cast 3591 >> |cRXP_WARN_Use the|r |T134712:0|t[|cRXP_LOOT_Holy Spring Water|r] |cRXP_WARN_at the small fountain|r
-    >>|cRXP_WARN_You may need to kill |cRXP_ENEMY_Gan'zulah|r (level 41) and a small pack of |cRXP_ENEMY_Trolls|r around him to get to the small fountain|r
+    .cast 3591 >> 使用 |T134712:0|t[|cRXP_LOOT_圣泉之水|r] 在荆棘谷圣泉处，|cRXP_ENEMY_甘祖拉恩 <血顶酋长>|r 右边一点干枯的蛇形水台，使用[|cRXP_LOOT_圣泉之水|r]后会出泉水
+    >>或许你需要击败 |cRXP_ENEMY_甘祖拉恩 <血顶酋长>|r（41级）及其周围的一小群 |cRXP_ENEMY_巨魔|r，以便前往小泉水处
     .use 737
     .mob Gan'zulah
 step
     .train 425314,1
     .goto Stranglethorn Vale,23.569,7.955
-    >>Click the |cRXP_PICK_Fount|r which appears. Loot it for the |T135975:0|t|cRXP_LOOT_[Prophecy of Imprisoned Malice]|r
+    >>点击出现的 |cRXP_PICK_泉水|r。以获取 |T135975:0|t[|cRXP_LOOT_囚禁憎怨的预言|r]
     .collect 213142,1
 step
-    .train 425314 >> |cRXP_WARN_Use the|r |T135975:0|t|cRXP_LOOT_[Prophecy of Imprisoned Malice]|r |cRXP_WARN_to train|r |T237563:0|t[Dispersion]
+    .train 425314 >> |cRXP_WARN_使用|r |T135975:0|t[|cRXP_LOOT_囚禁憎怨的预言|r] |cRXP_WARN_来训练|r |T237563:0|t[消散]
     .use 213142
 step
     .isQuestComplete 79731
     .goto Stranglethorn Vale,35.658,10.808
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
-    .turnin 79731 >> Turn in The Troll Scroll
+    >>与 |cRXP_FRIENDLY_赫米特·奈辛瓦里|r 交谈
+    .turnin 79731 >> 完成 巨魔卷轴 任务
     .target Hemet Nesingwary
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Boots
-#name Pain Suppression - 32 (Azeroth)
-#title Pain Suppression
+#group RestedXP Rune Guide符文指南
+#subgroup Boots靴子
+#name Pain Suppression痛苦压制 - 32 (Azeroth)艾泽拉斯各地
+#title Pain Suppression痛苦压制
 
 -- Pain Suppression
 
 step
     .train 402855,1
-    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+    .zone Tirisfal Glades >>前往 |cFFfa9602提瑞斯法林地|r
 step
     .train 402855,1
     .goto 1415,47.44,19.75,10,0
     .goto 1415,47.45,19.69,5,0
     .goto 1415,47.62,19.59,10,0
-    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
+    .goto 1415,47.73,19.39,5 >> 进入血色修道院地下城：墓地
 step
-    >>Click on the |cRXP_PICK_Tombstone|r near the Headless Horseman's spawn location to collect the |cRXP_LOOT_|T136222:0|t[Graveyard Echo]|r |cRXP_WARN_It is highly recommended to form a group of 5 players for this step.|r
-    .link https://imgur.com/a/lqRc0i6 >> |cRXP_WARN_Click here for a picture reference.|r
+    >>点击附近无头骑士的生成位置的 |cRXP_PICK_Tombstone|r 收集 |cRXP_LOOT_|T136222:0|t[墓地的回响]|r |cRXP_WARN_强烈建议组队5名玩家进行此步骤|r
+    .link https://imgur.com/a/lqRc0i6 >> |cRXP_WARN_点击此处查看图片参考|r
     .collect 215426,1
 step
     #optional
     .train 402855,1
-    .zone Arathi Highlands >>Travel to Arathi Highlands
+    .zone Arathi Highlands >>前往阿拉希高地
 step
     .train 402855,1
     .goto Arathi Highlands,62.1,54.5
-    >>Click on the |cRXP_PICK_Grave|r to collect the |cRXP_LOOT_|T136222:0|t[Arathi Echo]|r on Go'sheks Farm next to the biggest building.
+    >>点击 |cRXP_PICK_Grave|r 收集位于Go'sheks农场最大建筑物旁的 |cRXP_LOOT_|T136222:0|t[阿拉希的回响]|r
     .collect 215427,1
 step
     .train 402855,1
-    .zone Dustwallow Marsh >>Travel to Dustwallow Marsh
+    .zone Dustwallow Marsh >>前往尘泥沼泽
 step
     .train 402855,1
     .goto Dustwallow Marsh,63.7,42.3
-    >>Click on the |cRXP_PICK_Tombstone|r to collect |cRXP_LOOT_|T136222:0|t[Theramore Echo]|r located near the Alliance graveyard.
+    >>点击附近联盟墓地的 |cRXP_PICK_Tombstone|r 收集 |cRXP_LOOT_|T136222:0|t[塞拉摩的回响]|r
     .collect 215428,1
 step
     .train 402855,1
-    .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
+    .zone Swamp of Sorrows >>前往 |cFFfa9602悲伤沼泽|r
 step
     .train 402855,1
     .goto Swamp of Sorrows,16.7,53.8
-    >>Click on the |cRXP_PICK_Grave|r to collect |cRXP_LOOT_|T136222:0|t[Swamp Echo]|r located near a lake next to a tree.
+    >>点击位于湖边树旁的 |cRXP_PICK_Grave|r 收集 |cRXP_LOOT_|T136222:0|t[沼泽的回响]|r
     .collect 215425,1
 step
     .train 402855,1
-    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+    .zone Tirisfal Glades >>前往 |cFFfa9602提瑞斯法林地|r
 step
     .train 402855,1
     .goto 1415,47.44,19.75,10,0
     .goto 1415,47.45,19.69,5,0
-    .goto 1415,47.62,19.59,10 >> Enter The Scarlet Monastery Dungeon: Library |cRXP_WARN_It is highly recommended to form a group of 5 players for the next steps.|r
+    .goto 1415,47.62,19.59,10 >> 进入血色修道院地下城：图书馆 |cRXP_WARN_强烈建议组队5名玩家进行接下来的步骤|r
 step
     .train 402855,1
-    .cast 437054 >>Use the |T136222:0|t[Swamp Echo] infront of the Warrior Statue.
+    .cast 437054 >>在战士雕像前使用 |T136222:0|t[沼泽回响]
     .use 215425
 step
     .train 402855,1
-    .cast 437053 >>Use the |T136222:0|t[Arathi Echo] infront of the Mage Statue.
+    .cast 437053 >>在法师雕像前使用 |T136222:0|t[阿拉希回响]
     .use 215428
 step
     .train 402855,1
-    .cast 436952 >>Use the |T136222:0|t[Theramore Echo] infront of the Paladin Statue.
+    .cast 436952 >>在圣骑士雕像前使用 |T136222:0|t[塞拉摩回响]
     .use 215425
 step
     .train 402855,1
-    .cast 437055 >>Use the |T136222:0|t[Graveyard Echo] infront of the Priest Statue.
+    .cast 437055 >>在牧师雕像前使用 |T136222:0|t[墓地回响]
     .use 215426
 step
-    .train 402855 >>Click on the Orange Remnant in the center of the room to receive |T135791:0|t|cRXP_FRIENDLY_[Apocryphal Epiphany]|r, use it to learn |T135936:0|t[Pain Suppression]
+    .train 402855 >>点击房间中央的橙色残留物以获得 |T135791:0|t|cRXP_FRIENDLY_[假冒的启示]|r，使用它来学习 |T135936:0|t[痛苦压制]
     .use 213143
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Helmet
-#name Eye of the Void - 50 (Azeroth)
+#group RestedXP Rune Guide符文指南
+#subgroup Helmet头盔
+#name Eye of the Void虚空之眼 -50  (Azeroth)艾泽拉斯各地
 
---x shiek: needs better coordinates and travelsteps
+--x shiek: 需要更好的坐标和行程
 step
     #completewith next
-    .zone The Hinterlands >>Travel to Hinterlands
+    .zone Hinterlands >>前往辛特兰
     .train 402864,1
 step
-    .goto The Hinterlands,58.4,72.7
-    >>Click on |cRXP_PICK_|T236407:0|tGlowing Eye|r
+    .goto Hinterlands,58.4,72.7
+    >>点击 |cRXP_PICK_|T236407:0|t发光之眼|r
     .collect 223334,1 --1/1 Glowing Eye
     .train 402864,1
 step
     #completewith next
-    .zone Blasted Lands >>Travel to Blasted Lands
+    .zone Blasted Lands >>前往诅咒之地
     .train 402864,1
 step
-    .goto Blasted Lands,43.8,45.8
-    >>Click on |cRXP_PICK_|T236407:0|tPulsating Eye|r
+    .goto Blasted Lands,43.8 45.8
+    >>点击 |cRXP_PICK_|T236407:0|t悸动之眼|r
     .collect 223331,1 --1/1 Pulsating Eye
     .train 402864,1
 step
     #completewith next
-    .zone Searing Gorge >>Travel to Searing Gorge
+    .zone Searing Gorge >>前往灼热峡谷
     .train 402864,1
 step
-    .goto Searing Gorge,43.8,45.8
-    >>Click on |cRXP_PICK_|T236407:0|tVibrating Eye|r
+    .goto Searing Gorge,43.8 45.8
+    >>点击 |cRXP_PICK_|T236407:0|t振动之眼|r
     .collect 223332,1 --1/1 Vibrating Eye
     .train 402864,1
 step
     #completewith next
-    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
+    .zone Stranglethorn Vale >>前往荆棘谷
     .train 402864,1
 step
-    .goto Stranglethorn Vale,33,88
-    >>Click on |cRXP_PICK_|T236407:0|tBaleful Eye|r
+    .goto Stranglethorn Vale,33 88
+    >>点击 |cRXP_PICK_|T236407:0|t凶恶之眼|r
     .collect 223333,1 --1/1 Baleful Eye
     .train 402864,1
 step
     #completewith next
-    .zone Feralas >>Travel to Feralas
+    .zone Feralas >>前往菲拉斯
     .train 402864,1
 step
-    .goto Feralas,57.2,68.7
-    >>Click on |cRXP_PICK_|T236407:0|tBurning Eye|r
+    .goto Feralas,57.2 68.7
+    >>点击 |cRXP_PICK_|T236407:0|t炽热之眼|r
     .collect 223337,1 --1/1 Burning Eye
     .train 402864,1
 step
     #completewith next
-    .zone Tanaris >>Travel to Tanaris
+    .zone Tanaris >>前往塔纳利斯
     .train 402864,1
 step
-    .goto Tanaris,56.4,73.7
-    >>Click on |cRXP_PICK_|T236407:0|tOozing Eye|r
+    .goto Tanaris,56.4 73.7
+    >>点击 |cRXP_PICK_|T236407:0|t渗滤之眼|r
     .collect 223335,1 --1/1 Oozing Eye
     .train 402864,1
 step
     #completewith next
-    .zone Felwood >>Travel to Felwood
+    .zone Felwood >>前往费伍德森林
     .train 410013,1
 step
-    .goto Felwood,36.5,55.7
-    >>Click on |cRXP_PICK_|T236407:0|tPiercing Eye|r
+    .goto Felwood,36.5 55.7
+    >>点击 |cRXP_PICK_|T236407:0|t穿刺之眼|r
     .collect 223336,1 --1/1 Piercing Eye
     .train 402864,1
 step
     #completewith next
-    .zone Azshara >>Travel to Azshara
+    .zone Azshara >>前往艾萨拉
     .train 402864,1
 step
     .goto Azshara,89.8,33.6
-    >>Target |cRXP_FRIENDLY_Shrine of the Watcher|r
+    >>目标 |cRXP_FRIENDLY_Watcher的神龛|r
     .emote KNEEL,223590
-    .accept 82316,1 >>Accept Seven Eyes I Seek...
+    .accept 82316,1 >>接受我寻求的七个眼睛...
     .target Shrine of the Watcher
     .train 402864,1
 ]])
@@ -1306,25 +1362,25 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Bracers
-#title Surge of Light
-#name Surge of Light - 40 (Tanaris)
+#group RestedXP Rune Guide符文指南
+#subgroup Bracers护腕
+#title Surge of Light圣光涌动
+#name Surge of Light圣光涌动 - 40 (Tanaris)塔纳利斯
 
 -- Surge of Light
 
 step
     #completewith RuneLearned
-    +|cRXP_WARN_You may only get the|r |T135981:0|t[Surge of Light] |cRXP_WARN_rune between 9pm-6am in Tanaris.|r
-    +You can look into the Stranglethorn Vale when you want to get the rune outside of this timespan.
+    +|cRXP_WARN_您可能只能获得|r |T135981:0|t[圣光涌动] |cRXP_WARN_晚上 9 点至凌晨 6 点 in Tanaris.|r
+    +当你想在这个时间跨度之外获得符文时，你可以查看 Stranglethorn Vale.
     .train 431669,1
 step
     #completewith next
-    .zone Tanaris >>Travel to Tanaris
+    .zone Tanaris >>前往塔纳利斯
     .train 431669,1
 step
     .train 431669,1
-    >>Kill the |cRXP_ENEMY_Echo of a Lost Soul|r |cRXP_WARN_with Holy or Arcane spells/wands|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r]
+    >>用神圣或奥术法术/魔杖击败 |cRXP_ENEMY_失落之魂的回响|r。拾取 |T135975:0|t[|cRXP_FRIENDLY_失落部落的预言|r]
     .collect 221981,1
     .goto Tanaris,52,29
     .mob Echo of a Lost Soul
@@ -1332,32 +1388,32 @@ step
     #label RuneLearned
     .itemcount 221981,1
     .use 221981
-    *|cRXP_WARN_You need TWO meditation buffs: Look for a priest with multiple buffs, /kneel before him, wait for him to /pray for you.|r
-    .train 431669 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r] |cRXP_WARN_to train|r |T135981:0|t[Surge of Light]
+    *|cRXP_WARN_你需要两个冥想 增益： 找一个有多个 增益 的牧师，/跪在他面前，等他为你/祈祷。.|r
+    .train 431669 >>|cRXP_WARN_使用|r |T135975:0|t[|cRXP_FRIENDLY_失落部落的预言|r] |cRXP_WARN_来训练|r |T135981:0|t[圣光涌动]
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Bracers
-#title Surge of Light
-#name Surge of Light - 40 (Swamp of Sorrows)
+#group RestedXP Rune Guide符文指南
+#subgroup Bracers护腕
+#title Surge of Light圣光涌动
+#name Surge of Light圣光涌动 - 40 (Swamp of Sorrows)
 
 -- Surge of Light
 
 step
     #completewith RuneLearned
-    +|cRXP_WARN_You may only get the|r |T135981:0|t[Surge of Light] |cRXP_WARN_rune between 9pm-6am in Swamp of Sorrows.|r
-    +You can look into the Stranglethorn Vale when you want to get the rune outside of this timespan.
+    +|cRXP_WARN_您可能只能获得|r |T135981:0|t[圣光涌动] |cRXP_WARN_晚上 9 点至凌晨 6 点 in Swamp of Sorrows.|r
+    +当你想在这个时间跨度之外获得符文时，你可以查看 Stranglethorn Vale.
     .train 431669,1
 step
     #completewith next
-    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
+    .zone Swamp of Sorrows >>前往悲伤沼泽
     .train 431669,1
 step
     .train 431669,1
-    >>Kill the |cRXP_ENEMY_Echo of a Lost Soul|r |cRXP_WARN_with Holy or Arcane spells/wands|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r]
+    >>用神圣或奥术法术/魔杖击败 |cRXP_ENEMY_失落之魂的回响|r。拾取 |T135975:0|t[|cRXP_FRIENDLY_失落部落的预言|r]
     .collect 221981,1
     .goto Swamp of Sorrows,50,60
     .mob Echo of a Lost Soul
@@ -1365,33 +1421,33 @@ step
     #label RuneLearned
     .itemcount 221981,1
     .use 221981
-    *|cRXP_WARN_You need TWO meditation buffs: Look for a priest with multiple buffs, /kneel before him, wait for him to /pray for you.|r
-    .train 431669 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r] |cRXP_WARN_to train|r |T135981:0|t[Surge of Light]
+    *|cRXP_WARN_你需要两个冥想 增益： 找一个有多个 增益 的牧师，/跪在他面前，等他为你/祈祷。.|r
+    .train 431669 >>|cRXP_WARN_使用|r |T135975:0|t[|cRXP_FRIENDLY_失落部落的预言|r] |cRXP_WARN_来训练|r |T135981:0|t[圣光涌动]
 ]])
 
 
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Bracers
-#title Surge of Light
-#name Surge of Light - 40 (The Hinterlands)
+#group RestedXP Rune Guide符文指南
+#subgroup Bracers护腕
+#title Surge of Light圣光涌动
+#name Surge of Light圣光涌动 - 40 (The Hinterlands)辛特兰
 
 -- Surge of Light
 
 step
     #completewith RuneLearned
-    +|cRXP_WARN_You may only get the|r |T135981:0|t[Surge of Light] |cRXP_WARN_rune between 9pm-6am in The Hinterlands.|r
-    +You can look into the Stranglethorn Vale when you want to get the rune outside of this timespan.
+    +|cRXP_WARN_您可能只能获得|r |T135981:0|t[圣光涌动] |cRXP_WARN_晚上 9 点至早上 6 点之间辛特兰的符文。|r
+    +当你想在这个时间跨度之外获得符文时，你可以查看 Stranglethorn Vale.
     .train 431669,1
 step
     #completewith next
-    .zone The Hinterlands>>Travel to The Hinterlands
+    .zone The Hinterlands>>前往辛特兰
     .train 431669,1
 step
     .train 431669,1
-    >>Kill the |cRXP_ENEMY_Echo of a Lost Soul|r |cRXP_WARN_with Holy or Arcane spells/wands|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r]
+    >>用神圣或奥术法术/魔杖击败 |cRXP_ENEMY_失落之魂的回响|r。拾取 |T135975:0|t[|cRXP_FRIENDLY_失落部落的预言|r]
     .collect 221981,1
     .goto The Hinterlands,73,68
     .mob Echo of a Lost Soul
@@ -1399,31 +1455,31 @@ step
     #label RuneLearned
     .itemcount 221981,1
     .use 221981
-    *|cRXP_WARN_You need TWO meditation buffs: Look for a priest with multiple buffs, /kneel before him, wait for him to /pray for you.|r
-    .train 431669 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r] |cRXP_WARN_to train|r |T135981:0|t[Surge of Light]
+    *|cRXP_WARN_你需要两个冥想 增益： 找一个有多个 增益 的牧师，/跪在他面前，等他为你/祈祷。.|r
+    .train 431669 >>|cRXP_WARN_使用|r |T135975:0|t[|cRXP_FRIENDLY_失落部落的预言|r] |cRXP_WARN_来训练|r |T135981:0|t[圣光涌动]
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Bracers
-#title Surge of Light
-#name Surge of Light - 40 (Stranglethorn Vale) 2
+#group RestedXP Rune Guide符文指南
+#subgroup Bracers护腕
+#title Surge of Light圣光涌动
+#name Surge of Light圣光涌动 - 40 (Stranglethorn Vale) 2 荆棘谷
 
 -- Surge of Light
 
 step
     #completewith RuneLearned
-    +|cRXP_WARN_The soul may only spawn after a Blood Moon event. You can also disable the event and run to the waypoint location|r.
+    +|cRXP_WARN_灵魂只有在血月事件后才会出现。您也可以禁用该事件，然后跑到航点位置。n|r. 
     .train 431669,1
 step
     #completewith next
-    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
+    .zone Stranglethorn Value >>前往荆棘谷
     .train 431669,1
 step
     .train 431669,1
-    >>Kill the |cRXP_ENEMY_Echo of a Lost Soul|r |cRXP_WARN_with Holy or Arcane spells/wands|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r]
+    >>用神圣或奥术法术/魔杖击败 |cRXP_ENEMY_失落之魂的回响|r。拾取 |T135975:0|t[|cRXP_FRIENDLY_失落部落的预言|r]
     .collect 221981,1
     .goto Stranglethorn Vale,40.0,58.0
     .mob Echo of a Lost Soul
@@ -1431,32 +1487,32 @@ step
     #label RuneLearned
     .itemcount 221981,1
     .use 221981
-    *|cRXP_WARN_You need TWO meditation buffs: Look for a priest with multiple buffs, /kneel before him, wait for him to /pray for you.|r
-    .train 431669 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r] |cRXP_WARN_to train|r |T135981:0|t[Surge of Light]
+    *|cRXP_WARN_你需要两个冥想 增益： 找一个有多个 增益 的牧师，/跪在他面前，等他为你/祈祷。.|r
+    .train 431669 >>|cRXP_WARN_使用|r |T135975:0|t[|cRXP_FRIENDLY_失落部落的预言|r] |cRXP_WARN_来训练|r |T135981:0|t[圣光涌动]
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Bracers
-#title Surge of Light
-#name Surge of Light - 40 (Stranglethorn Vale) 1
+#group RestedXP Rune Guide符文指南
+#subgroup Bracers护腕
+#title Surge of Light圣光涌动
+#name Surge of Light圣光涌动 - 40 (Stranglethorn Vale)荆棘谷 
 
 -- Surge of Light
 
 step
     #completewith RuneLearned
-    +|cRXP_WARN_You may only get the|r |T135981:0|t[Surge of Light] |cRXP_WARN_rune between 9pm-6am.|r
-    +You can look into the Stranglethorn Vale 2 when you want to get the rune outside of this timespan.
+    +|cRXP_WARN_您可能只能获得|r |T135981:0|t[圣光涌动] |cRXP_WARN_晚上 9 点至凌晨 6 点.|r
+    +如果您想在这个时间段之外获得符文，可以研究一下 Stranglethorn Vale 2。.
     .train 431669,1
 step
     #completewith next
-    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
+    .zone Stranglethorn Vale >>前往荆棘谷
     .train 431669,1
 step
     .train 431669,1
-    >>Kill the |cRXP_ENEMY_Echo of a Lost Soul|r |cRXP_WARN_with Holy or Arcane spells/wands|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r]
+    >>用神圣或奥术法术/魔杖击败 |cRXP_ENEMY_失落之魂的回响|r。拾取 |T135975:0|t[|cRXP_FRIENDLY_失落部落的预言|r]
     .collect 221981,1
     .goto Stranglethorn Vale,30.0,73.0
     .mob Echo of a Lost Soul
@@ -1464,424 +1520,46 @@ step
     #label RuneLearned
     .itemcount 221981,1
     .use 221981
-    *|cRXP_WARN_You need TWO meditation buffs: Look for a priest with multiple buffs, /kneel before him, wait for him to /pray for you.|r
-    .train 431669 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r] |cRXP_WARN_to train|r |T135981:0|t[Surge of Light]
+    *|cRXP_WARN_你需要两个冥想 增益： 找一个有多个 增益 的牧师，/跪在他面前，等他为你/祈祷。|r
+    .train 431669 >>|cRXP_WARN_使用|r |T135975:0|t[|cRXP_FRIENDLY_失落部落的预言|r] |cRXP_WARN_来训练|r |T135981:0|t[圣光涌动]
 ]])
 
-RXPGuides.RegisterGuide([[
-#classic
-<< Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Cloak
-#title Binding Heal
-#name Binding Heal - 58 (Western and Eastern Plaguelands)
-#next Priest Racials - 60 (Azeroth)
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Priest SoD
+-- #group RestedXP Rune Guide符文指南
+-- #subgroup Bracers护腕
+-- #name Void Zone
+-- for phase 3
 
-step << Alliance
-    #completewith next
-    .zone Stormwind City >> Travel to Stormwind
-step << Alliance
-    .goto Stormwind City,38.8,26.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
-    .accept 84320 >> Accept Lost Heirloom
-    .target High Priestess Laurena
-step << Horde
-    #completewith next
-    .zone Orgrimmar >> Travel to Orgrimmar
-step << Horde
-    .goto Orgrimmar,35.8,87.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
-    .accept 84405 >> Accept Lost Heirloom
-    .target Dietrich Praice
-step
-    #completewith next
-    .zone Western Plaguelands >> Travel to Western Plaguelands
-step
-    .goto Western Plaguelands,51.9,82.4,50 >> Travel to the large crypt located next to Sorrow Hill
-step
-    .goto Western Plaguelands,54.8,81.2
-    >>|cRXP_WARN_Enter the crypt and go left. Go downstairs and look for a small wooden chest in a small alcove to your right. Loot it for the|r |T133299:0|t[|cRXP_PICK_Family Heirloom|r]
-    .collect 227745,1 --Family Heirloom(1)
-step
-    .goto Western Plaguelands,53.8,80.2
-    >>|cRXP_WARN_Head to the bottom of the crypt. Loot the|r |T133741:0|t[|cRXP_PICK_Family Records|r] |cRXP_WARN_from a Bookshelf to the right and|r |T133735:0|t[|cRXP_PICK_Survivor Journal|r] |cRXP_WARN_from the table on the left|r
-    .collect 227747,1 --Family Records
-    .collect 227748,1 --Survivor Journal
-step << Alliance
-    #completewith next
-    .zone Stormwind City >> Return to Stormwind
-step << Alliance
-    .goto Stormwind City,38.8,26.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
-    .turnin 84320 >> Turn in Lost Heirloom
-    .accept 84321 >> Accept Relic of Light
-    .target High Priestess Laurena
-step << Horde
-    #completewith next
-    .zone Orgrimmar >> Return to Orgrimmar
-step << Horde
-    .goto Orgrimmar,35.8,87.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
-    .turnin 84405 >> Turn in Lost Heirloom
-    .accept 84406 >> Accept Relic of Light
-    .target Dietrich Praice
-step
-    #completewith next
-    >>|cRXP_WARN_The next quest will require you to loot an item from an elite area. It's possible to do solo but if you're lower level or not very geared consider looking for someone to help you|r
-    .zone Western Plaguelands >> Return to Western Plaguelands
-step
-    .goto Western Plaguelands,48.2,21.7,50 >> Head to Hearthglen, |cRXP_WARN_keep in mind that this is an elite area|r
-step
-    .goto Western Plaguelands,42.2,18.1
-    >>|cRXP_WARN_Enter the Town Hall in Hearthglen and interact with the|r |cRXP_PICK_Scarlet Ledger|r |cRXP_WARN_located on the podium. Watch out as the area is filled with elite mobs|r
-    .turnin 84406 >> Turn in Relic of Light << Horde
-    .turnin 84321 >> Turn in Relic of Light << Alliance
-    .accept 84322 >> Accept Scarlet Research
-step
-    #completewith next
-    >>|cRXP_WARN_The next quest will require you to loot an item from an elite area. It's possible to do solo but if you're lower level or not very geared consider looking for someone to help you|r
-    .zone Eastern Plaguelands >> Travel to Eastern Plaguelands
-step
-    .goto Eastern Plaguelands,77.5,81.7,50 >> Travel to Tyr's Hand, |cRXP_WARN_keep in mind that this is an elite area|r
-step
-    .goto Eastern Plaguelands,83.6,78.2
-    >>|cRXP_WARN_The rune of|r |T237537:0|t[Holy Specialization] |cRXP_WARN_is also located in Tyr's Hand, if you don't want to get it now skip this step|r 
-    >>|cRXP_WARN_If you want to get it head to the library wing of the building marked on your map and look for a book located on top of a bookshelf. Loot it for the rune. Keep in mind you can't loot it in combat|r
-    >>|cRXP_WARN_You can either clear all mobs in the room or die next to the book and release in a spot thats out of line of sight of mobs to loot the rune without having to kill anything|r
-    .collect 226418,1 --Rune of Holy Specialization
-    .train 453702,1
-step
-    #completewith next
-    .train 453702 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Holy Specialization|r] to train |T237537:0|t[Holy Specialization]
-    .train 453702,1
-    .itemcount 226418,1
-step
-    .goto Eastern Plaguelands,83.6,78.2
-    >>|cRXP_WARN_Enter the bell tower and head to the top floor. Interact with the locked box located there|r
-    .turnin 84322 >> Turn in Scarlet Research
-    .accept 84323 >> Accept The Prize Within
-step
-    .goto Eastern Plaguelands,83.6,78.2
-    >>Kill any scarlet mobs in Tyr's Hand. Loot them for an |T134245:0|t[|cRXP_LOOT_Artifact Storage Key|r]
-    >>|cRXP_WARN_You can skip farming the key and find a rogue with lockpicking of 175+ as they can also open the box for you. Skip this step if you would rather look for a rogue than farm the key|r
-    .collect 228912,1 --Artifact Storage Key
-    .itemcount 132874,<1 --Skips if you get the Shard of Light without the key
-step
-    >>Use the |T134245:0|t[|cRXP_LOOT_Artifact Storage Key|r] to unlock the |T133876:0|t[|cRXP_LOOT_Puzzle Box|r] or have a rogue open it for you with lockpicking. Loot it for the |T132874:0|t[|cRXP_LOOT_Shard of Light|r]
-    .collect 227938,1 --Shard of Light(1)
-step << Alliance
-    #completewith next
-    .zone Stormwind City >> Return to Stormwind
-step << Alliance
-    .goto Stormwind City,38.8,26.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
-    .turnin 84323 >> Turn in The Prize Within
-    .target High Priestess Laurena
-step << Horde
-    #completewith next
-    .zone Orgrimmar >> Return to Orgrimmar
-step << Horde
-    .goto Orgrimmar,35.8,87.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
-    .turnin 84323 >> Turn in The Prize Within
-    .target Dietrich Praice
-step
-    .train 402853 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Jubilant Epiphany|r] to train |T135883:0|t[|cRXP_FRIENDLY_Binding Heal|r]
-    .use 228123
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
-<< Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Cloak
-#title Vampiric Touch
-#name Vampiric Touch - 60 (Demon Fall Canyon Dungeon)
-
-step
-    #completewith next
-    >>The rune of |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r] drops from the last boss of Demon Fall Canyon the new dungeon added in SoD
-    .zone Felwood >> |cRXP_WARN_In order to enter the dungeon you first need a trinket rewarded from a short quest, head to Felwood to begin it|r
-    .itemcount 228172,<1 --Only shows if you don't have the trinket
-step
-    .goto Felwood,51.4,82.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Shadowtooth Emissary|r
-    .accept 84384 >> Accept Demonic Deceptions
-    .target Shadowtooth Emissary
-    .itemcount 228172,<1 --Only shows if you don't have the trinket
-step
-    #completewith next
-    .zone Winterspring >> Travel to Winterspring
-    .itemcount 228172,<1 --Only shows if you don't have the trinket
-step
-    .goto Winterspring,65.6,21.4
-    >>Look for |cRXP_ENEMY_Berserk Owlbeasts|r north of Everlook. Kill them and loot them for the |T237413:0|t[|cRXP_LOOT_Owlbeast Pineal Glands|r]
-    .complete 84384,1
-    .mob Berserk Owlbeast
-    .itemcount 228172,<1 --Only shows if you don't have the trinket
-step
-    #completewith next
-    .zone Felwood >> Return to Felwood
-    .itemcount 228172,<1 --Only shows if you don't have the trinket
-step
-    .goto Felwood,51.4,82.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Shadowtooth Emissary|r
-    .turnin 84384 >> Turn in Demonic Deceptions
-    .target Shadowtooth Emissary
-    .itemcount 228172,<1 --Only shows if you don't have the trinket
-step
-    #completewith next
-    +Equip the |T136232:0|t[|cRXP_FRIENDLY_Shadowtooth Illusion Ward|r] in any of your trinket slots. You need it equipped in order to be able to enter the dungeon
-    .use 228172
-    .itemcount 228172,<1
-step
-    >>|cRXP_WARN_The rune of|r |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r] |cRXP_WARN_drops from the last boss of Demon Fall Canyon the new dungeon added in SoD. Start looking for a group for it as you head to Ashenvale|r
-    >>If you're flying, fly to Talendris Point in Azshara instead of Astranaar. It's closer to the dungeon entrance << Alliance
-    .zone Ashenvale >> Travel to Ashenvale
-step
-    .goto Ashenvale,84.5,75.0,50 >> Head to the entrance of the Demon Fall Canyon dungeon
-step
-    >>Clear the dungeon. |T135791:0|t[|cRXP_FRIENDLY_Aperitive Epiphany|r] which teaches you |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r] drops from the last boss of the dungeon, |cRXP_ENEMY_Hellscream's Phantom|r. |cRXP_WARN_Make sure you loot him for the rune!|r
-    .collect 228126,1 --Apperitive Epiphany
-    .mob Hellscream's Phantom
-step
-    .train 402857 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Aperitive Epiphany|r] to train |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r]
-    .use 228126
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
-<< Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Extras
-#title Priest Racials
-#name Priest Racials - 60 (Azeroth)
+-- Void Zone
 
 
-step
-    #completewith next
-    >>|cRXP_WARN_The extra priest ability is a server-wide unlock. This means that if someone has already done it on your server you can skip the entire questline and go straight to Karazhan to train your new racial ability. If thats not the case you can use the guide below to be the person who unlocks it for your server!|r
-    .zone Deadwind Pass >> Travel to the Deadwind Pass
-step
-    .goto Deadwind Pass,40.8,78.4
-    >>Travel to a small shrine located next to Karazhan
-    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Divine Apprehension|r at a shrine next to Karazhan to pick which racial ability you would like to choose
-    .target Divine Apprehension
-step
-    #completewith PreQStart
-    +This is the begining of the questchain for the server-wide unlock of the additional priest racial. |cRXP_WARN_There's a good chance that it was already completed on your server and you don't need to do the below. Proceed with it only if you want to try the chain or you know that it's not been unlocked yet|r
-step
-    #completewith QStart
-    +|cRXP_WARN_In order to begin this quest you need to have previously done the questline awarding|r |T135883:0|t[|cRXP_FRIENDLY_Binding Heal|r]|cRXP_WARN_. You can find a guide for it in the cloak runes section|r
-    .train 402853,1
-step
-    #label PreQStart
-    .goto Eastern Plaguelands,48.1,24.0
-    >>|cRXP_WARN_To turn in the first quest in this chain you will need 4|r |T134855:0|t[|cRXP_LOOT_Stratholme Holy Water|r] |cRXP_WARN_on top of other materials which can be bought from the auction house. Look for a group to run the Stratholme(undead) dungeon|r
-    >>|cRXP_WARN_Once inside look for and loot Supply Crates laying on the ground scattered across the instance. They can contain Holy Water but also be decoys which spawn annoying to deal with enemies|r
-    .collect 13180,4 --Stratholme Holy Water(4)
-step << Alliance
-    #completewith next
-    .zone Stormwind City >> Travel to Stormwind
-step << Alliance
-    .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>Buy 6 |T133682:0|t[|cRXP_LOOT_Heavy Runecloth Bandages|r], 4 |T134834:0|t[|cRXP_LOOT_Major Healing Potions|r] and 8 |T132834:0|t[|cRXP_LOOT_Giant Eggs|r] from the auction house. You will need them for the first quest in this chain together with the |T134855:0|t[|cRXP_LOOT_Stratholme Holy Water|r] you collected already
-    .collect 14530,6 --Heavy runecloth bandage (6)
-    .collect 13446,4 --Major Healing Potion (4)
-    .collect 12207,8 --Giant Egg(8)
-    .collect 13180,4 --Stratholme Holy Water(4)
-    .target Auctioneer Jaxon
-step << Alliance
-    #label QStart
-    .goto Stormwind City,38.8,26.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
-    .accept 84324 >> Accept Diplomatic Overtures
-    .turnin 84324 >> Turn in Diplomatic Overtures
-    .target High Priestess Laurena
-step << Horde
-    #completewith next
-    .zone Orgrimmar >> Travel to Orgrimmar
-step << Horde
-    .goto Orgrimmar,55.59,62.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thathung|r
-    >>Buy 6 |T133682:0|t[|cRXP_LOOT_Heavy Runecloth Bandages|r], 4 |T134834:0|t[|cRXP_LOOT_Major Healing Potions|r] and 8 |T132834:0|t[|cRXP_LOOT_Giant Eggs|r] from the auction house. You will need them for the first quest in this chain together with the |T134855:0|t[|cRXP_LOOT_Stratholme Holy Water|r] you collected already
-    .collect 14530,6 --Heavy runecloth bandage (6)
-    .collect 13446,4 --Major Healing Potion (4)
-    .collect 12207,8 --Giant Egg(8)
-    .collect 13180,4 --Stratholme Holy Water(4)
-    .target Thathung
-step << Horde
-    #label QStart
-    .goto Orgrimmar,35.8,87.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
-    .accept 84408 >> Accept Diplomatic Overtures
-    .turnin 84408 >> Turn in Diplomatic Overtures
-    .target Dietrich Praice
-step
-    #completewith next
-    >>|cRXP_WARN_For the next part of the quest you will need to find an opposite faction priest that is also on the questline in order to progress|r
-    .zone Eastern Plaguelands >> Travel to Eastern Plaguelands
-step
-    .goto Eastern Plaguelands,47,58
-    >>|cRXP_WARN_Travel to the|r |cRXP_FRIENDLY_Shrine of Cooperation|r |cRXP_WARN_located in EPL. Damage one another with the opposite faction priest and then use the|r |T134918:0|t[|cRXP_FRIENDLY_Altruist Ward|r] |cRXP_WARN_item you received from turning in the previous quest to heal each other|r
-    >>If done correctly the |cRXP_FRIENDLY_Shrine of Cooperation|r will offer you a quest, accept it
-    .accept 84325 >> Accept Shrine of Cooperation << Alliance
-    .accept 84410 >> Accept Shrine of Cooperation << Horde
-    .use 228130
-step << Alliance
-    #completewith next
-    .zone Stormwind City >> Return to Stormwind
-step << Alliance
-    .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>Buy 2 |T134459:0|t[|cRXP_LOOT_Arcanite Bars|r], 2 |T134086:0|t[|cRXP_LOOT_Blood of the Mountain|r] and 3 |T134132:0|t[|cRXP_LOOT_Blue Sapphires|r] from the auction house. You will need them to turnin a quest soon. These items might be expensive
-    .collect 12360,2 --Arcanite Bar(2)
-    .collect 11382,2 --Blood of the Mountain(2)
-    .collect 12361,3 --Blue Sapphire(3)
-    .target Auctioneer Jaxon
-step << Alliance
-    .goto Stormwind City,38.8,26.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
-    .turnin 84325 >> Turn in Shrine of Cooperation
-    .accept 84326 >> Accept Diplomat Ring
-    .turnin 84326 >> Turn in Diplomat Ring
-    .accept 84327 >> Accept A Diplomatic Mission
-    .target High Priestess Laurena
-step << Horde
-    #completewith next
-    .zone Orgrimmar >> Return to Orgrimmar
-step << Horde
-    .goto Orgrimmar,55.59,62.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thathung|r
-    >>Buy 2 |T134459:0|t[|cRXP_LOOT_Arcanite Bars|r], 2 |T134086:0|t[|cRXP_LOOT_Blood of the Mountain|r] and 3 |T134132:0|t[|cRXP_LOOT_Blue Sapphires|r] from the auction house. You will need them to turnin a quest soon. These items might be expensive
-    .collect 12360,2 --Arcanite Bar(2)
-    .collect 11382,2 --Blood of the Mountain(2)
-    .collect 12361,3 --Blue Sapphire(3)
-    .target Thathung
-step << Horde
-    .goto Orgrimmar,35.8,87.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
-    .turnin 84410 >> Turn in Shrine of Cooperation
-    .accept 84411 >> Accept Diplomat Ring
-    .turnin 84411 >> Turn in Diplomat Ring
-    .accept 84412 >> Accept A Diplomatic Mission
-    .target Dietrich Praice
-step << Horde
-    #completewith next
-    >>|cRXP_WARN_To complete this quest you will once again need to find an opposite faction priest and have them use their|r |T133396:0|t[|cFF0070FFDiplomat Ring|r] |cRXP_WARN_on you while you're next to the gates of Stormwind. This will make the city guards no longer attack you and let you safely enter the enemy capital|r
-    >>|cRXP_WARN_Keep in mind that opposing faction players can still atack you on a PvP server!|r
-    .zone Elwynn Forest >> Travel to the gates of Stormwind
-step << Horde
-    .goto Stormwind City,38.8,26.6
-    >>Have an opposing faction priest use their |T133396:0|t[|cFF0070FFDiplomat Ring|r] on you so the city guards don't attack you and head to the Stormwind Cathedral. |cRXP_WARN_You can still be attacked by other players!|r
-    >>|cRXP_WARN_The opposing faction priest has to escort you to the quest giver or you will lose the diplomatic immunity buff|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
-    .turnin 84412 >> Turn in Diplomatic Mission
-    .accept 84413 >> Accept Repairing the Shard
-    .target High Priestess Laurena
-step << Alliance
-    #completewith next
-    >>|cRXP_WARN_To complete this quest you will once again need to find an opposite faction priest and have them use their|r |T133396:0|t[|cFF0070FFDiplomat Ring|r] |cRXP_WARN_on you while you're next to the gates of Orgrimmar. This will make the city guards no longer attack you and let you safely enter the enemy capital|r
-    >>|cRXP_WARN_Keep in mind that opposing faction players can still atack you on a PvP server!|r
-    .zone Durotar >> Travel to the gates of Orgrimmar
-step << Alliance
-    .goto Orgrimmar,35.8,87.2
-    >>Have an opposing faction priest use their |T133396:0|t[|cFF0070FFDiplomat Ring|r] on you so the city guards don't attack you and head to the Valley of Spirits. |cRXP_WARN_You can still be attacked by other players!|r
-    >>|cRXP_WARN_The opposing faction priest has to escort you to the quest giver or you will lose the diplomatic immunity buff|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
-    .turnin 84327 >> Turn in A Diplomatic Mission
-    .accept 84328 >> Accept Repairing the Shard
-    .target Dietrich Praice
-step
-    #completewith next
-    >>|cRXP_WARN_Start looking for a group for the Dire Maul West dungeon, for the next quest you need to kill|r |cRXP_ENEMY_Magister Kalendris|r |cRXP_WARN_one of the dungeon bosses|r
-    .zone Feralas >> Travel to Feralas
-step
-    .goto Feralas,59.1,43.2,100 >> Enter the Dire Maul area
-step
-    .goto Feralas,60.4,30.2
-    >>Enter Dire Maul West and kill |cRXP_ENEMY_Magister Kalendris|r. Loot him for the book |T133737:0|t[|cRXP_LOOT_Applied Divinity|r]. He is located in the ghost section of the dungeon
-    .collect 227912,1
-step << Horde
-    #completewith next
-    >>|cRXP_WARN_To complete this quest you will once again need to find an opposite faction priest and have them use their|r |T133396:0|t[|cFF0070FFDiplomat Ring|r] |cRXP_WARN_on you while you're next to the gates of Stormwind. This will make the city guards no longer attack you and let you safely enter the enemy capital|r
-    >>|cRXP_WARN_Keep in mind that opposing faction players can still atack you on a PvP server!|r
-    .zone Elwynn Forest >> Travel to the gates of Stormwind
-step << Horde
-    .goto Stormwind City,38.8,26.6
-    >>Have an opposing faction priest use their |T133396:0|t[|cFF0070FFDiplomat Ring|r] on you so the city guards don't attack you and head to the Stormwind Cathedral. |cRXP_WARN_You can still be attacked by other players!|r
-    >>|cRXP_WARN_The opposing faction priest has to escort you to the quest giver or you will lose the diplomatic immunity buff|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
-    .turnin 84413 >> Turn in Repairing the Shard
-    .accept 84329 >> Accept The Convocation Assembles
-    .target High Priestess Laurena
-step << Alliance
-    #completewith next
-    >>|cRXP_WARN_To complete this quest you will once again need to find an opposite faction priest and have them use their|r |T133396:0|t[|cFF0070FFDiplomat Ring|r] |cRXP_WARN_on you while you're next to the gates of Orgrimmar. This will make the city guards no longer attack you and let you safely enter the enemy capital|r
-    >>|cRXP_WARN_Keep in mind that opposing faction players can still atack you on a PvP server!|r
-    .zone Durotar >> Travel to the gates of Orgrimmar
-step << Alliance
-    .goto Orgrimmar,35.8,87.2
-    >>Have an opposing faction priest use their |T133396:0|t[|cFF0070FFDiplomat Ring|r] on you so the city guards don't attack you and head to the Valley of Spirits. |cRXP_WARN_You can still be attacked by other players!|r
-    >>|cRXP_WARN_The opposing faction priest has to escort you to the quest giver or you will lose the diplomatic immunity buff|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
-    .turnin 84328 >> Turn in Repairing the Shard
-    .accept 84329 >> Accept The Convocation Assembles
-    .target Dietrich Praice
-step
-    #completewith next
-    .zone Deadwind Pass >> Travel to the Deadwind Pass
-step
-    .goto Deadwind Pass,40.8,78.4
-    >>Travel to a small shrine located next to Karazhan
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maethra Slagheart|r at a shrine next to Karazhan
-    .turnin 84329 >> Turn in The Convocation Assembles
-step
-    +Turning in the above quest should complete the questline and unlock the ability to train a racial priest ability from another race server-wide
-]])
+-- ]])
 
-RXPGuides.RegisterGuide([[
-#classic
-<< Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Cloak
-#title Soul Warding
-#name Soul Warding - 60 (Stratholme)
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Priest SoD
+-- #group RestedXP Rune Guide符文指南
+-- #subgroup Helmet
+-- #name Divine Aegis
+-- for phase 3
 
-step
-    #completewith next
-    >>|cRXP_WARN_In order to complete this rune you will need to complete a couple tasks within the Stratholme Dungeon (both living and dead sides). Start looking for a group for it|r
-    .zone Eastern Plaguelands >> Travel to the Eastern Plaguelands
-step
-    .goto Eastern Plaguelands,47.8,24.2
-    >>Enter Stratholme
-    >>|cRXP_WARN_READ THIS SECTION CAREFULLY AS THIS RUNE QUEST IS A BIT UNCONVENTIONAL|r
-    >>In order to get the rune you will need to gather 3 essences from bosses in Stratholme. The bosses who have the essnces are |cRXP_WARN_RANDOM AND DIFFERENT EVERY DUNGEON ID|r. In order to know which bosses have the essence in your run you need to find clues located on pillars within the Scarlet Building in the live side of the dungeon
-    >>To gather the essences you will need 3 |T134799:0|t[|cRXP_LOOT_Stratholme Shadow Jars|r] which drop from the [|cRXP_PICK_Postbox Parcels|r] within the dungeon, to open the [|cRXP_PICK_Postboxes|r] in the first place you need to kill the |cRXP_ENEMY_Stratholme Courier|r to get the |T134237:0|t[|cRXP_LOOT_Postbox Keys|r] from him
-    >>Once you gathered all the essences you have to return to the pillars with the clues and activate them with the essence corresponding to the hint they gave. This spawns an orb next to them which you have to loot to get the rune
-    +|cRXP_WARN_Click here once you read the above and want to see more details about which clue corresponds to which boss. You can always go back to this step if you need to|r
-step
-    >>|cRXP_WARN_Here are the clues and bosses which they correspond to:|r
-    >>Among the dead this mortal dwells with acolytes and icy spells = Maleki the Pallid
-    >>A specter cursed to guard a tower No solace gained from Wealth or power = Baroness Anastari
-    >>The ancient kingdom rediscovered. Trades one master for another = Nerub'enkan
-    >>Built from flesh, a sin of science hunted by Forsakens finest = Ramstein the Gorger
-    >>The people looked to him to lead in their hour of greatest need = Magistrate Barthilas
-    >>A champion of wicked malice, hulking horrors guard his palace = Baron Rivendare
-    >>Holy furor purges sin and yet a shadow lurks within. = Balnazzar
-    >>The smell of brimstone fills the room. This zealot greets you with a boom. = Cannon Master Willey
-    +|cRXP_WARN_Click here if you want to see the recommended efficient order of steps you can take to complete this quest. You can always go back to this step to read the clues again if you need to|r
-step
-    >>|cRXP_WARN_The efficient order of business while doing this quest is as follows:|r
-    >>1. Start in the Living side of the dungeon 
-    >>2. Loot three [|cRXP_PICK_Postbox Parcels|r] for the |T134799:0|t[|cRXP_LOOT_Stratholme Shadow Jars|r], the jars are unique so have a different player pick up each one 
-    >>3. Clear to the pedestal room and figure out which bosses have the essences in your ID 
-    >>4. Collect all the essences as you progress through the dungeon 
-    >>5. Return to the pedestal room and activate each one with its essence 
-    >>6. Loot the orb that spawns for your rune
-    .collect 228124,1 --Oneiric Epiphany
-step
-    .train 402850 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Oneiric Epiphany|r] to train |T135948:0|t[|cRXP_FRIENDLY_Soul Warding|r]
-    .use 228124
-]])
+-- Divine Aegis
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune Guide符文指南
+-- #subgroup Skill Books
+-- #name Increased Fortitude
+-- for phase 3
+
+-- -- Increased Fortitude
+
+
+
+-- ]])
+

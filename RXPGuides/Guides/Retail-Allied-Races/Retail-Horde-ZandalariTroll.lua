@@ -1,13 +1,10 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Allied Race Unlocks
-#groupweight 5
--- #subgroup Zandalari Troll
+#group Allied Race Unlocks
+#subgroup Zandalari Trolls
 #name 1) Zandalari Troll Questline
-#displayname Zandalari Troll
-
-<< Horde !ZandalariTroll
+#displayname Zandalari Troll Questline
 
 step
     #completewith ZandalariTrollStartQuestline
@@ -115,12 +112,7 @@ step
     .goto 1165,34.96,10.72,20,0
     .goto 1165,36.49,15.16,20,0
     .goto 1165,39.96,20.07,20,0
-#loop
-	.line 1165,36.17,7.69,34.96,10.72,36.49,15.16,39.96,20.07
-	.goto 1165,36.17,7.69,22,0
-	.goto 1165,34.96,10.72,22,0
-	.goto 1165,36.49,15.16,22,0
-	.goto 1165,39.96,20.07,22,0
+    .loop 22,1165,36.17,7.69,34.96,10.72,36.49,15.16,39.96,20.07
     .skipgossip 147781,1
     .complete 54419,1 --12/12 Rioters subdued
     .mob Rioting Speaker

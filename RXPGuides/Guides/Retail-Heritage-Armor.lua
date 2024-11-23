@@ -205,7 +205,7 @@ step
     .mob Clessington Attendant
 step
     .goto 52,42.60,71.96
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 72431,1 --1/1 Defias Hideout entered
 step
     #label Count Clessington
@@ -228,7 +228,7 @@ step
     .timer 60,RP
 step
     #sticky
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 72431,2 --1/1 Count Clessington found
 step
     .goto 55,49.41,49.63,10,0
@@ -266,7 +266,7 @@ step
     .goto 52,46.88,66.62,10 >>Follow the Arrow
     .timer 5, RP
 step
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     *|cRXP_WARN_You can use the|r [ExtraActionButton] to increase your movement speed.
     .complete 72453,1 --1/1 Defias Hideout escaped
 step
@@ -306,23 +306,23 @@ step
     .mob Defias Mage
 step
     .goto 425,35.61,61.23
-    >>Kill |cRXP_ENEMY_Enforcer Grant.|r Loot them for |cRXP_LOOT_Enforcer Grant's Signet|r
+    >>Kill |cRXP_ENEMY_Enforcer Grant.|r Loot them for [|cRXP_LOOT_Enforcer Grant's Signet|r]
     .complete 72449,1 --1/1 Enforcer Grant's Signet
     .mob Enforcer Grant
 step
     .goto 425,49.52,62.61
-    >>Kill |cRXP_ENEMY_Enforcer Jennive.|r Loot them for |cRXP_LOOT_Enforcer Jennive's Signet|r
+    >>Kill |cRXP_ENEMY_Enforcer Jennive.|r Loot them for [|cRXP_LOOT_Enforcer Jennive's Signet|r]
     .complete 72449,2 --1/1 Enforcer Jennive's Signet
     .mob Enforcer Jennive
 step
     .goto 425,35.32,39.05
-    >>Kill |cRXP_ENEMY_Enforcer Tera.|r Loot them for |cRXP_LOOT_Enforcer Tera's Signet|r
+    >>Kill |cRXP_ENEMY_Enforcer Tera.|r Loot them for [|cRXP_LOOT_Enforcer Tera's Signet|r]
     .complete 72449,3 --1/1 Enforcer Tera's Signet
     .mob Enforcer Tera
 step
     #label Enforcer Horb's Signet
     .goto 425,31.25,19.24
-    >>Kill |cRXP_ENEMY_Enforcer Horb.|r Loot them for |cRXP_LOOT_Enforcer Horb's Signet|r
+    >>Kill |cRXP_ENEMY_Enforcer Horb.|r Loot them for [|cRXP_LOOT_Enforcer Horb's Signet|r]
     .complete 72449,4 --1/1 Enforcer Horb's Signet
     .mob Enforcer Horb
 step
@@ -561,6 +561,9 @@ step
     #completewith Maiev Shadowsong1
     +Stay close to |cRXP_FRIENDLY_Maiev Shadowsong|r
 step
+    .goto 77,36.09,57.49,5,0
+    .goto 77,35.9,57.8,5,0
+    .goto 77,36.19,57.79,5,0
     .goto 77,36.18,56.85
     >>Click on |cRXP_PICK_Felflame Brazier|r
     .complete 76203,2,1 --6/6 Felflame Braziers extinguished
@@ -586,8 +589,11 @@ step
     .complete 76203,2,6 --6/6 Felflame Braziers extinguished
 step
     #label Maiev Shadowsong1
-    .goto 77,38.40,53.96
-    >>|cRXP_WARN_Follow the Arrow|r
+    .goto 77,39,54.04,10,0
+    .goto 77,38.85,54.36,10,0
+    .goto 77,38.19,53.7,10,0
+    .goto 77,38.05,53.68
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 76203,3 --1/1 Discover what lurks in the depths of Shadow Hold
     .timer 5, RP
 step
@@ -620,51 +626,81 @@ step
     .mob Hel'nurathian Defender
     .mob Hel'nurathian Felmaw
 step
-    #sticky
+    .isOnQuest 76206
+    .goto 77,39.03,50.3
+    .cast 416036 >>Click on the |cRXP_PICK_Portal|r
+step
+    #hidewindow
+    #completewith Portal1
+    .goto 77,39.47,49.61,5,0
+    .goto 77,39.69,49.86,5,0
+    .goto 77,39.93,49.99,5,0
+    .goto 77,39.86,49.57,5,0
+    .goto 77,39.66,49.86,5,0
+    .goto 77,39.96,49.87,5,0
+    .goto 77,41.17,48.4
+    +1
+step
+    .isOnQuest 76206
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 76206,1,1 --4/4 Portals closed
 step
+    #label Portal1
     .isOnQuest 76206
-    .goto 77,39.02,50.33
-    .cast 416036 >>Click on the |cRXP_PICK_Portals|r
+    .cast 416036 >>Click on the |cRXP_PICK_Portal|r
 step
-    #sticky
+    #hidewindow
+    #completewith Portal2
+    .goto 77,40.72,48.7,15,0
+    .goto 77,41.05,49.58
+    +1
+step
+    .isOnQuest 76206
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 76206,1,2 --4/4 Portals closed
 step
     .isOnQuest 76206
-    .goto 77,39.58,49.62,5,0
-    .goto 77,39.83,50.04,5,0
-    .goto 77,39.9,49.59,5,0
-    .goto 77,39.68,49.9,5,0
-    .goto 77,39.95,49.91,5,0
-    .goto 77,39.33,46.66,5,0
-    .goto 77,41.13,48.39
-    .complete 76206,1,2 --4/4 Portals closed
+    #label Portal2
+    .cast 416036 >>Click on the |cRXP_PICK_Portal|r
 step
-    #sticky
+    #hidewindow
+    #completewith Portal3
+    .goto 77,40.5,47.76,10,0
+    .goto 77,39.28,46.94
+    +1
+step
     .isOnQuest 76206
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 76206,1,3 --4/4 Portals closed
 step
-    .isOnQuest 76206
-    .goto 77,40.88,48.5,10,0
-    .goto 77,41.04,49.6
-    .cast 416036 >>Click on the |cRXP_PICK_Portals|r
+    #label Portal3
+    .cast 416036 >>Click on the |cRXP_PICK_Portal|r
 step
-    #sticky
-    .isOnQuest 76206
-    .complete 76206,1,4 --4/4 Portals closed
-step
-    .isOnQuest 76206
-    #label Portals
-    .goto 77,40.48,47.51,10,0
-    .goto 77,39.29,46.93
-    .cast 416036 >>Click on the |cRXP_PICK_Portals|r
-step
+    #loop
+    .goto 77,40.5,47.76,10,0
+    .goto 77,40.53,48.05,10,0
+    .goto 77,40.4,48.96,10,0
+    .goto 77,41.05,49.58,10,0
+    .goto 77,39.03,50.3,10,0
     >>Kill |cRXP_ENEMY_Hel'nurathian Hel'nurathian Cultist,|r |cRXP_ENEMY_Hel'nurathian Defender|r and |cRXP_ENEMY_Hel'nurathian Felmaw.|r
     .complete 76205,1 --Enemies slain in Shadow Hold (100%)
     .mob Hel'nurathian Cultist
     .mob Hel'nurathian Defender
     .mob Hel'nurathian Felmaw
 step
+    #hidewindow
+    #completewith Turn in Balancing the Scales
+    .goto 77,39.14,46.23,15,0
+    .goto 77,38.74,46.88,15,0
+    .goto 77,37.98,46.21
+    +1
+step
+    .isOnQuest 76206
+    #label Portals
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 76206,1,4 --4/4 Portals closed
+step
+    #label Turn in Balancing the Scales
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maiev Shadowsong|r and |cRXP_FRIENDLY_Arko'narin Starshade|r
     .turnin 76205 >>Turn in Balancing the Scales
     .goto 77,37.98,46.21
@@ -678,6 +714,7 @@ step
     .accept 76207 >>Accept Wardens' Wrath
     .target Arko'narin Starshade
 step
+    .goto 77,38.47,45.7,10,0
     .goto 77,38.58,46.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maiev Shadowsong|r
     .target Maiev Shadowsong
@@ -702,7 +739,7 @@ step
     .target Maiev Shadowsong
 step
     .goto 12,47.4,30.36
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 76212,1 --1/1 Take your position
 step
     #completewith next
@@ -767,7 +804,7 @@ step
     .goto 31,38.47,54.23,10,0
     .goto 31,50.87,20.89,10,0
     .goto 31,39.69,22.64
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 53838,1 --1/1 Find the missing excavators
 step
     .goto 31,39.80,22.55
@@ -1146,7 +1183,7 @@ step
     .accept 54582 >>Accept Smarter Than Your Average Trogg
 step
     .goto 114,64.62,23.02
-    >>Kill |cRXP_ENEMY_Krugg the Smart.|r Loot them for the |cRXP_LOOT_Broken Communication Device.|r
+    >>Kill |cRXP_ENEMY_Krugg the Smart.|r Loot them for the [|cRXP_LOOT_Broken Communication Device.|r]
     .complete 54582,1 --1/1 Krugg the Smart slain
     .complete 54582,2 --1/1 Broken Communication Device
     .mob Krugg the Smart
@@ -1310,7 +1347,7 @@ step
     .mob Bloodeyes
 step
     .goto 47,18.10,57.23
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 54980,3 --1/1 Bloodeyes brought to Raven Hill
 step
     #loop
@@ -1323,7 +1360,7 @@ step
     .accept 54982 >>Accept The Spirit of the Hunter
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Mistfang Alpha.|r Loot them for |cRXP_LOOT_Bloodstained Fangs.|r
+    >>Kill |cRXP_ENEMY_Mistfang Alpha.|r Loot them for [|cRXP_LOOT_Bloodstained Fangs.|r]
     .complete 54982,1 --6/6 Bloodstained Fangs
     .mob Mistfang Alpha
 step
@@ -1335,7 +1372,7 @@ step
     .goto 47,77.27,35.49,15,0
     .goto 47,77.3,30.53,15,0
     .goto 47,81.7,33.46,15,0
-    >>Kill |cRXP_ENEMY_Mistfang Alpha.|r Loot them for |cRXP_LOOT_Bloodstained Fangs.|r
+    >>Kill |cRXP_ENEMY_Mistfang Alpha.|r Loot them for [|cRXP_LOOT_Bloodstained Fangs.|r]
     .complete 54982,1 --6/6 Bloodstained Fangs
     .mob Mistfang Alpha
 step
@@ -1561,7 +1598,7 @@ step
     .target High Artificer Ataanya
 step
     .goto 108,40.51,25.07
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 78071,2 --1/1 Draenite miners located
 step
     #loop
@@ -1665,7 +1702,7 @@ step
     .use 210454
 step
     .goto 103,55.36,79.03
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 78075,2 --1/1 Return to Romuul in the Exodar
 step
     .goto 103,55.36,79.03
@@ -1711,7 +1748,7 @@ step
     .goto 106,52.67,80.43,40,0
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Infected Nightsaber|r and |cRXP_ENEMY_Corrupted Grizzly|r. Loot them for |cRXP_LOOT_itted Bones.|r
+    >>Kill |cRXP_ENEMY_Infected Nightsaber|r and |cRXP_ENEMY_Corrupted Grizzly|r. Loot them for [|cRXP_LOOT_itted Bones.|r]
     .complete 78077,1 --8/8 Pitted Bones
     .mob Infected Nightsaber
     .mob Corrupted Grizzly
@@ -1737,7 +1774,7 @@ step
     .target +Prophet Velen
 step
     .goto 106,43.85,77.68
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 78079,1 --1/1 Meet Velen and Hatuun in Nazzivian
 step
     .goto 106,41.6,77.85
@@ -1765,7 +1802,7 @@ step
     .target Arzaal
 step
     .goto 106,41.47,33.07
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 78080,1 --1/1 Source of fel revealed
 step
     .goto 106,41.47,33.07
@@ -1796,7 +1833,7 @@ step
     .use 210454
 step
     .goto 103,54.72,80.66
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 78081,2 --1/1 Return to Velen in the Exodar
 step
     .goto 103,54.72,80.66
@@ -1991,7 +2028,7 @@ step
     .goto 1532,55.88,69.89,20,0
     .goto 1532,55.7,74.02,20,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shady Thug.|r
-    *|cRXP_WARN_If you have to kill them|r Loot them for |cRXP_LOOT_Unpaid Debt|r
+    *|cRXP_WARN_If you have to kill them|r Loot them for [|cRXP_LOOT_Unpaid Debt|r]
     .skipgossip
     .complete 57051,1 --8/8 Unpaid Debt
     .target Shady Thug
@@ -2271,14 +2308,14 @@ step
     .goto 50,88.01,45.74,20,0
     .goto 50,89.17,49.06,20,0
     .goto 50,87.18,49.64,20,0
-    >>Kill |cRXP_ENEMY_Animated Offering|r, |cRXP_ENEMY_Hakkari Ritualist|r and |cRXP_ENEMY_Foul Offering.|r Loot them for |cRXP_LOOT_Offering to Hakkar|r
+    >>Kill |cRXP_ENEMY_Animated Offering|r, |cRXP_ENEMY_Hakkari Ritualist|r and |cRXP_ENEMY_Foul Offering.|r Loot them for [|cRXP_LOOT_Offering to Hakkar|r]
     .complete 77879,1 --6/6 Offering to Hakkar
     .mob Animated Offering
     .mob Hakkari Ritualist
     .mob Foul Offering
 step
     .goto 50,81.77,47.86
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 77879,2 --1/1 Return to Jani
     .timer 20,RP
 step
@@ -2359,7 +2396,7 @@ step
     .accept 77882 >>Accept Stolen but Not Forgotten
     .accept 78875 >>Accept The Unkillable
 step
-    >>Kill |cRXP_ENEMY_Mosh'Ogg Witch Doctor|r and |cRXP_ENEMY_Mosh'Ogg Spellcrafter.|r Loot them for |cRXP_LOOT_Altar Fragment.|r
+    >>Kill |cRXP_ENEMY_Mosh'Ogg Witch Doctor|r and |cRXP_ENEMY_Mosh'Ogg Spellcrafter.|r Loot them for [|cRXP_LOOT_Altar Fragment.|r]
     *Click on |cRXP_PICK_Dusty Bags|r
     .complete 77882,1 --8/8 Altar Fragment
     .mob Mosh'Ogg Witch Doctor
@@ -2370,7 +2407,7 @@ step
     .goto 50,68.44,49.04,10,0
     .goto 50,67.92,47,10,0
     .goto 50,69.18,46.97
-    >>Kill |cRXP_ENEMY_Mai'Zoth.|r Loot them for |cRXP_LOOT_Lukou's Altar Centerpiece|r
+    >>Kill |cRXP_ENEMY_Mai'Zoth.|r Loot them for [|cRXP_LOOT_Lukou's Altar Centerpiece|r]
     .complete 78875,1 --1/1 Lukou's Altar Centerpiece
     .mob Mai'Zoth
 step
@@ -2383,7 +2420,7 @@ step
     .goto 50,68.34,48.88,10,0
     .goto 50,68.76,49.38,10,0
     .goto 50,68.97,48.84,10,0
-    >>Kill |cRXP_ENEMY_Mosh'Ogg Witch Doctor|r and |cRXP_ENEMY_Mosh'Ogg Spellcrafter.|r Loot them for |cRXP_LOOT_Altar Fragment.|r
+    >>Kill |cRXP_ENEMY_Mosh'Ogg Witch Doctor|r and |cRXP_ENEMY_Mosh'Ogg Spellcrafter.|r Loot them for [|cRXP_LOOT_Altar Fragment.|r]
     *Click on |cRXP_PICK_Dusty Bags|r
     .complete 77882,1 --8/8 Altar Fragment
 step
@@ -2891,7 +2928,7 @@ step
     .mob Flood Elemental
 step
     .goto 1,40.48,26.90
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 72466,2 --1/1 Return to the Ancient Skeleton
 step
     .goto 1,40.60,26.77
@@ -2969,7 +3006,7 @@ step
 --     .target Galgar
 step
     .goto 1,59.28,63.38
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 72475,1 --Trail Followed
 step
     #completewith next
@@ -2978,7 +3015,7 @@ step
     .timer 5,RP
 step
     .goto 1,59.15,63.43
-    >>Kill |cRXP_ENEMY_Gor'krosh.|r Loot them for |cRXP_LOOT_Long Knife|r
+    >>Kill |cRXP_ENEMY_Gor'krosh.|r Loot them for [|cRXP_LOOT_Long Knife|r]
     .complete 72475,2 --1/1 Gor'krosh slain
     .complete 72475,4 --1/1 "Long Knife" Collected
     .mob Gor'krosh
@@ -3639,7 +3676,7 @@ step
     .target Lilian Voss
 step
     .goto 2070,61.84,71.51
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 65788,1 --1/1 Enter the Throne Room of Lordaeron
 step
     .goto 2070,61.84,72.83
@@ -3687,7 +3724,7 @@ step
     .accept 72857 >>Accept Boom Weed
 step
     #completewith Notice to All Undead
-    >>Kill |cRXP_ENEMY_Plagued Wolf,|r |cRXP_ENEMY_Sickly Deer|r and |cRXP_ENEMY_Plagued Bear.|r Loot them for |cRXP_LOOT_Plagued Flesh|r
+    >>Kill |cRXP_ENEMY_Plagued Wolf,|r |cRXP_ENEMY_Sickly Deer|r and |cRXP_ENEMY_Plagued Bear.|r Loot them for [|cRXP_LOOT_Plagued Flesh|r]
     .complete 72856,1 --12/12 Plagued Flesh
     .mob Plagued Wolf
     .mob Sickly Deer
@@ -3724,7 +3761,7 @@ step
     +1
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Plagued Wolf,|r |cRXP_ENEMY_Sickly Deer|r and |cRXP_ENEMY_Plagued Bear.|r Loot them for |cRXP_LOOT_Plagued Flesh|r
+    >>Kill |cRXP_ENEMY_Plagued Wolf,|r |cRXP_ENEMY_Sickly Deer|r and |cRXP_ENEMY_Plagued Bear.|r Loot them for [|cRXP_LOOT_Plagued Flesh|r]
     .complete 72856,1 --12/12 Plagued Flesh
     .mob Plagued Wolf
     .mob Sickly Deer
@@ -3734,7 +3771,7 @@ step
     .complete 72857,1 --6/6 Boom Weed
 step
     #label Plagued Flesh
-    >>Kill |cRXP_ENEMY_Plagued Wolf,|r |cRXP_ENEMY_Sickly Deer|r and |cRXP_ENEMY_Plagued Bear.|r Loot them for |cRXP_LOOT_Plagued Flesh|r
+    >>Kill |cRXP_ENEMY_Plagued Wolf,|r |cRXP_ENEMY_Sickly Deer|r and |cRXP_ENEMY_Plagued Bear.|r Loot them for [|cRXP_LOOT_Plagued Flesh|r]
     .complete 72856,1 --12/12 Plagued Flesh
     .mob Plagued Wolf
     .mob Sickly Deer
@@ -3759,7 +3796,7 @@ step
 step
     .goto 21,52.75,27.58,10,0
     .goto 21,52.81,28.10
-    >>Kill |cRXP_ENEMY_Lieutenant Hawlsey.|r Loot them for |cRXP_LOOT_Hawlsey's Armor|r
+    >>Kill |cRXP_ENEMY_Lieutenant Hawlsey.|r Loot them for [|cRXP_LOOT_Hawlsey's Armor|r]
     .complete 72859,1 --1/1 Steal Lieutenant Hawlsey's Armor
     .mob Lieutenant Hawlsey
 step
@@ -3865,7 +3902,7 @@ step
     .mob Scarlet Confessor
 step
     .goto 21,66.33,31.09
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 72864,2 --1/1 Meet Lilian Voss Ouside Fenris Keep
 step
     .goto 21,66.33,31.09
@@ -3875,7 +3912,7 @@ step
     .accept 72865 >>Accept This is the Hour of the Forsaken
 step
     .goto 21,65.74,24.72
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 72865,1 --1/1 Reach Fenris Keep
 step
     .goto 21,65.19,24.42,10,0

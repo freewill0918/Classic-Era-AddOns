@@ -2,21 +2,20 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#groupweight 8
 #subgroup Orc Starting Zones << Orc
 #subgroup Troll Starting Zones << Troll
 #subgroup Durotar Starting Zones << !Orc !Troll
-#name 1Orc Starting Zone << !Troll --Orc
+#name 1Orc Starting Zone << Orc
 #name 2Orc Starting Zone << Troll
--- #name Valley of Trials << !Orc !Troll
+#name Valley of Trials << !Orc !Troll
 #displayname Chapter 2 - Valley of Trials << Troll
-#displayname Chapter 1 - Valley of Trials << !Troll --Orc
--- #displayname Valley of Trials (Orc) << !Orc !Troll
-#next 2Troll Starting Zone << !Troll --Orc
-#next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << Troll
-#defaultfor Orc !DK/Troll !DK
+#displayname Chapter 1 - Orc Starting Zone << Orc
+#displayname Valley of Trials (Orc) << !Orc !Troll
+#next 2Troll Starting Zone << Orc
+#next RestedXP Horde 10-60\1 BfA Intro << Troll
+#defaultfor Orc/Troll
     
-<< Horde
+<< Horde !DK
 
 step << Orc
     .zoneskip 1727
@@ -125,16 +124,7 @@ step
     .mob Sarkoth
 step
     >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for their |cRXP_LOOT_Tails|r
-#loop
-	.line 461,37.38,65.09,34.90,67.58,32.93,66.72,32.45,61.81,32.11,57.46,34.97,57.14,39.82,56.48,37.38,65.09
-	.goto 461,37.38,65.09,40,0
-	.goto 461,34.90,67.58,40,0
-	.goto 461,32.93,66.72,40,0
-	.goto 461,32.45,61.81,40,0
-	.goto 461,32.11,57.46,40,0
-	.goto 461,34.97,57.14,40,0
-	.goto 461,39.82,56.48,40,0
-	.goto 461,37.38,65.09,40,0
+    .loop 40,461,37.38,65.09,34.90,67.58,32.93,66.72,32.45,61.81,32.11,57.46,34.97,57.14,39.82,56.48,37.38,65.09
     .complete 25127,1 --8/8 Scorpid Worker Tail
     .mob Scorpid Worker
 step
@@ -335,21 +325,20 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#groupweight 8
+#name 1Troll Starting Zone << Troll
+#name 2Troll Starting Zone << Orc
+#name Echo Isles << !Troll !Orc
+#displayname Chapter 1 - Echo Isles << Troll
+#displayname Chapter 2 - Echo Isles << Orc
+#displayname Echo Isles (Troll) << !Troll !Orc
+#next 2Orc Starting Zone << Troll
+#next RestedXP Horde 10-60\1 BfA Intro << Orc
 #subgroup Troll Starting Zones << Troll
 #subgroup Orc Starting Zones << Orc
-#subgroup Durotar Starting Zones << !Orc !Troll
-#name 1Troll Starting Zone << Troll
-#name 2Troll Starting Zone << !Troll --Orc
--- #name Echo Isles << !Troll !Orc
-#displayname Chapter 1 - Echo Isles << Troll
-#displayname Chapter 2 - Echo Isles << !Troll --Orc
--- #displayname Echo Isles (Troll) << !Troll !Orc
-#next 2Orc Starting Zone << Troll
-#next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << !Troll --Orc
-#defaultfor Orc !DK/Troll !DK
+#subgroup Durotar Starting Zones << !Troll !Orc
+#defaultfor Orc/Troll
 
-<< Horde
+<< Horde !DK
 
 step << Orc
     #completewith next
@@ -844,33 +833,12 @@ step
     .mob Naj'tess
 step
 	#label Bloodtalons
-#loop
-	.line 463,34.04,70.60,36.60,69.56,38.51,66.20,40.18,69.15,40.05,71.23,39.37,74.83,38.41,73.07,36.67,73.48,35.14,73.49,36.60,69.56
-	.goto 463,34.04,70.60,30,0
-	.goto 463,36.60,69.56,30,0
-	.goto 463,38.51,66.20,30,0
-	.goto 463,40.18,69.15,30,0
-	.goto 463,40.05,71.23,30,0
-	.goto 463,39.37,74.83,30,0
-	.goto 463,38.41,73.07,30,0
-	.goto 463,36.67,73.48,30,0
-	.goto 463,35.14,73.49,30,0
-	.goto 463,36.60,69.56,30,0
+    .loop 30,463,34.04,70.60,36.60,69.56,38.51,66.20,40.18,69.15,40.05,71.23,39.37,74.83,38.41,73.07,36.67,73.48,35.14,73.49,36.60,69.56
     >>Kill |cRXP_ENEMY_Corrupted Bloodtalons|r
     .complete 24624,1 --8/8 Corrupted Bloodtalon slain
     .mob Corrupted Bloodtalon
 step
-#loop
-	.line 463,36.60,69.56,38.51,66.20,40.18,69.15,40.05,71.23,39.37,74.83,38.41,73.07,36.67,73.48,35.14,73.49,36.60,69.56
-	.goto 463,36.60,69.56,30,0
-	.goto 463,38.51,66.20,30,0
-	.goto 463,40.18,69.15,30,0
-	.goto 463,40.05,71.23,30,0
-	.goto 463,39.37,74.83,30,0
-	.goto 463,38.41,73.07,30,0
-	.goto 463,36.67,73.48,30,0
-	.goto 463,35.14,73.49,30,0
-	.goto 463,36.60,69.56,30,0
+    .loop 30,463,36.60,69.56,38.51,66.20,40.18,69.15,40.05,71.23,39.37,74.83,38.41,73.07,36.67,73.48,35.14,73.49,36.60,69.56
     >>Use the |T132161:0|t[Bloodtalon Whistle] near Bloodtalon Hatchlings to rescue them
     .complete 24623,1 --12/12 Bloodtalon Hatchlings rescued
     .use 52283
@@ -890,7 +858,6 @@ step
     .target Tegashi
     .target Kijara
 step
-    #loop
 	.line 463,45.93,86.53,46.15,88.00,43.81,88.49,43.46,91.82,44.25,91.93,45.27,89.85,45.95,89.71,46.91,93.18,47.68,92.85,47.84,88.58,48.45,90.12,47.51,88.96,47.42,86.91,46.21,85.10,46.03,83.83,44.17,82.86,42.43,83.12,41.15,85.98,40.87,88.56,42.30,88.10,43.60,85.27,44.56,85.10,45.93,86.53
     .goto 463,45.93,86.53,30,0
     .goto 463,44.56,85.10,30,0
@@ -914,6 +881,7 @@ step
     .goto 463,43.46,91.82,30,0
     .goto 463,43.81,88.49,30,0
     .goto 463,46.15,88.00,30,0
+    .goto 463,45.93,86.53
     >>Use the |T134326:0|t[Bloodtalon Lasso] on |cRXP_FRIENDLY_Swiftclaw|r. He spawns next to you and then runs counter-clockwise around the island
     .complete 24626,1 --1/1 Capture Swiftclaw
 	.unitscan Swiftclaw

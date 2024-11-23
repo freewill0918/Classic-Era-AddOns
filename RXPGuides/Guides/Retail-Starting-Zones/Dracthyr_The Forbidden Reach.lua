@@ -2,15 +2,12 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#groupweight 9 --9 instead of 8 because they start from 60+
 #subgroup Dracthyr Starting Zones
 #name Retail-Dracthyr_The Forbidden Reach
-#displayname Chapter 1 - The Forbidden Reach
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A) << Alliance
-#next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << Horde
-#defaultfor Dracthyr
+#displayname Dracthyr Starting Zone
+#next Dragonflight 60-70\1) The Waking Shores Campaign
 
-<< Dracthyr
+<<Dracthyr
 
 step
     .goto 2109,46.73,78.71
@@ -313,15 +310,7 @@ step
     .mob Deatheater Scythid
 step
     >>Kill |cRXP_ENEMY_Scalerenders|r in the area. Loot them for the |cRXP_LOOT_glands|r
-#loop
-	.line 2118,24.77,30.11,26.89,32.41,28.52,30.33,30.39,29.45,33.84,29.78,36.97,24.44,30.60,20.52
-	.goto 2118,24.77,30.11,20,0
-	.goto 2118,26.89,32.41,20,0
-	.goto 2118,28.52,30.33,20,0
-	.goto 2118,30.39,29.45,20,0
-	.goto 2118,33.84,29.78,20,0
-	.goto 2118,36.97,24.44,20,0
-	.goto 2118,30.60,20.52,20,0
+    .loop 20,2118,24.77,30.11,26.89,32.41,28.52,30.33,30.39,29.45,33.84,29.78,36.97,24.44,30.60,20.52
     .complete 65073,1 --6/6 Toxin Glands collected
     .mob Mature Scalerender
     .mob Scalerender Beetle
@@ -330,15 +319,7 @@ step
     >>Kill |cRXP_ENEMY_Scythid|r in the Area
     .goto 2118,35.21,24.52,30,0
     .goto 2118,31.33,24.79,30,0
-#loop
-	.line 2118,24.77,30.11,26.89,32.41,28.52,30.33,30.39,29.45,33.84,29.78,36.97,24.44,30.60,20.52
-	.goto 2118,24.77,30.11,20,0
-	.goto 2118,26.89,32.41,20,0
-	.goto 2118,28.52,30.33,20,0
-	.goto 2118,30.39,29.45,20,0
-	.goto 2118,33.84,29.78,20,0
-	.goto 2118,36.97,24.44,20,0
-	.goto 2118,30.60,20.52,20,0
+    .loop 20,2118,24.77,30.11,26.89,32.41,28.52,30.33,30.39,29.45,33.84,29.78,36.97,24.44,30.60,20.52
     .complete 65074,1 --4/4 Scythid slain
     .mob Scythid Steamstalker
     .mob Deatheater Scythid

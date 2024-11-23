@@ -2,14 +2,13 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#groupweight 8
 #subgroup Blood Elf Starting Zones
 #name 1 Blood Elf Starting Zone
 #displayname Chapter 1 - Sunstrider Isle
 #next 2 Blood Elf Eversong Woods
-#defaultfor BloodElf !DK
+#defaultfor BloodElf
 
-<< Horde
+<< Horde !DK
 
 step
     .zoneskip 1727
@@ -195,22 +194,7 @@ step
     #label EversongWoodsArcaneWraith
     >>Kill |cRXP_ENEMY_Arcane Wraiths|r and |cRXP_ENEMY_Tainted Arcane Wraith|r
     .goto 467,36.49,62.42,10,0
-#loop
-	.line 467,35.95,62.37,33.98,60.95,33.30,57.44,35.22,55.35,37.68,57.26,41.53,61.92,42.39,66.27,44.03,69.13,43.00,71.32,41,32,71.70,39.72,74.29,38.05,73.09,37.83,70.00,38.26,66.85
-	.goto 467,35.95,62.37,15,0
-	.goto 467,33.98,60.95,15,0
-	.goto 467,33.30,57.44,15,0
-	.goto 467,35.22,55.35,15,0
-	.goto 467,37.68,57.26,15,0
-	.goto 467,41.53,61.92,15,0
-	.goto 467,42.39,66.27,15,0
-	.goto 467,44.03,69.13,15,0
-	.goto 467,43.00,71.32,15,0
-	.goto 467,41.00,32.00,15,0
-	.goto 467,71.70,39.72,15,0
-	.goto 467,74.29,38.05,15,0
-	.goto 467,73.09,37.83,15,0
-	.goto 467,70.00,38.26,15,0
+    .loop 15,467,35.95,62.37,33.98,60.95,33.30,57.44,35.22,55.35,37.68,57.26,41.53,61.92,42.39,66.27,44.03,69.13,43.00,71.32,41,32,71.70,39.72,74.29,38.05,73.09,37.83,70.00,38.26,66.85
     .complete 8335,1 --8/8 Arcane Wraith slain
     .complete 8335,2 --2/2 Tainted Arcane Wraith slain
     .mob Arcane Wraith
@@ -264,14 +248,13 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#groupweight 8
 #name 2 Blood Elf Eversong Woods
 #displayname Chapter 2 - Eversong Woods
-#next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H)
+#next RestedXP Horde 10-60\1 BfA Intro
 #subgroup Blood Elf Starting Zones
-#defaultfor BloodElf !DK
+#defaultfor BloodElf
 
-<< Horde
+<< Horde !DK
 
 step << Hunter
     #completewith next

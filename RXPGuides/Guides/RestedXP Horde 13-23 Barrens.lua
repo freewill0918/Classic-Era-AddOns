@@ -116,7 +116,7 @@ step << Warrior
     #completewith next
     #requires Steel
     >>Kill some Plainstriders en route. Loot them for Beaks << !Tauren
-    .complete 844,1 << !Tauren --Plainstrider Beak (7)
+    .complete 844,1 --Plainstrider Beak (7) << !Tauren
     .goto The Barrens,54.7,28.0,20 >>Run up the mountain here
 step << Warrior
     #requires Steel
@@ -595,7 +595,7 @@ step << Shaman
 .train 526 >> Train Cure Poison
 .train 8154 >>Train Stoneskin Totem r2
 step << Shaman
-.goto Orgrimmar,31.62,37.82
+    .goto Orgrimmar,31.733,37.823
 .target Thrall
 >>Talk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5727 >>Turn in Hidden Enemies
@@ -1253,7 +1253,7 @@ step
 #xprate >1.499
     .goto Thunder Bluff,45.814,64.711
     #completewith next
-    >> Walk to Thunder Bluff.
+    >> Walk to Thunderbluff.
     .home >>Set your Hearthstone to Thunder Bluff
 step
 #xprate <1.5

@@ -3,7 +3,6 @@ RXPGuides.RegisterGuide([[
 #group +RestedXP Northrend Daily Quests
 #subgroup Faction Daily Quests
 #wotlk
-#cata
 #name The Kalu'ak Daily Quests
 
 step

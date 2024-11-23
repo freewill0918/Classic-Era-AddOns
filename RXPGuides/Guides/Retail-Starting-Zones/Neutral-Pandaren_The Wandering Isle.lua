@@ -1,15 +1,15 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Starting Zones
 #groupweight 8
+#group RestedXP Starting Zones
 #name 2Retail-Panda_The Wandering Isle
-#displayname The Wandering Isle
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A) << Alliance
-#next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << Horde
+#displayname Pandaren Starting Zone
+#next RestedXP Alliance 10-60\1A_Elwynn Forest << Alliance
+#next RestedXP Horde 10-60\1 BfA Intro << Horde
 #defaultfor Pandaren
 
-<< Pandaren !DK
+<<!DK Pandaren
 
 step
     #completewith next
@@ -530,7 +530,7 @@ step
     .accept 29678 >>Accept Shu, the Spirit of Water
 	.target Old Man Liang
 step
-	.isOnQuest 29678
+	.isOnQuest29678
     .goto 378,79.66,41.83,4,0
     .goto 378,79.61,38.72
     >>Position yourself |cFFfa9602on the Blue Circle.|r This will allow you to jump |cFFfa9602toward the Pool.|r
@@ -586,12 +586,7 @@ step
     .goto 378,69.55,79.23,15,0
     .goto 378,70.84,80.41,15,0
     .goto 378,71.46,78.11,15,0
-#loop
-	.line 378,70.11,77.63,69.55,79.23,70.84,80.41,71.46,78.11
-	.goto 378,70.11,77.63,10,0
-	.goto 378,69.55,79.23,10,0
-	.goto 378,70.84,80.41,10,0
-	.goto 378,71.46,78.11,10,0
+    .loop 10,378,70.11,77.63,69.55,79.23,70.84,80.41,71.46,78.11
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Turnips|r
     .complete 29770,1 --3/3 Uprooted Turnip
 step
@@ -600,12 +595,7 @@ step
     .goto 378,78.01,72.56,15,0
     .goto 378,78.85,70.76,20,0
     .goto 378,78.6,69.74,20,0
-#loop
-	.line 378,77.35,70.51,78.12,72.61,78.82,70.88,78.6,69.75
-	.goto 378,77.35,70.51,10,0
-	.goto 378,78.12,72.61,10,0
-	.goto 378,78.82,70.88,10,0
-	.goto 378,78.60,69.75,10,0
+    .loop 10,378,77.35,70.51,78.12,72.61,78.82,70.88,78.6,69.75
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Pumpkin|r
     .complete 29770,3 --3/3 Pilfered Pumpkin
 step
@@ -618,11 +608,7 @@ step
     .goto 378,73.97,72.58,15,0
     .goto 378,73.94,70.86,15,0
     .goto 378,74.7,74.76,15,0
-#loop
-	.line 378,73.97,72.58,73.94,70.86,74.7,74.76
-	.goto 378,73.97,72.58,5,0
-	.goto 378,73.94,70.86,5,0
-	.goto 378,74.70,74.76,5,0
+    .loop 5,378,73.97,72.58,73.94,70.86,74.7,74.76
     >>Kill |cRXP_ENEMY_Plump Carrotcatchers|r and loot them for their |cRXP_LOOT_Carrots|r. You can also |TInterface/cursor/crosshair/interact.blp:20|tclick the |cRXP_PICK_Carrots|r on the ground.
     .complete 29770,2 --3/3 Stolen Carrot
 	.mob Plump Carrotcatcher
@@ -634,11 +620,7 @@ step
     .goto 378,72.67,69.48,15,0
     .goto 378,70.75,71.61,15,0
     .goto 378,69.4,69.74,15,0
-#loop
-	.line 378,77.89,70.13,77.36,70.49,77.85,71.75
-	.goto 378,77.89,70.13,10,0
-	.goto 378,77.36,70.49,10,0
-	.goto 378,77.85,71.75,10,0
+    .loop 10,378,77.89,70.13,77.36,70.49,77.85,71.75
     >>Kill |cRXP_ENEMY_Plump Virmens|r
     .complete 29769,1 --10/10 Plump Virmen slain
 	.mob Plump Virmen
@@ -773,11 +755,7 @@ step
     .goto 378,31.19,47.97,15,0
     .goto 378,32.49,46.63,15,0
     .goto 378,33.13,46.32,15,0
-#loop
-	.line 378,33.42,50.88,32.57,53.31,28.71,50.23
-	.goto 378,33.42,50.88,15,0
-	.goto 378,32.57,53.31,15,0
-	.goto 378,28.71,50.23,15,0
+    .loop 15,378,33.42,50.88,32.57,53.31,28.71,50.23
     #label Defaced Scroll of Wisdom burned
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Banners|r on the monuments.
     .complete 29778,1 --5/5 Defaced Scroll of Wisdom burned
@@ -794,23 +772,11 @@ step
     .goto 378,33.06,52.27,15,0
     .goto 378,32.16,50.53,15,0
     .goto 378,31.32,52.22,15,0
-#loop
-	.line 378,31.18,47.9,32.57,46.43,33.99,50.9,32.16,50.53,31.32,52.22
-	.goto 378,31.18,47.90,15,0
-	.goto 378,32.57,46.43,15,0
-	.goto 378,33.99,50.90,15,0
-	.goto 378,32.16,50.53,15,0
-	.goto 378,31.32,52.22,15,0
+    .loop 15,378,31.18,47.9,32.57,46.43,33.99,50.9,32.16,50.53,31.32,52.22
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Stone Blocks.|r
     .complete 29783,1 --12/12 Abandoned Stone Block
 step
-#loop
-	.line 378,31.18,47.9,32.57,46.43,33.99,50.9,32.16,50.53,31.32,52.22
-	.goto 378,31.18,47.90,15,0
-	.goto 378,32.57,46.43,15,0
-	.goto 378,33.99,50.90,15,0
-	.goto 378,32.16,50.53,15,0
-	.goto 378,31.32,52.22,15,0
+    .loop 15,378,31.18,47.9,32.57,46.43,33.99,50.9,32.16,50.53,31.32,52.22
     >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r and loot them for their |cRXP_LOOT_Brushes.|r
     .complete 29777,1 --8/8 Paint Soaked Brush
 	.mob Fe-Feng Wiseman
@@ -853,12 +819,7 @@ step
     .goto 378,25.72,29.91,15,0
     .goto 378,24.24,30.84,15,0
     .goto 378,20.52,34.6,10,0
-#loop
-	.line 378,24.24,30.84,25.72,29.91,27.49,29.61,26.75,31.86
-	.goto 378,24.24,30.84,10,0
-	.goto 378,25.72,29.91,10,0
-	.goto 378,27.49,29.61,10,0
-	.goto 378,26.75,31.86,10,0
+    .loop 10,378,24.24,30.84,25.72,29.91,27.49,29.61,26.75,31.86
 	>>Kill |cRXP_ENEMY_Fe-Feng Hozen|r
     .complete 29779,1 --20/20 Fe-Feng Hozen slain
 	.mob Fe-Feng Firethief
@@ -879,12 +840,7 @@ step
 	.mob Fe-Feng Firethief
 	.mob Fe-Feng Ruffian
 step
-#loop
-	.line 378,24.24,30.84,25.72,29.91,27.49,29.61,26.75,31.86
-	.goto 378,24.24,30.84,10,0
-	.goto 378,25.72,29.91,10,0
-	.goto 378,27.49,29.61,10,0
-	.goto 378,26.75,31.86,10,0
+    .loop 10,378,24.24,30.84,25.72,29.91,27.49,29.61,26.75,31.86
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Firework Bundles|r
     .complete 29781,1 --8/8 Stolen Firework Bundle
 step
@@ -1068,13 +1024,7 @@ step
 	.target Provisioner Drog
 	.isOnQuest 29795
 step
-#loop
-	.line 378,54.51,85.54,45.05,85.81,45.89,71.57,55.62,69.49,54.51,85.54
-	.goto 378,54.51,85.54,40,0
-	.goto 378,45.05,85.81,40,0
-	.goto 378,45.89,71.57,40,0
-	.goto 378,55.62,69.49,40,0
-	.goto 378,54.51,85.54,40,0
+	.loop 40,378,54.51,85.54,45.05,85.81,45.89,71.57,55.62,69.49,54.51,85.54
     >>Kill |cRXP_ENEMY_Pei-Wu Tigers|r. Loot the |cRXP_PICK_Bamboo Stalks|r |cFFfa9602on the ground.|r
     .complete 30591,1 --9/9 Pei-Wu Tiger slain
     .complete 29795,1 --10/10 Broken Bamboo Stalk
@@ -1138,33 +1088,27 @@ step
     .complete 29797,1 --8/8 Alliance Medical Supplies
 	.mob Deepscale Tormentor
 step
-    #optional
 	#completewith next
     .goto 378,40.18,87.69
 	.cast 56685 >>Pick up the |cRXP_FRIENDLY_Injured Sailor|r
 	.isOnQuest 29794
 	.target Injured Sailor
---XXZ Zarant Function
 step
-    #optional
     .goto 378,42.27,86.80
     >>Carry the |cRXP_FRIENDLY_Injured Sailor|r back to |cRXP_FRIENDLY_Delora|r's Camp
     .complete 29794,1,1 --3/3 Injured Sailors rescued
 step
-    #optional
 	#completewith next
     .goto 378,39.41,87.98
 	.cast 56685 >>Pick up the |cRXP_FRIENDLY_Injured Sailor|r
 	.isOnQuest 29794
 	.target Injured Sailor
 step
-    #optional
 	#label Sailor2
     .goto 378,42.27,86.80
     >>Carry the |cRXP_FRIENDLY_Injured Sailor|r back to |cRXP_FRIENDLY_Delora|r's Camp
     .complete 29794,1,2 --3/3 Injured Sailors rescued
 step
-    #optional
     .goto 378,38.36,87.60,20,0
     .goto 378,37.04,87.93,20,0
     .goto 378,35.77,86.77,20,0

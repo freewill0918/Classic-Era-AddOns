@@ -1,13 +1,12 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Allied Race Unlocks
-#groupweight 5
--- #subgroup Nightborne
+#group Allied Race Unlocks
+#subgroup Nightborne
 #name 01) Nightborne Unlock Scenario
-#displayname Nightborne
+#displayname Nightborne Questline
 
-<< Horde !Nightborne
+<< Horde
 
 step
     #completewith NightborneStartQuestline
@@ -119,12 +118,7 @@ step
     .goto 973,36.95,61.32,25,0
     .goto 973,47.16,47.87,25,0
     .goto 973,55.03,59.13,25,0
-#loop
-	.line 973,46.43,74.16,36.95,61.32,47.16,47.87,55.03,59.13
-	.goto 973,46.43,74.16,25,0
-	.goto 973,36.95,61.32,25,0
-	.goto 973,47.16,47.87,25,0
-	.goto 973,55.03,59.13,25,0
+    .loop 25,973,46.43,74.16,36.95,61.32,47.16,47.87,55.03,59.13
     .scenario 3584,1
     .mob Void Effusion
     .mob Creeping Void

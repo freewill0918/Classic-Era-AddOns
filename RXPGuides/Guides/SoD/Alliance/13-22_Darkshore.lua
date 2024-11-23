@@ -210,7 +210,7 @@ step << Warlock/Mage
     .collect 223147,1 << Mage --Spell Notes: Balefire Bolt
     .itemcount 220792,1 << Mage --Skips if you don't have a Scroll of Spatial Mending
     .use 223148 << Warlock --Otherworldy Treasure
-    .use 220792 << Mage 
+    .use 220792 << Mage
     .train 428878,1 << Mage
     .train 427733,1 << Warlock
     .train 1120,3 << Warlock --Skips if you don't have drain soul
@@ -809,7 +809,7 @@ step << skip --logout skip !Warrior !Rogue
     .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Kill the Moonkin Oracle inside and jump on top of the large mushroom at the back of the cave, then perform a Logout Skip by logging out and back in|r
 
 
-----Start of SoD Druid Starsurge segment----    
+----Start of SoD Druid Starsurge segment----
 
 step << Druid
     #optional
@@ -1680,7 +1680,7 @@ step << !sod/Warrior/Rogue/Priest
     .waypoint 1439,43.104,62.563,50,0
     .waypoint 1439,42.794,62.166,50,0
     .waypoint 1439,42.489,60.677,50,0 --Middle spawn
-    >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r 
+    >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
     >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
     >>|cRXP_WARN_If you can't find her and want to try again later at the cost of potentially grinding more mobs soon, skip this step|r
     .complete 963,1 --Anaya's Pendant (1)
@@ -2798,10 +2798,10 @@ step << !Priest
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
 step
-    #season 2   
+    #season 2
     #completewith OnuSoD
     .goto 1439,43.555,76.293,80 >> Travel to the Grove of the Ancients
-step    
+step
     #season 2
     #label OnuSoD
     .goto 1439,43.555,76.293
@@ -2823,7 +2823,7 @@ step
     >>Kill |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r. Loot them for the |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r]
     *|cRXP_WARN_Be careful as |cRXP_ENEMY_Twilight Thugs|r can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
     *|cRXP_WARN_Be careful as |cRXP_ENEMY_Twilight Disciples|r cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
-    >>|cRXP_WARN_The dropchance of this item is extremally low. Do not go out of your way to farm it|r
+    >>|cRXP_WARN_The dropchance of this item is extremely low. Do not go out of your way to farm it|r
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .mob Twilight Disciple
     .mob Twilight Thug
@@ -3227,7 +3227,7 @@ step << Warrior
     .collect 928,1
     .target Ariyell Skyshadow
     .money <0.9860
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.16 
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.16
 step << Warrior
     #season 2
     #completewith next
@@ -3295,7 +3295,7 @@ step << Rogue
     .collect 2209,2
     .target Ariyell Skyshadow
     .money <0.9860
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.93 
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.93
     .isQuestComplete 741
 step << Rogue
     #season 2
@@ -3323,7 +3323,7 @@ step << Priest
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maethra Slagheart|r
     .turnin 78192 >> Turn in Secrets of the Light
-    .accept 78193 >> Accept Secrets of the Light 
+    .accept 78193 >> Accept Secrets of the Light
     .target Maethra Slagheart
 step << !Druid !Hunter
     #season 2
@@ -3517,8 +3517,8 @@ step << Druid/Hunter
     #optional
     .hs >> Hearth to Darkshore
     .zoneskip Darkshore
-    
-    
+
+
 ----End of Druid Quest+SoD rune section----
 
 
@@ -3542,8 +3542,8 @@ step << Priest
     .zoneskip Westfall
     .dungeon !DM
 
-    
-----End of SoD 250% xp buff early southern Darkshore one loop----    
+
+----End of SoD 250% xp buff early southern Darkshore one loop----
 
 ]])
 
@@ -3822,7 +3822,7 @@ step
     .goto 1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .turnin 966 >> Turn in The Tower of Althalaxx
-    .accept 967 >> Accept The Tower of Althalaxx
+    .accept 967 >> Accept The Tower of Althalaxx << !Hunter
     .target Balthule Shadowstrike
 step << Priest
     #season 1 -- Skipping this rune cus its useless
@@ -4264,7 +4264,7 @@ step << Druid
     #season 2
     #optional
     #completewith next
-    +|cRXP_WARN_You will now be getting your|r |T132143:0|t[|cRXP_FRIENDLY_Wild Strikes|r] |cRXP_WARN_rune. This will take you to the Stonetalon Mountains which will take a while but the rune is extremally powerful for the rest of the leveling|r
+    +|cRXP_WARN_You will now be getting your|r |T132143:0|t[|cRXP_FRIENDLY_Wild Strikes|r] |cRXP_WARN_rune. This will take you to the Stonetalon Mountains which will take a while but the rune is extremely powerful for the rest of the leveling|r
 step << Druid
     .goto 1439,43.555,76.293
     #season 2
@@ -5112,7 +5112,7 @@ step << Dwarf Rogue
     .dungeon !DM
 step << Rogue
     #xprate >1.59
-    .xp 22-8200 >> Grind untill you're 8200 xp away from level 22. You will need to reach it in Stormwind to train |T132331:0|t[Vanish] which is required for an extremally powerful rune later
+    .xp 22-8200 >> Grind untill you're 8200 xp away from level 22. You will need to reach it in Stormwind to train |T132331:0|t[Vanish] which is required for an extremely powerful rune later
 step << Rogue
     #xprate >1.59
     #optional
@@ -5229,7 +5229,7 @@ step << Rogue
     .goto StormwindClassic,39.834,54.360
     >>|cRXP_WARN_Zone into the Stockade in Stormwind|r
     >>|cRXP_WARN_Once inside:|r
-    .link /run InviteUnit("a");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Click here to Copy + Paste this macro into chat to ghetto hearth back to Auberdine|r
+    .link /run InviteUnit("aa");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Click here to Copy + Paste this macro into chat to ghetto hearth back to Auberdine|r
     .zone Darkshore >>|cRXP_WARN_If you are unable to do this, make your way back to Auberdine|r
     .zoneskip Teldrassil
     .zoneskip Darnassus
