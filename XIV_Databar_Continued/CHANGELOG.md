@@ -1,18 +1,23 @@
 # XIV_Databar Continued
 
-## [2.8](https://github.com/ZelionGG/XIV_Databar-Continued/tree/v2.8) (2024-05-16)
+## [3.1](https://github.com/ZelionGG/XIV_Databar-Continued/tree/v3.1) (2024-09-03)
 
-[Full Changelog](https://github.com/ZelionGG/XIV_Databar-Continued/compare/v2.7.3...v2.8) [Previous Releases](https://github.com/ZelionGG/XIV_Databar-Continued/releases)
+[Full Changelog](https://github.com/ZelionGG/XIV_Databar-Continued/compare/v3.0.3...v3.1) [Previous Releases](https://github.com/ZelionGG/XIV_Databar-Continued/releases)
 
 ### _Retail :_
 
-- TOC update for Retail 10.2.7.
+- New Mythic+ Portals functionality in the Travel module, allowing you to have fast access to your known Mythic+ Portals and to cast that teleport.
+- Travel module fix (Acherus, Dreamgrove, ...) for Retail's API changes in 11.0.2.
 
-### _Classic (SOD) :_
+### _Cataclysm Classic :_
 
-- TOC update for Classic SOD 1.15.2.
+- Added Archaeology in the Tradeskill module tooltip.
+- Added back the Right Click functionality in the Tradeskill module to make it possible to access the professions frame.
 
-### _Cata Classic :_
+### _Classic SoD :_
 
-- Initial support for Cata Classic 4.4.0.
-- Known bug : The talent switcher is actually bugged, a fix is planned ASAP.
+- Tradeskill module fix.
+
+### _Global :_
+
+- Code refactoring to fix underscores reassignments causing erros with some native Blizzard commands in XIV Databr Continued.
