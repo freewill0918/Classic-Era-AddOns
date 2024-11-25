@@ -9,7 +9,7 @@ local btnSettingsMeta = {__index = function(self, key)
 	return self[key]
 end}
 local createdButtonsByName, btnSettings, noEventFrames = {}, {}, {}
-hb.ombDefIcon = "Interface/Icons/misc_arrowleft"
+hb.ombDefIcon = "Interface/MINIMAP/Vehicle-SilvershardMines-Arrow"
 hb.ldbiPrefix = "LibDBIcon10_"
 hb.matchName = hb.ldbiPrefix..addon.."%d+$"
 hb.createdButtons, hb.minimapButtons, hb.mixedButtons = {}, {}, {}
@@ -24,7 +24,6 @@ local MSQ = LibStub("Masque", true)
 
 
 local ignoreFrameNameList = {
-	["GameTimeFrame"] = true,
 	["HelpOpenWebTicketButton"] = true,
 	["MinimapBackdrop"] = true,
 	["MinimapZoomIn"] = true,
@@ -639,12 +638,6 @@ function hb:init()
 	end
 
 	if self.pConfig.grabDefMinimap then
-		local LFGFrame = MiniMapLFGFrame
-		local parent = LFGFrame:GetParent()
-		local left = LFGFrame:GetLeft() - parent:GetLeft()
-		local top = LFGFrame:GetTop() - parent:GetTop()
-		LFGFrame:ClearAllPoints()
-		LFGFrame:SetPoint("TOPLEFT", left, top)
 		self:grabDefButtons()
 	end
 
@@ -751,6 +744,7 @@ function hb:updateBars()
 		end
 
 		bar:Hide()
+		bar:SetAlpha(1)
 		if bar.config.fade then
 			bar.drag:SetAlpha(bar.config.fadeOpacity)
 		end
@@ -769,7 +763,7 @@ function hb:updateBars()
 		if self.currentProfile.bars[i] then
 			bar:setFrameStrata()
 			bar.drag:setShowHandler()
-			bar:setBarTypePosition()
+			bar:setBarTypePosition(bar.config.barTypePosition)
 			bar:setBackground()
 			bar:setBorder()
 			bar:setLineTexture()
@@ -986,90 +980,30 @@ function hb:grabDefButtons()
 		return self.MSQ_MButton and not btn.__MSQ_Addon and not (btnData or self:getMBtnSettings(btn))[6]
 	end
 
-	-- CALENDAR BUTTON
-	local GameTimeFrame = GameTimeFrame
-	if GameTimeFrame and self:ignoreCheck("GameTimeFrame") and not self.btnParams[GameTimeFrame] then
-		local text = GameTimeFrame:GetFontString()
-		text:SetPoint("CENTER", 0, -1)
-		GameTimeFrame:SetNormalFontObject("GameFontBlackMedium")
-		GameTimeCalendarInvitesTexture:SetPoint("CENTER")
-		GameTimeCalendarInvitesGlow.Show = void
-		GameTimeCalendarInvitesGlow:Hide()
-		self:setHooks(GameTimeFrame)
-		local p = self:setParams(GameTimeFrame, function(p, GameTimeFrame)
-			GameTimeCalendarInvitesGlow.Show = nil
-			GameTimeFrame:SetScript("OnUpdate", p.OnUpdate)
-		end)
-		p.tooltipFrame = GameTooltip
-		p.OnUpdate = GameTimeFrame:GetScript("OnUpdate")
-		self.HookScript(GameTimeFrame, "OnUpdate", function(GameTimeFrame)
-			local bar = GameTimeFrame:GetParent()
-			if bar.config.interceptTooltip and GameTooltip:IsOwned(GameTimeFrame) then
-				bar:updateTooltipPosition()
-			end
-		end)
-
-		if not GameTimeFrame.__MSQ_Addon then
-			GameTimeFrame:GetNormalTexture():SetTexCoord(0, .375, 0, .75)
-			GameTimeFrame:GetPushedTexture():SetTexCoord(.5, .875, 0, .75)
-			GameTimeFrame:GetHighlightTexture():SetTexCoord(0, 1, 0, .9375)
-
-			if checkMasqueConditions(GameTimeFrame) then
-				self:setMButtonRegions(GameTimeFrame, {.0859375, .296875, .156255, .59375})
-			end
-		end
-
-		tinsert(self.minimapButtons, GameTimeFrame)
-		tinsert(self.mixedButtons, GameTimeFrame)
-	end
-
 	-- TRACKING BUTTON
-	local MiniMapTracking = MiniMapTracking
-	if MiniMapTracking and self:ignoreCheck("MiniMapTracking") and not self.btnParams[MiniMapTracking] then
-		local MiniMapTrackingButton = MiniMapTrackingButton
-		local icon = MiniMapTrackingIcon
-		MiniMapTracking.rButton = MiniMapTrackingButton
-		self:setHooks(MiniMapTracking)
-		local p = self:setParams(MiniMapTracking, function(p)
-			if MiniMapTrackingButton.__MSQ_Addon then return end
-			icon.SetPoint = nil
-			MiniMapTrackingButton:SetScript("OnMouseDown", p.OnMouseDown)
-			MiniMapTrackingButton:SetScript("OnMouseUp", p.OnMouseUp)
-		end)
+	local tracking =  MiniMapTracking
+	if tracking and self:ignoreCheck("MiniMapTracking") and not self.btnParams[tracking] then
+		local btnData = rawget(self.pConfig.mbtnSettings, "MiniMapTrackingFrame")
+		if btnData then
+			self.pConfig.mbtnSettings["MiniMapTracking"] = btnData
+			self.pConfig.mbtnSettings["MiniMapTrackingFrame"] = nil
+		end
+		tracking.icon = MiniMapTrackingIcon
+		tracking.icon:SetTexture(132328)
+		tracking:GetScript("OnEvent")(tracking, "UNIT_AURA")
+		tracking.show = tracking:IsShown()
+		self:setHooks(tracking)
+		self:setParams(tracking)
 
-		icon:ClearAllPoints()
-		icon:SetPoint("CENTER")
-		hooksecurefunc(icon, "SetPoint", function(icon)
-			icon:ClearAllPoints()
-			self.SetPoint(icon, "CENTER")
-		end)
-		p.OnMouseDown = MiniMapTrackingButton:GetScript("OnMouseDown")
-		p.OnMouseUp = MiniMapTrackingButton:GetScript("OnMouseUp")
-		MiniMapTrackingButton:HookScript("OnMouseDown", function()
-			icon:SetScale(.9)
-		end)
-		MiniMapTrackingButton:HookScript("OnMouseUp", function()
-			icon:SetScale(1)
-		end)
+		btnData = self:getMBtnSettings(tracking)
+		if btnData[5] == nil then btnData[5] = true end
 
-		if checkMasqueConditions(MiniMapTrackingButton, self:getMBtnSettings(MiniMapTracking)) then
-			self.MSQ_Button_Data[MiniMapTrackingButton] = {
-				_Border = MiniMapTrackingButtonBorder,
-				_Background = MiniMapTrackingBackground,
-			}
-			self:setTexCurCoord(icon, icon:GetTexCoord())
-			icon.SetTexCoord = self.setTexCoord
-			local data = {
-				Icon = icon,
-				Highlight = MiniMapTrackingButton:GetHighlightTexture()
-			}
-			self.MSQ_MButton:AddButton(MiniMapTrackingButton, data, "Legacy", true)
-			self:MSQ_Button_Update(MiniMapTrackingButton)
-			self:MSQ_CoordUpdate(MiniMapTrackingButton)
+		if checkMasqueConditions(tracking, btnData)then
+			self:setMButtonRegions(tracking)
 		end
 
-		tinsert(self.minimapButtons, MiniMapTracking)
-		tinsert(self.mixedButtons, MiniMapTracking)
+		tinsert(self.minimapButtons, tracking)
+		tinsert(self.mixedButtons, tracking)
 	end
 
 	-- MINIMAP LFG FRAME
@@ -1095,6 +1029,7 @@ function hb:grabDefButtons()
 	local battlefield = MiniMapBattlefieldFrame
 	if battlefield and self:ignoreCheck("MiniMapBattlefieldFrame") and not self.btnParams[battlefield] then
 		battlefield.icon = MiniMapBattlefieldIcon
+		battlefield.show = battlefield:IsShown()
 		self:setHooks(battlefield)
 		self:setParams(battlefield)
 
@@ -1122,7 +1057,7 @@ function hb:grabDefButtons()
 		self:setHooks(mail)
 		self:setParams(mail)
 
-		local btnData = self:getMBtnSettings(mail)
+		btnData = self:getMBtnSettings(mail)
 		if btnData[5] == nil then btnData[5] = true end
 
 		if checkMasqueConditions(mail, btnData) then
@@ -1167,7 +1102,7 @@ function hb:grabDefButtons()
 				zoom:Disable()
 			end
 
-			local p = self:setParams(zoom, function(p, zoom)
+			local p = self:setParams(zoom, function()
 				zoom.Enable = nil
 				zoom.Disable = nil
 				if not zoom:GetScript("OnClick") then
@@ -1187,7 +1122,7 @@ function hb:grabDefButtons()
 
 	-- WORLD MAP BUTTON
 	local mapButton = MiniMapWorldMapButton
-	if mapButton and self:ignoreCheck("MiniMapWorldMapButton") and not self.btnParams[mapButton] then
+	if MiniMapWorldMapButton and self:ignoreCheck("MiniMapWorldMapButton") and not self.btnParams[MiniMapWorldMapButton] then
 		self:setHooks(mapButton)
 		local p = self:setParams(mapButton, function(p, mapButton)
 			if mapButton.__MSQ_Addon then return end
@@ -1694,8 +1629,7 @@ local hidingBarMixin = CreateFromMixins(BackdropTemplateMixin)
 
 
 do
-	local OnClick = function(btn, button)
-		local bar = btn.bar
+	local OnClick = function(btn, button, bar)
 		if button == "LeftButton" then
 			if bar:IsShown() and bar.config.showHandler ~= 3 then
 				bar:Hide()
@@ -1709,8 +1643,12 @@ do
 	end
 
 
-	local OnEnter = function(btn)
-		local curBar = btn.bar
+	local OnEnter = function(btn, curBar)
+		if curBar.rFrame ~= btn and curBar.config.barTypePosition == 2 then
+			curBar.rFrame = btn
+			curBar:updateBarPosition()
+		end
+
 		local func = curBar.drag:GetScript("OnEnter")
 		if func then func(curBar.drag) end
 
@@ -1720,8 +1658,7 @@ do
 			if bar ~= curBar
 			and bar.config.barTypePosition == 2
 			and bar.config.showHandler ~= 3
-			and bar.omb
-			and parent == bar.omb:GetParent()
+			and parent == bar.rFrame:GetParent()
 			and bar:IsShown()
 			then
 				bar:Hide()
@@ -1731,8 +1668,7 @@ do
 	end
 
 
-	local OnLeave = function(btn)
-		local drag = btn.bar.drag
+	local OnLeave = function(btn, drag)
 		local func = drag:GetScript("OnLeave")
 		if func then func(drag) end
 	end
@@ -1745,9 +1681,9 @@ do
 			type = "data source",
 			text = self.ombName,
 			icon = hb.ombDefIcon,
-			OnClick = OnClick,
-			OnEnter = OnEnter,
-			OnLeave = OnLeave,
+			OnClick = function(btn, button) OnClick(btn, button, self) end,
+			OnEnter = function(btn) OnEnter(btn, self) end,
+			OnLeave = function(btn) OnLeave(btn, self.drag) end,
 		})
 		ldbi:Register(self.ombName, self.ldb_icon, self.config.omb)
 	end
@@ -2400,8 +2336,14 @@ function hidingBarMixin:setBarTypePosition(typePosition)
 	if typePosition then self.config.barTypePosition = typePosition end
 
 	if self.config.barTypePosition == 2 then
-		self.config.omb.hide = false
-		ldbi:Show(self.ombName)
+		self.config.omb.hide = self.config.ombHide
+
+		if self.config.ombHide then
+			ldbi:Hide(self.ombName)
+		else
+			ldbi:Show(self.ombName)
+		end
+
 		if self.config.lock then
 			ldbi:Lock(self.ombName)
 		else
@@ -2437,22 +2379,26 @@ function hidingBarMixin:setBarTypePosition(typePosition)
 			end
 		end
 
+		local rotation
 		if self.config.omb.anchor == "left" then
 			secondPosition = btnSize + self.config.omb.distanceToBar
-			self.ldb_icon.icon = self.config.omb.icon or "Interface/Icons/misc_arrowright"
+			rotation = -math.pi/2
 		elseif self.config.omb.anchor == "right" then
 			secondPosition = -btnSize - self.config.omb.distanceToBar
-			self.ldb_icon.icon = self.config.omb.icon or "Interface/Icons/misc_arrowleft"
+			rotation = math.pi/2
 		elseif self.config.omb.anchor == "top" then
 			secondPosition = -btnSize - self.config.omb.distanceToBar
-			self.ldb_icon.icon = self.config.omb.icon or "Interface/Icons/misc_arrowdown"
+			rotation = math.pi
 		else
 			secondPosition = btnSize + self.config.omb.distanceToBar
-			self.ldb_icon.icon = self.config.omb.icon or "Interface/Icons/misc_arrowlup"
+			rotation = 0
 		end
+		self.ldb_icon.icon = self.config.omb.icon or hb.ombDefIcon
+		self.omb.icon:SetRotation(self.config.omb.icon and 0 or rotation)
+
+		if typePosition or not self.rFrame then self.rFrame = self.omb end
 
 		self.anchorObj = self.config.omb
-		self.rFrame = self.omb
 		self.position = position + self.config.omb.barDisplacement
 		self.secondPosition = secondPosition
 	else
