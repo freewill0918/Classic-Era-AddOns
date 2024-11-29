@@ -5,7 +5,7 @@ local E, C = addonTable.E, addonTable.C
 local _G = getfenv(0)
 
 E:RegisterSkin("beautycase", {
-	name = "化妝箱",
+	name = "Beautycase",
 	leaves = {
 		points = {
 			{x = -4, y = 18}, -- topleft
@@ -19,8 +19,27 @@ E:RegisterSkin("beautycase", {
 	},
 })
 
+E:RegisterSkin("beautycase-legacy", {
+	name = "Beautycase (Legacy)",
+	template = "beautycase",
+	bg = {
+		default = {
+			color = {1, 1, 1},
+			texture = "Interface\\AddOns\\ls_Toasts\\assets\\legacy\\toast-bg-default",
+			tex_coords = {1 / 256, 225 / 256, 1 / 64, 49 / 64},
+			tile = false,
+		},
+		legendary = {
+			color = {1, 1, 1},
+			texture = "Interface\\AddOns\\ls_Toasts\\assets\\legacy\\toast-bg-legendary",
+			tex_coords = {1 / 256, 225 / 256, 1 / 64, 49 / 64},
+			tile = false,
+		},
+	},
+})
+
 E:RegisterSkin("beautycase-no-art", {
-	name = "化妝箱 (無背景圖)",
+	name = "Beautycase (No Artwork)",
 	template = "beautycase",
 	text_bg = {
 		hidden = true,
@@ -41,51 +60,8 @@ E:RegisterSkin("beautycase-no-art", {
 	},
 })
 
-E:RegisterSkin("beautycase-legacy", {
-	name = "Beautycase (Legacy)",
-	template = "beautycase",
-	bg = {
-		archaeology = {
-			color = {1, 1, 1},
-			texture = "Interface\\AddOns\\ls_Toasts\\assets\\legacy\\toast-bg-archaeology",
-			tex_coords = {1 / 256, 225 / 256, 1 / 64, 49 / 64},
-			tile = false,
-		},
-		collection = {
-			color = {1, 1, 1},
-			texture = "Interface\\AddOns\\ls_Toasts\\assets\\legacy\\toast-bg-collection",
-			tex_coords = {1 / 256, 225 / 256, 1 / 64, 49 / 64},
-			tile = false,
-		},
-		default = {
-			color = {1, 1, 1},
-			texture = "Interface\\AddOns\\ls_Toasts\\assets\\legacy\\toast-bg-default",
-			tex_coords = {1 / 256, 225 / 256, 1 / 64, 49 / 64},
-			tile = false,
-		},
-		legendary = {
-			color = {1, 1, 1},
-			texture = "Interface\\AddOns\\ls_Toasts\\assets\\legacy\\toast-bg-legendary",
-			tex_coords = {1 / 256, 225 / 256, 1 / 64, 49 / 64},
-			tile = false,
-		},
-		store = {
-			color = {1, 1, 1},
-			texture = "Interface\\AddOns\\ls_Toasts\\assets\\legacy\\toast-bg-store",
-			tex_coords = {1 / 256, 225 / 256, 1 / 64, 49 / 64},
-			tile = false,
-		},
-		transmog = {
-			color = {1, 1, 1},
-			texture = "Interface\\AddOns\\ls_Toasts\\assets\\legacy\\toast-bg-transmog",
-			tex_coords = {1 / 256, 225 / 256, 1 / 64, 49 / 64},
-			tile = false,
-		},
-	},
-})
-
 E:RegisterSkin("beautycase-twotone", {
-	name = "化妝箱 (雙色調)",
+	name = "Beautycase (Two Tone)",
 	template = "beautycase",
 	title = {
 		color = {0.15, 0.15, 0.15},
