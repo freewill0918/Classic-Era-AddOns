@@ -1,12 +1,10 @@
 # DBM - Vanilla and Season of Discovery
 
-## [r764](https://github.com/DeadlyBossMods/DBM-Vanilla/tree/r764) (2024-12-07)
-[Full Changelog](https://github.com/DeadlyBossMods/DBM-Vanilla/compare/r763...r764) [Previous Releases](https://github.com/DeadlyBossMods/DBM-Vanilla/releases)
+## [r767](https://github.com/DeadlyBossMods/DBM-Vanilla/tree/r767) (2024-12-10)
+[Full Changelog](https://github.com/DeadlyBossMods/DBM-Vanilla/compare/r766...r767) [Previous Releases](https://github.com/DeadlyBossMods/DBM-Vanilla/releases)
 
-- AQ20/Buru: Fix trigger for Pursue warning  
-    It's used as a regex, hence the %s doesn't work as expected, just use the main part of the string as it's an in-combat event anyways  
-- SoD/Emerald Dragons: Update for SoD  
-    * Add encounter IDs  
-    * Add creature IDs  
-    * Add timer, warning, and yell for the new Ysondre soaking mechanic  
-    * Filter the sleep fog warning to only show once  
+- Bug Trio: Keep GTFO warning around after fight ends as the pool persists  
+- Prophet Skeram: Interrupt warning and minor tweak for Mind Control on SoD  
+    SoD mind control only targets one player, no point in waiting 0.5 seconds  
+- Fankriss: Add AntiSpam for worm summon warning  
+- AQ40 Trash: Add pretty much the same warnings as we have for AQ20  
