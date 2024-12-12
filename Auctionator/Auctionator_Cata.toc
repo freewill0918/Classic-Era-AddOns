@@ -1,4 +1,4 @@
-## Interface: 11505
+## Interface: 40401
 ## Title: Auctionator
 ## Version: 11.0.19
 ## Author: Borjamacare, plusmouse
@@ -26,7 +26,6 @@ Locales\Manifest.xml
 
 Source\Manifest.xml
 Source_Classic\Manifest.xml
-Source_Vanilla\Manifest.xml
-Data_Vanilla\Suffixes.lua
+Data_Cata\Suffixes.lua
 
 Embeds\json.lua
