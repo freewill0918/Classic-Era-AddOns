@@ -1,10 +1,11 @@
 # DBM - Vanilla and Season of Discovery
 
-## [r767](https://github.com/DeadlyBossMods/DBM-Vanilla/tree/r767) (2024-12-10)
-[Full Changelog](https://github.com/DeadlyBossMods/DBM-Vanilla/compare/r766...r767) [Previous Releases](https://github.com/DeadlyBossMods/DBM-Vanilla/releases)
+## [r769](https://github.com/DeadlyBossMods/DBM-Vanilla/tree/r769) (2024-12-14)
+[Full Changelog](https://github.com/DeadlyBossMods/DBM-Vanilla/compare/r768...r769) [Previous Releases](https://github.com/DeadlyBossMods/DBM-Vanilla/releases)
 
-- Bug Trio: Keep GTFO warning around after fight ends as the pool persists  
-- Prophet Skeram: Interrupt warning and minor tweak for Mind Control on SoD  
-    SoD mind control only targets one player, no point in waiting 0.5 seconds  
-- Fankriss: Add AntiSpam for worm summon warning  
-- AQ40 Trash: Add pretty much the same warnings as we have for AQ20  
+- Work-around core breakage for delayed timers  
+- AQ20/40 Trash: Differentiate the various variants of SoD hard mode debuffs and add info frame for guardian abilities  
+- Twin Emps: Teleport timer is exact on SoD  
+- Skeram: Simplify logic for mind control and support the case where exactly one mirror image is alive  
+- Sartura: Add GTFO warning for whirlwind  
+- Update koKR (#271)  
