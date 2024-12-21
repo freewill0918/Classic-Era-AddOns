@@ -164,6 +164,20 @@ L:SetGeneralLocalization{
 	name = "안퀴40 일반몹"
 }
 
+L:SetTimerLocalization{
+	TimerExplosion = "폭발하는 유령"
+}
+
+L:SetWarningLocalization{
+	WarnExplosion = "폭발하는 유령 한마리 등장 - 피하세요",
+	SpecWarnExplosion = "폭발하는 유령 - 피하세요",
+}
+L:SetOptionLocalization{
+	WarnExplosion = "폭발하는 유령 알림 보기 ($spell:1214871)",
+	SpecWarnExplosion = "폭발하는 유령이 여러마리 등장시 특수 경고 보기 ($spell:1214871)",
+	TimerExplosion = "폭발하는 유령이 여러마리 등장시 타이머 바 보기 ($spell:1214871)"
+}
+
 ---------------
 -- Kurinnaxx --
 ---------------
@@ -257,13 +271,19 @@ L:SetGeneralLocalization{
 	name = "안퀴20 일반몹"
 }
 
-L:SetWarningLocalization{
-	WarnExplosion = "폭발 5초 전"
-}
-L:SetOptionLocalization{
-	WarnExplosion = "$spell:1214871 알림 보기 (눈알 촉수 광역 스킬)"
+L:SetTimerLocalization{
+	TimerExplosion = "폭발하는 유령"
 }
 
+L:SetWarningLocalization{
+	WarnExplosion = "폭발하는 유령 한마리 등장 - 피하세요",
+	SpecWarnExplosion = "폭발하는 유령 - 피하세요",
+}
+L:SetOptionLocalization{
+	WarnExplosion = "폭발하는 유령 알림 보기 ($spell:1214871)",
+	SpecWarnExplosion = "폭발하는 유령이 여러마리 등장시 특수 경고 보기 ($spell:1214871)",
+	TimerExplosion = "폭발하는 유령이 여러마리 등장시 타이머 바 보기 ($spell:1214871)"
+}
 -----------------
 --  Razorgore  --
 -----------------
@@ -995,6 +1015,7 @@ L:SetOptionLocalization({
 	WarningChargeChanged	= "극성이 바뀔때 특수 알림 보기",
 	WarningChargeNotChanged	= "극성이 바뀌지 않으면 특수 알림 보기",
 	AirowsEnabled			= "$spell:28089 동안 화살표 보기",
+	Never					= "사용 안함",
 	TwoCamp					= "화살표 보기 (일반 \"2점\" 택틱)",
 	ArrowsRightLeft			= "\"4점\" 택틱 왼쪽/오른쪽 화살표 보기 (극성이 바뀌면 왼쪽 화살표가 나오고 바뀌지 않으면 오른쪽이 나옴)",
 	ArrowsInverse			= "역 \"4점\" 택틱 (극성이 바뀌면 오른쪽 화살표가 나오고 바뀌지 않으면 왼쪽이 나옴)"
