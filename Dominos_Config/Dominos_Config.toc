@@ -1,4 +1,4 @@
-## Interface: 110007, 110005, 40401, 11504
+## Interface: 11506, 40401, 110005, 110007
 ## Title: Dominos Config
 ## Title-zhCN: Dominos 设置
 ## Title-zhTW: Dominos 設置
@@ -8,7 +8,12 @@
 ## Dependencies: Dominos
 ## LoadOnDemand: 1
 ## IconTexture: Interface/AddOns/Dominos/Dominos
-embeds.xml
+
+## Title-zhTW: |cff00CCFF[快捷列]|r 達美樂-設定選項
+## Notes-zhTW: Dominos Config |n|n提供快捷列圖形介面的設定選項功能。|n|n|cffffd200使用方法: |r點小地圖按鈕進行設定。
+## X-Category-zhTW: 介面
+
+## embeds.xml
 localization.xml
 main.lua
 widgets\include.xml

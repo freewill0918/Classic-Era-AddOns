@@ -4,38 +4,46 @@ if faction == "Horde" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Human Mage
-#name 1-10 艾尔文森林 法师 AoE
+#name 1-10 Elwynn Forest Mage AoE
 #version 1
-#group RestedXP 联盟 法师
+#group RestedXP Alliance Mage
 #defaultfor Human
-#next 10-12 洛克莫丹 法师 AoE
+#next 10-12 Loch Modan Mage AoE
 step
     #sticky
     #completewith next
-    .goto Elwynn Forest,48.2,42.9
-    +您已经选择了一个针对人类的指南。你应该选择与你开始时相同的起始区域 << Gnome
-    +请注意，您已经选择了AoE指南。AoE通常比单目标法师困难得多，但速度快得多
+    .goto Elwynn Forest,48.171,42.943
+    +You have selected a guide meant for Humans. You should choose the same starter zone that you start in << Gnome
+    +Note that you have selected the AoE guide. AoE is typically a lot harder than single target mage, but a LOT faster
 step
-    >>删除您的炉石
-    .goto Elwynn Forest,48.2,42.9
-    .accept 783 >>接任务: |cFFFCDC00身边的危机|r
+    >>Delete your Hearthstone
+    .goto Elwynn Forest,48.171,42.943
+.target Deputy Willem
+>>Talk to |cRXP_FRIENDLY_Deputy Willem|r
+    .accept 783 >> Accept A Threat Within
 step
-    .goto Elwynn Forest,48.9,41.6
-    .turnin 783 >>交任务: |cFF00FF25身边的危机|r
-    .accept 7 >>接任务: |cFFFCDC00剿灭狗头人|r
+    .goto Elwynn Forest,48.923,41.606
+>>Talk to |cRXP_FRIENDLY_Marshal McBride|r
+    .turnin 783 >> Turn in A Threat Within
+.target Marshal McBride
+    .accept 7 >> Accept Kobold Camp Cleanup
 step
-    .goto Elwynn Forest,48.2,42.9
-    .accept 5261 >>接任务: |cFFFCDC00伊根·派特斯金纳|r
+    .goto Elwynn Forest,48.171,42.943
+.target Deputy Willem
+>>Talk to |cRXP_FRIENDLY_Deputy Willem|r
+    .accept 5261 >> Accept Eagan Peltskinner
 step
     .goto Elwynn Forest,46.2,40.4
-    .vendor >>杀死狼，直到你有价值50美分的小贩垃圾。供应商，然后从丹尼尔兄弟那里购买10 x10的水。
+    .vendor >>Kill wolves until you have 50c worth of vendor trash. Vendor, then buy x10 water from Brother Danil.
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step
-    .xp 2 >>升级到2
+    .xp 2 >> Grind to 2
 step
     .goto Elwynn Forest,48.9,40.2
-    .turnin 5261 >>交任务: |cFF00FF25伊根·派特斯金纳|r
-    .accept 33 >>接任务: |cFFFCDC00林中的群狼|r
+>>Talk to |cRXP_FRIENDLY_Eagan Peltskinner|r
+    .turnin 5261 >> Turn in Eagan Peltskinner
+.target Eagan Peltskinner
+    .accept 33 >> Accept Wolves Across The Border
 step
     .goto Elwynn Forest,46.1,40.7,40,0
     .goto Elwynn Forest,46.2,37.6,40,0
@@ -43,7 +51,7 @@ step
     .goto Elwynn Forest,46.1,40.7,40,0
     .goto Elwynn Forest,46.2,37.6,40,0
     .goto Elwynn Forest,47.6,37.2,40,0
-    >>杀死该地区的幼狼以获取肉食
+    >>Kill Young Wolves in the area for Meat
     .complete 33,1 --Collect Tough Wolf Meat (x8)
 step
     .goto Elwynn Forest,47.4,35.3,40,0
@@ -52,21 +60,25 @@ step
     .goto Elwynn Forest,49.7,36.2,40,0
     .goto Elwynn Forest,47.4,35.3,40,0
     .goto Elwynn Forest,49.7,36.2,40,0
-    >>杀死该地区的科博尔德害虫
+    >>Kill Kobold Vermin in the area
     .complete 7,1 --Kill Kobold Vermin (x10)
 step
     .goto Elwynn Forest,48.9,40.2
-    .turnin 33 >>交任务: |cFF00FF25林中的群狼|r
+.target Eagan Peltskinner
+>>Talk to |cRXP_FRIENDLY_Eagan Peltskinner|r
+    .turnin 33 >> Turn in Wolves Across The Border
 step
     .goto Elwynn Forest,47.6,41.5
-    .vendor >>小贩扔掉垃圾，然后从丹尼尔兄弟那里多买10瓶水
+    .vendor >>vendor trash, then buy x10 more water from Brother Danil
 step
-    .goto Elwynn Forest,48.9,41.6
-    .turnin 7 >>交任务: |cFF00FF25剿灭狗头人|r
-    .accept 15 >>接任务: |cFFFCDC00回音山调查行动|r
-    .accept 3104 >>接任务: |cFFFCDC00雕文信件|r
+    .goto Elwynn Forest,48.923,41.606
+>>Talk to |cRXP_FRIENDLY_Marshal McBride|r
+    .turnin 7 >> Turn in Kobold Camp Cleanup
+.target Marshal McBride
+    .accept 15 >> Accept Investigate Echo Ridge
+    .accept 3104 >> Accept Glyphic Letter
 step
-    .xp 3 >>升级到3
+    .xp 3 >> Grind to 3
 step
     .goto Elwynn Forest,47.5,36.3,40,0
     .goto Elwynn Forest,46.6,32.2,40,0
@@ -74,28 +86,34 @@ step
     .goto Elwynn Forest,47.5,36.3,40,0
     .goto Elwynn Forest,46.6,32.2,40,0
     .goto Elwynn Forest,48.6,34.0,40,0
-    >>杀死Kobold工人
+    >>Kill Kobold Workers
     .complete 15,1 --Kill Kobold Worker (x10)
 step
     .goto Elwynn Forest,47.7,41.4
-    .xp 3+1110>>在回镇的路上，提升经验到1110+/1400经验
+    .xp 3+1110 >>Grind to 1110+/1400xp on your way back to town
 step
     .goto Elwynn Forest,47.7,41.4
-    .vendor >>供应商垃圾
+    .vendor >>vendor trash
 step
-    .goto Elwynn Forest,48.9,41.6
-    .turnin 15 >>交任务: |cFF00FF25回音山调查行动|r
-    .accept 21 >>接任务: |cFFFCDC00回音山清剿行动|r
+    .goto Elwynn Forest,48.923,41.606
+>>Talk to |cRXP_FRIENDLY_Marshal McBride|r
+    .turnin 15 >> Turn in Investigate Echo Ridge
+.target Marshal McBride
+    .accept 21 >> Accept Skirmish at Echo Ridge
 step
-    >>上楼去
+    >>Go upstairs
     .goto Elwynn Forest,49.3,40.7,15,0
     .goto Elwynn Forest,49.5,40.0,15,0
-    .goto Elwynn Forest,49.7,39.4
-    .turnin 3104 >>交任务: |cFF00FF25雕文信件|r
-    .trainer >>训练你的职业技能
+    .goto Elwynn Forest,49.661,39.402
+.target Khelden Bremen
+>>Talk to |cRXP_FRIENDLY_Khelden Bremen|r
+    .turnin 3104 >> Turn in Glyphic Letter
+    .trainer >> Train your class spells
 step
-    .goto Elwynn Forest,48.2,42.9
-    .accept 18 >>接任务: |cFFFCDC00潜行者兄弟会|r
+    .goto Elwynn Forest,48.171,42.943
+.target Deputy Willem
+>>Talk to |cRXP_FRIENDLY_Deputy Willem|r
+    .accept 18 >> Accept Brotherhood of Thieves
 step
     .goto Elwynn Forest,53.7,52.2,60,0
     .goto Elwynn Forest,55.7,47.4,60,0
@@ -103,16 +121,18 @@ step
     .goto Elwynn Forest,53.7,52.2,60,0
     .goto Elwynn Forest,55.7,47.4,60,0
     .goto Elwynn Forest,54.7,41.9,60,0
-    >>杀死德菲亚斯暴徒。抢了他们的头巾
+    >>Kill Defias Thugs. Loot them for Bandanas
     .complete 18,1 --Collect Red Burlap Bandana (x12)
 step
-    .goto Elwynn Forest,48.2,42.9
-    .turnin 18 >>交任务: |cFF00FF25潜行者兄弟会|r
-    .accept 6 >>接任务: |cFFFCDC00加瑞克·帕德弗特的赏金|r
-    .accept 3903 >>接任务: |cFFFCDC00米莉·奥斯沃斯|r
+    .goto Elwynn Forest,48.171,42.943
+>>Talk to |cRXP_FRIENDLY_Deputy Willem|r
+    .turnin 18 >> Turn in Brotherhood of Thieves
+.target Deputy Willem
+    .accept 6 >> Accept Bounty on Garrick Padfoot
+    .accept 3903 >> Accept Milly Osworth
 step
     .goto Elwynn Forest,47.7,41.4
-    .vendor >>供应商垃圾，修理
+    .vendor >>vendor trash, repair
 step
     .goto Elwynn Forest,54.7,41.9,60,0
     .goto Elwynn Forest,47.7,31.7,60,0
@@ -123,211 +143,259 @@ step
     .goto Elwynn Forest,50.4,27.0,60,0
     .goto Elwynn Forest,47.7,31.7,60,0
     .goto Elwynn Forest,50.4,27.0,60,0
-    >>杀死矿井中的工人
+    >>Kill Laborers in the mine
     .complete 21,1 --Kill Kobold Laborer (x12)
 step
-    .xp 5 >>升级到5
+    .xp 5 >> Grind to 5
 step
     #era/som
     .goto Elwynn Forest,50.7,39.2
-    .turnin 3903 >>交任务: |cFF00FF25米莉·奥斯沃斯|r
-    .accept 3904 >>接任务: |cFFFCDC00米莉的葡萄|r
+>>Talk to |cRXP_FRIENDLY_Milly Osworth|r
+    .turnin 3903 >> Turn in Milly Osworth
+.target Milly Osworth
+    .accept 3904 >> Accept Milly's Harvest
 step
+    #som
     #phase 3-6
     .goto Elwynn Forest,50.7,39.2
-    .turnin 3903 >>交任务: |cFF00FF25米莉·奥斯沃斯|r
+.target Milly Osworth
+>>Talk to |cRXP_FRIENDLY_Milly Osworth|r
+    .turnin 3903 >> Turn in Milly Osworth
 step
     #era/som
-    >>在田里掠夺葡萄桶
+    >>Loot the Buckets of Grapes in the field
     .goto Elwynn Forest,54.5,49.4
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.5,48.2
-    >>杀死加里克并抢走他的头
+    >>Kill Garrick and loot his Head
     .complete 6,1 --Collect Garrick's Head (x1)
 step
-    .xp 5+1175>>在返回1175+/2800xp的途中进行研磨
+    .xp 5+1175 >> Grind on your way back to 1175+/2800xp
     .goto Elwynn Forest,50.7,39.2
 step
     #era/som
     .goto Elwynn Forest,50.7,39.2
-    .turnin 3904 >>交任务: |cFF00FF25米莉的葡萄|r
-    .accept 3905 >>接任务: |cFFFCDC00葡萄出货单|r
+>>Talk to |cRXP_FRIENDLY_Milly Osworth|r
+    .turnin 3904 >> Turn in Milly's Harvest
+.target Milly Osworth
+    .accept 3905 >>Accept Grape Manifest
 step
-    .goto Elwynn Forest,48.2,42.9
-    .turnin 6 >>交任务: |cFF00FF25加瑞克·帕德弗特的赏金|r
+    .goto Elwynn Forest,48.171,42.943
+.target Deputy Willem
+>>Talk to |cRXP_FRIENDLY_Deputy Willem|r
+    .turnin 6 >> Turn in Bounty on Garrick Padfoot
 step
-    .goto Elwynn Forest,48.9,41.6
-    .turnin 21 >>交任务: |cFF00FF25回音山清剿行动|r
-    .accept 54 >>接任务: |cFFFCDC00去闪金镇报到|r
+    .goto Elwynn Forest,48.923,41.606
+>>Talk to |cRXP_FRIENDLY_Marshal McBride|r
+    .turnin 21 >> Turn in Skirmish at Echo Ridge
+.target Marshal McBride
+    .accept 54 >> Accept Report to Goldshire
 step
      #era/som
-     >>到主楼梯上去
+     >>Go upstairs the main staircase
     .goto Elwynn Forest,49.6,41.6,15,0
     .goto Elwynn Forest,48.9,41.3,15,0
-    .goto Elwynn Forest,49.5,41.6
-    .turnin 3905 >>交任务: |cFF00FF25葡萄出货单|r
+    .goto Elwynn Forest,49.471,41.586
+.target Brother Neals
+>>Talk to |cRXP_FRIENDLY_Brother Neals|r
+    .turnin 3905 >>Turn in Grape Manifest
 step
     .goto Elwynn Forest,45.6,47.7
-    .accept 2158 >>接任务: |cFFFCDC00休息和放松|r
+.target Falkhaan Isenstrider
+>>Talk to |cRXP_FRIENDLY_Falkhaan Isenstrider|r
+    .accept 2158 >> Accept Rest and Relaxation
 step
     #softcore
     #sticky
     #completewith next
-    .goto Elwynn Forest,39.5,60.5,200 >>在精神疗养院死去并重生，或者逃到戈德郡
+    .goto Elwynn Forest,39.5,60.5,200 >> Die and respawn at the Spirit Healer, or run to Goldshire
 step
     .goto Elwynn Forest,41.7,65.9
-    .vendor >>供应商垃圾，修理
+    .vendor >> vendor trash, repair
 step
-    .goto Elwynn Forest,42.1,65.9
-    .turnin 54 >>交任务: |cFF00FF25去闪金镇报到|r
-    .accept 62 >>接任务: |cFFFCDC00法戈第矿洞|r
+    .goto Elwynn Forest,42.105,65.927
+>>Talk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 54 >> Turn in Report to Goldshire
+.target Marshal Dughan
+    .accept 62 >> Accept The Fargodeep Mine
 step
     .goto Elwynn Forest,42.9,65.7,15,0
-    >>在你进客栈的时候，靠近左边
-    .goto Elwynn Forest,43.3,65.7
-    .accept 60 >>接任务: |cFFFCDC00狗头人的蜡烛|r
+    >>On your close left as you go in the Inn
+    .goto Elwynn Forest,43.283,65.721
+.target William Pestle
+>>Talk to |cRXP_FRIENDLY_William Pestle|r
+    .accept 60 >> Accept Kobold Candles
 step
-    .goto Elwynn Forest,43.8,65.8
-    .turnin 2158 >>交任务: |cFF00FF25休息和放松|r
-    .home >>将您的炉石设置为Goldshire
+    .goto Elwynn Forest,43.771,65.803
+.target Innkeeper Farley
+>>Talk to |cRXP_FRIENDLY_Innkeeper Farley|r
+    .turnin 2158 >> Turn in Rest and Relaxation
+    .home >> Set your Hearthstone to Goldshire
 step
-    .xp 6 >>升级到6
+    .xp 6 >> Grind to 6
 step
     .goto Elwynn Forest,43.7,66.4,12,0
     .goto Elwynn Forest,43.2,66.2
-    .trainer >>上楼去。训练你的职业技能
+    .trainer >> Go Upstairs. Train your class spells
 step
     .goto Elwynn Forest,42.1,67.3
-    .accept 47 >>接任务: |cFFFCDC00金砂交易|r
+.target Remy "Two Times"
+>>Talk to |cRXP_FRIENDLY_Remy "Two Times"|r
+    .accept 47 >> Accept Gold Dust Exchange
 step
     #sticky
     #completewith BoarMeat1
-    >>开始杀掉你看到的野猪肉
+    >>Start killing some boars you see for Boar Meat
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
 step
-    .goto Elwynn Forest,34.5,84.3
-    .accept 85 >>接任务: |cFFFCDC00丢失的项链|r
-    .goto Elwynn Forest,34.7,84.5
-    .accept 88 >>接任务: |cFFFCDC00公主必须死！|r
+    .goto Elwynn Forest,34.486,84.253
+.target "Auntie" Bernice Stonefield
+>>Talk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
+    .accept 85 >> Accept Lost Necklace
+    .goto Elwynn Forest,34.660,84.482
+.target Ma Stonefield
+>>Talk to |cRXP_FRIENDLY_Ma Stonefield|r
+    .accept 88 >> Accept Princess Must Die!
 step
     #sticky
     #completewith Candles
-    >>从附近的Kobolds买些蜡烛
+    >> Get some Candles from nearby Kobolds
     .complete 60,1 --Collect Kobold Candle (x8)
 step
     #sticky
     #label Candles
     #completewith next
-    >>从附近的Kobolds那里获得一些金粉
+    >> Get some Gold Dust from nearby Kobolds
     .complete 47,1 --Collect Gold Dust (x10)
 step
     #label Dust
-    >>将暴徒从矿井外向东驱赶
-    .goto Elwynn Forest,43.1,85.7
-    .turnin 85 >>交任务: |cFF00FF25丢失的项链|r
-    .accept 86 >>接任务: |cFFFCDC00比利的馅饼|r
+    >>Grind mobs east through the outside of the mine
+    .goto Elwynn Forest,43.132,85.722
+>>Talk to |cRXP_FRIENDLY_Billy Maclure|r
+    .turnin 85 >> Turn in Lost Necklace
+.target Billy Maclure
+    .accept 86 >> Accept Pie for Billy
 step
     #label BoarMeat1
     .goto Elwynn Forest,43.2,89.6
-    .accept 106 >>接任务: |cFFFCDC00年轻的恋人|r
+.target Maybell Maclure
+>>Talk to |cRXP_FRIENDLY_Maybell Maclure|r
+    .accept 106 >> Accept Young Lovers
 step
     .goto Elwynn Forest,42.4,89.4
-    .vendor >>小贩，尽可能多买牛奶
+    .vendor >>Vendor, buy as much milk as you can
 step
     #sticky
     #completewith next
-    >>杀死你看到的野猪肉
+    >>Kill boars you see for Boar Meat
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
 step
-    .goto Elwynn Forest,29.8,86.0
-    .turnin 106 >>交任务: |cFF00FF25年轻的恋人|r
-    .accept 111 >>接任务: |cFFFCDC00托米的祖母|r
+    .goto Elwynn Forest,29.840,85.997
+>>Talk to |cRXP_FRIENDLY_Tommy Joe Stonefield|r
+    .turnin 106 >> Turn in Young Lovers
+.target Tommy Joe Stonefield
+    .accept 111 >> Accept Speak with Gramma
 step
     .goto Elwynn Forest,32.5,85.5
-    >>吃完野猪肉
+    >>Finish off getting the Boar Meat
     .complete 86,1 --Collect Chunk of Boar Meat (x4)
 step
-    .goto Elwynn Forest,34.5,84.3
-    .turnin 86 >>交任务: |cFF00FF25比利的馅饼|r
-    .accept 84 >>接任务: |cFFFCDC00比利的馅饼|r
+    .goto Elwynn Forest,34.486,84.253
+>>Talk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
+    .turnin 86 >> Turn in Pie for Billy
+.target "Auntie" Bernice Stonefield
+    .accept 84 >> Accept Back to Billy
 step
-    .goto Elwynn Forest,34.9,83.9
-    .turnin 111 >>交任务: |cFF00FF25托米的祖母|r
-    .accept 107 >>接任务: |cFFFCDC00给威廉·匹斯特的信|r
+    .goto 1429,34.945,83.855
+>>Talk to |cRXP_FRIENDLY_Gramma Stonefield|r
+    .turnin 111 >> Turn in Speak with Gramma
+.target Gramma Stonefield
+    .accept 107 >> Accept Note to William
 step
     #sticky
     #label KoboldCandles
-    >>从附近的Kobolds买些蜡烛
+    >> Get some Candles from nearby Kobolds
     .complete 60,1 --Collect Kobold Candle (x8)
 step
     #sticky
     #label GoldDust
-    >>从附近的Kobolds那里获得一些金粉
+    >> Get some Gold Dust from nearby Kobolds
     .complete 47,1 --Collect Gold Dust (x10)
 step
-    >>将暴徒从矿井外向东驱赶
-    .goto Elwynn Forest,43.1,85.7
-    .turnin 84 >>交任务: |cFF00FF25比利的馅饼|r
-    .accept 87 >>接任务: |cFFFCDC00金牙|r
+    >>Grind mobs east through the outside of the mine
+    .goto Elwynn Forest,43.132,85.722
+>>Talk to |cRXP_FRIENDLY_Billy Maclure|r
+    .turnin 84 >> Turn in Back to Billy
+.target Billy Maclure
+    .accept 87 >> Accept Goldtooth
 step
-    >>进入矿井
+    >>Go into the mine
     .goto Elwynn Forest,40.5,82.3
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
-    >>为伯妮斯的项链杀死金牙
+    >>Kill Goldtooth for Bernice's Necklace
     .goto Elwynn Forest,41.7,78.1
     .complete 87,1 --Collect Bernice's Necklace  (x1)
 step
-    .xp 7+1600>>提升经验到1600+/4500xp
+    .xp 7+1600 >>Grind until 1600+/4500xp
 step
+#hidewindow
     #requires KoboldCandles
 step
     #label Goldtooth
     #requires GoldDust
-    .goto Elwynn Forest,34.5,84.3
-    .turnin 87 >>交任务: |cFF00FF25金牙|r
+    .goto Elwynn Forest,34.486,84.253
+.target "Auntie" Bernice Stonefield
+>>Talk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
+    .turnin 87 >> Turn in Goldtooth
 step
-    >>把一些暴徒逼回戈德郡
-    .xp 7+2690>>提升经验到2690+/4500xp
+    >>Grind some mobs back to Goldshire
+    .xp 7+2690 >>Grind until 2690+/4500xp
     .goto Elwynn Forest,42.1,67.3
 step
     .goto Elwynn Forest,42.1,67.3
-    .turnin 47 >>交任务: |cFF00FF25金砂交易|r
-    .accept 40 >>接任务: |cFFFCDC00鱼人的威胁|r
+>>Talk to |cRXP_FRIENDLY_Remy "Two Times"|r
+    .turnin 47 >> Turn in Gold Dust Exchange
+.target Remy "Two Times"
+    .accept 40 >> Accept A Fishy Peril
 step
     .goto Elwynn Forest,41.7,65.9
-    .vendor >>供应商垃圾，修理
+    .vendor >>vendor trash, repair
 step
-    .goto Elwynn Forest,42.1,65.9
-    .turnin 40 >>交任务: |cFF00FF25鱼人的威胁|r
-    .accept 35 >>接任务: |cFFFCDC00卫兵托马斯|r
-    .turnin 62 >>交任务: |cFF00FF25法戈第矿洞|r
-    .accept 76 >>接任务: |cFFFCDC00玉石矿洞|r
+    .goto Elwynn Forest,42.105,65.927
+>>Talk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 40 >> Turn in A Fishy Peril
+.target Marshal Dughan
+    .accept 35 >> Accept Further Concerns
+    .turnin 62 >> Turn in The Fargodeep Mine
+    .accept 76 >> Accept The Jasperlode Mine
 step
     .goto Elwynn Forest,41.7,65.9
-    .vendor >>供应商垃圾，修理
+    .vendor >> vendor trash, repair
 step
-    .goto Elwynn Forest,43.3,65.7
-    .turnin 60 >>交任务: |cFF00FF25狗头人的蜡烛|r
-    .accept 61 >>接任务: |cFFFCDC00送往暴风城的货物|r
-    .turnin 107 >>交任务: |cFF00FF25给威廉·匹斯特的信|r
-    .accept 112 >>接任务: |cFFFCDC00收集海藻|r
+    .goto Elwynn Forest,43.283,65.721
+>>Talk to |cRXP_FRIENDLY_William Pestle|r
+    .turnin 60 >> Turn in Kobold Candles
+.target William Pestle
+    .accept 61 >> Accept Shipment to Stormwind
+    .turnin 107 >> Turn in Note to William
+    .accept 112 >> Collecting Kelp
 step
-    .xp 8 >>升级到8
+    .xp 8 >> Grind to 8
 step
     .money <0.1250
     .goto Elwynn Forest,44.0,65.9
-    .vendor >>从Brog购买6槽包
+    .vendor >>Buy a 6 slot bag from Brog
 step
     .goto Elwynn Forest,43.7,66.4,12,0
     .goto Elwynn Forest,43.2,66.2
-    .trainer >>上楼去。训练你的职业技能
+    .trainer >> Go Upstairs. Train your class spells
 step
-    .goto Elwynn Forest,43.8,65.8
-    .vendor >>购买5级水，最高40
+    .goto Elwynn Forest,43.771,65.803
+    .vendor >>Buy level 5 Water up to 40
 step
-    >>向东边碾碎莫洛克鱼，然后将其掠夺为海带蛙。如果你还需要的话，杀掉岛上的暴徒
+    >>Grind Murlocs toward the east and loot them for Kelp Frond. kill mobs on the island if you still need some
     .goto Elwynn Forest,47.6,63.3,60,0
     .goto Elwynn Forest,51.4,64.6,50,0
     .goto Elwynn Forest,57.6,62.8,50,0
@@ -335,49 +403,53 @@ step
     .goto Elwynn Forest,53.8,66.8,50,0
     .complete 112,1 --Collect Crystal Kelp Frond (x4)
 step
-    >>进入矿井，继续沿着中间的小路走
+    >>Go in the mine, and keep following the middle path
     .goto Elwynn Forest,61.8,54.0,60,0
     .goto Elwynn Forest,60.4,50.2
     .complete 76,1 --Scout through the Jasperlode Mine
 step
-    .goto Elwynn Forest,74.0,72.2
-    .turnin 35 >>交任务: |cFF00FF25卫兵托马斯|r
-    .accept 37 >>接任务: |cFFFCDC00失踪的卫兵|r
-    .accept 52 >>接任务: |cFFFCDC00保卫边境|r
+    .goto Elwynn Forest,73.973,72.179
+>>Talk to |cRXP_FRIENDLY_Guard Thomas|r
+    .turnin 35 >> Turn in Further Concerns
+.target Guard Thomas
+    .accept 37 >> Accept Find the Lost Guards
+    .accept 52 >> Accept Protect the Frontier
 step
     #sticky
     #completewith Prowlers
-    >>在执行其他任务时杀死潜行者
+    >>Kill Prowlers as you do other quests
     .complete 52,1 --Kill Prowler (x8)
 step
     #sticky
     #completewith Bears
-    >>在执行其他任务时杀死熊。杀死你看到的任何人
+    >>Kill Bears as you do other quests. Kill any you see
     .complete 52,2 --Kill Young Forest Bear (x5)
 step
     .goto Elwynn Forest,72.7,60.3
-    .turnin 37 >>交任务: |cFF00FF25失踪的卫兵|r
-    .accept 45 >>接任务: |cFFFCDC00罗尔夫的下落|r
+    .turnin 37 >> Turn in Find the Lost Guards
+    .accept 45 >> Accept Discover Rolf's Fate
 step
-    .goto Elwynn Forest,81.4,66.1
-    .accept 5545 >>接任务: |cFFFCDC00木材危机|r
+    .goto Elwynn Forest,81.382,66.112
+.target Supervisor Raelen
+>>Talk to |cRXP_FRIENDLY_Supervisor Raelen|r
+    .accept 5545 >> Accept A Bundle of Trouble
 step
     .goto Elwynn Forest,83.3,66.1
-    .vendor >>供应商垃圾，修理
+    .vendor >> vendor trash, repair
 step
     #sticky
     #completewith Bundles
-    >>留心树下的一捆捆原木
+    >>Keep an eye out for the bundles of logs at the base of the trees
     .collect 13872,8 --Collect Bundle of Wood (x8)
 step
     #label Bundles
-    .goto Elwynn Forest,79.8,55.5,60 >>走向守卫的尸体
+    .goto Elwynn Forest,79.8,55.5,60 >> Go toward the guard's corpse
 step
     .goto Elwynn Forest,79.8,55.5
-    >>杀死尸体周围的暴徒。把两个暴徒拉到小屋前，走开，一边放羊一边杀掉另一个，然后杀掉羊群暴徒。掠夺地上的尸体
-    >>小心，因为这个任务可能很困难
-    .turnin 45 >>交任务: |cFF00FF25罗尔夫的下落|r
-    .accept 71 >>接任务: |cFFFCDC00回复托马斯|r
+    >> Kill mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away and sheep one whilst killing the other, then kill the sheeped mob. Loot the carcass on the ground
+    >> Be careful as this quest can be difficult
+    .turnin 45 >> Turn in Discover Rolf's Fate
+    .accept 71 >> Accept Report to Thomas
 step
     .goto Elwynn Forest,76.8,62.4,40,0
     .goto Elwynn Forest,83.7,59.4,40,0
@@ -385,19 +457,23 @@ step
     .goto Elwynn Forest,83.7,59.4,40,0
     .goto Elwynn Forest,76.8,62.4,40,0
     .goto Elwynn Forest,83.7,59.4,40,0
-    >>开始后退，完成包裹
+    >>Start running back, finish off the bundles
     .collect 13872,8 --Collect Bundle of Wood (x8)
 step
     #label Bundles2
-    .goto Elwynn Forest,81.4,66.1
-    .turnin 5545 >>交任务: |cFF00FF25木材危机|r
+    .goto Elwynn Forest,81.382,66.112
+.target Supervisor Raelen
+>>Talk to |cRXP_FRIENDLY_Supervisor Raelen|r
+    .turnin 5545 >> Turn in A Bundle of Trouble
 step
     #label Prowlers
-    .xp 9 >>升级到9
+    .xp 9 >> Grind to 9
 step
     #label Bears
-    .goto Elwynn Forest,79.5,68.8
-    .accept 83 >>接任务: |cFFFCDC00红色亚麻布|r
+    .goto Elwynn Forest,79.457,68.789
+.target Sara Timberlain
+>>Talk to |cRXP_FRIENDLY_Sara Timberlain|r
+    .accept 83 >> Accept Red Linen Goods
 step
     .goto Elwynn Forest,76.7,75.6,40,0
     .goto Elwynn Forest,79.7,83.7,40,0
@@ -405,21 +481,34 @@ step
     .goto Elwynn Forest,76.7,75.6,40,0
     .goto Elwynn Forest,79.7,83.7,40,0
     .goto Elwynn Forest,82.0,76.8,40,0
-    >>杀死最后一批暴徒保护边境
+    >>Kill the last mobs for Protect the Frontier
     .complete 52,1 --Kill Prowler (x8)
     .complete 52,2 --Kill Young Forest Bear (x5)
 step
-    .goto Elwynn Forest,74.0,72.2
-    .turnin 52 >>交任务: |cFF00FF25保卫边境|r
-    .turnin 71 >>交任务: |cFF00FF25回复托马斯|r
-    .accept 39 >>接任务: |cFFFCDC00托马斯的报告|r
-    .accept 109 >>接任务: |cFFFCDC00向格里安·斯托曼报到|r
+    .goto Elwynn Forest,73.973,72.179
+>>Talk to |cRXP_FRIENDLY_Guard Thomas|r
+    .turnin 52 >> Turn in Protect the Frontier
+    .turnin 71 >> Turn in Report to Thomas
+.target Guard Thomas
+    .accept 39 >> Accept Deliver Thomas' Report
+.target Deputy Rainer
+.target Marshal Haggard
+.target Marshal Dughan
+.target Farmer Furlbrow
+.target Farmer Saldean
+>>Talk to |cRXP_FRIENDLY_Farmer Saldean|r
+-->>Talk to |cRXP_FRIENDLY_Farmer Furlbrow|r
+-->>Talk to |cRXP_FRIENDLY_Marshal Dughan|r
+--
+-->>Talk to |cRXP_FRIENDLY_Marshal Haggard|r
+-->>Talk to |cRXP_FRIENDLY_Deputy Rainer|r
+    .accept 109 >> Accept Report to Gryan Stoutmantle
 step
     #sticky
     #completewith Princess
-    >>留意德菲亚斯(Defias)的《威斯特福尔契约》(lucky drop)
+    >>Keep an eye out for Westfall Deed from the Defias (lucky drop)
     .collect 1972,1,184 --Collect Westfall Deed (x1)
-    .accept 184 >>接任务: |cFFFCDC00法布隆的地契|r
+    .accept 184 >> Accept Furlbrow's Deed
 step
     .goto Elwynn Forest,70.5,77.6,60,0
     .goto Elwynn Forest,68.1,77.5,60,0
@@ -433,181 +522,233 @@ step
     .goto Elwynn Forest,68.1,77.5,60,0
     .goto Elwynn Forest,68.2,81.4,60,0
     .goto Elwynn Forest,70.8,80.9,60,0
-    >>开始围着农场转，杀掉德菲亚斯，然后掠夺他们的头巾
+    >>Start circling the farm, killing Defias and looting them for Bandanas
     .complete 83,1 --Collect Red Linen Bandana (x6)
+    .isOnQuest 83
 step
     #label Princess
     .goto Elwynn Forest,69.4,79.2
-    >>杀死公主。如果需要的话，使用之前的小治疗药剂。抢走她的衣领
-    >>你也可以在农场边缘的篱笆之间来回跳跃，杀死公主和她的守卫
+    >>Kill Princess. Use a Lesser Heal Potion from before if needed. Loot her for the Collar
+    >>You can also jump back and forth between the fences on the edge of the farm to kill Princess and her guards
     .complete 88,1 --Collect Brass Collar (x1)
 --N link
 step
     #softcore
     #sticky
     #completewith next
-    .goto Elwynn Forest,83.6,69.7,120 >>如果你的生命值低，在精神治疗者处死亡并重生，否则只需跑回并处理
+    .goto Elwynn Forest,83.6,69.7,120 >>Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
 step
     .goto Elwynn Forest,79.5,68.9
-    .turnin 83 >>交任务: |cFF00FF25红色亚麻布|r
+.target Sara Timberlain
+>>Talk to |cRXP_FRIENDLY_Sara Timberlain|r
+    .turnin 83 >> Turn in Red Linen Goods
+    .isQuestComplete 83
 step
     .goto Redridge Mountains,7.87,73.85
-    .zone Redridge Mountains >>前往: |cFFDB2EEF赤脊山|r
+    .zone Redridge Mountains >>Grind en route to Redridge
 step
     #softcore
     #sticky
     #completewith next
-    +死在这里的暴徒面前
+    +Die to the mobs here
     .goto Redridge Mountains,11.2,78.4
 step
     #softcore
-    >>在精神治疗者处重生
-    .goto Redridge Mountains,20.8,56.6,100 >>在精神治疗者处重生
+    >>Respawn at the Spirit Healer
+    .goto Redridge Mountains,20.8,56.6,100 >>Respawn at the Spirit Healer
 step
     #softcore
     .goto Redridge Mountains,30.6,59.4
-    .fp Redridge Mountains >>获得Redridge Mountains飞行路线
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
 step
     #hardcore
-    >>朝飞行路线跑去。要格外小心，不要在途中对任何暴徒进行攻击或死亡。试着紧贴道路，保持警惕
+    >>Run toward the Flight Path. Be exceedingly careful to not aggro or die to any mobs en route. Try sticking to the road and keeping an eye out
     .goto Redridge Mountains,30.6,59.4
-    .fp Redridge Mountains >>获得Redridge Mountains飞行路线
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
 step
-    .hs >>赫斯到戈德郡
+    .hs >> Hearth to Goldshire
 step
-    .goto Elwynn Forest,43.3,65.7
-    >>不要等待他的rp活动
-    .turnin 112 >>交任务: |cFF00FF25收集海藻|r
+    .goto Elwynn Forest,43.283,65.721
+    >>Don't wait for his rp event
+.target William Pestle
+>>Talk to |cRXP_FRIENDLY_William Pestle|r
+    .turnin 112 >> Turn in Collecting Kelp
 step
     .goto Elwynn Forest,42.2,65.8
-    .turnin 39 >>交任务: |cFF00FF25托马斯的报告|r
-    .turnin 76 >>交任务: |cFF00FF25玉石矿洞|r
-    .accept 239 >>接任务: |cFFFCDC00西泉要塞|r
+>>Talk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 39 >> Turn in Deliver Thomas' Report
+    .turnin 76 >> Turn in The Jasperlode Mine
+.target Marshal Dughan
+    .accept 239 >> Accept Westbrook Garrison Needs Help!
 step
-    .goto Elwynn Forest,41.7,65.5
-    .accept 1097 >>接任务: |cFFFCDC00艾尔默的任务|r
+    .goto Elwynn Forest,41.706,65.544
+.target Smith Argus
+.target Verner Osgood
+>>Talk to |cRXP_FRIENDLY_Verner Osgood|r
+-->>Talk to |cRXP_FRIENDLY_Smith Argus|r
+    .accept 1097 >> Accept Elmore's Task
 step
     .goto Elwynn Forest,41.7,65.9
-    .vendor >>供应商垃圾，修理
+    .vendor >>vendor trash, repair
 step
-    .goto Elwynn Forest,43.3,65.7
-    .accept 114 >>接任务: |cFFFCDC00梅贝尔的隐形水|r
+    .goto Elwynn Forest,43.283,65.721
+.target William Pestle
+>>Talk to |cRXP_FRIENDLY_William Pestle|r
+    .accept 114 >> Accept The Escape
 step
-    >>跑出客栈往南走
+    >>Run out of the inn and go south
     .goto Elwynn Forest,43.2,89.6
-    .turnin 114 >>交任务: |cFF00FF25梅贝尔的隐形水|r
+.target Maybell Maclure
+>>Talk to |cRXP_FRIENDLY_Maybell Maclure|r
+    .turnin 114 >> Turn in The Escape
 step
-    .goto Elwynn Forest,34.7,84.5
-    .turnin 88 >>交任务: |cFF00FF25公主必须死！|r
+    .goto Elwynn Forest,34.660,84.482
+.target Ma Stonefield
+>>Talk to |cRXP_FRIENDLY_Ma Stonefield|r
+    .turnin 88 >> Turn in Princess Must Die!
 step
     .goto Elwynn Forest,24.2,74.5
-    .turnin 239 >>交任务: |cFF00FF25西泉要塞|r
+.target Deputy Rainer
+>>Talk to |cRXP_FRIENDLY_Deputy Rainer|r
+    .turnin 239 >> Turn in Westbrook Garrison Needs Help!
 step
     .isOnQuest 184
     .goto Westfall,60.0,19.4
-    .turnin 184 >>交任务: |cFF00FF25法布隆的地契|r
+.target Farmer Furlbrow
+>>Talk to |cRXP_FRIENDLY_Farmer Furlbrow|r
+    .turnin 184 >> Turn in Furlbrow's Deed
 step
-    .goto Westfall,59.9,19.4
-    .accept 36 >>接任务: |cFFFCDC00杂味炖肉|r
+    .goto Westfall,59.918,19.416
+.target Verna Furlbrow
+>>Talk to |cRXP_FRIENDLY_Verna Furlbrow|r
+    .accept 36 >> Accept Westfall Stew
 step
-    .goto Westfall,56.4,30.5
-    .turnin 36 >>交任务: |cFF00FF25杂味炖肉|r
+    .goto Westfall,56.416,30.519
+.target Salma Saldean
+>>Talk to |cRXP_FRIENDLY_Salma Saldean|r
+    .turnin 36 >> Turn in Westfall Stew
 step
     #softcore
     #sticky
     #completewith next
-    .goto Westfall,51.7,49.4,150 >>在精神疗愈者处死亡并重生，或跑到哨兵山
+    .goto Westfall,51.7,49.4,150 >> Die and respawn at the Spirit Healer, or run to Sentinel Hill
 step
-    .goto Westfall,56.3,47.5
-    .turnin 109 >>交任务: |cFF00FF25向格里安·斯托曼报到|r
+    .goto Westfall,56.327,47.520
+.target Gryan Stoutmantle
+>>Talk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 109 >> Turn in Report to Gryan Stoutmantle
 step
-    .goto Westfall,57.0,47.2
-    .vendor >>供应商垃圾
-    .accept 6181 >>接任务: |cFFFCDC00快递消息|r
+    .goto Westfall,57.002,47.169
+    .vendor >>vendor trash
+.target Quartermaster Lewis
+>>Talk to |cRXP_FRIENDLY_Quartermaster Lewis|r
+    .accept 6181 >> Accept A Swift Message
 step
     #phase 3-6
-    .goto Westfall,56.4,30.5
-    .xp 11+3750>>提升经验到3750+/8800xp
+    .goto Westfall,56.416,30.519
+    .xp 11+3750 >> Grind to 3750+/8800xp
 step
     .goto Westfall,56.6,52.6
-    .fp Sentinel Hill >>获取哨兵山飞行路线
-    .turnin 6181 >>交任务: |cFF00FF25快递消息|r
-    .accept 6281 >>接任务: |cFFFCDC00赶赴暴风城|r
-    .fly Stormwind >>飞到暴风城
+    .fp Sentinel Hill >> Get the Sentinel Hill flight path
+>>Talk to |cRXP_FRIENDLY_Thor|r
+    .turnin 6181 >> Turn in A Swift Message
+.target Thor
+    .accept 6281 >> Accept Continue To Stormwind
+    .fly Stormwind >> Fly to Stormwind
 step
     .goto StormwindClassic,56.2,64.6
-    >>选择火箭。这些有很好的伤害，可以用来劈开
-    .turnin 61 >>交任务: |cFF00FF25送往暴风城的货物|r
+    >>Choose rockets. These have very good damage, and can be used for splitpulling
+.target Morgan Pestle
+>>Talk to |cRXP_FRIENDLY_Morgan Pestle|r
+    .turnin 61 >> Turn in Shipment to Stormwind
 step
     #era/som
     .goto StormwindClassic,57.1,57.7
-    .trainer >>训练1h剑
+    .trainer >> Train 1h Swords
 step
     .goto StormwindClassic,74.3,47.2
-    .turnin 6281 >>交任务: |cFF00FF25赶赴暴风城|r
-    >>供应商和维修
+.target Osric Strang
+>>Talk to |cRXP_FRIENDLY_Osric Strang|r
+    .turnin 6281 >> Turn in Continue to Stormwind
+    >>Vendor and Repair
 step
     #completewith next
     .goto StormwindClassic,51.8,12.1
-    .turnin 1097 >>交任务: |cFF00FF25艾尔默的任务|r
+.target Grimand Elmore
+>>Talk to |cRXP_FRIENDLY_Grimand Elmore|r
+    .turnin 1097 >> Turn in Elmore's Task
 step
     .goto StormwindClassic,51.8,12.1
-    .accept 353 >>接任务: |cFFFCDC00雷矛的包裹|r
+.target Grimand Elmore
+>>Talk to |cRXP_FRIENDLY_Grimand Elmore|r
+    .accept 353 >> Accept Stormpike's Delivery
 step
     #sticky
     #completewith next
-    .goto StormwindClassic,63.9,8.3,20 >>进入Deeprun Tram
+    .goto StormwindClassic,63.9,8.3,20 >>Enter the Deeprun Tram
 step
-    >>有轨电车到了就乘，到了另一边就下车
-    .accept 6661 >>接任务: |cFFFCDC00捕捉矿道老鼠|r
+    >>Take the tram when it arrives, then get off when it arrives on the other side
+.target Monty
+>>Talk to |cRXP_FRIENDLY_Monty|r
+    .accept 6661 >> Accept Deeprun Rat Roundup
 step
-    >>用你的长笛对付四处散落的老鼠
+    >>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
 step
-    .turnin 6661 >>交任务: |cFF00FF25捕捉矿道老鼠|r
+.target Monty
+>>Talk to |cRXP_FRIENDLY_Monty|r
+    .turnin 6661 >> Turn in Deeprun Rat Roundup
 step
-    .goto Ironforge,77.0,51.0,30 >>前往: |cFFDB2EEF铁炉堡|r
+    .goto Ironforge,77.0,51.0,30 >>Enter Ironforge
 step
-    .goto Ironforge,55.5,47.7
-    .fp Ironforge >>获得铁炉堡飞行路线
+    .goto Ironforge,55.501,47.742
+    .fp Ironforge >> Get the Ironforge flight path
 step
     #phase 3-6
     .goto Ironforge,27.17,8.57
-     .trainer >>训练你的职业技能
+     .trainer >> Train your class spells
 step
     #sticky
     #completewith next
-    .goto Dun Morogh,53.5,34.9,100 >>冲出铁炉堡
+    .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
 step
     .goto Dun Morogh,60.1,52.6,50,0
     .goto Dun Morogh,63.1,49.8
-    .accept 314 >>接任务: |cFFFCDC00保护牲畜|r
+.target Rudra Amberstill
+>>Talk to |cRXP_FRIENDLY_Rudra Amberstill|r
+    .accept 314 >> Accept Protecting the Herd
 step
     #sticky
     #completewith next
     .goto Dun Morogh,62.3,50.3,14,0
-    .goto Dun Morogh,62.2,49.4,12 >>跑上山的这一部分
+    .goto Dun Morogh,62.2,49.4,12 >> Run up this part of the mountain
 step
-    >>杀死瓦加什。抢他的牙
-    >>把他引到牧场南边的守卫那里。确保你对他造成51%+的伤害
-    >>小心，因为这个任务可能很困难
+    >>Kill Vagash. Loot him for his Fang
+    >>Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him
+    >>Be careful as this quest can be difficult
     .goto Dun Morogh,62.6,46.1
     .goto Dun Morogh,62.78,54.60,0
     .complete 314,1 --Collect Fang of Vagash (1)
 --N add video tutorial
 step
     .goto Dun Morogh,63.1,49.8
-    .turnin 314 >>交任务: |cFF00FF25保护牲畜|r
+.target Rudra Amberstill
+>>Talk to |cRXP_FRIENDLY_Rudra Amberstill|r
+    .turnin 314 >> Turn in Protecting the Herd
 step
-    >>途中磨碎一点
+    >>Grind a little en route
     .goto Dun Morogh,68.6,54.7
-    .vendor >>供应商，购买食物+水
+    .vendor >>Vendor, buy food+water
 step
     .goto Dun Morogh,68.7,56.0
-    .accept 433 >>接任务: |cFFFCDC00公众之仆|r
+.target Senator Mehr Stonehallow
+>>Talk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
+    .accept 433 >> Accept The Public Servant
 step
-    .goto Dun Morogh,69.1,56.3
-    .accept 432 >>接任务: |cFFFCDC00该死的石腭怪！|r
+    .goto Dun Morogh,69.084,56.330
+.target Foreman Stonebrow
+>>Talk to |cRXP_FRIENDLY_Foreman Stonebrow|r
+    .accept 432 >> Accept Those Blasted Troggs!
 step
     .goto Dun Morogh,70.6,56.6,30,0
     .goto Dun Morogh,70.8,53.3,30,0
@@ -617,108 +758,124 @@ step
     .goto Dun Morogh,70.8,53.3,30,0
     .goto Dun Morogh,71.9,50.7,30,0
     .goto Dun Morogh,72.9,53.1,30,0
-    >>在山洞里杀死Troggs
+    >>Kill Troggs in the cave
     .complete 432,1 --Kill Rockjaw Skullthumper (6)
     .complete 433,1 --Kill Rockjaw Bonesnapper (10)
 step
     #era/som
-    .xp 10+6350>>提升经验到6350+/7600
+    .xp 10+6350 >>Grind until 6350+/7600
 step
-    .goto Dun Morogh,69.1,56.3
-    .turnin 432 >>交任务: |cFF00FF25该死的石腭怪！|r
+    .goto Dun Morogh,69.084,56.330
+.target Foreman Stonebrow
+>>Talk to |cRXP_FRIENDLY_Foreman Stonebrow|r
+    .turnin 432 >> Turn in Those Blasted Troggs!
 step
     #completewith next
     .goto Dun Morogh,68.9,55.9
-    .vendor >>供应商垃圾，修理
+    .vendor >> vendor trash, repair
 step
     .goto Dun Morogh,68.7,56.0
-    .turnin 433 >>交任务: |cFF00FF25公众之仆|r
+.target Senator Mehr Stonehallow
+>>Talk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
+    .turnin 433 >> Turn in The Public Servant
 step
-    #era/som
+    #era/som--xpgate
     .xp 11
 step
     .goto Dun Morogh,68.6,54.7
-    .vendor >>小贩垃圾，从喀山购买x30 5级饮料
-    .trainer >>Ghilm的火车烹饪。你需要这个来接2个额外任务
+    .vendor >>vendor trash, buy x30 level 5 drink from Kazan
+    .trainer >> Train Cooking from Ghilm. You'll need this to pick up 2 extra quests later
 step
-    .goto Dun Morogh,83.9,39.2
-    .accept 419 >>接任务: |cFFFCDC00失踪的驾驶员|r
+    .goto Dun Morogh,83.892,39.188
+.target Pilot Hammerfoot
+>>Talk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
+    .accept 419 >> Accept The Lost Pilot
 step
     .goto Dun Morogh,79.7,36.2
-    .turnin 419 >>交任务: |cFF00FF25失踪的驾驶员|r
-    .accept 417 >>接任务: |cFFFCDC00驾驶员的复仇|r
+    .turnin 419 >> Turn in The Lost Pilot
+    .accept 417 >> Accept A Pilot's Revenge
 step
-    >>杀死芒格克劳。抢走他的爪子
+    >>Kill Mangeclaw. Loot him for his Claw
     .goto Dun Morogh,80.0,36.4
     .complete 417,1 --Collect Mangy Claw (x1)
 step
-    .goto Dun Morogh,83.9,39.2
-    .turnin 417 >>交任务: |cFF00FF25驾驶员的复仇|r
+    .goto Dun Morogh,83.892,39.188
+.target Pilot Hammerfoot
+>>Talk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
+    .turnin 417 >> Turn in A Pilot's Revenge
 step
-    .goto Dun Morogh,84.4,31.1,25 >>穿过隧道去莫丹湖
+    .goto Dun Morogh,84.4,31.1,25 >>Go through the tunnel to Loch Modan
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Gnome Mage
-#name 1-10 丹莫罗 法师 AoE
+#name 1-10 Dun Morogh Mage AoE
 #version 1
-#group RestedXP 联盟 法师
+#group RestedXP Alliance Mage
 #defaultfor Dwarf/Gnome
-#next 10-12 洛克莫丹 法师 AoE
+#next 10-12 Loch Modan Mage AoE
 step
     #era/som
     #sticky
     #completewith next
-    .goto Dun Morogh,29.9,71.2
-    +你选择了一个为侏儒和侏儒准备的向导。你应该选择与你开始时相同的起始区域 << Human
-    +请注意，您已经选择了AoE指南。AoE通常比单目标法师困难得多，但速度快得多
+    .goto Dun Morogh,29.927,71.201
+    +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in << Human
+    +Note that you have selected the AoE guide. AoE is typically a lot harder than single target mage, but a LOT faster
 step
     #phase 3-6
     #sticky
     #completewith next
-    .goto Dun Morogh,29.9,71.2
-    +你选择了一个为侏儒和侏儒准备的向导。你应该选择与你开始时相同的起始区域 << Human
-    +请注意，您已经选择了AoE指南。AoE通常比单目标法师困难得多，但随着最近100%任务xp的变化，速度也变慢了
+    .goto Dun Morogh,29.927,71.201
+    +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in << Human
+    +Note that you have selected the AoE guide. AoE is typically a lot harder than single target mage, but with the recent 100% quest xp changes, is also slower
 step
-    >>删除您的炉石
-    .goto Dun Morogh,29.9,71.2
-    .accept 179 >>接任务: |cFFFCDC00矮人的交易|r
+    >>Delete your Hearthstone
+    .goto Dun Morogh,29.927,71.201
+.target Sten Stoutarm
+>>Talk to |cRXP_FRIENDLY_Sten Stoutarm|r
+    .accept 179 >> Accept Dwarven Outfitters
 step
-    >>杀死狼。抢他们的肉
+    >>Kill Wolves. Loot them for Meat
     .goto Dun Morogh,28.7,74.8
     .complete 179,1 --Collect Tough Wolf Meat (x8)
 step
-    .xp 2 >>升级到2
+    .xp 2 >> Grind to 2
 step
     .goto Dun Morogh,30.0,71.5
-    >>供应商垃圾箱。购买15杯水。如果你没有足够的钱，就多磨几只狼
+    >>vendor trash. Buy 15 Water. Grind extra wolves if you don't have enough money
     .collect 159,15 --Collect Refreshing Spring Water (x15)
 step
-    .goto Dun Morogh,29.9,71.2
-    .turnin 179 >>交任务: |cFF00FF25矮人的交易|r
-    .accept 233 >>接任务: |cFFFCDC00寒脊山谷的送信任务|r
-    .accept 3114 >>接任务: |cFFFCDC00雕文备忘录|r
+    .goto Dun Morogh,29.927,71.201
+>>Talk to |cRXP_FRIENDLY_Sten Stoutarm|r
+    .turnin 179 >> Turn in Dwarven Outfitters
+.target Sten Stoutarm
+    .accept 233 >> Accept Coldridge Valley Mail Delivery
+    .accept 3114 >> Accept Glyphic Memorandum
 step
     .goto Dun Morogh,29.7,71.2
-    .accept 170 >>接任务: |cFFFCDC00新的威胁|r
+.target Balir Frosthammer
+>>Talk to |cRXP_FRIENDLY_Balir Frosthammer|r
+    .accept 170 >> Accept A New Threat
 step
     #sticky
     #completewith Rockjaw
-    >>杀死你看到的普通岩颚巨魔
+    >>Kill Normal Rockjaw Troggs that you see
     .complete 170,1 --Kill Rockjaw Trogg (x6)
 step
     .goto Dun Morogh,26.9,72.7,30,0
     .goto Dun Morogh,25.1,72.1,30,0
     .goto Dun Morogh,26.9,72.7,30,0
     .goto Dun Morogh,25.1,72.1,30,0
-    >>杀死Burly Rockjaw Troggs
+    >>Kill Burly Rockjaw Troggs
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
 step
-    .goto Dun Morogh,22.6,71.4
-    .turnin 233 >>交任务: |cFF00FF25寒脊山谷的送信任务|r
-    .accept 183 >>接任务: |cFFFCDC00猎杀野猪|r
-    .accept 234 >>接任务: |cFFFCDC00寒脊山谷的送信任务|r
+    .goto Dun Morogh,22.601,71.433
+>>Talk to |cRXP_FRIENDLY_Talin Keeneye|r
+    .turnin 233 >> Turn in Coldridge Valley Mail Delivery
+.target Talin Keeneye
+    .accept 183 >> Accept The Boar Hunter
+    .accept 234 >> Accept Coldridge Valley Mail Delivery
 step
     .goto Dun Morogh,22.2,72.5,40,0
     .goto Dun Morogh,20.5,71.4,40,0
@@ -728,13 +885,15 @@ step
     .goto Dun Morogh,20.5,71.4,40,0
     .goto Dun Morogh,21.1,69.0,40,0
     .goto Dun Morogh,22.8,69.6,40,0
-    >>杀死该地区的野猪
+    >>Kill Boars in the area
     .complete 183,1 --Kill Small Crag Boar (x12)
 step
-    .goto Dun Morogh,22.6,71.4
-    .turnin 183 >>交任务: |cFF00FF25猎杀野猪|r
+    .goto Dun Morogh,22.601,71.433
+.target Talin Keeneye
+>>Talk to |cRXP_FRIENDLY_Talin Keeneye|r
+    .turnin 183 >> Turn in The Boar Hunter
 step
-    .xp 3+860>>提升经验到860+/1400经验
+    .xp 3+860 >> Grind to 860+/1400xp
     .goto Dun Morogh,23.0,75.0,40,0
     .goto Dun Morogh,24.2,72.5,40,0
     .goto Dun Morogh,27.7,76.3,40,0
@@ -743,42 +902,56 @@ step
     .goto Dun Morogh,27.7,76.3,40,0
 step
     #label Rockjaw
-    .goto Dun Morogh,25.1,75.7
-    .turnin 234 >>交任务: |cFF00FF25寒脊山谷的送信任务|r
-    .accept 182 >>接任务: |cFFFCDC00巨魔洞穴|r
+    .goto Dun Morogh,25.076,75.713
+>>Talk to |cRXP_FRIENDLY_Grelin Whitebeard|r
+    .turnin 234 >> Turn in Coldridge Valley Mail Delivery
+.target Grelin Whitebeard
+    .accept 182 >> Accept The Troll Cave
 step
     .goto Dun Morogh,25.0,76.0
-    .accept 3364 >>接任务: |cFFFCDC00热酒快递|r
-    >>一旦接受，将启动5分钟计时器。放松并遵循指南
+.target Nori Pridedrift
+>>Talk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
+    >> Once accepted, a 5 minute timer will start. Relax and follow the guide
 step
     .goto Dun Morogh,28.7,77.5
-    >>如果你现在还没有处理完Troggs，就上去杀了他们
+    >>Go up here and kill Troggs if you're not done with them by now
     .complete 170,1 --Kill Rockjaw Trogg (x6)
 step
     #sticky
     #completewith Scalding1
-    >>如果你速度太慢，无法完成定时任务，请再去捡一次
+    >>If you were too slow and failed the timed quest, go and pick it up again
     .goto Dun Morogh,25.0,76.0,0
-    .accept 3364 >>接任务: |cFFFCDC00热酒快递|r
+.target Nori Pridedrift
+>>Talk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
     .goto Dun Morogh,28.8,66.4
-    .turnin 3364 >>交任务: |cFF00FF25热酒快递|r
+.target Durnan Furcutter
+>>Talk to |cRXP_FRIENDLY_Durnan Furcutter|r
+    .turnin 3364 >> Turn in Scalding Mornbrew Delivery
 step
     #label Scalding1
     .goto Dun Morogh,28.8,66.4
-    .turnin 3364 >>交任务: |cFF00FF25热酒快递|r
-    .accept 3365 >>接任务: |cFFFCDC00归还酒杯|r
-    .vendor >>供应商垃圾
+>>Talk to |cRXP_FRIENDLY_Durnan Furcutter|r
+    .turnin 3364 >> Turn in Scalding Mornbrew Delivery
+.target Durnan Furcutter
+    .accept 3365 >> Accept Bring Back the Mug
+    .vendor >> vendor trash
 step
-    .goto Dun Morogh,28.7,66.4
-    .turnin 3114 >>交任务: |cFF00FF25雕文备忘录|r
-    .trainer >>训练你的职业技能
+    .goto Dun Morogh,28.709,66.366
+.target Marryk Nurribit
+>>Talk to |cRXP_FRIENDLY_Marryk Nurribit|r
+    .turnin 3114 >> Turn in Glyphic Memorandum
+    .trainer >> Train your class spells
 step
-    >>跑出沙坑
+    >>Run back out the bunker
     .goto Dun Morogh,29.7,71.2
-    .turnin 170 >>交任务: |cFF00FF25新的威胁|r
+.target Balir Frosthammer
+>>Talk to |cRXP_FRIENDLY_Balir Frosthammer|r
+    .turnin 170 >> Turn in A New Threat
 step
     .goto Dun Morogh,30.0,71.5
-    .vendor >>供应商，购买10水
+    .vendor >>Vendor, buy 10 water
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step
     .goto Dun Morogh,26.3,79.2,30,0
@@ -788,100 +961,126 @@ step
     .goto Dun Morogh,20.9,75.7,30,0
     .goto Dun Morogh,22.7,79.3,30,0
     .goto Dun Morogh,20.9,75.7,30,0
-    >>杀死霜鬃巨魔幼崽
+    >>Kill Frostmane Troll Whelps
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
 step
     #sticky
     #label Mug
     .goto Dun Morogh,25.0,76.0
-    .turnin 3365 >>交任务: |cFF00FF25归还酒杯|r
+.target Nori Pridedrift
+>>Talk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    .turnin 3365 >> Turn in Bring Back the Mug
 step
-    .goto Dun Morogh,25.1,75.7
-    .turnin 182 >>交任务: |cFF00FF25巨魔洞穴|r
-    .accept 218 >>接任务: |cFFFCDC00被窃取的日记|r
+    .goto Dun Morogh,25.076,75.713
+>>Talk to |cRXP_FRIENDLY_Grelin Whitebeard|r
+    .turnin 182 >> Turn in The Troll Cave
+.target Grelin Whitebeard
+    .accept 218 >> Accept The Stolen Journal
 step
     #requires Mug
     .goto Dun Morogh,26.8,79.9,30,0
     .goto Dun Morogh,29.0,79.0,15,0
     .goto Dun Morogh,30.6,80.3
-    >>进入巨魔洞穴。杀了格里克尼尔，然后把他抢走作为格雷林的日记
+    >>Enter the Troll cave. Kill Grik'nir, then loot him for Grelin's journal
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
 step
-    >>磨碎一点回到这里
+    >>Grind a bit back to here
     .goto Dun Morogh,25.1,75.8
-    .turnin 218 >>交任务: |cFF00FF25被窃取的日记|r
-    .accept 282 >>接任务: |cFFFCDC00森内尔的观察站|r
+>>Talk to |cRXP_FRIENDLY_Grelin Whitebeard|r
+    .turnin 218 >> Turn in The Stolen Journal
+.target Grelin Whitebeard
+    .accept 282 >> Accept Senir's Observations
 step
-    >>把一些暴徒赶到这里
-    .goto Dun Morogh,33.5,71.8
-    .turnin 282 >>交任务: |cFF00FF25森内尔的观察站|r
-    .accept 420 >>接任务: |cFFFCDC00森内尔的观察站|r
+    >> Grind some mobs up to here
+    .goto Dun Morogh,33.484,71.841
+>>Talk to |cRXP_FRIENDLY_Mountaineer Thalos|r
+    .turnin 282 >> Turn in Senir's Observations
+.target Mountaineer Thalos
+    .accept 420 >> Accept Senir's Observations
 step
     .goto Dun Morogh,33.9,72.2
-    .accept 2160 >>接任务: |cFFFCDC00塔诺克的补给品|r
+.target Hands Springsprocket
+>>Talk to |cRXP_FRIENDLY_Hands Springsprocket|r
+    .accept 2160 >> Accept Supplies to Tannok
 step
     .goto Dun Morogh,34.1,71.6,20,0
-    .goto Dun Morogh,35.7,66.0,20 >>穿过隧道
+    .goto Dun Morogh,35.7,66.0,20 >>Go through the tunnel
 step
     #sticky
     #completewith BoarMeat44
-    >>杀死野猪，获得4块野猪肉供日后食用
+    >> Kill boars to get 4 Boar Meat for later
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
 step
     #sticky
     #completewith Ribs
-    >>杀死野猪以获得6根野猪肋骨供日后使用
+    >> Kill boars to get 6 Boar Ribs for later
     .collect 2886,6 --Collect Crag Boar Rib (x6)
 step
-    >>将野猪磨碎，东北至哈拉诺斯
+    >>grind boars north-east to Kharanos
     .goto Dun Morogh,36.4,62.9,45,0
     .goto Dun Morogh,37.7,60.5,45,0
     .goto Dun Morogh,43.9,55.7
-    .xp 5+2415>>提升经验到2415/+2800xp
+    .xp 5+2415 >> Grind to 2415/+2800xp
 step
     #softcore
-    .goto Dun Morogh,47.0,55.1,120 >>在精神疗愈者处死亡并重生，或者跑向哈拉诺斯。确保你的分区不是Coldridge Pass
+    .goto Dun Morogh,47.0,55.1,120 >> Die and respawn at the Spirit Healer, or run to Kharanos. Make sure your subzone is NOT Coldridge Pass
 step
-    .goto Dun Morogh,46.7,53.8
-    .turnin 420 >>交任务: |cFF00FF25森内尔的观察站|r
+    .goto Dun Morogh,46.726,53.826
+.target Senir Whitebeard
+>>Talk to |cRXP_FRIENDLY_Senir Whitebeard|r
+    .turnin 420 >> Turn in Senir's Observations
 step
     #completewith next
     .goto Dun Morogh,46.7,53.5
-    .vendor >>供应商垃圾
+    .vendor >>vendor trash
 step
     .goto Dun Morogh,46.8,52.4
-    .accept 384 >>接任务: |cFFFCDC00啤酒烤猪排|r
+.target Ragnar Thunderbrew
+>>Talk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r
+    .accept 384 >> Accept Beer Basted Boar Ribs
 step
     .goto Dun Morogh,48.3,57.0
-    .xp 6 >>升级到6
+    .xp 6 >> Grind to 6
 step
-    .goto Dun Morogh,47.2,52.2
-    .turnin 2160 >>交任务: |cFF00FF25塔诺克的补给品|r
+    .goto Dun Morogh,47.217,52.195
+.target Tannok Frosthammer
+>>Talk to |cRXP_FRIENDLY_Tannok Frosthammer|r
+    .turnin 2160 >> Turn in Supplies to Tannok
 step
-    >>楼上的
+    >>Upstairs
     .goto Dun Morogh,47.5,52.1
-    .trainer >>训练你的职业技能
+    .trainer >> Train your class spells
 step
     .goto Dun Morogh,47.4,52.5
-    .home >>将您的炉石设置为Thunderbrew酒厂
-    .vendor >>尽可能多地购买5级饮料
+    .home >> Set your Hearthstone to Thunderbrew Distillery
+    .vendor >> Buy as much level 5 drink as you can afford
 step
-    .goto Dun Morogh,46.0,51.7
-    .accept 400 >>接任务: |cFFFCDC00贝尔丁的工具|r
+    .goto Dun Morogh,46.021,51.676
+.target Tharek Blackstone
+>>Talk to |cRXP_FRIENDLY_Tharek Blackstone|r
+    .accept 400 >> Accept Tools for Steelgrill
 step
-    .goto Dun Morogh,49.4,48.4
-    >>不要在途中杀死熊
-    .accept 317 >>接任务: |cFFFCDC00贝尔丁的补给|r
+    .goto Dun Morogh,49.426,48.410
+    >>DON'T kill bears en route
+.target Pilot Bellowfiz
+>>Talk to |cRXP_FRIENDLY_Pilot Bellowfiz|r
+    .accept 317 >> Accept Stocking Jetsteam
 step
-    .goto Dun Morogh,49.6,48.6
-    .accept 313 >>接任务: |cFFFCDC00灰色洞穴|r
+    .goto Dun Morogh,49.622,48.612
+.target Pilot Stonegear
+>>Talk to |cRXP_FRIENDLY_Pilot Stonegear|r
+    .accept 313 >> Accept The Grizzled Den
 step
     .goto Dun Morogh,50.4,49.1
-    .turnin 400 >>交任务: |cFF00FF25贝尔丁的工具|r
+.target Beldin Steelgrill
+>>Talk to |cRXP_FRIENDLY_Beldin Steelgrill|r
+    .turnin 400 >> Turn in Tools for Steelgrill
 step
     #label BoarMeat44
-    .goto Dun Morogh,50.1,49.4
-    .accept 5541 >>接任务: |cFFFCDC00海格纳的弹药|r
+    .goto Dun Morogh,50.084,49.420
+.target Loslor Rudge
+>>Talk to |cRXP_FRIENDLY_Loslor Rudge|r
+    .accept 5541 >> Accept Ammo for Rumbleshot
 step
     .goto Dun Morogh,52.0,50.1,40,0
     .goto Dun Morogh,51.5,53.9,40,0
@@ -911,19 +1110,21 @@ step
     .goto Dun Morogh,48.0,49.5,40,0
     .goto Dun Morogh,48.2,46.9,40,0
     .goto Dun Morogh,43.5,52.5,40,0
-    >>获取Jetsteam库存物品
+    >>Get the items for Stocking Jetsteam
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
     .complete 317,2 --Collect Thick Bear Fur (x2)
 step
-    .goto Dun Morogh,49.4,48.4
-    .turnin 317 >>交任务: |cFF00FF25贝尔丁的补给|r
-    .accept 318 >>接任务: |cFFFCDC00艾沃沙酒|r
+    .goto Dun Morogh,49.426,48.410
+>>Talk to |cRXP_FRIENDLY_Pilot Bellowfiz|r
+    .turnin 317 >> Turn in Stocking Jetsteam
+.target Pilot Bellowfiz
+    .accept 318 >> Accept Evershine
 step
-    >>回客栈去
+    >>Go back to the Inn
     .goto Dun Morogh,46.9,52.1,20,0
     .goto Dun Morogh,47.4,52.5
-    .vendor >>尽可能多地购买5级饮料
-    >>如果你想的话，你可以在客栈外面买一把剥皮刀，在你获得+属性武器之前，它比棍子更好
+    .vendor >> Buy as much level 5 drink as you can afford
+    >>You can buy a Skinning Knife outside the inn if you want, it's better than a staff until you get a +stats weapon
 step
     .goto Dun Morogh,42.5,54.8,40,0
     .goto Dun Morogh,42.4,52.2,40,0
@@ -937,39 +1138,47 @@ step
     .goto Dun Morogh,42.5,54.8,40,0
     .goto Dun Morogh,42.4,52.2,40,0
     .goto Dun Morogh,41.0,49.4,40,0
-    >>到洞里去。杀死Wendigos。掠夺他们的鬃毛
+    >> Go into the cave. Kill Wendigos. Loot them for their Manes
     .complete 313,1 --Collect Wendigo Mane (x8)
 step
-    >>掠夺板条箱
+    >>Loot the crate
     .goto Dun Morogh,44.1,56.9
     .complete 5541,1 --Collect Rumbleshot's Ammo (x1)
 step
     #label BearFur
     .goto Dun Morogh,40.6,62.6,30,0
-    .goto Dun Morogh,40.7,65.1
-    .turnin 5541 >>交任务: |cFF00FF25海格纳的弹药|r
-    .vendor >>供应商和维修
+    .goto Dun Morogh,40.682,65.130
+.target Hegnar Rumbleshot
+>>Talk to |cRXP_FRIENDLY_Hegnar Rumbleshot|r
+    .turnin 5541 >> Turn in Ammo for Rumbleshot
+    .vendor >> Vendor and repair
 step
-    .xp 7 >>升级到7
+    .xp 7 >> Grind to 7
 step
-    >>在途中碾碎一些暴徒
+    >>Grind some mobs en route
     .goto Dun Morogh,35.2,56.4,50,0
     .goto Dun Morogh,36.0,52.0,50,0
     .goto Dun Morogh,34.6,51.7
-    .accept 312 >>接任务: |cFFFCDC00马克格拉恩的干肉|r
+.target Tundra MacGrann
+>>Talk to |cRXP_FRIENDLY_Tundra MacGrann|r
+    .accept 312 >> Accept Tundra MacGrann's Stolen Stash
 step
     .goto Dun Morogh,30.5,46.0
-    .vendor >>小贩购买最多20杯5级饮料
+    .vendor >> Vendor. Buy up to 20 level 5 drink
 step
     #sticky
     #label Evershine
     .goto Dun Morogh,30.2,45.8
-    .turnin 318 >>交任务: |cFF00FF25艾沃沙酒|r
-    .accept 319 >>接任务: |cFFFCDC00艾沃沙酒|r
-    .accept 315 >>接任务: |cFFFCDC00完美烈酒|r
+>>Talk to |cRXP_FRIENDLY_Rejold Barleybrew|r
+    .turnin 318 >> Turn in Evershine
+.target Rejold Barleybrew
+    .accept 319 >> Accept A Favor for Evershine
+    .accept 315 >> Accept The Perfect Stout
 step
-    .goto Dun Morogh,30.2,45.5
-    .accept 310 >>接任务: |cFFFCDC00针锋相对|r
+    .goto Dun Morogh,30.186,45.531
+.target Marleth Barleybrew
+>>Talk to |cRXP_FRIENDLY_Marleth Barleybrew|r
+    .accept 310 >> Accept Bitter Rivals
 step
     #label Ribs
     #requires Evershine
@@ -985,93 +1194,111 @@ step
     .goto Dun Morogh,25.8,47.2,60,0
     .goto Dun Morogh,25.8,47.2,60,0
     .goto Dun Morogh,30.0,51.8,60,0
-    >>杀死熊、野猪和豹子。从北->西->南走
+    >> Kill Bears, Boars and Leopards. Go from north->west->south
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .complete 319,2 --Kill Elder Crag Boar (x8)
     .complete 319,3 --Kill Snow Leopard (x8)
 step
-    >>完成野猪肋
+    >>Finish off getting the Boar Ribs
     .complete 384,1 --Collect Crag Boar Rib (x6)
 step
-    .goto Dun Morogh,30.2,45.7
-    .turnin 319 >>交任务: |cFF00FF25艾沃沙酒|r
-    .accept 320 >>接任务: |cFFFCDC00艾沃沙酒|r
+    .goto Dun Morogh,30.189,45.725
+>>Talk to |cRXP_FRIENDLY_Rejold Barleybrew|r
+    .turnin 319 >> Turn in A Favor for Evershine
+.target Rejold Barleybrew
+    .accept 320 >> Accept Return to Bellowfiz
 step
     .isQuestTurnedIn 384
-    .xp 7+4360>>提升经验到4360+/4500xp
+    .xp 7+4360 >>Grind until 4360+/4500xp
 step
-    .xp 7+3735>>提升经验到3735+/4500xp
+    .xp 7+3735 >>Grind until 3735+/4500xp
 step
-    .hs >>赫斯到哈拉诺斯
+    .hs >> Hearth to Kharanos
 step
     .goto Dun Morogh,47.4,52.5
-    >>从Belm购买狂想曲麦芽和雷霆啤酒
+    >> Buy a Rhapsody Malt and Thunder Ale from Belm
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .collect 2686,1 --Collect Thunder Ale (x1)
 step
     .goto Dun Morogh,47.6,52.4,10,0
     .goto Dun Morogh,47.71,52.69
-    >>下楼去，然后和贾文谈谈，给他雷霆啤酒
-    >>等待木桶鼠标移到“无人看守”位置，然后handin
-    .turnin 310 >>交任务: |cFF00FF25针锋相对|r
-    .accept 311 >>接任务: |cFFFCDC00向马莱斯回报|r
+    >>Go downstairs, then talk to Jarven, and give him the Thunder Ale
+    >>Wait for the barrel mouseover to become "unguarded", then handin
+    .turnin 310 >> Turn in Bitter Rivals
+    .accept 311 >> Accept Return to Marleth
 step
     .goto Dun Morogh,46.8,52.4
-    .turnin 384 >>交任务: |cFF00FF25啤酒烤猪排|r
-     >>当你下一个供应商时出售配方
+.target Ragnar Thunderbrew
+>>Talk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r
+    .turnin 384 >> Turn in Beer Basted Boar Ribs
+     >>Sell the recipe when you next vendor
 step
-    .xp 8 >>升级到8
+    .xp 8 >> Grind to 8
 step
     .goto Dun Morogh,47.5,52.1
-    .trainer >>训练你的职业技能
-    >>确保训练变形
+    .trainer >> Train your class spells
+    >>Make sure you train Polymorph
 step
     .goto Dun Morogh,47.4,52.5
-    .vendor >>从客栈老板那里购买最多30杯5级饮料
+    .vendor >> Buy up to 30 level 5 drink from the innkeeper
 step
-    .goto Dun Morogh,46.7,53.8
-    .accept 287 >>接任务: |cFFFCDC00霜鬃巨魔要塞|r
+    .goto Dun Morogh,46.726,53.826
+.target Senir Whitebeard
+>>Talk to |cRXP_FRIENDLY_Senir Whitebeard|r
+    .accept 287 >> Accept Frostmane Hold
 step
-    .goto Dun Morogh,49.6,48.6
-    .turnin 313 >>交任务: |cFF00FF25灰色洞穴|r
+    .goto Dun Morogh,49.622,48.612
+.target Pilot Stonegear
+>>Talk to |cRXP_FRIENDLY_Pilot Stonegear|r
+    .turnin 313 >> Turn in The Grizzled Den
 step
-    .goto Dun Morogh,49.4,48.4
-    .turnin 320 >>交任务: |cFF00FF25艾沃沙酒|r
+    .goto Dun Morogh,49.426,48.410
+.target Pilot Bellowfiz
+>>Talk to |cRXP_FRIENDLY_Pilot Bellowfiz|r
+    .turnin 320 >> Turn in Return to Bellowfiz
 step
     #era/som
-    >>建筑物内部
+    >>Inside the building
     .goto Dun Morogh,45.8,49.4
-    .accept 412 >>接任务: |cFFFCDC00自动净化装置|r
+.target Razzle Sprysprocket
+>>Talk to |cRXP_FRIENDLY_Razzle Sprysprocket|r
+    .accept 412 >> Accept Operation Recombobulation
 step
     .goto Dun Morogh,43.1,45.0,25,0
-    .goto Dun Morogh,42.1,45.4,25 >>跑上坡道到Shimmerweed
+    .goto Dun Morogh,42.1,45.4,25 >> Run up the ramp to Shimmerweed
 step
     .goto Dun Morogh,40.9,45.3,30,0
     .goto Dun Morogh,41.5,43.6,30,0
     .goto Dun Morogh,39.7,40.0,30,0
     .goto Dun Morogh,42.1,34.3,30,0
-    >>清除这个地区的暴徒。如果你需要清理中间营地，请小心。如果你需要更多的暴徒，你可以把暴徒拉到小屋里，视线(LoS)在小屋后面。如果你运气不好，就跑到另一个地方去
-    >>地面上的掠夺箱
+    >>Clear mobs in this area. Be careful if you need to clear the middle camp. You can pull the mobs in the huts and line of sight (LoS) them behind the huts if you need 2 more mobs. If you get unlucky, run to the other area
+    >>Loot boxes on the ground
     .complete 315,1 --Collect Shimmerweed (x6)
 step
-    >>变形老冰胡子，然后洗劫肉
+    >> Polymorph Old Icebeard, then loot the meats
     .goto Dun Morogh,38.5,53.9
     .complete 312,1 --Collect MacGrann's Dried Meats (x1)
 step
     .goto Dun Morogh,34.6,51.7
-    .turnin 312 >>交任务: |cFF00FF25马克格拉恩的干肉|r
+.target Tundra MacGrann
+>>Talk to |cRXP_FRIENDLY_Tundra MacGrann|r
+    .turnin 312 >> Turn in Tundra MacGrann's Stolen Stash
 step
     .goto Dun Morogh,30.4,45.8
-    .vendor >>最多再购买20杯5级饮料
+    .vendor >> Buy up to 20 more level 5 drink
 step
     #sticky
     #label Stout
-    .goto Dun Morogh,30.2,45.7
-    .turnin 315 >>交任务: |cFF00FF25完美烈酒|r
-    .accept 413 >>接任务: |cFFFCDC00微光酒|r
+    .goto Dun Morogh,30.189,45.725
+>>Talk to |cRXP_FRIENDLY_Rejold Barleybrew|r
+    .turnin 315 >> Turn in The Perfect Stout
+.target Rejold Barleybrew
+    .accept 413 >> Accept Shimmer Stout
 step
-    .goto Dun Morogh,30.2,45.5
-    .turnin 311 >>交任务: |cFF00FF25向马莱斯回报|r
+    .goto Dun Morogh,30.186,45.531
+.target Marleth Barleybrew
+>>Talk to |cRXP_FRIENDLY_Marleth Barleybrew|r
+    .turnin 311 >> Turn in Return to Marleth
 step
     #era/som
     #requires Stout
@@ -1080,78 +1307,90 @@ step
     .goto Dun Morogh,25.6,43.4,40,0
     .goto Dun Morogh,24.3,44.0,40,0
     .goto Dun Morogh,25.4,45.4,40,0
-    >>杀死麻风侏儒。掠夺他们的装备和鞋帽
+    >>Kill Leper Gnomes. Loot them for Gears and Cogs
     .complete 412,2 --Collect Gyromechanic Gear (x8)
     .complete 412,1 --Collect Restabilization Cog (x8)
 step
-    .xp 9 >>升级到9
+    .xp 9 >> Grind to 9
 step
-    .goto Dun Morogh,24.5,50.8,35 >>进入洞穴
+    .goto Dun Morogh,24.5,50.8,35 >>Enter the cave
 step
     .goto Dun Morogh,22.1,50.3,40,0
     .goto Dun Morogh,21.3,52.9,40,0
-    >>杀死洞穴内的猎头
+    >>Kill Headhunters inside the cave
     .complete 287,1 --Kill Frostmane Headhunter (x5)
 step
     #hardcore
-    >>小心地磨进洞里的这个角落
+    >>Carefully grind down into this nook in the cave
     .goto Dun Morogh,23.0,52.2
     .complete 287,2 --Fully explore Frostmane Hold
 step
     #softcore
-    .goto Dun Morogh,23.4,51.5,15 >>返回洞穴
+    .goto Dun Morogh,23.4,51.5,15 >>Go back up the cave
 step
     #softcore
-    >>跳下去，你死后
+    >>Jump down, you die after
     .goto Dun Morogh,23.0,52.2
     .complete 287,2 --Fully explore Frostmane Hold
 step
     #softcore
-    .deathskip >>在精神治疗师处死亡并重生
+    .deathskip >> Die and respawn at the Spirit Healer
 step
     #hardcore
-   .goto Dun Morogh,46.7,53.8,150 >>如果没问题的话，就把炉子烧了，否则就要碾回哈拉诺斯
+   .goto Dun Morogh,46.726,53.826,150 >> Hearth if its up, otherwise grind back to Kharanos
 step
-    .goto Dun Morogh,46.7,53.8
-    .turnin 287 >>交任务: |cFF00FF25霜鬃巨魔要塞|r
-    .accept 291 >>接任务: |cFFFCDC00森内尔的报告|r
+    .goto Dun Morogh,46.726,53.826
+>>Talk to |cRXP_FRIENDLY_Senir Whitebeard|r
+    .turnin 287 >> Turn in Frostmane Hold
+.target Senir Whitebeard
+    .accept 291 >> Accept The Reports
 step
     #era/som
     .goto Dun Morogh,45.8,49.4
-    .turnin 412 >>交任务: |cFF00FF25自动净化装置|r
+.target Razzle Sprysprocket
+>>Talk to |cRXP_FRIENDLY_Razzle Sprysprocket|r
+    .turnin 412 >> Turn in Operation Recombobulation
 step
     .goto Dun Morogh,60.1,52.6,50,0
     .goto Dun Morogh,63.1,49.8
-    .accept 314 >>接任务: |cFFFCDC00保护牲畜|r
+.target Rudra Amberstill
+>>Talk to |cRXP_FRIENDLY_Rudra Amberstill|r
+    .accept 314 >> Accept Protecting the Herd
 step
     #sticky
     #completewith next
     .goto Dun Morogh,62.3,50.3,14,0
-    .goto Dun Morogh,62.2,49.4,10 >>跑上山的这一部分
+    .goto Dun Morogh,62.2,49.4,10 >>Run up this part of the mountain
 step
-    >>杀死瓦加什。抢他的牙
-    >>把他引到牧场南边的守卫那里。确保你对他造成51%+的伤害
-    >>小心，因为这个任务可能很困难
+    >>Kill Vagash. Loot him for his Fang
+    >>Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him
+    >>Be careful as this quest can be difficult
     .goto Dun Morogh,62.6,46.1
     .complete 314,1 --Collect Fang of Vagash (1)
 --N Video tutorial needed
 step
     .goto Dun Morogh,63.1,49.8
-    .turnin 314 >>交任务: |cFF00FF25保护牲畜|r
+.target Rudra Amberstill
+>>Talk to |cRXP_FRIENDLY_Rudra Amberstill|r
+    .turnin 314 >> Turn in Protecting the Herd
 step
-    >>途中磨碎一点
+    >>Grind a little en route
     .goto Dun Morogh,68.6,54.7
-    .vendor >>供应商垃圾箱。如果需要，购买一些食物/水
+    .vendor >>vendor trash. Buy some food/water if needed
 step
     .goto Dun Morogh,68.7,56.0
-    .accept 433 >>接任务: |cFFFCDC00公众之仆|r
+.target Senator Mehr Stonehallow
+>>Talk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
+    .accept 433 >> Accept The Public Servant
 step
     #completewith next
     .goto Dun Morogh,68.9,55.9
-    .vendor >>供应商垃圾，修理
+    .vendor >> vendor trash, repair
 step
-    .goto Dun Morogh,69.1,56.3
-    .accept 432 >>接任务: |cFFFCDC00该死的石腭怪！|r
+    .goto Dun Morogh,69.084,56.330
+.target Foreman Stonebrow
+>>Talk to |cRXP_FRIENDLY_Foreman Stonebrow|r
+    .accept 432 >> Accept Those Blasted Troggs!
 step
     .goto Dun Morogh,70.6,56.6,30,0
     .goto Dun Morogh,70.8,53.3,30,0
@@ -1161,73 +1400,87 @@ step
     .goto Dun Morogh,70.8,53.3,30,0
     .goto Dun Morogh,71.9,50.7,30,0
     .goto Dun Morogh,72.9,53.1,30,0
-    >>在山洞里杀死Troggs
+    >>Kill Troggs in the cave
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
 step
-    .goto Dun Morogh,69.1,56.3
-    .turnin 432 >>交任务: |cFF00FF25该死的石腭怪！|r
+    .goto Dun Morogh,69.084,56.330
+.target Foreman Stonebrow
+>>Talk to |cRXP_FRIENDLY_Foreman Stonebrow|r
+    .turnin 432 >> Turn in Those Blasted Troggs!
 step
     #completewith next
     .goto Dun Morogh,68.9,55.9
-    .vendor >>供应商垃圾，修理
+    .vendor >> vendor trash, repair
 step
     .goto Dun Morogh,68.7,56.0
-    .turnin 433 >>交任务: |cFF00FF25公众之仆|r
+.target Senator Mehr Stonehallow
+>>Talk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
+    .turnin 433 >> Turn in The Public Servant
 step
     .goto Dun Morogh,67.1,59.7,40,0
     .goto Dun Morogh,70.7,58.2,40,0
     .goto Dun Morogh,71.0,53.9,40,0
-    .xp 10 >>在拖架上升级到10
+    .xp 10 >> Grind to 10 at the troggs
 step
     .goto Dun Morogh,68.6,54.7
-    .vendor >>小贩垃圾，从喀山购买最多30杯5级饮料
-    .trainer >>Ghilm的火车烹饪。你需要这个来接2个额外任务
+    .vendor >>vendor trash, buy up to 30 level 5 drink from Kazan
+    .trainer >> Train Cooking from Ghilm. You'll need this to pick up 2 extra quests later
 step
     .goto Dun Morogh,83.8,39.2
-    .accept 419 >>接任务: |cFFFCDC00失踪的驾驶员|r
+.target Pilot Hammerfoot
+>>Talk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
+    .accept 419 >> Accept The Lost Pilot
 step
-    >>途中研磨
+    >>Grind en route
     .goto Dun Morogh,79.7,36.2
-    .turnin 419 >>交任务: |cFF00FF25失踪的驾驶员|r
-    .accept 417 >>接任务: |cFFFCDC00驾驶员的复仇|r
+    .turnin 419 >> Turn in The Lost Pilot
+    .accept 417 >> Accept A Pilot's Revenge
 step
-    >>杀死芒格克劳。抢走他的爪子
+    >>Kill Mangeclaw. Loot him for his Claw
     .goto Dun Morogh,80.0,36.4
     .complete 417,1 --Collect Mangy Claw (x1)
 step
-    .goto Dun Morogh,83.9,39.2
-    .turnin 417 >>交任务: |cFF00FF25驾驶员的复仇|r
+    .goto Dun Morogh,83.892,39.188
+.target Pilot Hammerfoot
+>>Talk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
+    .turnin 417 >> Turn in A Pilot's Revenge
 step
-    >>从你来的地道回去
+    >>Go back through the tunnel you came from
     .goto Dun Morogh,79.6,50.7,50,0
     .goto Dun Morogh,82.3,53.5,25,0
-    .goto Dun Morogh,86.3,48.8
-    .turnin 413 >>交任务: |cFF00FF25微光酒|r
-    .accept 414 >>接任务: |cFFFCDC00卡德雷尔的酒|r
+    .goto Dun Morogh,86.278,48.812
+>>Talk to |cRXP_FRIENDLY_Mountaineer Barleybrew|r
+    .turnin 413 >> Turn in Shimmer Stout
+.target Mountaineer Barleybrew
+    .accept 414 >> Accept Stout to Kadrell
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Mage
-#name 10-12 洛克莫丹 法师 AoE
+#name 10-12 Loch Modan Mage AoE
 #version 1
-#group RestedXP 联盟 法师
+#group RestedXP Alliance Mage
 #defaultfor Human Mage/Gnome Mage
-#next 12-18 黑海岸 法师 AoE
+#next 12-18 Darkshore Mage AoE
 step
     #era/som
     #completewith next
-    +当你在莫丹湖寻找时，保存你得到的所有大块野猪肉，不要出售。你以后需要它
+    +As you quest through Loch Modan, save ALL of the Chunks of Boar Meat you get and DO NOT vendor it. You'll need it for later
 step << Gnome
-    .goto Loch Modan,22.1,73.1
-    .accept 224 >>接任务: |cFFFCDC00保卫国王的领土|r
+    .goto Loch Modan,22.071,73.127
+.target Mountaineer Cobbleflint
+>>Talk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
+    .accept 224 >> Accept In Defense of the King's Lands
 step << Gnome
-    .goto Loch Modan,23.2,73.7
-    >>从后面进入沙坑
-    .accept 267 >>接任务: |cFFFCDC00穴居人的威胁|r
+    .goto Loch Modan,23.233,73.675
+    >>Go into the bunker from behind
+.target Captain Rugelfuss
+>>Talk to |cRXP_FRIENDLY_Captain Rugelfuss|r
+    .accept 267 >> Accept The Trogg Threat
 step << Gnome
-    .goto Loch Modan,29.9,68.2,45 >>跑到Troggs入口
+    .goto Loch Modan,29.9,68.2,45 >> Run to the Troggs Entrance
 step << Gnome
     .goto Loch Modan,30.0,72.4,50,0
     .goto Loch Modan,34.7,71.6,50,0
@@ -1235,92 +1488,104 @@ step << Gnome
     .goto Loch Modan,30.0,72.4,50,0
     .goto Loch Modan,34.7,71.6,50,0
     .goto Loch Modan,30.9,81.1,50,0
-    >>杀死石刺怪。抢走他们的牙齿
-    >>小心，因为这个任务可能很困难。如果你一次误拉2个暴徒，就逃跑
+    >>Kill Stonesplinter Troggs. Loot them for their Teeth
+    >>Be careful as this quest can be difficult. Run if you misspull 2 mobs at once
     .complete 224,1 --Kill Stonesplinter Trogg (x10)
     .complete 224,2 --Kill Stonesplinter Scout (x10)
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
 step << Gnome
-    .goto Loch Modan,22.1,73.1
-    .turnin 224 >>交任务: |cFF00FF25保卫国王的领土|r
+    .goto Loch Modan,22.071,73.127
+.target Mountaineer Cobbleflint
+>>Talk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
+    .turnin 224 >> Turn in Defense of the King's Lands
 step << Gnome
-    .goto Loch Modan,23.2,73.7
-    >>从后面进入沙坑
-    .turnin 267 >>交任务: |cFF00FF25穴居人的威胁|r
+    .goto Loch Modan,23.233,73.675
+    >>Go into the bunker from behind
+.target Captain Rugelfuss
+>>Talk to |cRXP_FRIENDLY_Captain Rugelfuss|r
+    .turnin 267 >> Turn in The Trogg Threat
 step << Human
     .goto Loch Modan,24.1,18.2
-    .vendor >>供应商和维修
+    .vendor >>Vendor and repair
 step << Human
-    .goto Loch Modan,24.8,18.4
-    .turnin 353 >>交任务: |cFF00FF25雷矛的包裹|r
-    .accept 307 >>接任务: |cFFFCDC00肮脏的爪子|r
+    .goto Loch Modan,24.764,18.397
+>>Talk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    .turnin 353 >> Turn in Stormpike's Delivery
+.target Mountaineer Stormpike
+    .accept 307 >> Accept Filthy Paws
 step << Human
     #sticky
     #completewith next
-    >>在蜘蛛一角的区域内杀死蜘蛛
+    >>Kill Spiders in the zone for Spider Ichor
     .collect 3174,3 --Collect Spider Ichor (x3)
-    >>在熊肉区杀死熊
+    >>Kill Bears in the zone for Bear Meat
     .collect 3173,3 --Collect Bear Meat (x3)
-    >>在野猪肠道区域杀死野猪
+    >>Kill Boars in the zone for Boar Intestines
     .collect 3172,3 --Collect Boar Intestines (x3)
 step << Human
-    .goto Loch Modan,35.1,47.8,130 >>在途中碾碎暴徒，以便稍后进行烹饪任务
+    .goto Loch Modan,35.1,47.8,130 >>Grind mobs en route for cooking quest later
 step
-    >>跑向塞尔斯马尔。不要放炉子 << Gnome
-    .goto Loch Modan,34.8,49.3
-    .accept 418 >>接任务: |cFFFCDC00塞尔萨玛血肠|r
+    >>Run up to Thelsamar. do NOT set your hearth << Gnome
+    .goto Loch Modan,34.828,49.283
+.target Vidra Hearthstove
+>>Talk to |cRXP_FRIENDLY_Vidra Hearthstove|r
+    .accept 418 >> Accept Thelsamar Blood Sausages
 step << Human
     #sticky
-    .abandon 1338 >>放弃Stormpike的命令。这是为了解锁登山者Stormpike的任务
+    .abandon 1338 >> Abandon Stormpike's Order. This is to unlock Mountaineer Stormpike's Task
 step
     .goto Loch Modan,34.8,48.6
-    .vendor >>购买1-2个6槽袋，填充您的袋槽
+    .vendor >>Buy 1-2 6 slot bags to fill your bag slots
 step
     .goto Loch Modan,35.5,48.4
-    .vendor >>购买食物/水(尝试喝40杯5级饮料，20杯5级食物)
+    .vendor >> Buy food/water (try to have 40 level 5 drink, 20 level 5 food)
 step
     .goto Loch Modan,32.6,49.9,80.0,0
     .goto Loch Modan,37.2,46.1,80.0,0
     .goto Loch Modan,36.7,41.6
-    >>找到卡德雷尔。他沿着塞尔萨马尔公路巡逻
-    .accept 416 >>接任务: |cFFFCDC00狗头人的耳朵|r
-    .accept 1339 >>接任务: |cFFFCDC00巡山人卡尔·雷矛的任务|r
+    >>Find Kadrell. He patrols along the Thelsamar road
+.target Mountaineer Kadrell
+>>Talk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
+    .accept 416 >> Accept Rat Catching
+    .accept 1339 >> Accept Mountaineer Stormpike's Task
 step
     #sticky
     #completewith Thelsamar1
-    >>为了塞尔萨马尔血香肠杀死区域内的蜘蛛
-    .complete 418,3 --Collect Spider Ichor (x3)
+    >>Kill Spiders in the zone for Thelsamar Blood Sausages
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step
     #sticky
     #completewith Thelsamar1
-    >>在Thelsamar鲜血香肠区杀死熊
-    .complete 418,2 --Collect Bear Meat (x3)
+    >>Kill Bears in the zone for Thelsamar Blood Sausages
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step
     #sticky
     #completewith Thelsamar1
-    >>在赛尔萨马尔血肠区杀死野猪
-    .complete 418,1 --Collect Boar Intestines (x3)
+    >>Kill Boars in the zone for Thelsamar Blood Sausages
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step << Gnome
     .goto Loch Modan,24.1,18.2
-    .vendor >>供应商和维修
+    .vendor >>Vendor and repair
 step << Gnome
-    .goto Loch Modan,24.8,18.4
-    .turnin 1339 >>交任务: |cFF00FF25巡山人卡尔·雷矛的任务|r
-    .accept 1338 >>接任务: |cFFFCDC00卡尔·雷矛的订单|r
-    .accept 307 >>接任务: |cFFFCDC00肮脏的爪子|r
+    .goto Loch Modan,24.764,18.397
+>>Talk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    .turnin 1339 >> Turn in Mountaineer Stormpike's Task
+.target Mountaineer Stormpike
+    .accept 1338 >> Accept Stormpike's Order
+    .accept 307 >> Accept Filthy Paws
 step << Gnome
     #label Thelsamar1
-    .goto Loch Modan,33.71,17.20,130 >>途中为野猪肠、熊肉和蜘蛛丝碾碎一些暴徒
+    .goto Loch Modan,33.71,17.20,130 >>Grind some mobs for Boar Intestines, Bear Meat and Spider Ichor en route
 step << Human
     #label Thelsamar1
-    .goto Loch Modan,39.3,27.0,130 >>途中为野猪肠、熊肉和蜘蛛丝碾碎一些暴徒
+    .goto Loch Modan,39.3,27.0,130 >>Grind some mobs for Boar Intestines, Bear Meat and Spider Ichor en route
 step
     #sticky
     #completewith Gear
-    >>杀死隧道老鼠。抢走他们的耳朵
+    >> Kill Tunnel Rats. Loot them for their Ears
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
 step
-    .goto Loch Modan,35.5,18.2,45 >>去洞口杀老鼠
+    .goto Loch Modan,35.5,18.2,45 >>Go to the entrance of the cave whilst killing rats
 step
     #label Gear
     .goto Loch Modan,35.5,19.9,12,0
@@ -1336,40 +1601,42 @@ step
     .goto Loch Modan,35.3,22.0,12,0
     .goto Loch Modan,36.4,20.7,12,0
     .goto Loch Modan,35.5,19.9,12,0
-    >>收集你在山洞里找到的板条箱。小心，因为这在11级很难做到
-    >>几秒钟后，当Geomangers施放火焰防护(Fire Immunity)时要小心
+    >>Collect the crates you find in the cave. Be careful because this is difficult at level 11
+    >>Be careful as the Geomancers cast Flame Ward (Fire Immunity) after a few seconds
     .complete 307,1 --Collect Miners' Gear (x4)
 step
     .goto Loch Modan,39.43,22.58
-    >>杀死隧道老鼠。抢走他们的耳朵
-    >>试着杀死害虫，而不是Kobolds/Geomangers
+    >> Kill Tunnel Rats. Loot them for their Ears
+    >> Try to kill the Vermin instead of Kobolds/Geomancers
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
 step
     #sticky
     #completewith Thelsamar2
-    >>为了塞尔萨马尔血香肠杀死区域内的蜘蛛
-    .complete 418,3 --Collect Spider Ichor (x3)
+    >>Kill Spiders in the zone for Thelsamar Blood Sausages
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step
     #sticky
     #completewith Thelsamar2
-    >>在Thelsamar鲜血香肠区杀死熊
-    .complete 418,2 --Collect Bear Meat (x3)
+    >>Kill Bears in the zone for Thelsamar Blood Sausages
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step
     #sticky
     #completewith Thelsamar2
-    >>在赛尔萨马尔血肠区杀死野猪
-    .complete 418,1 --Collect Boar Intestines (x3)
+    >>Kill Boars in the zone for Thelsamar Blood Sausages
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step
     #label Thelsamar2
-    .goto Loch Modan,23.3,17.9,60 >>跑回沙坑，途中碾磨
+    .goto Loch Modan,23.3,17.9,60 >>Run back to the bunker, grinding en route
 step
     .goto Loch Modan,24.1,18.2
-    .vendor >>供应商和维修
+    .vendor >>vendor and repair
 step
     .goto Loch Modan,24.7,18.3
-    .turnin 307 >>交任务: |cFF00FF25肮脏的爪子|r
-    .turnin 1339 >>交任务: |cFF00FF25巡山人卡尔·雷矛的任务|r
-    .accept 1338 >>接任务: |cFFFCDC00卡尔·雷矛的订单|r
+>>Talk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    .turnin 307 >> Turn in Filthy Paws
+    .turnin 1339 >> Turn in Mountaineer Stormpike's Task << Human
+.target Mountaineer Stormpike
+    .accept 1338 >> Accept Stormpike's Order << Human
 step
     #sticky
     #label Meat9
@@ -1386,8 +1653,8 @@ step
     .goto Loch Modan,33.4,30.3,40,0
     .goto Loch Modan,39.4,33.3,40,0
     .goto Loch Modan,26.9,10.7
-    >>杀死熊。抢他们的肉
-    .complete 418,2 --Collect Bear Meat (x3)
+    >>Kill Bears. Loot them for Meat
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step
     #sticky
     #label Ichor9
@@ -1402,8 +1669,8 @@ step
     .goto Loch Modan,36.2,30.9,40,0
     .goto Loch Modan,39.0,32.1,40,0
     .goto Loch Modan,31.9,16.4
-    >>杀死蜘蛛。为伊科尔抢走他们
-    .complete 418,3 --Collect Spider Ichor (x3)
+    >>Kill Spiders. Loot them for Ichor
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step
     .goto Loch Modan,38.0,34.9,40,0
     .goto Loch Modan,37.1,39.8,40,0
@@ -1416,9 +1683,10 @@ step
     .goto Loch Modan,27.7,25.3,40,0
     .goto Loch Modan,28.6,22.6,40,0
     .goto Loch Modan,38.0,34.9
-    >>杀死野猪。掠夺他们的肠道
-    .complete 418,1 --Collect Boar Intestines (x3)
+    >>Kill Boars. Loot them for Intestines
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step
+#hidewindow
     #requires Meat9
 step
     #sticky
@@ -1427,99 +1695,127 @@ step
     .goto Loch Modan,32.6,49.9,80.0,0
     .goto Loch Modan,37.2,46.1,80.0,0
     .goto Loch Modan,36.7,41.6
-    >>找到卡德雷尔。他沿着塞尔萨马尔公路巡逻
-    .turnin 416 >>交任务: |cFF00FF25狗头人的耳朵|r
+    >>Find Kadrell. He patrols along the Thelsamar road
+.target Mountaineer Kadrell
+>>Talk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
+    .turnin 416 >> Turn in Rat Catching
 step
     #requires Ichor9
-    .goto Loch Modan,34.8,49.3
-    .turnin 418 >>交任务: |cFF00FF25塞尔萨玛血肠|r
+    .goto Loch Modan,34.828,49.283
+.target Vidra Hearthstove
+>>Talk to |cRXP_FRIENDLY_Vidra Hearthstove|r
+    .turnin 418 >> Turn in Thelsamar Blood Sausages
 step
     #era/som
     .goto Loch Modan,34.76,48.62
-    .vendor >>购买6个插槽，直到您的袋子装满。还需购买1块Flint and Tinder和2块Simple Wood
+    .vendor >> Buy 6 slots until your bag containers are full. Also buy 1 Flint and Tinder, and 2 Simple Wood
     .collect 4470,2 --Simple Wood (2)
     .collect 4471,1 --Flint and Tinder (1)
 step
-    .xp 12 >>升级到12
+    .xp 12 >> Grind to 12
 step << Gnome
     #completewith next
     #requires RatCatching
     .goto Loch Modan,64.82,66.04
-    .vendor >>检查奥尔德伦的智者腰带。如果你买得起就买。保存以备以后使用
+    .vendor >> Check Aldren for a Wise Man's Belt. Buy it if you can afford it. Save it for later
 step << Gnome
     #requires RatCatching
     .goto Loch Modan,65.94,65.62
-    .accept 298 >>接任务: |cFFFCDC00挖掘进度报告|r
+.target Prospector Ironband
+>>Talk to |cRXP_FRIENDLY_Prospector Ironband|r
+    .accept 298 >>Accept Excavation Progress Report
 step << Gnome
     #softcore
     .goto Loch Modan,68.12,62.98
-    .deathskip >>死亡并重生回塞尔萨马尔
+    .deathskip >> Die and respawn back in Thelsamar
 step << Gnome
     #hardcore
-    >>跑回塞尔斯马尔。进入大楼
+    >> Run back to Thelsamar. Go inside the building
     .goto Loch Modan,37.16,46.89,20,0
     .goto Loch Modan,37.02,47.81
-    .accept 6387 >>接任务: |cFFFCDC00荣誉学员|r
-    .turnin 298 >>交任务: |cFF00FF25挖掘进度报告|r
-    .accept 301 >>接任务: |cFFFCDC00向铁炉堡报告|r
+.target Brock Stoneseeker
+>>Talk to |cRXP_FRIENDLY_Brock Stoneseeker|r
+    .accept 6387 >>Accept Honor Students
+>>Talk to |cRXP_FRIENDLY_Jern Hornhelm|r
+    .turnin 298 >>Turn in Excavation Progress Report
+.target Jern Hornhelm
+    .accept 301 >>Accept Report to Ironforge
 step << Gnome
     #softcore
-    >>进入大楼
+    >> Go inside the building
     .goto Loch Modan,37.16,46.89,20,0
     .goto Loch Modan,37.02,47.81
-    .accept 6387 >>接任务: |cFFFCDC00荣誉学员|r
-    .turnin 298 >>交任务: |cFF00FF25挖掘进度报告|r
-    .accept 301 >>接任务: |cFFFCDC00向铁炉堡报告|r
+.target Brock Stoneseeker
+>>Talk to |cRXP_FRIENDLY_Brock Stoneseeker|r
+    .accept 6387 >>Accept Honor Students
+>>Talk to |cRXP_FRIENDLY_Jern Hornhelm|r
+    .turnin 298 >>Turn in Excavation Progress Report
+.target Jern Hornhelm
+    .accept 301 >>Accept Report to Ironforge
 step
     #requires RatCatching
     .goto Loch Modan,33.94,50.96
-    .fp Thelsamar >>获取Thelsamar飞行路线
-    .turnin 6387 >>交任务: |cFF00FF25荣誉学员|r
-    .accept 6391 >>接任务: |cFFFCDC00飞往铁炉堡|r
-    .fly Ironforge >>飞往铁炉堡
+    .fp Thelsamar >> Get the Thelsamar flight path
+>>Talk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
+    .turnin 6387 >>Turn in Honor Students << Gnome
+.target Thorgrum Borrelson
+    .accept 6391 >>Accept Ride to Ironforge << Gnome
+    .fly Ironforge >> Fly to Ironforge
 step << Human
     .goto Ironforge,27.15,8.57
-    .trainer >>训练你的职业技能
-step << Human
+    .trainer >> Train your class spells
+step << skip --logout skip << Human
     #completewith next
-    +朝房间后面圣骑士训练师后面的楼梯走去。往上走一半，然后移动到楼梯边缘，直到看起来你在漂浮。注销，然后重新登录
-    .link https://www.youtube.com/watch?v=E8b90bzJMSI >>单击此处以供参考
-    >>注销跳转到铁炉堡前面
+    +Go toward the staircase behind the paladin trainers at the back of the room. Go about halfway up, then move yourself to the edge of the stairs until it looks like you're floating. Logout, then back in
+    .link https://www.youtube.com/watch?v=E8b90bzJMSI >> CLICK HERE for reference
+    >>Logout skip to the front of Ironforge
 step << Human
-    .goto Ironforge,12.24,89.17,120 >>退出铁炉堡
+    .goto Ironforge,12.24,89.17,120 >> Exit Ironforge
 step << Gnome
     .goto Ironforge,74.65,11.74
-    .turnin 301 >>交任务: |cFF00FF25向铁炉堡报告|r
-    .accept 302 >>接任务: |cFFFCDC00铁环的火药|r
+>>Talk to |cRXP_FRIENDLY_Prospector Stormpike|r
+    .turnin 301 >>Turn in Report to Ironforge
+.target Prospector Stormpike
+    .accept 302 >>Accept Powder to Ironband
 step << Gnome
-    >>返回大熔炉，然后向右拐，进入大楼
+    >>Go back toward The Great Forge, then take a right and go inside the building
     .goto Ironforge,49.59,28.96,30,0
     .goto Ironforge,51.52,26.32
-    .turnin 6391 >>交任务: |cFF00FF25飞往铁炉堡|r
-    .accept 6388 >>接任务: |cFFFCDC00格莱斯·瑟登|r
+>>Talk to |cRXP_FRIENDLY_Golnir Bouldertoe|r
+    .turnin 6391 >>Turn in Ride to Ironforge
+.target Golnir Bouldertoe
+    .accept 6388 >>Accept Gryth Thurden
 step << Gnome
     .goto Ironforge,39.55,57.49
-    .turnin 291 >>交任务: |cFF00FF25森内尔的报告|r
+.target Senator Barin Redstone
+>>Talk to |cRXP_FRIENDLY_Senator Barin Redstone|r
+    .turnin 291 >>Turn in The Reports
 step << Gnome
     .goto Ironforge,55.50,47.74
-    .turnin 6388 >>交任务: |cFF00FF25格莱斯·瑟登|r
-    .accept 6392 >>接任务: |cFFFCDC00向布洛克回复|r
-    .fly Thelsamar >>飞往塞尔斯马尔
+>>Talk to |cRXP_FRIENDLY_Gryth Thurden|r
+    .turnin 6388 >>Turn in Gryth Thurden
+.target Gryth Thurden
+    .accept 6392 >>Accept Return to Brock
+    .fly Thelsamar >> Fly to Thelsamar
 step << Gnome
-    >>进入大楼
+    >>Go inside the building
     .goto Loch Modan,37.16,46.89,20,0
     .goto Loch Modan,37.02,47.81
-    .turnin 6392 >>交任务: |cFF00FF25向布洛克回复|r
-    .turnin 302 >>交任务: |cFF00FF25铁环的火药|r
+.target Brock Stoneseeker
+>>Talk to |cRXP_FRIENDLY_Brock Stoneseeker|r
+    .turnin 6392 >>Turn in Return to Brock
+.target Jern Hornhelm
+>>Talk to |cRXP_FRIENDLY_Jern Hornhelm|r
+    .turnin 302 >>Turn in Powder to Ironband
 step << Gnome
-    .hs >>赫斯到哈拉诺斯
+    .hs >> Hearth to Kharanos
 step << Gnome
     .goto Dun Morogh,47.50,52.08
-    .trainer >>训练你的职业技能
+    .trainer >> Train your class spells
 step
     #hardcore
     #completewith next
-    .goto Dun Morogh,59.43,42.85,150 >>前往跳跃点
+    .goto Dun Morogh,59.43,42.85,150 >> Travel to the skip spot
 step
     #hardcore
     .goto Dun Morogh,59.5,42.8,40,0
@@ -1540,58 +1836,58 @@ step
     .goto Wetlands,16.8,65.3,40,0
     .goto Wetlands,15.1,64.0,40,0
     .goto Wetlands,12.1,60.3,40,0
-    >>打开此链接并在另一个屏幕上进行跟踪。
-    >>邓莫罗不死->湿地跳过
-    >>横渡大海时要避开鳄鱼
-    .link https://www.youtube.com/watch?v=9afQTimaiZQ >>单击此处以供参考
-    .goto Wetlands,12.1,60.3,80 >>前往: 湿地
+    >>Open this link and follow it on another screen.
+    >>Do the Deathless Dun Morogh -> Wetlands skip
+    >>Avoid the Crocodiles when crossing the sea
+    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for reference
+    .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
 step
     #softcore
-    .goto Dun Morogh,30.3,37.5,50 >>跑到这里
+    .goto Dun Morogh,30.3,37.5,50 >> Run to here
 step
     #softcore
-    .goto Dun Morogh,30.9,33.1,15 >>向北跑上山
+    .goto Dun Morogh,30.9,33.1,15 >>Run up the mountain north
 step
     #softcore
-    .goto Dun Morogh,32.4,29.1,15 >>继续到这里
+    .goto Dun Morogh,32.4,29.1,15 >>Follow it up to here
 step
     #softcore
     .goto Dun Morogh,33.0,27.2,15,0
     .goto Dun Morogh,33.0,25.2,15,0
     .goto Wetlands,11.6,43.4,60,0
-    .deathskip >>继续向北奔跑，摔倒死亡，然后重生
+    .deathskip >>Keep running straight north, drop down and die, then respawn
 step
     #softcore
     #completewith next
-    .goto Wetlands,12.7,46.7,60 >>游到岸上
+    .goto Wetlands,12.7,46.7,60 >> Swim to shore
 step
     .money <0.08
     .goto Wetlands,10.4,56.0,15,0
     .goto Wetlands,10.1,56.9,15,0
     .goto Wetlands,10.6,57.2,15,0
-    .goto Wetlands,10.7,56.8
-    .vendor >>如果你有8s，检查Neal Allen的铜管，如果有就买
+    .goto 1437,10.760,56.721
+    .vendor >> If you have 8s, Check for Bronze Tube from Neal Allen and buy it if it's there
 step
     .money <0.04
     .goto Wetlands,8.1,56.3
-    .vendor >>检查Dewin的治疗药剂，购买时间减至1秒
+    .vendor >> Check Dewin for Heal Potions, buy down to 1s
 step
     .goto Wetlands,9.5,59.7
-    .fp Menethil Harbor >>获取Menethil Harbor航线
+    .fp Menethil Harbor >> Get the Menethil Harbor flight path
 step
     #era/som
     #sticky
     #completewith Darkshore1
-    +在这里等船。从你的魔法书中烧一堆野营火，开始煮你早先省下的大块野猪肉。你现在至少需要10项技能，以后需要50项技能(所以全部都要做)
+    +Wait here for the boat. Make a Campfire from your spellbook and start cooking the chunks of boar meat you saved from earlier. You need at least 10 skill now, and 50 later (so cook all of it)
     .goto Wetlands,4.7,57.3
 step
     #era/som
     #label Darkshore1
-    .zone Darkshore >>前往: |cFFDB2EEF黑海岸|r
+    .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore. If you've finished cooking food, start conjuring as much level 5 water as possible
 step
     #som
     #phase 3-6
     #label Darkshore1
-    .zone Darkshore >>前往: |cFFDB2EEF黑海岸|r
+    .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore. Start conjuring as much level 5 water as possible
 ]])
 

@@ -1,10 +1,8 @@
 # Baganator
 
-## [626](https://github.com/Baganator/Baganator/tree/626) (2025-01-25)
-[Full Changelog](https://github.com/Baganator/Baganator/compare/625...626) 
+## [644](https://github.com/Baganator/Baganator/tree/644) (2025-02-08)
+[Full Changelog](https://github.com/Baganator/Baganator/compare/643...644) 
 
-- Add new visual search builder into Categories settings  
-    > GUI to add search terms, options for typing and not typing  
-    > No syntax knowledge required  
-    > Button to revert to previous text input  
-- Update auctionable check ready for Cata 4.4.2  
+- [Fixes #423] Categories: Resolve recent items not clearing automatically  
+- Forgot a "not"  
+- Categories: Fix empty slots resetting (again) due to bounce-back when vendoring  

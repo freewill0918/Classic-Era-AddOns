@@ -193,10 +193,12 @@ end
 
 function PetBar:GetDefaults()
     return {
-        point = 'CENTER',
-        x = 0,
-        y = -32,
-        spacing = 6
+        point = 'BOTTOM',
+		x = -484,
+		y = 140,
+		scale = 0.8,
+		columns = 5,
+		spacing = 2
     }
 end
 
@@ -212,12 +214,12 @@ function PetBar:OnAttachButton(button)
     button.HotKey:SetAlpha(self:ShowingBindingText() and 1 or 0)
     button:UpdateShownInsecure()
 
-    Addon:GetModule('ButtonThemer'):Register(button, 'Pet Bar')
+    Addon:GetModule('ButtonThemer'):Register(button, L.PetBarDisplayName)
     Addon:GetModule('Tooltips'):Register(button)
 end
 
 function PetBar:OnDetachButton(button)
-    Addon:GetModule('ButtonThemer'):Unregister(button, 'Pet Bar')
+    Addon:GetModule('ButtonThemer'):Unregister(button, L.PetBarDisplayName)
     Addon:GetModule('Tooltips'):Unregister(button)
 end
 

@@ -548,9 +548,12 @@ end
 				total = total + actorObject.last_dps
 
 				if (bOrderDpsByRealTime) then
-					local realTimeDPS = Details222.CurrentDPS.Cache[actorObject.serial] or 0
-					actorObject.last_dps_realtime = realTimeDPS
-					totalRealTime = totalRealTime + realTimeDPS
+					local realTimeDPS = Details222.CurrentDPS.Cache[actorObject.serial]
+					if (realTimeDPS) then
+						realTimeDPS = realTimeDPS.totalDamage / timeSample
+						actorObject.last_dps_realtime = realTimeDPS
+						totalRealTime = totalRealTime + realTimeDPS
+					end
 				end
 			end
 		end
@@ -1414,9 +1417,9 @@ end
 
 		local minutos, segundos = floor(uptime / 60), floor(uptime % 60)
 		if (minutos > 0) then
-			uptime = "" .. minutos .. "m " .. segundos .. "s" .. ""
+			uptime = "" .. minutos .. Loc["m "] .. segundos .. Loc["s"] .. ""
 		else
-			uptime = "" .. segundos .. "s" .. ""
+			uptime = "" .. segundos .. Loc["s"] .. ""
 		end
 
 		return Details:ToK2(value) .. " - " .. uptime .. " "
@@ -1493,9 +1496,9 @@ end
 				local actor_table = {Details:GetOnlyName(void_table[1])}
 				local m, s = math.floor(void_table[3].uptime / 60), math.floor(void_table[3].uptime % 60)
 				if (m > 0) then
-					actor_table [2] = formatTooltipNumber(_, void_table[3].damage) .. "(" .. m .. "m " .. s .. "s" .. ")"
+					actor_table [2] = formatTooltipNumber(_, void_table[3].damage) .. "(" .. m .. Loc["m "] .. s .. Loc["s"] .. ")"
 				else
-					actor_table [2] = formatTooltipNumber(_, void_table[3].damage) .. "(" .. s .. "s" .. ")"
+					actor_table [2] = formatTooltipNumber(_, void_table[3].damage) .. "(" .. s .. Loc["s"] .. ")"
 				end
 				t [#t+1] = actor_table
 			end
@@ -1613,9 +1616,9 @@ end
 
 			local minutos, segundos = math.floor(debuff_table.uptime / 60), math.floor(debuff_table.uptime % 60)
 			if (minutos > 0) then
-				GameCooltip:AddLine(Details:GetOnlyName(t[1]), formatTooltipNumber(_, debuff_table.damage) .. "(" .. minutos .. "m " .. segundos .. "s" .. ")")
+				GameCooltip:AddLine(Details:GetOnlyName(t[1]), formatTooltipNumber(_, debuff_table.damage) .. "(" .. minutos .. Loc["m "] .. segundos .. Loc["s"] .. ")")
 			else
-				GameCooltip:AddLine(Details:GetOnlyName(t[1]), formatTooltipNumber(_, debuff_table.damage) .. "(" .. segundos .. "s" .. ")")
+				GameCooltip:AddLine(Details:GetOnlyName(t[1]), formatTooltipNumber(_, debuff_table.damage) .. "(" .. segundos .. Loc["s"] .. ")")
 			end
 
 			local classe = Details:GetClass(t[1])
@@ -3618,7 +3621,7 @@ function damageClass.PredictedAugSpellsOnEnter(self)
 
 		--add the total combat time into the tooltip
 		local combatTimeMinutes, combatTimeSeconds = math.floor(combatTime / 60), math.floor(combatTime % 60)
-		GameCooltip:AddLine("Combat Time", combatTimeMinutes .. "m " .. combatTimeSeconds .. "s" .. "(" .. format("%.1f", 100) .. "%)")
+		GameCooltip:AddLine("Combat Time", combatTimeMinutes .. Loc["m "] .. combatTimeSeconds .. Loc["s"] .. "(" .. format("%.1f", 100) .. "%)")
 		GameCooltip:AddIcon([[Interface\TARGETINGFRAME\UnitFrameIcons]], nil, nil, iconSize, iconSize, iconBorderInfo.L, iconBorderInfo.R, iconBorderInfo.T, iconBorderInfo.B)
 		Details:AddTooltipBackgroundStatusbar(false, 100, true, "darkgreen")
 
@@ -3755,10 +3758,10 @@ function damageClass.PredictedAugSpellsOnEnter(self)
 					if (uptime <= combatTime) then
 						local minutes, seconds = math.floor(uptime / 60), math.floor(uptime % 60)
 						if (minutes > 0) then
-							GameCooltip:AddLine(spellName, minutes .. "m " .. seconds .. "s" .. "(" .. format("%.1f", uptimePercent) .. "%)")
+							GameCooltip:AddLine(spellName, minutes .. Loc["m "] .. seconds .. Loc["s"] .. "(" .. format("%.1f", uptimePercent) .. "%)")
 							Details:AddTooltipBackgroundStatusbar(false, uptimePercent, true, sourceName and "darkgreen")
 						else
-							GameCooltip:AddLine(spellName, seconds .. "s" .. "(" .. format("%.1f", uptimePercent) .. "%)")
+							GameCooltip:AddLine(spellName, seconds .. Loc["s"] .. "(" .. format("%.1f", uptimePercent) .. "%)")
 							Details:AddTooltipBackgroundStatusbar(false, uptimePercent, true, sourceName and "darkgreen")
 						end
 

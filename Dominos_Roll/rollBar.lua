@@ -41,7 +41,9 @@ end
 
 function AlertsBar:GetDefaults()
 	return {
-		point = 'LEFT',
+		point = 'BOTTOM',
+		x = 0,
+		y = 200,
 		columns = 1,
 		spacing = 2,
 		showInPetBattleUI = true,

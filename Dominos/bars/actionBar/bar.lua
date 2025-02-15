@@ -96,20 +96,95 @@ end)
 
 -- TODO: change the position code to be based more on the number of action bars
 function ActionBar:GetDefaults()
-    return {
-        point = 'BOTTOM',
-        x = 0,
-        y = 14 + (ActionButton1:GetHeight() + 4) * (self.id - 1),
-        pages = {},
-        spacing = 2,
-        padW = 2,
-        padH = 2,
-        numButtons = self:MaxLength(),
-        showEmptyButtons = false,
-        unit = "none",
-        rightClickUnit = "none",
-        displayLayer = 'LOW'
-    }
+    local defaults = {}
+	defaults.point = 'BOTTOM'
+	defaults.scale = 1
+
+	defaults.pages = {}
+	defaults.spacing = 2
+	defaults.padW = 2
+	defaults.padH = 2
+	defaults.numButtons = self:MaxLength()
+	defaults.showEmptyButtons = true
+    defaults.unit = "none"
+    defaults.rightClickUnit = "none"
+    defaults.displayLayer = 'LOW'
+	
+	if self.id == 1 then
+		defaults.x = 0
+		defaults.y = 116
+	elseif self.id == 2 then
+		defaults.x = 0
+		defaults.y = 68
+	elseif self.id == 3 then
+		defaults.x = 0
+		defaults.y = 20
+		defaults.fadeAlpha = 0.1
+	elseif self.id == 4 then
+		defaults.point = 'RIGHT'
+		defaults.columns = 1
+		defaults.x = 0
+		defaults.hidden = true
+	elseif self.id == 5 then
+		defaults.point = 'RIGHT'
+		defaults.columns = 1
+		defaults.x = -48
+		defaults.hidden = true
+	elseif self.id == 6 then
+		defaults.x = 500
+		defaults.y = 25
+		defaults.columns = 6
+		defaults.fadeAlpha = 0.1
+		defaults.scale = 0.8
+	elseif self.id == 10 then
+		defaults.x = -500
+		defaults.y = 25
+		defaults.columns = 6
+		defaults.fadeAlpha = 0.1
+		defaults.scale = 0.8
+	elseif self.id == 11 then
+		defaults.point = 'CENTER'
+		defaults.x = 390
+		defaults.y = 0
+		defaults.hidden = true
+		defaults.columns = 3
+	elseif self.id == 12 then
+		defaults.point = 'CENTER'
+		defaults.x = -390
+		defaults.y = 0
+		defaults.hidden = true
+		defaults.columns = 3
+	elseif self.id == 14 then
+		defaults.point = 'CENTER'
+		defaults.y = 192
+		defaults.hidden = true
+	elseif self.id == 13 then
+		defaults.point = 'CENTER'
+		defaults.y = 240
+		defaults.hidden = true
+	elseif self.id == 9 then
+		defaults.point = 'CENTER'
+		defaults.y = 288
+		defaults.hidden = true
+	elseif self.id == 8 then
+		defaults.point = 'CENTER'
+		defaults.y = 336
+		defaults.hidden = true
+	elseif self.id == 7 then
+		defaults.point = 'CENTER'
+		defaults.y = 384
+		defaults.hidden = true
+	end
+	
+	if not Addon:IsBuild("retail") then
+		if self.id == 1 then
+			defaults.y = 100
+		elseif self.id == 2 then
+			defaults.y = 60
+		end
+	end
+	
+	return defaults
 end
 
 function ActionBar:GetDisplayName()

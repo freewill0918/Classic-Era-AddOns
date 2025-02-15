@@ -1,4 +1,5 @@
 local _detalhes = 		_G.Details
+local Loc = _G.LibStub("AceLocale-3.0"):GetLocale("Details")
 
 --code from blizzard AlertFrames
 
@@ -290,8 +291,8 @@ function _detalhes.PlayBestDamageOnGuild (damage)
 	----------------------------------------------
 
 	local NewDamageRecord  = DetailsNewDamageRecord:CreateFontString("NewDamageRecordFontString", "OVERLAY")
-	NewDamageRecord:SetFont([=[Fonts\FRIZQT__.TTF]=], 12, "OUTLINE")
-	NewDamageRecord:SetText("Damage Record!")
+	NewDamageRecord:SetFont(STANDARD_TEXT_FONT, 16, "OUTLINE")
+	NewDamageRecord:SetText(Loc["Damage Record!"])
 	NewDamageRecord:SetDrawLayer("OVERLAY", 0)
 	NewDamageRecord:SetPoint("center", DetailsNewDamageRecord, "center", 18, 7)
 	NewDamageRecord:SetSize(181, 20)
@@ -329,7 +330,7 @@ function _detalhes.PlayBestDamageOnGuild (damage)
 	----------------------------------------------
 
 	local DamageAmount  = DetailsNewDamageRecord:CreateFontString("DamageAmountFontString", "OVERLAY")
-	DamageAmount:SetFont([=[Fonts\FRIZQT__.TTF]=], 12, "THICKOUTLINE")
+	DamageAmount:SetFont(STANDARD_TEXT_FONT, 16, "THICKOUTLINE")
 	DamageAmount:SetText(_detalhes:comma_value (damage))
 	DamageAmount:SetDrawLayer("OVERLAY", 0)
 	DamageAmount:SetPoint("center", DetailsNewDamageRecord, "center", 18, -7)

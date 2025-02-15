@@ -24,8 +24,17 @@ local isBCC = WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC
 local isWrath = WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC
 local isCata = WOW_PROJECT_ID == WOW_PROJECT_CATACLYSM_CLASSIC
 
-Skillet.NewsName = "Skillet-Classic News"
+Skillet.NewsName = L["Skillet-Classic News"]
 Skillet.NewsData = {
+	{	version = "2.08",
+		data = {
+			{	name = "Changes",
+				data = {
+					{ header = "TOC", body = "Update TOC" },
+				},
+			},
+		},
+	},
 	{	version = "2.07",
 		data = {
 			{	name = "Changes",

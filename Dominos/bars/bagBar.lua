@@ -21,19 +21,24 @@ end
 function BagBar:GetDefaults()
     if Addon:IsBuild("retail") then
         return {
-            displayLayer = 'LOW',
+            hidden = true,
+			displayLayer = 'LOW',
             point = 'BOTTOMRIGHT',
-            oneBag = false,
+            x = 0,
+            y = 40,
+            oneBag = true,
             keyRing = false,
             spacing = 2
         }
     else
         return {
-            displayLayer = 'LOW',
+            hidden = true,
+			displayLayer = 'LOW',
             point = 'BOTTOMRIGHT',
             x = 0,
             y = 40,
-            oneBag = false,
+            scale = 0.8,
+            oneBag = true,
             keyRing = true,
             spacing = 2
         }
@@ -216,7 +221,7 @@ function BagBarModule:OnFirstLoad()
     for _, button in pairs(BagButtons) do
         Addon:GetModule('ButtonThemer'):Register(
             button,
-            'Bag Bar',
+            L.BagBarDisplayName,
             {
                 Icon = button.icon
             }

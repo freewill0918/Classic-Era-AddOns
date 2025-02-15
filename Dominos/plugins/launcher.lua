@@ -32,7 +32,7 @@ function Launcher:CreateDataBrokerObject()
                     return
                 end
 
-                GameTooltip_SetTitle(tooltip, AddonName)
+                GameTooltip_SetTitle(tooltip, L.AddonName)
 
                 if Addon:Locked() then
                     GameTooltip_AddInstructionLine(tooltip, L.ConfigEnterTip)

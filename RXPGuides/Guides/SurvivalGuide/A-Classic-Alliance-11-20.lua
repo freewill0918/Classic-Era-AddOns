@@ -95,12 +95,14 @@ step
     #completewith HarvestW
     >>Kill |cRXP_ENEMY_Young Goretusks|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Vulture Meat|r, |cRXP_LOOT_Snouts|r and |cRXP_LOOT_Livers|r
     .collect 729,3,38,1 --Stringy Vulture Meat (3)
+    .mob +Young Fleshripper
+    .mob +Fleshripper
     .collect 731,3,38,1 --Goretusk Snout (3)
+    .mob +Young Goretusk
+    .mob +Goretusk
     .collect 723,8,22,1 --Goretusk Liver (8)
-    .mob Young Goretusk
-    .mob Goretusk
-    .mob Young Fleshripper
-    .mob Fleshripper
+    .mob +Young Goretusk
+    .mob +Goretusk
 step
     >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |cRXP_LOOT_Red Leather Bandanas|r
     .goto Westfall,48.21,46.70,60,0
@@ -112,10 +114,12 @@ step
     .goto Westfall,48.21,46.70
     .goto Westfall,41.21,40.75
     .complete 12,1 -- Defias Trapper slain (15)
+    .mob +Defias Trapper
     .complete 12,2 -- Defias Smuggler slain (15)
+    .mob +Defias Smuggler
     .complete 153,1 -- Red Leather Bandana (15)
-    .mob Defias Trapper
-    .mob Defias Smuggler
+    .mob +Defias Trapper
+    .mob +Defias Smuggler
 step
 	#label bennytime
     .goto Westfall,49.34,19.27
@@ -166,20 +170,20 @@ step
     #era
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
     .turnin 64 >> Turn in The Forgotten Heirloom
+    .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .turnin 151 >> Turn in Poor Old Blanchy
     .goto Westfall,59.92,19.42
-    .target Farmer Furlbrow
-	.target Verna Furlbrow
+	.target +Verna Furlbrow
 step
     #som
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
     .turnin 64 >> Turn in The Forgotten Heirloom
+    .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .turnin 151 >> Turn in Poor Old Blanchy
     .goto Westfall,59.92,19.42
-    .target Farmer Furlbrow
-	.target Verna Furlbrow
+	.target +Verna Furlbrow
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salma Saldean|r
     .goto Westfall,56.40,30.50
@@ -220,12 +224,14 @@ step
     .goto Westfall,54.42,40.38
     >>Kill |cRXP_ENEMY_Young Goretusks|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Vulture Meat|r, |cRXP_LOOT_Snouts|r and |cRXP_LOOT_Livers|r
     .collect 729,3,38,1 --Stringy Vulture Meat (3)
+    .mob +Young Fleshripper
+    .mob +Fleshripper
     .collect 731,3,38,1 --Goretusk Snout (3)
+    .mob +Young Goretusk
+    .mob +Goretusk
     .collect 723,8,22,1 --Goretusk Liver (8)
-    .mob Young Goretusk
-    .mob Goretusk
-    .mob Young Fleshripper
-    .mob Fleshripper
+    .mob +Young Goretusk
+    .mob +Goretusk
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
 	.target Farmer Saldean
@@ -293,7 +299,7 @@ step << !NightElf
 step << Human Warrior
     .goto Ironforge,62.0,89.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r
-    .train 176 >>Train Thrown
+    .train 2567 >>Train Thrown
     .target Bixi Wobblebonk
 step << Dwarf Paladin
     .goto Ironforge,24.55,4.49
@@ -386,9 +392,9 @@ step << !NightElf
 step << !NightElf
     .goto Wetlands,10.43,61.01,10,0
     .goto Wetlands,10.496,60.201
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Samor Festivus|r upstairs
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Samor Festivus|r upstairs
     .vendor >> |cRXP_BUY_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_BUY_that are available|r
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cFF00FF25Samor Festivus|r doesn't have any|r
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Samor Festivus|r doesn't have any|r
     .target Samor Festivus
 step << !NightElf
     .goto Wetlands,9.49,59.69
@@ -415,7 +421,7 @@ step << !NightElf
 step << !NightElf
     .zone Darkshore >> Take the boat to Darkshore
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the boat to Darkshore|r
-    >>|cRXP_WARN_Level up your|r |T133971:0|t[Cooking] |cRXP_WARN_using the|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you farmed earlier. Level it to 10 ideally|r
+    >>|cRXP_WARN_Level up your|r |T133971:0|t[Cooking] |cRXP_WARN_using the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you farmed earlier. Level it to 10 ideally|r
 step << NightElf !Druid
     .goto Westfall,56.556,52.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
@@ -458,9 +464,13 @@ step << Druid
 step << Druid
     .goto Moonglade,52.6,51.6
     >>Swim into Lake Elune'Ara
-    >>Open a |cFFDB2EEFBauble Container|r. Loot it for a |T134125:0|t[Shrine Bauble]
-    >>|cFFFCDC00It may spawn in different locations underwater|r
+    >>Open a |cRXP_PICK_Bauble Container|r. Loot it for a |T134125:0|t[Shrine Bauble]
+    >>|cRXP_WARN_It may spawn in different locations underwater|r
     .collect 15877,1,29,1 -- Shrine Bauble (1)
+step << Druid
+    #completewith next
+    .cast 18960 >> Cast Teleport: Moonglade
+    >>|cRXP_WARN_It will be faster this way so you don't need to swim for a longer time|r
 step << Druid
     .goto Moonglade,36.026,41.374
     .use 15877 >>|cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos tree|r
@@ -655,7 +665,7 @@ step
     .target Cerellean Whiteclaw
 step
     #completewith next
-    .goto Darkshore,32.75,42.21,35 >> Travel to the end of the dock then jump into the water
+    .goto 1439,32.432,43.744,15 >> Travel to the end of the dock then jump into the water
 step
     #completewith washed1
     .goto Darkshore,33.59,40.36,0
@@ -984,9 +994,9 @@ step
     .goto Darkshore,39.34,56.58,50,0
     .goto Darkshore,39.84,53.82
     .complete 985,1 -- Blackwood Pathfinder
+    .mob +Blackwood Pathfinder
     .complete 985,2 -- Blackwood Windtalker
-    .mob Blackwood Pathfinder
-    .mob Blackwood Windtalker
+    .mob +Blackwood Windtalker
 step
 #map Darkshore
     .goto Felwood,22.39,29.45
@@ -1079,7 +1089,7 @@ step << !NightElf Priest
     .target Jandria
 step << !NightElf Warrior
     .goto Darnassus,58.945,35.336
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Darnath Bladesinger|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darnath Bladesinger|r
     .trainer >> Train your class spells
     .target Darnath Bladesinger
 step << !NightElf Rogue
@@ -1229,7 +1239,7 @@ step
     .goto Darkshore,52.60,36.65,45,0
     .goto Darkshore,51.48,38.26
     >>Kill |cRXP_ENEMY_Den Mother|r
-    >>|cRXP_WARN_Be aware of the |cRXP_ENEMY_Thistle Cubs|r which can stun you for 2 seconds|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Thistle Cubs|r can cast|r |T132152:0|t[Ravage]|cRXP_WARN_, a meele instant attack which stuns you for 2 seconds|r
     .complete 2139,1 --Den Mother (1)
     .mob Den Mother
     .mob Thistle Cub
@@ -1266,10 +1276,10 @@ step
     #label CliffCave
     #completewith next
     .goto Darkshore,54.99,32.04,30,0
-    .goto Winterspring,5.49,36.64,35 >> Travel to the Cliffspring River Cave
+    .goto Darkshore,54.99,33.41,15 >> Travel to the Cliffspring River Cave
 step << Druid
     >>|cRXP_WARN_Use the|r |T134776:0|t[Empty Cliffspring Falls Sampler] |cRXP_WARN_in the water at the entrance of the Cliffspring River Cave|r
-    .goto Darkshore,54.80,33.16
+    .goto Darkshore,54.99,33.41
     .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
 step
 .group
@@ -1347,7 +1357,8 @@ step
 .group 3
     .goto Darkshore,54.93,12.19
     >>Kill |cRXP_ENEMY_Greymist Oracles|r and |cRXP_ENEMY_Greymist Tidehunter|r. Loot them for the |cRXP_LOOT_Middle of Gelkak's Key|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r |T136048:0|t[Lightning Bolt] damage and they can also heal with |T136052:0|t[Healing Wave]|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r |T136048:0|t[Lightning Bolt] damage, they can also heal with |T136052:0|t[Healing Wave]|r
+    >>Care as |cRXP_ENEMY_Greymist Tidehunters|r can cast |T136016:0|t[|cRXP_FRIENDLY_Poison|r] while in meele leaving a dot dealing 13 damage per 3 seconds for 30 seconds
     .complete 2098,2 -- Middle of Gelkak's Key (1)
     .mob Greymist Oracle
     .mob Greymist Tidehunter
@@ -1379,7 +1390,8 @@ step
     .goto Darkshore,61.40,9.40,45,0
     .goto Darkshore,62.42,7.67
     >>Kill |cRXP_ENEMY_Moonstalker Sires|r and |cRXP_ENEMY_Moonstalker Matriarchs|r. Loot them for their |cRXP_LOOT_Pelts|r and |cRXP_LOOT_Fangs|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Moonstalker Matriarchs|r also attacking with a |cRXP_ENEMY_Moonstalker Runt|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Moonstalker Matriarchs|r. They always attack with a |cRXP_ENEMY_Moonstalker Runt|r by their side|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r can cast |T132090:0|t[Exploit Weakness] a backstab attack dealing 20-40 damage if you turn your back to them
     .complete 986,1 -- Fine Moonstalker Pelt (5)
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker Sire
@@ -1434,6 +1446,7 @@ step
     #completewith next
     >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Crab Chunks|r
     >>|cRXP_WARN_If the |cRXP_ENEMY_Encrusted Tide Crawlers|r are too strong, focus on just|r |cRXP_ENEMY_Reef Crawlers|r
+    >>Be careful as |cRXP_ENEMY_Reef Crawlers|r can cast |T132155:0|t[Muscle Tear] an instant attack dealing 30-55 damage
     .complete 1138,1 -- Fine Crab Chunks (6)
     .mob Encrusted Tide Crawler
     .mob Reef Crawler
@@ -1448,6 +1461,7 @@ step
     .goto Darkshore,49.66,21.39
     >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Crab Chunks|r
     >>|cRXP_WARN_If the |cRXP_ENEMY_Encrusted Tide Crawlers|r are too strong, focus on just|r |cRXP_ENEMY_Reef Crawlers|r
+    >>Be careful as |cRXP_ENEMY_Reef Crawlers|r can cast |T132155:0|t[Muscle Tear] an instant attack dealing 30-55 damage
     .complete 1138,1 -- Fine Crab Chunks (6)
     .mob Encrusted Tide Crawler
     .mob Reef Crawler
@@ -1458,8 +1472,14 @@ step
     .mob Blackwood Warrior
     .mob Blackwood Totemic
 step
+    #completewith NorthDarkshore
+    #map Darkshore
+    .goto Felwood,18.50,19.87,100 >> Travel to Auberdine
+    .cooldown item,6948,<0
+step
     #completewith next
     .hs >> Hearth to Auberdine
+    .cooldown item,6948,>0,1
 step
 #map Darkshore
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
@@ -1483,6 +1503,7 @@ step
     .accept 948 >> Accept Onu
 step
 #map Darkshore
+    #label NorthDarkshore
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
 	.target Sentinel Glynda Nal'Shea
     .goto Darkshore,37.70,43.39
@@ -1611,7 +1632,7 @@ step << Druid
     .target Vesprystus
 step
     #completewith next
-    .goto Darkshore,32.75,42.21,35 >> Travel to the Auberdine Docks. Wait for the Menethil Harbor boat
+    .goto 1439,32.432,43.744,15 >> Travel to the Auberdine Docks. Wait for the Menethil Harbor boat
 step
     .goto Darkshore,32.44,43.71
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the Menethil Harbor boat|r
@@ -1692,7 +1713,7 @@ step
     .goto Darkshore,52.60,36.65,45,0
     .goto Darkshore,51.48,38.26
     >>Kill |cRXP_ENEMY_Den Mother|r
-    >>|cRXP_WARN_Be aware of the |cRXP_ENEMY_Thistle Cubs|r which can stun you for 2 seconds|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Thistle Cubs|r can cast|r |T132152:0|t[Ravage]|cRXP_WARN_, a meele instant attack which stuns you for 2 seconds|r
     .complete 2139,1 --Den Mother (1)
     .mob Den Mother
     .mob Thistle Cub
@@ -1754,7 +1775,8 @@ step
 step
     #completewith moonstalkers
     >>Kill |cRXP_ENEMY_Moonstalker Sires|r and |cRXP_ENEMY_Moonstalker Matriarchs|r. Loot them for their |cRXP_LOOT_Pelts|r and |cRXP_LOOT_Fangs|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Moonstalker Matriarchs|r also attacking with a |cRXP_ENEMY_Moonstalker Runt|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Moonstalker Matriarchs|r. They always attack with a |cRXP_ENEMY_Moonstalker Runt|r by their side|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r can cast |T132090:0|t[Exploit Weakness] a backstab attack dealing 20-40 damage if you turn your back to them
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
     .mob Moonstalker Matriarch
@@ -1762,8 +1784,10 @@ step
 step
 	#era/som
     #completewith Murkdeep
+    #optional
     .goto Darkshore,40.23,81.28,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
+    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
     .complete 1003,1
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -1788,6 +1812,8 @@ step
 #label moonstalkers
     .goto Darkshore,38.54,86.05
     >>Discover The Master's Glaive
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
     .complete 944,1
 step
     #completewith next
@@ -1798,20 +1824,28 @@ step
     .use 5251 >> Click the |cRXP_PICK_Scrying Bowl|r
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
 step
     .goto Ashenvale,22.24,2.52
     >>Click the |cRXP_PICK_Twilight Tome|r
     .turnin 949 >> Turn in The Twilight Camp
     .accept 950 >> Accept Return to Onu
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
 step
     .goto Ashenvale,22.36,3.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therylune|r. This will start an escort
     >>|cRXP_WARN_Skip this step if she is not there|r
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
     .accept 945 >> Accept Therylune's Escape
     .target Therylune
 step
     .goto Darkshore,40.51,87.09
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Therylune|r out of The Masters Glaive|r
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
     .complete 945,1 -- Escort Therylune
     .isOnQuest 945
 step
@@ -1824,7 +1858,8 @@ step
     .goto Darkshore,38.96,80.07,0
 	.goto Darkshore,39.3,91.8
     >>Kill |cRXP_ENEMY_Moonstalker Sires|r and |cRXP_ENEMY_Moonstalker Matriarchs|r. Loot them for their |cRXP_LOOT_Pelts|r and |cRXP_LOOT_Fangs|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Moonstalker Matriarchs|r also attacking with a |cRXP_ENEMY_Moonstalker Runt|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Moonstalker Matriarchs|r. They always attack with a |cRXP_ENEMY_Moonstalker Runt|r by their side|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r can cast |T132090:0|t[Exploit Weakness] a backstab attack dealing 20-40 damage if you turn your back to them
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
     .mob Moonstalker Matriarch
@@ -1891,7 +1926,9 @@ step
     .goto Darkshore,43.59,80.02,50,0
     .goto Darkshore,39.74,80.43,50,0
     .goto Darkshore,38.00,83.55
+    #optional
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
+    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
     .complete 1003,1 -- Grizzled Scalp (4)
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -2003,6 +2040,7 @@ step
 	.target Delgren the Purifier
     .goto Ashenvale,26.19,38.69
     .turnin 970 >> Turn in The Tower of Althalaxx
+    .accept 973 >> Accept The Tower of Althalaxx
 step
     .goto Ashenvale,31.89,22.53
     .xp 20 >> Grind to level 20
@@ -2118,11 +2156,11 @@ step
 .dungeon WC
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
     .accept 1486 >> Accept Deviate Hides
+    .target +Nalpak
     .goto 1414,51.912,55.422 -- Nalpak
     .accept 1487 >> Accept Deviate Eradication
     .goto 1414,51.918,55.444 -- Ebru
-    .target Nalpak
-    .target Ebru
+    .target +Ebru
 step
 .dungeon WC
     #completewith EnterWC
@@ -2242,10 +2280,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
     .turnin 1486 >> Turn in Deviate Hides
     .goto 1414,51.912,55.422 -- Nalpak
+    .target +Nalpak
     .turnin 1487 >> Turn in Deviate Eradication
     .goto 1414,51.918,55.444 -- Ebru
-    .target Nalpak
-    .target Ebru
+    .target +Ebru
     .isQuestComplete 1486
     .isQuestComplete 1487
 step

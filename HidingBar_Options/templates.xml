@@ -521,11 +521,11 @@
 					</OnLeave>
 					<OnMouseDown>
 						if self:IsEnabled() then
-							self.texture:SetPoint("CENTER", 1, -1)
+							self.texture:SetPoint("TOPLEFT", 4, -4)
 						end
 					</OnMouseDown>
 					<OnMouseUp>
-						self.texture:SetPoint("CENTER")
+						self.texture:SetPoint("TOPLEFT", 3, -3)
 					</OnMouseUp>
 					<OnClick function="SearchBoxTemplateClearButton_OnClick"/>
 				</Scripts>

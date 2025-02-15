@@ -77,8 +77,7 @@ function Details:OpenRaidHistoryWindow(raidName, bossEncounterId, difficultyId, 
 
         --create title bar
         local titlebar = DF:CreateTitleBar(statisticsFrame, "Details! " .. Loc ["STRING_STATISTICS"])
-        titlebar.CloseButton:SetScript("OnClick", function() statisticsFrame:GetParent():Hide() end)
-
+		titlebar.CloseButton:SetScript("OnClick", function() statisticsFrame:GetParent():Hide() end)
 --STRING_GUILDDAMAGERANK_TUTORIAL_DESC
 --STRING_OPTIONS_CHART_CLOSE
 
@@ -174,7 +173,7 @@ function Details:OpenRaidHistoryWindow(raidName, bossEncounterId, difficultyId, 
 
                 statisticsFrame.SyncText = workingFrame:CreateFontString(nil, "border", "GameFontNormal")
                 statisticsFrame.SyncText:SetPoint("right", statisticsFrame.SyncTextureBackground, "left", 0, 0)
-                statisticsFrame.SyncText:SetText("working")
+                statisticsFrame.SyncText:SetText(Loc["working"])
 
                 local endAnimationHub = DF:CreateAnimationHub(workingFrame, nil, function() workingFrame:Hide() end)
                 DF:CreateAnimation(endAnimationHub, "ALPHA", 1, 0.5, 1, 0)
@@ -224,7 +223,7 @@ function Details:OpenRaidHistoryWindow(raidName, bossEncounterId, difficultyId, 
                     statisticsFrame.DownloadedSize = statisticsFrame.DownloadedSize + length
                     local downloadSpeed = statisticsFrame.DownloadedSize / (time() - statisticsFrame.SyncStartTime)
 
-                    statisticsFrame.SyncText:SetText("working [downloading " .. statisticsFrame.DownloadedAmount .. "/" .. statisticsFrame.RequestedAmount .. ", " .. format("%.2f", downloadSpeed/1024) .. "Kbps]")
+                    statisticsFrame.SyncText:SetText(Loc["working [downloading "] .. statisticsFrame.DownloadedAmount .. "/" .. statisticsFrame.RequestedAmount .. ", " .. format("%.2f", downloadSpeed/1024) .. "Kbps]")
                 end
             end
         end
@@ -239,7 +238,7 @@ function Details:OpenRaidHistoryWindow(raidName, bossEncounterId, difficultyId, 
                 --requested to download a selected list of encounter tables
                 elseif (guildSyncID == "G") then
                     statisticsFrame.RequestedAmount = statisticsFrame.RequestedAmount + #missingIDs
-                    statisticsFrame.SyncText:SetText("working [downloading " .. statisticsFrame.DownloadedAmount .. "/" .. statisticsFrame.RequestedAmount .. "]")
+                    statisticsFrame.SyncText:SetText(Loc["working [downloading "] .. statisticsFrame.DownloadedAmount .. "/" .. statisticsFrame.RequestedAmount .. "]")
                 end
             end
         end
@@ -254,7 +253,7 @@ function Details:OpenRaidHistoryWindow(raidName, bossEncounterId, difficultyId, 
                     local bossName = statisticsFrame.select_boss.label:GetText()
                     local bossDiff = statisticsFrame.select_diff.label:GetText()
                     local guildName = statisticsFrame.select_guild.label:GetText()
-                    local reportTable = {"Details!: DPS Rank for: " .. (bossDiff or "") .. " " .. (bossName or "--x--x--") .. " <" .. (guildName or "") .. ">"}
+                    local reportTable = {Loc["Details!: DPS Rank for: "] .. (bossDiff or "") .. " " .. (bossName or "--x--x--") .. " <" .. (guildName or "") .. ">"}
                     local result = {}
 
                     for i = 1, AmtLines do
@@ -397,8 +396,8 @@ function Details:OpenRaidHistoryWindow(raidName, bossEncounterId, difficultyId, 
 
         local buildRoleList = function()
             return {
-                {value = "DAMAGER", label = "Damager", icon = icon, onclick = onRoleSelect},
-                {value = "HEALER", label = "Healer", icon = icon, onclick = onRoleSelect}
+                {value = "DAMAGER", label = Loc["Damager"], icon = icon, onclick = onRoleSelect},
+                {value = "HEALER", label = Loc["Healer"], icon = icon, onclick = onRoleSelect}
             }
         end
 
@@ -712,10 +711,10 @@ function Details:OpenRaidHistoryWindow(raidName, bossEncounterId, difficultyId, 
                         ---@type details_stats_gframe_data
                         local thisData = self.data
 
-                        GameCooltip:AddLine("Total Done:", Details:ToK2(thisData.value), 1, "white")
-                        GameCooltip:AddLine("Dps:", Details:ToK2(thisData.value / thisData.elapsed), 1, "white")
-                        GameCooltip:AddLine("Item Level:", floor(thisData.data.itemLevel), 1, "white")
-                        GameCooltip:AddLine("Date:", thisData.fulldate:gsub(".*%s", ""), 1, "white")
+                        GameCooltip:AddLine(Loc["Total Done:"], Details:ToK2(thisData.value), 1, "white")
+                        GameCooltip:AddLine(Loc["Dps:"], Details:ToK2(thisData.value / thisData.elapsed), 1, "white")
+                        GameCooltip:AddLine(Loc["Item Level:"], floor(thisData.data.itemLevel), 1, "white")
+                        GameCooltip:AddLine(Loc["Date:"], thisData.fulldate:gsub(".*%s", ""), 1, "white")
 
                         GameCooltip:SetOwner(self.ball.tooltip_anchor)
                         GameCooltip:Show()
@@ -850,7 +849,7 @@ function Details:OpenRaidHistoryWindow(raidName, bossEncounterId, difficultyId, 
                 return
             end
 
-            local header = {{name = "Player Name", type = "text"}} -- , width = 90
+            local header = {{name = Loc["Player Name"], type = "text"}} -- , width = 90
             local players = {}
 
             ---@type table<unitname, number>
@@ -1047,7 +1046,7 @@ function Details:OpenRaidHistoryWindow(raidName, bossEncounterId, difficultyId, 
     end
 
     if (not statsWindow.UpdateDropdowns) then
-        Details:Msg("Failled to load statistics, Details! Storage is disabled?")
+        Details:Msg(Loc["Failled to load statistics, Details! Storage is disabled?"])
         return
     end
 

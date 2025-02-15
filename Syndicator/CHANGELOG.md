@@ -1,6 +1,7 @@
 # Syndicator
 
-## [162](https://github.com/Baganator/Syndicator/tree/162) (2025-01-25)
-[Full Changelog](https://github.com/Baganator/Syndicator/compare/161...162) 
+## [170](https://github.com/Baganator/Syndicator/tree/170) (2025-02-03)
+[Full Changelog](https://github.com/Baganator/Syndicator/compare/169...170) 
 
-- Search Builder: Fix parsing of terms involving ! as a starting element  
+- Remove unused locale string  
+- Search Builder: Fix translation string and frame strata issue  

@@ -28,7 +28,7 @@ function TalkingHeadBar:GetDefaults()
     return {
         point = 'BOTTOM',
         x = 0,
-        y = 74,
+        y = 165,
         displayLayer = 'LOW',
         showInPetBattleUI = true,
         showInOverrideUI = true
@@ -100,7 +100,7 @@ end
 function TalkingHeadBarModule:Unload()
     if self.frame then
         self.frame:Free()
-        self.frame = nil
+		self.frame = nil
     end
 end
 

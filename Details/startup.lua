@@ -395,6 +395,9 @@ function Details222.StartUp.StartMeUp()
 				--check if there's changes in the size of the news string
 				if (Details.last_changelog_size ~= #Loc["STRING_VERSION_LOG"]) then
 					Details.last_changelog_size = #Loc["STRING_VERSION_LOG"]
+
+					if (true) then return end --stop opening the new window automatically
+
 					if (Details.auto_open_news_window) then
 						C_Timer.After(5, function()
 							Details.OpenNewsWindow()
@@ -405,7 +408,7 @@ function Details222.StartUp.StartMeUp()
 						C_Timer.After(10, function()
 							if (lowerInstanceId:IsEnabled()) then
 								lowerInstanceId:InstanceAlert(Loc ["STRING_VERSION_UPDATE"], {[[Interface\GossipFrame\AvailableQuestIcon]], 16, 16, false}, 60, {Details.OpenNewsWindow}, true)
-								Details:Msg("A new version has been installed: /details news") --localize-me
+								Details:Msg(Loc["A new version has been installed: /details news"]) --localize-me
 							end
 						end)
 					end
@@ -527,7 +530,7 @@ function Details222.StartUp.StartMeUp()
 				---@type trinketdata
 				local thisTrinketData = {
 					itemName = C_Item.GetItemNameByID(trinketTable.itemId),
-					spellName = Details222.GetSpellInfo(spellId) or "spell not found",
+					spellName = Details222.GetSpellInfo(spellId) or Loc["spell not found"],
 					lastActivation = 0,
 					lastPlayerName = "",
 					totalCooldownTime = 0,
@@ -624,7 +627,7 @@ function Details222.StartUp.StartMeUp()
 
 	if (GetExpansionLevel() == 10) then
 		if (not Details.data_wipes_exp["11"]) then
-			Details:Msg("New expansion detected, clearing data...")
+			Details:Msg(Loc["New expansion detected, clearing data..."])
 			Details:Destroy(Details.encounter_spell_pool or {})
 			Details:Destroy(Details.boss_mods_timers or {})
 			Details:Destroy(Details.spell_school_cache or {})

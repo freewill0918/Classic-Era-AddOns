@@ -66,7 +66,12 @@ function PowerBar:GetDisplayName()
 end
 
 function PowerBar:GetDefaults()
-	return { point = 'CENTER', displayLayer = 'HIGH' }
+	return {
+		point = 'BOTTOM',
+		displayLayer = 'HIGH',
+		x = 0,
+		y = 290
+	}
 end
 
 -- always reparent + position the bar due to UIParent.lua moving it whenever its shown

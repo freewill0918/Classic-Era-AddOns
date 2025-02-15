@@ -404,16 +404,16 @@ detailsFramework.LayoutFrame = {
 			if (textType) then
 				textType = string.lower(textType)
 				if (textType == "short") then
-					text = "close window"
+					text = "關閉視窗"
 
 				elseif (textType == "medium") then
-					text = "close window"
+					text = "關閉視窗"
 
 				elseif (textType == "large") then
-					text = "close window"
+					text = "關閉視窗"
 				end
 			else
-				text = "close window"
+				text = "關閉視窗"
 			end
 		end
 
@@ -835,7 +835,7 @@ local align_rows = function(self)
 					text:SetPoint("left", line, "left", self._anchors [#self._anchors], 0)
 					text:SetWidth(row.width)
 
-					detailsFramework:SetFontSize(text, row.textsize or 10)
+					detailsFramework:SetFontSize(text, row.textsize or 14)
 					text:SetJustifyH(row.textalign or "left")
 				end
 			elseif (rowType == "entry") then
@@ -1005,7 +1005,7 @@ local update_rows = function(self, updated_rows)
 			--
 
 			widget.text:SetText(t.name)
-			detailsFramework:SetFontSize(widget.text, raw.textsize or 10)
+			detailsFramework:SetFontSize(widget.text, raw.textsize or 14)
 			widget.text:SetJustifyH(raw.textalign or "left")
 		end
 	end
@@ -1505,7 +1505,7 @@ if ((ColorPickerFrame and ColorPickerFrame.SetupColorPickerAndShow) or toc >= 10
 
 	local color_pick_func_cancel = function()
 		local r, g, b, a = ColorPickerFrame.previousValues.r, ColorPickerFrame.previousValues.g, ColorPickerFrame.previousValues.b, ColorPickerFrame.previousValues.a
-		ColorPickerFrame.Content.ColorPicker:SetColorRGB(r, g, b) --error here: attempt to index field 'Content' (a nil value)
+		ColorPickerFrame:SetColorRGB(r, g, b)
 		ColorPickerFrame:dcallback (r, g, b, a, ColorPickerFrame.dframe)
 	end
 
@@ -1645,10 +1645,10 @@ function detailsFramework:IconPick (callback, close_when_select, param1, param2)
 		detailsFramework.IconPickFrame.preview:Hide()
 
 		--serach
-		detailsFramework.IconPickFrame.searchLabel =  detailsFramework:NewLabel(detailsFramework.IconPickFrame, nil, "$parentSearchBoxLabel", nil, "Search:")
+		detailsFramework.IconPickFrame.searchLabel =  detailsFramework:NewLabel(detailsFramework.IconPickFrame, nil, "$parentSearchBoxLabel", nil, "搜尋:")
 		detailsFramework.IconPickFrame.searchLabel:SetPoint("topleft", detailsFramework.IconPickFrame, "topleft", 12, -36)
 		detailsFramework.IconPickFrame.searchLabel:SetTemplate(detailsFramework:GetTemplate("font", "ORANGE_FONT_TEMPLATE"))
-		detailsFramework.IconPickFrame.searchLabel.fontsize = 12
+		detailsFramework.IconPickFrame.searchLabel.fontsize = 16
 
 		detailsFramework.IconPickFrame.search = detailsFramework:NewTextEntry(detailsFramework.IconPickFrame, nil, "$parentSearchBox", nil, 140, 20)
 		detailsFramework.IconPickFrame.search:SetPoint("left", detailsFramework.IconPickFrame.searchLabel, "right", 2, 0)
@@ -1671,7 +1671,7 @@ function detailsFramework:IconPick (callback, close_when_select, param1, param2)
 		--manually enter the icon path
 		detailsFramework.IconPickFrame.customIcon = detailsFramework:CreateLabel(detailsFramework.IconPickFrame, "Icon Path:", detailsFramework:GetTemplate("font", "ORANGE_FONT_TEMPLATE"))
 		detailsFramework.IconPickFrame.customIcon:SetPoint("bottomleft", detailsFramework.IconPickFrame, "bottomleft", 12, 16)
-		detailsFramework.IconPickFrame.customIcon.fontsize = 12
+		detailsFramework.IconPickFrame.customIcon.fontsize = 16
 
 		detailsFramework.IconPickFrame.customIconEntry = detailsFramework:CreateTextEntry(detailsFramework.IconPickFrame, function()end, 200, 20, "CustomIconEntry", _, _, detailsFramework:GetTemplate("dropdown", "OPTIONS_DROPDOWN_TEMPLATE"))
 		detailsFramework.IconPickFrame.customIconEntry:SetPoint("left", detailsFramework.IconPickFrame.customIcon, "right", 2, 0)
@@ -2052,7 +2052,7 @@ local SimplePanel_frame_backdrop_border_color = {0, 0, 0, 1}
 ---@field thumb texture
 function detailsFramework:CreateScaleBar(frame, config, bNoRightClick) --~scale
 	---@type df_scalebar
-	local scaleBar, text = detailsFramework:CreateSlider(frame, 120, 14, 0.6, 1.6, 0.1, config.scale, true, "ScaleBar", nil, "Scale:", detailsFramework:GetTemplate("slider", "OPTIONS_SLIDER_TEMPLATE"), detailsFramework:GetTemplate("font", "ORANGE_FONT_TEMPLATE"))
+	local scaleBar, text = detailsFramework:CreateSlider(frame, 120, 14, 0.6, 1.6, 0.1, config.scale, true, "ScaleBar", nil, "縮放:", detailsFramework:GetTemplate("slider", "OPTIONS_SLIDER_TEMPLATE"), detailsFramework:GetTemplate("font", "ORANGE_FONT_TEMPLATE"))
 	scaleBar.thumb:SetWidth(24)
 	scaleBar:SetValueStep(0.05)
 	scaleBar:SetObeyStepOnDrag(true)
@@ -2066,7 +2066,7 @@ function detailsFramework:CreateScaleBar(frame, config, bNoRightClick) --~scale
 	editbox:SetBackdrop({bgFile = [[Interface\ACHIEVEMENTFRAME\UI-GuildAchievement-Parchment-Horizontal-Desaturated]],
 	edgeFile = [[Interface\Buttons\WHITE8X8]],
 	tile = true, edgeSize = 1, tileSize = 64})
-	editbox:SetFontObject("GameFontHighlightSmall")
+	editbox:SetFontObject("GameFontHighlight")
 	editbox:SetBackdropColor(0, 0, 0, 1)
 
 	editbox:SetScript("OnEditFocusGained", function()
@@ -3383,7 +3383,7 @@ function detailsFramework:CreateChartPanel(parent, width, height, name)
 			line:SetWidth(670)
 			line:SetHeight(1.1)
 
-			local s = chartFrame:CreateFontString(nil, "overlay", "GameFontHighlightSmall")
+			local s = chartFrame:CreateFontString(nil, "overlay", "GameFontHighlight")
 			chartFrame ["dpsamt"..i] = s
 			s:SetText("100k")
 			s:SetPoint("topleft", chartFrame, "topleft", 27, -61 + (-(24.6*i)))
@@ -3398,7 +3398,7 @@ function detailsFramework:CreateChartPanel(parent, width, height, name)
 		chartFrame.TimeLabelsHeight = 16
 
 		for i = 1, 17 do
-			local timeString = chartFrame:CreateFontString(nil, "overlay", "GameFontHighlightSmall")
+			local timeString = chartFrame:CreateFontString(nil, "overlay", "GameFontHighlight")
 			timeString:SetText("00:00")
 			timeString:SetPoint("bottomleft", chartFrame, "bottomleft", 78 + ((i-1)*36), chartFrame.TimeLabelsHeight)
 			chartFrame.TimeLabels [i] = timeString
@@ -3513,13 +3513,13 @@ local gframe_create_line = function(self)
 	textBackground:SetColorTexture(0, 0, 0, 0.5)
 	textBackground:SetPoint("bottom", f.ball, "top", 0, -6)
 	text:SetPoint("center", textBackground, "center")
-	detailsFramework:SetFontSize(text, 10)
+	detailsFramework:SetFontSize(text, 14)
 	f.text = text
 	f.textBackground = textBackground
 
 	local timeline = f:CreateFontString(nil, "overlay", "GameFontNormal")
 	timeline:SetPoint("bottomright", f, "bottomright", -2, 0)
-	detailsFramework:SetFontSize(timeline, 8)
+	detailsFramework:SetFontSize(timeline, 12)
 	f.timeline = timeline
 
 	return f
@@ -3663,7 +3663,7 @@ function detailsFramework:CreateRightClickToClose(parent, xOffset, yOffset, colo
 	color = color or "white"
 	fontSize = fontSize or 10
 
-	local label = detailsFramework:CreateLabel(parent, "right click to close", fontSize, color)
+	local label = detailsFramework:CreateLabel(parent, "點一下右鍵關閉", fontSize, color)
 	label:SetPoint("bottomright", parent, "bottomright", -4 + xOffset, 5 + yOffset)
 
 	return label
@@ -3844,12 +3844,12 @@ function detailsFramework:CreateSimpleListBox(parent, name, title, emptyText, li
 
 	scroll:SetSize(scroll.options.width + 2, scroll.options.height)
 
-	local name = detailsFramework:CreateLabel(scroll, title, 12, "silver")
+	local name = detailsFramework:CreateLabel(scroll, title, 16, "silver")
 	name:SetTemplate(detailsFramework:GetTemplate("font", "OPTIONS_FONT_TEMPLATE"))
 	name:SetPoint("bottomleft", scroll, "topleft", 0, 2)
 	scroll.Title = name
 
-	local emptyLabel = detailsFramework:CreateLabel(scroll, emptyText, 12, "gray")
+	local emptyLabel = detailsFramework:CreateLabel(scroll, emptyText, 16, "gray")
 	emptyLabel:SetAlpha(.6)
 	emptyLabel:SetSize(scroll.options.width-10, scroll.options.height)
 	emptyLabel:SetPoint("center", 0, 0)

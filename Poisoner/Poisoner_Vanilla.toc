@@ -4,7 +4,7 @@
 ## Author: Original by Karrion@Terenas, Poisoner3 by Silentdave, humfras (06/2010), Poisoner4 by humfras
 ## eMail: N/A
 ## URL: N/A
-## Version: 1.15.5.1-vanilla
+## Version: 1.15.5.3-vanilla
 ## Dependencies:
 ## SavedVariablesPerCharacter: POISONER_CONFIG
 

@@ -1,0 +1,35 @@
+## Interface: 11500
+## Interface-Mainline: 110100
+## Interface-Wrath: 30403
+## Interface-Classic: 11506
+## Interface-Cata: 40402
+## Interface-BCC: 20504
+
+## Title: RXP Leveling
+## Notes: In-game quest stacking
+## Author: The Curator
+## Version: 1.0.0
+
+## Dependencies: RXPGuides
+
+Era/Extras.lua
+Era/30-60-Alliance.lua
+Era/30-60-Horde.lua
+HC/Alliance-20-60.lua
+HC/Horde-20-60.lua
+HC/Custom.lua
+SOD/Custom.lua
+Classic/Alliance-31-85.lua
+Classic/Horde-31-85.lua
+Classic/Cata Prep.lua
+Remix/Pandaria.lua
+BFA/A-War Campaign.lua
+BFA/H-War Campaign.lua
+DF/Alliance.lua
+DF/Horde.lua
+DF/Campaign.lua
+TWW/Prep-Alliance.lua
+TWW/Prep-Horde.lua
+TWW/Alliance.lua
+TWW/Custom.lua
+TWW/Horde.lua

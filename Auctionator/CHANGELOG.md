@@ -1,6 +1,8 @@
 # Auctionator
 
-## [257](https://github.com/Auctionator/Auctionator/tree/257) (2025-01-20)
-[Full Changelog](https://github.com/Auctionator/Auctionator/compare/256...257) 
+## [260](https://github.com/Auctionator/Auctionator/tree/260) (2025-02-11)
+[Full Changelog](https://github.com/Auctionator/Auctionator/compare/259...260) 
 
-- Classic: Fix disenchant odds to use greater magic on weapons ilvl 21-30  
+- [Fixes #1631] Cata Classic: Workaround to let users post  
+- Revert "Update for Cata 4.4.2 changes to AH" (update not out yet)  
+- Update for Cata 4.4.2 changes to AH  

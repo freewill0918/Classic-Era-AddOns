@@ -97,7 +97,7 @@ iconData:SetScript("OnShow", function(self)
 		elseif a.type ~= "spell" and b.type == "spell" then return false end
 		return a.name < b.name
 	end)
-	tinsert(self.extraIcons, 1, {type = "other", name = HidingBarAddon.ombDefIcon, icon = 651945})
+	tinsert(self.extraIcons, 1, {type = "other", name = HidingBarAddon.ombDefIcon, icon = 450906})
 
 	-- SELECTED ICON
 	self.selectedIconBtn = CreateFrame("BUTTON", nil, self, "HidingBarAddonIconButtonTemplate")

@@ -77,6 +77,7 @@ local addIgnoreAbility
 
 local options = {
     type = "group",
+	name = L["Lite Button Auras"],
     childGroups = "tab",
     args = {
         GeneralGroup = {
@@ -510,16 +511,16 @@ local AceDBOptions =  LibStub("AceDBOptions-3.0")
 -- appear in the right order, add the main panel when loaded.
 
 AceConfig:RegisterOptionsTable(addonName, GenerateOptions, { "litebuttonauras", "lba" })
-local optionsPanel, category = AceConfigDialog:AddToBlizOptions(addonName)
+local optionsPanel, category = AceConfigDialog:AddToBlizOptions(addonName, L[addonName])
 
 function LBA.InitializeGUIOptions()
     local profileOptions = AceDBOptions:GetOptionsTable(LBA.db)
     AceConfig:RegisterOptionsTable(addonName.."Profiles", profileOptions)
-    AceConfigDialog:AddToBlizOptions(addonName.."Profiles", profileOptions.name, addonName)
+    AceConfigDialog:AddToBlizOptions(addonName.."Profiles", profileOptions.name, L[addonName])
 end
 
 function LBA.OpenOptions()
-    Settings.OpenToCategory(category)
+    Settings.OpenToCategory(category.ID)
 end
 
 LiteButtonAuras_AddonCompartmentFunc = function () LBA.OpenOptions() end

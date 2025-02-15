@@ -15,7 +15,7 @@ end
 local defaultConfig = {}
 -- general
 defaultConfig.general = {
-    welcome               = true,                               -- display welcome message
+    welcome               = false,                               -- display welcome message
     updateFreq            = 0.2,                                -- how often the threat bars update
     rawPercent            = false,                              -- use raw percent
     downscaleThreat       = true,                               -- downscale threat so 1 damage = 1 threat
@@ -46,7 +46,7 @@ defaultConfig.frame = {
 -- backdrop settings
 defaultConfig.backdrop = {
     texture             = defaultTexture,                       -- backdrop texture
-    color               = {0, 0, 0, 1},                         -- backdrop color
+    color               = {0, 0, 0, 0.1},                         -- backdrop color
     edgeTexture         = defaultTexture,                       -- backdrop edge texture
     edgeColor           = {0, 0, 0, 1},                         -- backdrop edge color
     tile                = false,                                -- backdrop texture tiling

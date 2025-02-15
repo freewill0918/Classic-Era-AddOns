@@ -91,16 +91,20 @@ end)
 function MenuBar:GetDefaults()
     if Addon:IsBuild("retail") then
         return {
-            displayLayer = 'LOW',
+            hidden = true,
+			displayLayer = 'LOW',
             point = 'BOTTOMRIGHT',
             x = 0,
-            y = 48
+            y = 0,
+			spacing = -7
         }
     else
         return {
+			hidden = true,
             displayLayer = 'LOW',
             point = 'BOTTOMRIGHT',
-            x = 0,
+            scale = 0.8,
+			x = 0,
             y = 0
         }
     end

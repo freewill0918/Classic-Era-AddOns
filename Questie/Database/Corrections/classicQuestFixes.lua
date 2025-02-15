@@ -859,7 +859,7 @@ function QuestieQuestFixes:Load()
         },
         [1436] = {
             [questKeys.preQuestSingle] = {},
-            [questKeys.preQuestGroup] = {1434,1480},
+            [questKeys.preQuestGroup] = {1434,1435},
         },
         [1440] = {
             [questKeys.triggerEnd] = {"Rescue Dalinda Malem", {[zoneIDs.DESOLACE]={{58.27,30.91}}}},
@@ -1431,6 +1431,7 @@ function QuestieQuestFixes:Load()
         },
         [3525] = {
             [questKeys.triggerEnd] = {"Protect Belnistrasz while he performs the ritual to shut down the idol", {[zoneIDs.THE_BARRENS]={{50.86,92.87}}}},
+            [questKeys.finishedBy] = {nil,{152097}},
         },
         [3526] = {
             [questKeys.requiredSpecialization] = specKeys.ENGINEERING,
@@ -2915,8 +2916,9 @@ function QuestieQuestFixes:Load()
         [8171] = {
             [questKeys.specialFlags] = 0,
         },
-        [8183] = {
+        [8183] = { -- The Heart of Hakkar
             [questKeys.startedBy] = {{14834},nil,{19802}},
+            [questKeys.zoneOrSort] = zoneIDs.ZUL_GURUB,
         },
         [8184] = {
             [questKeys.requiredClasses] = classIDs.WARRIOR,
@@ -2977,8 +2979,11 @@ function QuestieQuestFixes:Load()
             [questKeys.requiredRaces] = raceIDs.ALL_HORDE,
         },
         [8304] = {
-            [questKeys.objectives] = {{{15171,"Frankal Questioned"},{15170,"Rutgar Questioned"}},nil,nil,nil},
+            [questKeys.objectives] = {{{15171,"Frankal Questioned",Questie.ICON_TYPE_TALK},{15170,"Rutgar Questioned",Questie.ICON_TYPE_TALK}},nil,nil,nil},
             [questKeys.requiredLevel] = 58, -- #2166
+        },
+        [8308] = { -- Brann Bronzebeard's Lost Letter
+            [questKeys.startedBy] = {{11698,11721,11722,11723,11724,11725,11726,11727,11728,11729,11730,11731,11732,11733,11734,13136,13301},nil,{20461}},
         },
         [8314] = {
             [questKeys.specialFlags] = 0, -- #1870
@@ -3104,13 +3109,13 @@ function QuestieQuestFixes:Load()
             [questKeys.triggerEnd] = {"Waking Legends.",{[zoneIDs.MOONGLADE]={{40.0,48.6}}}},
         },
         [8466] = {
-            [questKeys.objectivesText] = nil,
+            [questKeys.objectivesText] = {},
         },
         [8467] = {
-            [questKeys.objectivesText] = nil,
+            [questKeys.objectivesText] = {},
         },
         [8469] = {
-            [questKeys.objectivesText] = nil,
+            [questKeys.objectivesText] = {},
         },
         [8470] = {
             [questKeys.startedBy] = {{7156,7157,7158},nil,{20741}},
@@ -3588,6 +3593,14 @@ function QuestieQuestFixes:Load()
             [questKeys.finishedBy] = {{15700},nil},
             [questKeys.specialFlags] = specialFlags.REPEATABLE,
         },
+        [8860] = { -- New Year Celebrations!
+            [questKeys.requiredLevel] = 1,
+            [questKeys.questLevel] = 60,
+        },
+        [8861] = { -- New Year Celebrations!
+            [questKeys.requiredLevel] = 1,
+            [questKeys.questLevel] = 60,
+        },
         [8863] = {
             [questKeys.specialFlags] = specialFlags.REPEATABLE,
         },
@@ -3645,6 +3658,9 @@ function QuestieQuestFixes:Load()
         },
         [8882] = {
             [questKeys.specialFlags] = specialFlags.REPEATABLE,
+        },
+        [8883] = {
+            [questKeys.requiredSourceItems] = {21711},
         },
         [8897] = {
             [questKeys.exclusiveTo] = {8898,8899,8903},
@@ -3806,9 +3822,6 @@ function QuestieQuestFixes:Load()
             [questKeys.specialFlags] = specialFlags.REPEATABLE,
         },
         [9084] = {
-            [questKeys.specialFlags] = specialFlags.REPEATABLE,
-        },
-        [9085] = {
             [questKeys.specialFlags] = specialFlags.REPEATABLE,
         },
         [9086] = {
@@ -4037,6 +4050,8 @@ function QuestieQuestFixes:Load()
         },
         [9419] = {
             [questKeys.preQuestSingle] = {},
+            [questKeys.objectives] = {{{17090,"Return Silithyst",Questie.ICON_TYPE_EVENT}}},
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_OBJECT, l10n("Silithyst"),0,{{"object", 181597},{"object", 181598}}}},
         },
         [9422] = {
             [questKeys.preQuestSingle] = {},

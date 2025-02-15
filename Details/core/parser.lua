@@ -688,18 +688,18 @@
 		end
 		Details.LastPullMsg = time()
 
-		local hitLine = self.HitBy or "|cFFFFBB00First Hit|r: *?*"
+		local hitLine = self.HitBy or Loc["|cFFFFBB00First Hit|r: *?*"]
 		local targetLine = ""
 
 		if (Details.bossTargetAtPull) then
-			targetLine = " |cFFFFBB00Boss First Target|r: " .. Details.bossTargetAtPull
+			targetLine = Loc[" |cFFFFBB00Boss First Target|r: "] .. Details.bossTargetAtPull
 		else
 			for i = 1, 5 do
 				local boss = UnitExists("boss" .. i)
 				if (boss) then
 					local target = UnitName ("boss" .. i .. "target")
 					if (target and type(target) == "string") then
-						targetLine = " |cFFFFBB00Boss First Target|r: " .. target
+						targetLine = Loc[" |cFFFFBB00Boss First Target|r: "] .. target
 						break
 					end
 				end
@@ -761,11 +761,11 @@
 			end
 
 			if (value and combatTime and value > 0 and combatTime > 0) then
-				Details:Msg("|cFFFFBB00Your Best Score|r:", Details:ToK2 ((value) / combatTime) .. " [|cFFFFFF00Guild Rank: " .. rank .. "|r]") --localize-me
+				Details:Msg(Loc["|cFFFFBB00Your Best Score|r:"], Details:ToK2 ((value) / combatTime) .. Loc[" [|cFFFFFF00Guild Rank: "] .. rank .. "|r]") --localize-me
 			end
 
 			if ((not combatTime or combatTime == 0) and not Details.SyncWarning) then
-				Details:Msg("|cFFFF3300you may need sync the rank within the guild, type '|cFFFFFF00/details rank|r'|r") --localize-me
+				Details:Msg(Loc["|cFFFF3300you may need sync the rank within the guild, type '|cFFFFFF00/details rank|r'|r"]) --localize-me
 				Details.SyncWarning = true
 			end
 		end
@@ -974,7 +974,7 @@
 					end
 
 					Details.WhoAggroTimer = C_Timer.NewTimer(0.1, whoAggro)
-					Details.WhoAggroTimer.HitBy = "|cFFFFFF00First Hit|r: " .. (link or "") .. " from " .. (sourceName or "Unknown")
+					Details.WhoAggroTimer.HitBy = "|cFFFFFF00開怪|r: " .. (link or "") .. " 由 " .. (sourceName or "未知") -- 不能用外部翻譯
 
 					if (Details.announce_firsthit.enabled) then
 						Details:Msg("", Details.WhoAggroTimer.HitBy)
@@ -1833,14 +1833,14 @@
 		local this_event = t[i]
 
 		if (not this_event) then
-			return Details:Msg("Parser Event Error -> Set to 16 DeathLogs and /reload", i, _amount_of_last_events)
+			return Details:Msg(Loc["Parser Event Error -> Set to 16 DeathLogs and /reload"], i, _amount_of_last_events)
 		end
 
 		this_event [1] = true --true if this is a damage || false for healing
 		this_event [2] = spellId --spellid || false if this is a battle ress line
 		this_event [3] = amount --amount of damage or healing
 		this_event [4] = time --parser time
-		this_event [5] = UnitHealth(sourceName) / UnitHealthMax(sourceName) --current unit heal
+		this_event [5] = UnitHealth(sourceName) / (max(UnitHealthMax(sourceName), 0.1)) --current unit heal
 		this_event [6] = sourceName --source name
 		this_event [7] = absorbed
 		this_event [8] = school
@@ -1928,7 +1928,7 @@
 		local this_event = t [i]
 
 		if (not this_event) then
-			return Details:Msg("Parser Event Error -> Set to 16 DeathLogs and /reload", i, _amount_of_last_events)
+			return Details:Msg(Loc["Parser Event Error -> Set to 16 DeathLogs and /reload"], i, _amount_of_last_events)
 		end
 
 		this_event [1] = true --true if this is a damage || false for healing
@@ -2048,7 +2048,7 @@
 		local this_event = t [i]
 
 		if (not this_event) then
-			return Details:Msg("Parser Event Error -> Set to 16 DeathLogs and /reload", i, _amount_of_last_events)
+			return Details:Msg(Loc["Parser Event Error -> Set to 16 DeathLogs and /reload"], i, _amount_of_last_events)
 		end
 
 		this_event [1] = true --true if this is a damage || false for healing
@@ -2415,7 +2415,7 @@
 
 		--no name, use spellname
 		if (not sourceName) then
-			sourceName = "[*] " .. (spellNameHeal or "--unknown spell--")
+			sourceName = "[*] " .. (spellNameHeal or Loc["--unknown spell--"])
 		end
 
 		--no target, just ignore
@@ -2911,7 +2911,7 @@
 
 		--not yet well know about unnamed buff casters
 		if (not targetName) then
-			targetName = "[*] Unknown shield target"
+			targetName = Loc["[*] Unknown shield target"]
 
 		elseif (not sourceName) then
 			sourceName = names_cache[spellName]
@@ -2980,7 +2980,7 @@
 				local thisEvent = deathLog[i]
 
 				if (not thisEvent) then
-					return Details:Msg("Parser Event Error -> Set to 16 DeathLogs and /reload", i, _amount_of_last_events)
+					return Details:Msg(Loc["Parser Event Error -> Set to 16 DeathLogs and /reload"], i, _amount_of_last_events)
 				end
 
 				thisEvent[1] = 5 --5 = buff aplication
@@ -3489,7 +3489,7 @@
 					local thisEvent = t[i]
 
 					if (not thisEvent) then
-						return Details:Msg("Parser Event Error -> Set to 16 DeathLogs and /reload", i, _amount_of_last_events)
+						return Details:Msg(Loc["Parser Event Error -> Set to 16 DeathLogs and /reload"], i, _amount_of_last_events)
 					end
 
 					thisEvent[1] = 4 --4 = debuff aplication
@@ -4534,7 +4534,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 		end
 
 		if (not spellName) then
-			spellName = "Melee"
+			spellName = Loc["Melee"]
 		end
 
 		if (not sourceName) then
@@ -4860,7 +4860,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 						thisPlayer.nome, --string player name
 						thisPlayer.classe, --string player class
 						maxHealth, --number max health
-						minutes .. "m " .. seconds .. "s", --time of death as string
+						minutes .. Loc["m "] .. seconds .. Loc["s"], --time of death as string
 						["dead"] = true,
 						["last_cooldown"] = thisPlayer.last_cooldown,
 						["dead_at"] = combatElapsedTime,
@@ -4883,7 +4883,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 						local mythicPlusElapsedTime = GetTime() - Details.tabela_overall:GetStartTime()
 						local minutes, seconds = floor(mythicPlusElapsedTime/60), floor(mythicPlusElapsedTime % 60)
 
-						overallDeathTable[6] = minutes .. "m " .. seconds .. "s"
+						overallDeathTable[6] = minutes .. Loc["m "] .. seconds .. Loc["s"]
 						overallDeathTable.dead_at = mythicPlusElapsedTime
 
 						--save data about the mythic run in the deathTable which goes in the regular segment
@@ -5266,7 +5266,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 	end
 
 	function Details:CallWipe (from_slash)
-		Details:Msg("Wipe has been called by your raid leader.")
+		Details:Msg(Loc["Wipe has been called by your raid leader."])
 
 		if (Details.wipe_called) then
 			if (from_slash) then
@@ -5624,7 +5624,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 		local encounterID, encounterName, difficultyID, raidSize, endStatus = select(1, ...)
 
 		if (not Details.encounter_table.start) then
-			Details:Msg("encounter table without start time.")
+			-- Details:Msg("encounter table without start time.")
 			return
 		end
 
@@ -5974,7 +5974,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 			if (not Details.logoff_saving_data) then
 				local successful, errortext = pcall(Details.Database.StoreWipe)
 				if (not successful) then
-					Details:Msg("error occurred on Details.Database.StoreWipe():", errortext)
+					Details:Msg(Loc["error occurred on Details.Database.StoreWipe():"], errortext)
 				end
 			end
 			Details.schedule_store_boss_encounter_wipe = nil
@@ -6469,7 +6469,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 			if (not Details.instance_load_failed) then
 				Details:CreatePanicWarning()
 			end
-			Details.instance_load_failed.text:SetText("Framework for Details! isn't loaded.\nIf you just updated the addon, please reboot the game client.\nWe apologize for the inconvenience and thank you for your comprehension.")
+			Details.instance_load_failed.text:SetText(Loc["Framework for Details! isn't loaded.\nIf you just updated the addon, please reboot the game client.\nWe apologize for the inconvenience and thank you for your comprehension."])
 			return
 		end
 
@@ -6714,7 +6714,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 
 		--if is in combat during the logout, stop the combat
 		if (Details.in_combat and Details.tabela_vigente) then
-			tinsert(_detalhes_global.exit_log, "3 - Leaving current combat.")
+			tinsert(_detalhes_global.exit_log, Loc["3 - Leaving current combat."])
 			currentStep = "Leaving Current Combat"
 			xpcall(Details.SairDoCombate, logSaverError)
 			Details.can_panic_mode = true
@@ -6722,14 +6722,14 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 
 		--switch back to default, settings changed by automation
 		if (Details.CheckSwitchOnLogon and Details.tabela_instancias and Details.tabela_instancias[1] and getmetatable(Details.tabela_instancias[1])) then
-			tinsert(_detalhes_global.exit_log, "4 - Reversing switches.")
+			tinsert(_detalhes_global.exit_log, Loc["4 - Reversing switches."])
 			currentStep = "Check Switch on Logon"
 			xpcall(Details.CheckSwitchOnLogon, logSaverError)
 		end
 
 		--user requested a wipe of the full configuration
 		if (Details.wipe_full_config) then
-			tinsert(_detalhes_global.exit_log, "5 - Is a full config wipe.")
+			tinsert(_detalhes_global.exit_log, Loc["5 - Is a full config wipe."])
 			addToExitErrors("true: _detalhes.wipe_full_config | " .. Details.GetVersionString())
 			_detalhes_global = nil
 			_detalhes_database = nil
@@ -6737,16 +6737,16 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 		end
 
 		--save the config
-		tinsert(_detalhes_global.exit_log, "6 - Saving Config.")
+		tinsert(_detalhes_global.exit_log, Loc["6 - Saving Config."])
 		currentStep = "Saving Config"
 		xpcall(Details.SaveConfig, logSaverError)
 
-		tinsert(_detalhes_global.exit_log, "7 - Saving Profiles.")
+		tinsert(_detalhes_global.exit_log, Loc["7 - Saving Profiles."])
 		currentStep = "Saving Profile"
 		xpcall(Details.SaveProfile, logSaverError)
 
 		--save the nicktag cache
-		tinsert(_detalhes_global.exit_log, "8 - Saving nicktag cache.")
+		tinsert(_detalhes_global.exit_log, Loc["8 - Saving nicktag cache."])
 
 		local saveNicktabCache = function()
 			_detalhes_database.nick_tag_cache = Details.CopyTable(_detalhes_database.nick_tag_cache)
@@ -6935,7 +6935,36 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 		cacheAnything.track_hunter_frenzy = Details.combat_log.track_hunter_frenzy
 
 		if (Details.combat_log.merge_gemstones_1007) then
-			--ring powers merged, https://gist.github.com/ljosberinn/65abe150133ff3a08cd70f840f7dd019 (by Gerrit Alex - WCL)
+			--11.0.7 | 468666 = "Cyrce's Circlet"
+			override_spellId[462526] = 468666 --Roaring War-Queen's Citrine
+			override_spellId[462527] = 468666 --Seabed Leviathan's Citrine
+			override_spellId[462528] = 468666 --Legendary Skipper's Citrine
+			override_spellId[462530] = 468666 --Mariner's Hallowed Citrine
+			override_spellId[462531] = 468666 --Old Salt's Bardic Citrine
+			override_spellId[462532] = 468666 --Storm Sewer's Citrine
+			override_spellId[462534] = 468666 --Windsinger's Runed Citrine
+			override_spellId[462535] = 468666 --Fathomdweller's Runed Citrine
+			override_spellId[462536] = 468666 --Stormbringer's Runed Citrine
+			override_spellId[462538] = 468666 --Undersea Overseer's Citrine
+			override_spellId[462539] = 468666 --Squall Sailor's Citrine
+			override_spellId[462540] = 468666 --Thunderlord's Crackling Citrine
+			override_spellId[462951] = 468666 --Thunderlord's Crackling Citrine
+			override_spellId[462952] = 468666 --Squall Sailor's Citrine
+			override_spellId[462953] = 468666 --Undersea Overseer's Citrine
+			override_spellId[462958] = 468666 --Storm Sewer's Citrine
+			override_spellId[462959] = 468666 --Old Salt's Bardic Citrine
+			override_spellId[462960] = 468666 --Mariner's Hallowed Citrine
+			override_spellId[462962] = 468666 --Legendary Skipper's Citrine
+			override_spellId[462963] = 468666 --Seabed Leviathan's Citrine
+			override_spellId[462964] = 468666 --Roaring War-Queen's Citrine
+			override_spellId[465961] = 468666 --Stormbringer's Runed Citrine
+			override_spellId[465962] = 468666 --Fathomdweller's Runed Citrine
+			override_spellId[465963] = 468666 --Windsinger's Runed Citrine
+			override_spellId[468422] = 468666 --Storm Sewer's Citrine
+			override_spellId[468990] = 468666 --Seabed Leviathan's Citrine
+			override_spellId[469397] = 468666 --Roaring War-Queen's Citrine
+			override_spellId[470821] = 468666 --Pluck Out Singing Citrine
+			--10.0.7 ring powers merged, https://gist.github.com/ljosberinn/65abe150133ff3a08cd70f840f7dd019 (by Gerrit Alex - WCL)
 			override_spellId[403225] = 404884 --Flame Licked Stone
 			override_spellId[404974] = 404884 --Shining Obsidian Stone
 			override_spellId[405220] = 404884 --Pestilent Plague Stone
@@ -6957,6 +6986,36 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 			override_spellId[403253] = 404884 --Raging Magma Stone
 			override_spellId[403257] = 404884 --Searing Smokey Stone
 		else
+			--11.0.7
+			override_spellId[462526] = nil --Roaring War-Queen's Citrine
+			override_spellId[462527] = nil --Seabed Leviathan's Citrine
+			override_spellId[462528] = nil --Legendary Skipper's Citrine
+			override_spellId[462530] = nil --Mariner's Hallowed Citrine
+			override_spellId[462531] = nil --Old Salt's Bardic Citrine
+			override_spellId[462532] = nil --Storm Sewer's Citrine
+			override_spellId[462534] = nil --Windsinger's Runed Citrine
+			override_spellId[462535] = nil --Fathomdweller's Runed Citrine
+			override_spellId[462536] = nil --Stormbringer's Runed Citrine
+			override_spellId[462538] = nil --Undersea Overseer's Citrine
+			override_spellId[462539] = nil --Squall Sailor's Citrine
+			override_spellId[462540] = nil --Thunderlord's Crackling Citrine
+			override_spellId[462951] = nil --Thunderlord's Crackling Citrine
+			override_spellId[462952] = nil --Squall Sailor's Citrine
+			override_spellId[462953] = nil --Undersea Overseer's Citrine
+			override_spellId[462958] = nil --Storm Sewer's Citrine
+			override_spellId[462959] = nil --Old Salt's Bardic Citrine
+			override_spellId[462960] = nil --Mariner's Hallowed Citrine
+			override_spellId[462962] = nil --Legendary Skipper's Citrine
+			override_spellId[462963] = nil --Seabed Leviathan's Citrine
+			override_spellId[462964] = nil --Roaring War-Queen's Citrine
+			override_spellId[465961] = nil --Stormbringer's Runed Citrine
+			override_spellId[465962] = nil --Fathomdweller's Runed Citrine
+			override_spellId[465963] = nil --Windsinger's Runed Citrine
+			override_spellId[468422] = nil --Storm Sewer's Citrine
+			override_spellId[468990] = nil --Seabed Leviathan's Citrine
+			override_spellId[469397] = nil --Roaring War-Queen's Citrine
+			override_spellId[470821] = nil --Pluck Out Singing Citrine
+			--10.0.7
 			override_spellId[403225] = nil --Flame Licked Stone
 			override_spellId[404974] = nil --Shining Obsidian Stone
 			override_spellId[405220] = nil --Pestilent Plague Stone
@@ -7419,7 +7478,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 				actor.total = damageDone
 				actor.classe = classToken or "UNKNOW"
 
-			elseif (name ~= "Unknown" and type(name) == "string" and string.len(name) > 1) then
+			elseif (name ~= Loc["Unknown"] and type(name) == "string" and string.len(name) > 1) then
 				local guid = UnitGUID(Details:Ambiguate(name))
 				if (guid) then
 					local flag

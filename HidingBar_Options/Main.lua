@@ -300,7 +300,7 @@ info:SetText(C_AddOns.GetAddOnMetadata(addon, "Version"))
 local title = main:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 title:SetPoint("TOPLEFT", 16, -16)
 title:SetJustifyH("LEFT")
-title:SetText(L["%s Configuration"]:format(addon))
+title:SetText(L["%s Configuration"]:format(L["HidingBar "])) -- 設定選項標題
 
 -- PROFILES COMBOBOX
 local profilesCombobox = lsfdd:CreateStretchButton(main, 150, 22)
@@ -788,13 +788,19 @@ local function getNoErr(func, ...)
 	return status and val
 end
 
+local GetMouseFocus = GetMouseFocus
+if not GetMouseFocus then
+	local GetMouseFoci = GetMouseFoci
+	GetMouseFocus = function() return GetMouseFoci()[1] end
+end
+
 main.customGrabPointBtn = CreateFrame("BUTTON", nil, addBtnOptionsScroll.child, "UIPanelButtonTemplate")
 main.customGrabPointBtn:SetSize(140, 22)
 main.customGrabPointBtn:SetPoint("LEFT", main.customGrabBtn, "RIGHT")
 main.customGrabPointBtn:SetText(L["Point to button"])
 main.customGrabPointBtn:SetScript("OnUpdate", function(btn)
 	if not btn.isPoint then return end
-	local focus = GetMouseFoci()[1]
+	local focus = GetMouseFocus()
 	if focus then
 		local name = getNoErr(btn.GetName, focus)
 		if name and not getNoErr(btn.IsProtected, focus) and (
@@ -1635,7 +1641,7 @@ main.ombIcon.icon:SetTexture(hb.ombDefIcon)
 main.ombIcon:SetScript("OnClick", function(btn)
 	main.iconData:init(btn, function()
 		local icon = btn.icon:GetTexture()
-		if icon == 651945 then icon = nil end
+		if icon == 450906 then icon = nil end
 		main.bConfig.omb.icon = icon
 		main.ombIconCustom:SetText(icon or "")
 		main.barFrame:setBarTypePosition()

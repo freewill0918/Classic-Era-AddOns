@@ -105,9 +105,9 @@ end
 
 function PossessBar:GetDefaults()
     return {
-        point = 'CENTER',
-        x = 244,
-        y = 0,
+        point = 'BOTTOM',
+        x = 0,
+        y = 284,
         spacing = 4,
         padW = 2,
         padH = 2
@@ -185,7 +185,7 @@ function PossessBarModule:Unload()
 
     if self.bar then
         self.bar:Free()
-        self.bar = nil
+		self.bar = nil
     end
 end
 

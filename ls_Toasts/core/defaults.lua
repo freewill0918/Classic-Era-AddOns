@@ -6,13 +6,13 @@ addonTable.C, addonTable.D = C, D
 
 D.profile = {
 	strata = "DIALOG",
-	skin = "default",
+	skin = "default-legacy",
 	font = {
 		-- name = nil,
-		size = 12,
+		size = 14,
 	},
 	colors = {
-		name = false,
+		name = true,
 		border = true,
 		icon_border = true,
 		threshold = 1,
@@ -21,16 +21,16 @@ D.profile = {
 	anchors = {
 		[1] = {
 			fadeout_delay = 2.8,
-			growth_direction = "DOWN",
+			growth_direction = "UP",
 			growth_offset_x = 26,
 			growth_offset_y = 14,
 			max_active_toasts = 12,
 			scale = 1,
 			point = {
 				p = "TOPLEFT",
-				rP = "TOPLEFT",
-				x = 26,
-				y = -14,
+				rP = "BOTTOMLEFT",
+				x = 270,
+				y = 370,
 			},
 		},
 	},

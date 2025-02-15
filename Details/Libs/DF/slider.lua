@@ -634,7 +634,7 @@ DF:Mixin(DFSliderMetaFunctions, DF.ScriptHookMixin)
 				editbox:SetSize(40, 20)
 				editbox:SetJustifyH("center")
 				DF:ApplyStandardBackdrop(editbox)
-				editbox:SetFontObject("GameFontHighlightSmall")
+				editbox:SetFontObject("GameFontHighlight")
 
 				editbox:SetScript("OnEnterPressed", function()
 					editbox:ClearFocus()
@@ -1091,7 +1091,7 @@ function DF:NewSwitch(parent, container, name, member, width, height, leftText, 
 	thumb:SetAlpha(0.7)
 	thumb:SetPoint("left", slider.widget, "left")
 
-	local text = slider:CreateFontString(nil, "overlay", "GameFontHighlightSmall")
+	local text = slider:CreateFontString(nil, "overlay", "GameFontHighlight")
 	text:SetTextColor(.8, .8, .8, 1)
 	text:SetPoint("center", thumb, "center")
 
@@ -1380,10 +1380,10 @@ function DF:NewSlider (parent, container, name, member, width, height, minValue,
 	SliderObject.slider_middle:SetPoint("bottomright", SliderObject.slider_right, "bottomleft", 0, 0)
 
 	if (not isSwitch) then
-		SliderObject.have_tooltip = "Right Click to Type the Value"
+		SliderObject.have_tooltip = "點右鍵來輸入值"
 	end
 
-	SliderObject.amt = SliderObject.slider:CreateFontString(nil, "overlay", "GameFontHighlightSmall")
+	SliderObject.amt = SliderObject.slider:CreateFontString(nil, "overlay", "GameFontHighlight")
 
 	local amt = defaultValue
 	if (amt < 10 and amt >= 1) then
@@ -1425,7 +1425,7 @@ function DF:NewSlider (parent, container, name, member, width, height, minValue,
 
 	setmetatable(SliderObject, DFSliderMetaFunctions)
 
-	SliderObject:SetTooltip("right click to type the value")
+	SliderObject:SetTooltip("點右鍵來輸入值")
 
 	if (with_label) then
 		local label = DF:CreateLabel(SliderObject.slider, with_label, nil, nil, nil, "label", nil, "overlay")
