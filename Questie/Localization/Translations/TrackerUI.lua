@@ -136,7 +136,7 @@ local trackerUILocales = {
         ["esMX"] = true,
         ["enUS"] = true,
         ["zhCN"] = true,
-        ["zhTW"] = "文字轉語音",
+        ["zhTW"] = true,
         ["esES"] = true,
         ["frFR"] = true,
     },

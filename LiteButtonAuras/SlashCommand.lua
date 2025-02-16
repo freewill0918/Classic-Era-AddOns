@@ -18,7 +18,7 @@ local function TrueStr(x)
     return x and "on" or "off"
 end
 
-local header = ORANGE_FONT_COLOR:WrapTextInColorCode(L[addonName]..': ')
+local header = ORANGE_FONT_COLOR:WrapTextInColorCode(addonName..': ')
 
 local function printf(...)
     local msg = string.format(...)

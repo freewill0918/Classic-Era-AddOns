@@ -118,7 +118,7 @@ local keyboardShortcutLocales = {
         ["esMX"] = "Mantener Mayús",
         ["enUS"] = true,
         ["zhCN"] = "按住Shift查看更多",
-        ["zhTW"] = "按住 Shift",
+        ["zhTW"] = "按住Shift",
         ["esES"] = "Mantener Mayús",
         ["frFR"] = "Maintenir Maj",
     },

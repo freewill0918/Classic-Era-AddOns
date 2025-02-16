@@ -57,7 +57,7 @@ local WOW_PROJECT_ID = WOW_PROJECT_ID
 -- style LBA differently from the ActionButton, but it's the simplest way.
 
 local Masque = LibStub('Masque', true)
-local MasqueGroup = Masque and Masque:Group(L["Lite Button Auras"])
+local MasqueGroup = Masque and Masque:Group(addonName)
 
 
 --[[------------------------------------------------------------------------]]--
