@@ -35,9 +35,7 @@ local UnitIsPlayer          = _G.UnitIsPlayer
 local UnitName              = _G.UnitName
 local UnitReaction          = _G.UnitReaction
 local UnitIsUnit            = _G.UnitIsUnit
-local GetSpellInfo          = _G.GetSpellInfo or C_Spell.GetSpellInfo
 local GetShapeshiftForm     = _G.GetShapeshiftForm
-local FindAuraByName        = AuraUtil.FindAuraByName
 
 local screenWidth           = floor(GetScreenWidth())
 local screenHeight          = floor(GetScreenHeight())
@@ -277,7 +275,7 @@ function TC2:UpdateThreatBars()
     local igniteOwner = nil
     local hasActiveIgnite = false
     if C.bar.showIgniteIndicator or C.customBarColors.igniteEnabled then
-        igniteOwner = select(7, FindAuraByName(GetSpellInfo(12848), TC2.playerTarget, "HARMFUL"))
+        igniteOwner = select(7, AuraUtil.FindAuraByName(C_Spell.GetSpellName(12848), TC2.playerTarget, "HARMFUL"))
     end
     -- update view
     for i = 1, C.bar.count do
@@ -470,7 +468,7 @@ function TC2:CheckWarning(threatPercent, threatValue, rawThreatPercent)
             end
         elseif self.playerClass == "PALADIN" then
             -- righteous fury active
-            if FindAuraByName(GetSpellInfo(25780), "player", "HELPFUL") then
+            if AuraUtil.FindAuraByName(C_Spell.GetSpellName(25780), "player", "HELPFUL") then
                 lastWarnPercent = 100
                 return
             end
@@ -1028,11 +1026,11 @@ function TC2:SetupConfig()
 
     local ACD = LibStub("AceConfigDialog-3.0")
     self.config = {}
-    self.config.general = ACD:AddToBlizOptions(TC2.addonName, L.addonName, nil, "general")
-    self.config.appearance = ACD:AddToBlizOptions(TC2.addonName, L.appearance, L.addonName, "appearance")
-    self.config.appearance = ACD:AddToBlizOptions(TC2.addonName, L.filter, L.addonName, "filter")
-    self.config.warnings = ACD:AddToBlizOptions(TC2.addonName, L.warnings, L.addonName, "warnings")
-    self.config.profiles = ACD:AddToBlizOptions(TC2.addonName, L.profiles, L.addonName, "profiles")
+    self.config.general = ACD:AddToBlizOptions(TC2.addonName, TC2.addonName, nil, "general")
+    self.config.appearance = ACD:AddToBlizOptions(TC2.addonName, L.appearance, TC2.addonName, "appearance")
+    self.config.appearance = ACD:AddToBlizOptions(TC2.addonName, L.filter, TC2.addonName, "filter")
+    self.config.warnings = ACD:AddToBlizOptions(TC2.addonName, L.warnings, TC2.addonName, "warnings")
+    self.config.profiles = ACD:AddToBlizOptions(TC2.addonName, L.profiles, TC2.addonName, "profiles")
 end
 
 function TC2:RefreshProfile()
@@ -1043,7 +1041,7 @@ end
 
 TC2.configTable = {
     type = "group",
-    name = L.addonName,
+    name = TC2.addonName,
     get = function(info)
         return C[info[1]][info[2]]
     end,
