@@ -1,0 +1,51 @@
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">
+
+<!-- Season of Discovery Guides -->
+	<Script file="SOD\DruidBalanceDps.lua" />
+	<Script file="SOD\DruidFeralDps.lua" />
+	<Script file="SOD\HunterRangedDps.lua" />
+	<Script file="SOD\HunterMeleeDps.lua" />
+	<Script file="SOD\MageDps.lua" />
+	<Script file="SOD\PaladinDps.lua" />
+	<Script file="SOD\PriestDps.lua" />
+	<Script file="SOD\RogueDps.lua" />
+	<Script file="SOD\ShamanElementalDps.lua" />
+	<Script file="SOD\ShamanEnhancementDps.lua" />
+	<Script file="SOD\WarlockDps.lua" />
+	<Script file="SOD\WarriorDps.lua" />
+	
+	<Script file="SOD\DruidHealer.lua" />
+	<Script file="SOD\MageHealer.lua" />
+	<Script file="SOD\PaladinHealer.lua" />
+	<Script file="SOD\PriestHealer.lua" />
+	<Script file="SOD\ShamanHealer.lua" />
+	
+	<Script file="SOD\DruidTank.lua" />
+	<Script file="SOD\PaladinTank.lua" />
+	<Script file="SOD\RogueTank.lua" />
+	<Script file="SOD\ShamanTank.lua" />
+	<Script file="SOD\WarlockTank.lua" />
+	<Script file="SOD\WarriorTank.lua" />
+
+<!-- Classic Era/Hardcore Guides -->
+	<Script file="ERA\DruidBalance.lua" />
+	<Script file="ERA\DruidBear.lua" />
+	<Script file="ERA\DruidCat.lua" />
+	<Script file="ERA\DruidRestoration.lua" />
+	<Script file="ERA\HunterDps.lua" />
+	<Script file="ERA\MageDps.lua" />
+	<Script file="ERA\PaladinHoly.lua" />
+	<Script file="ERA\PaladinProtection.lua" />
+	<Script file="ERA\PaladinRetribution.lua" />
+	<Script file="ERA\PriestHoly.lua" />
+	<Script file="ERA\PriestShadow.lua" />
+	<Script file="ERA\RogueDps.lua" />
+	<Script file="ERA\ShamanElemental.lua" />
+	<Script file="ERA\ShamanEnhancement.lua" />
+	<Script file="ERA\ShamanRestoration.lua" />
+	<Script file="ERA\WarlockDps.lua" />
+	<Script file="ERA\WarriorDps.lua" />
+	<Script file="ERA\WarriorProtection.lua" />
+
+
+</Ui>
