@@ -337,6 +337,17 @@ function Details:SetWindowColor(r, g, b, a)
 	end
 end
 
+---@param self details
+---@param combatObject combat
+---@param actorName string
+---@param mainAttribute number
+---@param subAttribute number
+function Details:OpenSpecificBreakdownWindow(combatObject, actorName, mainAttribute, subAttribute)
+	local newActor = combatObject:GetActor(mainAttribute, actorName)
+	local instance = Details:GetInstance(1)
+	Details:OpenBreakdownWindow(instance, newActor, false, false, false, false, false, mainAttribute, subAttribute)
+end
+
 ---open the breakdown window
 ---@param self details
 ---@param instanceObject instance
@@ -346,9 +357,21 @@ end
 ---@param bIsShiftKeyDown boolean|nil
 ---@param bIsControlKeyDown boolean|nil
 ---@param bIgnoreOverrides boolean|nil
-function Details:OpenBreakdownWindow(instanceObject, actorObject, bFromAttributeChange, bIsRefresh, bIsShiftKeyDown, bIsControlKeyDown, bIgnoreOverrides)
+---@param mainAttributeOverride number|nil
+---@param subAttributeOverride number|nil
+function Details:OpenBreakdownWindow(instanceObject, actorObject, bFromAttributeChange, bIsRefresh, bIsShiftKeyDown, bIsControlKeyDown, bIgnoreOverrides, mainAttributeOverride, subAttributeOverride)
 	---@type number, number
 	local mainAttribute, subAttribute = instanceObject:GetDisplay()
+
+	if (not bIgnoreOverrides) then
+		if (mainAttributeOverride) then
+			mainAttribute = mainAttributeOverride
+			actorObject = instanceObject:GetCombat():GetActor(mainAttributeOverride, actorObject.nome)
+		end
+		if (subAttributeOverride) then
+			subAttribute = subAttributeOverride
+		end
+	end
 
 	if (not breakdownWindowFrame.__rcorners) then
 		breakdownWindowFrame:SetBackdropColor(.1, .1, .1, 0)
@@ -828,7 +851,7 @@ function Details:CreateBreakdownWindow()
 	breakdownWindowFrame.closeButton = closeButton
 
 	--title
-	detailsFramework:NewLabel(breakdownWindowFrame, breakdownWindowFrame, nil, "titleText", Loc ["STRING_PLAYER_DETAILS"], "GameFontHighlightLeft", 16, {227/255, 186/255, 4/255})
+	detailsFramework:NewLabel(breakdownWindowFrame, breakdownWindowFrame, nil, "titleText", Loc ["STRING_PLAYER_DETAILS"], "GameFontHighlightLeft", 12, {227/255, 186/255, 4/255})
 	breakdownWindowFrame.titleText:SetPoint("center", breakdownWindowFrame, "center")
 	breakdownWindowFrame.titleText:SetPoint("top", breakdownWindowFrame, "top", 0, -5)
 
@@ -887,7 +910,7 @@ function Details:CreateBreakdownWindow()
 
 	function breakdownWindowFrame:SetStatusbarText(text, fontSize, fontColor)
 		if (not text) then
-			breakdownWindowFrame:SetStatusbarText(Loc["An AddOn by Terciob | Part of Details! Damage Meter | Click 'Options' button for settings."], 14, "gray")
+			breakdownWindowFrame:SetStatusbarText("An AddOn by Terciob | Part of Details! Damage Meter | Click 'Options' button for settings.", 10, "gray")
 			return
 		end
 		statusBar.Text.text = text

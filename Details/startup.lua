@@ -408,7 +408,7 @@ function Details222.StartUp.StartMeUp()
 						C_Timer.After(10, function()
 							if (lowerInstanceId:IsEnabled()) then
 								lowerInstanceId:InstanceAlert(Loc ["STRING_VERSION_UPDATE"], {[[Interface\GossipFrame\AvailableQuestIcon]], 16, 16, false}, 60, {Details.OpenNewsWindow}, true)
-								Details:Msg(Loc["A new version has been installed: /details news"]) --localize-me
+								Details:Msg("A new version has been installed: /details news") --localize-me
 							end
 						end)
 					end
@@ -481,6 +481,36 @@ function Details222.StartUp.StartMeUp()
 		end
 	end
 
+	--store the names of all interrupt spells
+	---@type table<string, boolean>
+	Details.InterruptSpellNamesCache = {}
+    for spellId, spellData in pairs(LIB_OPEN_RAID_COOLDOWNS_INFO) do
+        if (spellData.type == 6) then
+            local spellInfo = C_Spell.GetSpellInfo(spellId)
+            if (spellInfo) then
+                Details.InterruptSpellNamesCache[spellInfo.name] = true
+            end
+        end
+    end
+
+	--store the names of all crowd control spells
+	---@type table<string, boolean>
+	Details.CrowdControlSpellNamesCache = {}
+	for spellId, spellData in pairs(LIB_OPEN_RAID_COOLDOWNS_INFO) do
+		if (spellData.type == 8) then
+			local spellInfo = C_Spell.GetSpellInfo(spellId)
+			if (spellInfo) then
+				Details.CrowdControlSpellNamesCache[spellInfo.name] = true
+			end
+		end
+	end
+	for spellId, spellData in pairs(LIB_OPEN_RAID_CROWDCONTROL) do
+		local spellInfo = C_Spell.GetSpellInfo(spellId)
+		if (spellInfo) then
+			Details.CrowdControlSpellNamesCache[spellInfo.name] = true
+		end
+	end
+
 	function Details:OpenOptionsWindowAtStart()
 		--Details:OpenOptionsWindow (Details.tabela_instancias[1])
 		--print(_G ["DetailsClearSegmentsButton1"]:GetSize())
@@ -530,7 +560,7 @@ function Details222.StartUp.StartMeUp()
 				---@type trinketdata
 				local thisTrinketData = {
 					itemName = C_Item.GetItemNameByID(trinketTable.itemId),
-					spellName = Details222.GetSpellInfo(spellId) or Loc["spell not found"],
+					spellName = Details222.GetSpellInfo(spellId) or "spell not found",
 					lastActivation = 0,
 					lastPlayerName = "",
 					totalCooldownTime = 0,
@@ -627,7 +657,7 @@ function Details222.StartUp.StartMeUp()
 
 	if (GetExpansionLevel() == 10) then
 		if (not Details.data_wipes_exp["11"]) then
-			Details:Msg(Loc["New expansion detected, clearing data..."])
+			Details:Msg("New expansion detected, clearing data...")
 			Details:Destroy(Details.encounter_spell_pool or {})
 			Details:Destroy(Details.boss_mods_timers or {})
 			Details:Destroy(Details.spell_school_cache or {})

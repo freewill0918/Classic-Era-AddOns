@@ -404,16 +404,16 @@ detailsFramework.LayoutFrame = {
 			if (textType) then
 				textType = string.lower(textType)
 				if (textType == "short") then
-					text = "關閉視窗"
+					text = "close window"
 
 				elseif (textType == "medium") then
-					text = "關閉視窗"
+					text = "close window"
 
 				elseif (textType == "large") then
-					text = "關閉視窗"
+					text = "close window"
 				end
 			else
-				text = "關閉視窗"
+				text = "close window"
 			end
 		end
 
@@ -835,7 +835,7 @@ local align_rows = function(self)
 					text:SetPoint("left", line, "left", self._anchors [#self._anchors], 0)
 					text:SetWidth(row.width)
 
-					detailsFramework:SetFontSize(text, row.textsize or 14)
+					detailsFramework:SetFontSize(text, row.textsize or 10)
 					text:SetJustifyH(row.textalign or "left")
 				end
 			elseif (rowType == "entry") then
@@ -1005,7 +1005,7 @@ local update_rows = function(self, updated_rows)
 			--
 
 			widget.text:SetText(t.name)
-			detailsFramework:SetFontSize(widget.text, raw.textsize or 14)
+			detailsFramework:SetFontSize(widget.text, raw.textsize or 10)
 			widget.text:SetJustifyH(raw.textalign or "left")
 		end
 	end
@@ -1645,10 +1645,10 @@ function detailsFramework:IconPick (callback, close_when_select, param1, param2)
 		detailsFramework.IconPickFrame.preview:Hide()
 
 		--serach
-		detailsFramework.IconPickFrame.searchLabel =  detailsFramework:NewLabel(detailsFramework.IconPickFrame, nil, "$parentSearchBoxLabel", nil, "搜尋:")
+		detailsFramework.IconPickFrame.searchLabel =  detailsFramework:NewLabel(detailsFramework.IconPickFrame, nil, "$parentSearchBoxLabel", nil, "Search:")
 		detailsFramework.IconPickFrame.searchLabel:SetPoint("topleft", detailsFramework.IconPickFrame, "topleft", 12, -36)
 		detailsFramework.IconPickFrame.searchLabel:SetTemplate(detailsFramework:GetTemplate("font", "ORANGE_FONT_TEMPLATE"))
-		detailsFramework.IconPickFrame.searchLabel.fontsize = 16
+		detailsFramework.IconPickFrame.searchLabel.fontsize = 12
 
 		detailsFramework.IconPickFrame.search = detailsFramework:NewTextEntry(detailsFramework.IconPickFrame, nil, "$parentSearchBox", nil, 140, 20)
 		detailsFramework.IconPickFrame.search:SetPoint("left", detailsFramework.IconPickFrame.searchLabel, "right", 2, 0)
@@ -1671,7 +1671,7 @@ function detailsFramework:IconPick (callback, close_when_select, param1, param2)
 		--manually enter the icon path
 		detailsFramework.IconPickFrame.customIcon = detailsFramework:CreateLabel(detailsFramework.IconPickFrame, "Icon Path:", detailsFramework:GetTemplate("font", "ORANGE_FONT_TEMPLATE"))
 		detailsFramework.IconPickFrame.customIcon:SetPoint("bottomleft", detailsFramework.IconPickFrame, "bottomleft", 12, 16)
-		detailsFramework.IconPickFrame.customIcon.fontsize = 16
+		detailsFramework.IconPickFrame.customIcon.fontsize = 12
 
 		detailsFramework.IconPickFrame.customIconEntry = detailsFramework:CreateTextEntry(detailsFramework.IconPickFrame, function()end, 200, 20, "CustomIconEntry", _, _, detailsFramework:GetTemplate("dropdown", "OPTIONS_DROPDOWN_TEMPLATE"))
 		detailsFramework.IconPickFrame.customIconEntry:SetPoint("left", detailsFramework.IconPickFrame.customIcon, "right", 2, 0)
@@ -2052,7 +2052,7 @@ local SimplePanel_frame_backdrop_border_color = {0, 0, 0, 1}
 ---@field thumb texture
 function detailsFramework:CreateScaleBar(frame, config, bNoRightClick) --~scale
 	---@type df_scalebar
-	local scaleBar, text = detailsFramework:CreateSlider(frame, 120, 14, 0.6, 1.6, 0.1, config.scale, true, "ScaleBar", nil, "縮放:", detailsFramework:GetTemplate("slider", "OPTIONS_SLIDER_TEMPLATE"), detailsFramework:GetTemplate("font", "ORANGE_FONT_TEMPLATE"))
+	local scaleBar, text = detailsFramework:CreateSlider(frame, 120, 14, 0.6, 1.6, 0.1, config.scale, true, "ScaleBar", nil, "Scale:", detailsFramework:GetTemplate("slider", "OPTIONS_SLIDER_TEMPLATE"), detailsFramework:GetTemplate("font", "ORANGE_FONT_TEMPLATE"))
 	scaleBar.thumb:SetWidth(24)
 	scaleBar:SetValueStep(0.05)
 	scaleBar:SetObeyStepOnDrag(true)
@@ -2066,7 +2066,7 @@ function detailsFramework:CreateScaleBar(frame, config, bNoRightClick) --~scale
 	editbox:SetBackdrop({bgFile = [[Interface\ACHIEVEMENTFRAME\UI-GuildAchievement-Parchment-Horizontal-Desaturated]],
 	edgeFile = [[Interface\Buttons\WHITE8X8]],
 	tile = true, edgeSize = 1, tileSize = 64})
-	editbox:SetFontObject("GameFontHighlight")
+	editbox:SetFontObject("GameFontHighlightSmall")
 	editbox:SetBackdropColor(0, 0, 0, 1)
 
 	editbox:SetScript("OnEditFocusGained", function()
@@ -3383,7 +3383,7 @@ function detailsFramework:CreateChartPanel(parent, width, height, name)
 			line:SetWidth(670)
 			line:SetHeight(1.1)
 
-			local s = chartFrame:CreateFontString(nil, "overlay", "GameFontHighlight")
+			local s = chartFrame:CreateFontString(nil, "overlay", "GameFontHighlightSmall")
 			chartFrame ["dpsamt"..i] = s
 			s:SetText("100k")
 			s:SetPoint("topleft", chartFrame, "topleft", 27, -61 + (-(24.6*i)))
@@ -3398,7 +3398,7 @@ function detailsFramework:CreateChartPanel(parent, width, height, name)
 		chartFrame.TimeLabelsHeight = 16
 
 		for i = 1, 17 do
-			local timeString = chartFrame:CreateFontString(nil, "overlay", "GameFontHighlight")
+			local timeString = chartFrame:CreateFontString(nil, "overlay", "GameFontHighlightSmall")
 			timeString:SetText("00:00")
 			timeString:SetPoint("bottomleft", chartFrame, "bottomleft", 78 + ((i-1)*36), chartFrame.TimeLabelsHeight)
 			chartFrame.TimeLabels [i] = timeString
@@ -3513,13 +3513,13 @@ local gframe_create_line = function(self)
 	textBackground:SetColorTexture(0, 0, 0, 0.5)
 	textBackground:SetPoint("bottom", f.ball, "top", 0, -6)
 	text:SetPoint("center", textBackground, "center")
-	detailsFramework:SetFontSize(text, 14)
+	detailsFramework:SetFontSize(text, 10)
 	f.text = text
 	f.textBackground = textBackground
 
 	local timeline = f:CreateFontString(nil, "overlay", "GameFontNormal")
 	timeline:SetPoint("bottomright", f, "bottomright", -2, 0)
-	detailsFramework:SetFontSize(timeline, 12)
+	detailsFramework:SetFontSize(timeline, 8)
 	f.timeline = timeline
 
 	return f
@@ -3663,7 +3663,7 @@ function detailsFramework:CreateRightClickToClose(parent, xOffset, yOffset, colo
 	color = color or "white"
 	fontSize = fontSize or 10
 
-	local label = detailsFramework:CreateLabel(parent, "點一下右鍵關閉", fontSize, color)
+	local label = detailsFramework:CreateLabel(parent, "right click to close", fontSize, color)
 	label:SetPoint("bottomright", parent, "bottomright", -4 + xOffset, 5 + yOffset)
 
 	return label
@@ -3844,12 +3844,12 @@ function detailsFramework:CreateSimpleListBox(parent, name, title, emptyText, li
 
 	scroll:SetSize(scroll.options.width + 2, scroll.options.height)
 
-	local name = detailsFramework:CreateLabel(scroll, title, 16, "silver")
+	local name = detailsFramework:CreateLabel(scroll, title, 12, "silver")
 	name:SetTemplate(detailsFramework:GetTemplate("font", "OPTIONS_FONT_TEMPLATE"))
 	name:SetPoint("bottomleft", scroll, "topleft", 0, 2)
 	scroll.Title = name
 
-	local emptyLabel = detailsFramework:CreateLabel(scroll, emptyText, 16, "gray")
+	local emptyLabel = detailsFramework:CreateLabel(scroll, emptyText, 12, "gray")
 	emptyLabel:SetAlpha(.6)
 	emptyLabel:SetSize(scroll.options.width-10, scroll.options.height)
 	emptyLabel:SetPoint("center", 0, 0)
@@ -4374,7 +4374,8 @@ local default_radiogroup_options = {
 ---@field RefreshCheckbox fun(self:df_checkboxgroup, checkbox:df_radiogroup_checkbox, optionTable:table, optionId:number)
 
 local radio_checkbox_onclick_extraspace = function(self)
-	self:GetParent():GetObject():OnSwitch() --as the parent of self is a Switch object from DetailsFramework, it need to run :GetObject() to get the capsule object
+	self:GetParent():GetObject():OnSwitch(self:GetParent():GetObject()._param, not self:GetParent():GetObject():GetValue()) --as the parent of self is a Switch object from DetailsFramework, it need to run :GetObject() to get the capsule object
+	self:GetParent():GetObject():GetParent():Refresh()
 end
 
 ---@type df_radiogroupmixin
@@ -4571,7 +4572,7 @@ detailsFramework.RadioGroupCoreFunctions = {
 			end
 		end
 
-		checkbox.__width = width + (checkbox.Icon:IsShown() and (checkbox.Icon:GetWidth() + 2)) + (checkbox.Label:GetStringWidth()) + 2
+		checkbox.__width = width + (checkbox.Icon:IsShown() and (checkbox.Icon:GetWidth() + (self.AnchorOptions.icon_offset_x or 0))) + (checkbox.Label:GetUnboundedStringWidth()) + (self.options.text_padding or 2)
 		checkbox.widget.__width = checkbox.__width
 
 		checkbox.__height = height + (checkbox.Icon:IsShown() and (checkbox.Icon:GetHeight() + 2))
@@ -4595,7 +4596,7 @@ detailsFramework.RadioGroupCoreFunctions = {
 			self:RefreshCheckbox(checkbox, optionsTable, optionId)
 			totalWidth = totalWidth + checkbox.__width
 
-			checkbox.extraSpaceToClick:SetWidth(checkbox.__width)
+			checkbox.extraSpaceToClick:SetWidth(checkbox.__width - checkbox:GetWidth()) -- total __width contains checkbox size which we don't need here
 
 			if (checkbox:GetHeight() > maxHeight) then
 				maxHeight = checkbox:GetHeight()
@@ -5480,3 +5481,90 @@ end
 
 --]=]
 
+--[=[
+
+--show data panel
+function detailsFramework:ShowData(data)
+	if (not DetailsFrameworkDataPanel) then
+		local mainFrame = detailsFramework:CreateSimplePanel(UIParent, 800, 600, "Show Data", "DetailsFrameworkShowDataPanel")
+		mainFrame:SetPoint("center", UIParent, "center", 0, 0)
+
+		--header
+		local headerTable = {
+			{text = "", width = 75},
+			{text = "", width = 75},
+			{text = "", width = 75},
+			{text = "", width = 75},
+			{text = "", width = 75},
+			{text = "", width = 75},
+			{text = "", width = 75},
+			{text = "", width = 75},
+			{text = "", width = 75},
+			{text = "", width = 75},
+			{text = "", width = 75},
+			{text = "", width = 75},
+		}
+		local headerOptions = {
+			padding = 2,
+		}
+
+		mainFrame.Header = DF:CreateHeader(mainFrame, headerTable, headerOptions)
+		mainFrame.Header:SetPoint("topleft", mainFrame, "topleft", 5, headerY)
+
+		local refreshFunc = function(self, data, offset, totalLines) --~refresh
+			local ToK = Details:GetCurrentToKFunction()
+
+			for i = 1, totalLines do
+				local index = i + offset
+				local thisData = data[index]
+				if (thisData) then
+					local line = self:GetLine(i)
+				end
+			end
+		end
+
+		local createLineFunc = function(self, index)
+			local line = CreateFrame("button", "$parentLine" .. index, self,"BackdropTemplate")
+			line:SetPoint("topleft", self, "topleft", 1, -((index-1)*(scroll_line_height+1)) - 1)
+			line:SetSize(scroll_width - 2, scroll_line_height)
+
+			line:SetBackdrop({bgFile = [[Interface\Tooltips\UI-Tooltip-Background]], tileSize = 64, tile = true})
+			line:SetBackdropColor(unpack(backdrop_color))
+			-- ~createline --~line
+			DF:Mixin(line, DF.HeaderFunctions)
+
+			--columns
+			local column1 = DF:CreateTextEntry(line, function()end, DetailsScrollDamage.Header:GetColumnWidth(2), scroll_line_height, _, _, _, dropdownTemplate)
+			local column1 = DF:CreateTextEntry(line, function()end, DetailsScrollDamage.Header:GetColumnWidth(2), scroll_line_height, _, _, _, dropdownTemplate)
+			local column1 = DF:CreateTextEntry(line, function()end, DetailsScrollDamage.Header:GetColumnWidth(2), scroll_line_height, _, _, _, dropdownTemplate)
+			local column1 = DF:CreateTextEntry(line, function()end, DetailsScrollDamage.Header:GetColumnWidth(2), scroll_line_height, _, _, _, dropdownTemplate)
+			local column1 = DF:CreateTextEntry(line, function()end, DetailsScrollDamage.Header:GetColumnWidth(2), scroll_line_height, _, _, _, dropdownTemplate)
+			local column1 = DF:CreateTextEntry(line, function()end, DetailsScrollDamage.Header:GetColumnWidth(2), scroll_line_height, _, _, _, dropdownTemplate)
+
+			line:AddFrameToHeaderAlignment(icon)
+			line:AddFrameToHeaderAlignment(spellNameText)
+			line:AddFrameToHeaderAlignment(damageText)
+			line:AddFrameToHeaderAlignment(timeText)
+			line:AddFrameToHeaderAlignment(spellIDText)
+
+			line:AlignWithHeader(DetailsScrollDamage.Header, "left")
+
+			line.Icon = icon
+			line.IconFrame = iconFrame
+			line.DamageText = damageText
+			line.TimeText = timeText
+			line.SpellIDText = spellIDText
+			line.SpellNameText = spellNameText
+
+			return line
+		end
+	end
+
+	local dataPanel = DetailsFrameworkDataPanel
+	local scrollBox = dataPanel.ScrollBox
+	scrollBox:SetData(data)
+	scrollBox:Refresh()
+
+end
+
+--]=]

@@ -5,7 +5,6 @@ local Details = _G.Details
 
 ---@class detailsframework
 local detailsFramework = _G.DetailsFramework
-local Loc = _G.LibStub("AceLocale-3.0"):GetLocale("Details")
 
 local openRaidLib = LibStub:GetLibrary("LibOpenRaid-1.0", true)
 local addonName, Details222 = ...
@@ -34,15 +33,20 @@ local lastSelectedPlayerPerSegment = {}
 local lastSelectedPlayerName = ""
 
 local onPlayerSelected = function(breakdownWindowFrame, playerObject)
+	local mainAttribute, subAttribute = Details:GetDisplayTypeFromBreakdownWindow()
+
 	---@type instance
 	local instanceObject = Details:GetActiveWindowFromBreakdownWindow()
-	Details:OpenBreakdownWindow(instanceObject, playerObject, false, true)
 
 	--cache the latest selected player for this combat
 	---@type combat
 	local combatObject = instanceObject:GetCombat()
+
 	---@type actorname
 	local playerName = playerObject:Name()
+
+	Details:OpenSpecificBreakdownWindow(combatObject, playerName, mainAttribute, subAttribute)
+	--Details:OpenBreakdownWindow(instanceObject, playerObject, false, true)
 
 	lastSelectedPlayerPerSegment[combatObject:GetCombatUID()] = playerName
 	lastSelectedPlayerName = playerName
@@ -60,23 +64,23 @@ local getActorToShowInBreakdownWindow = function(combatObject)
 	---@type uniquecombatid
 	local combatUID = combatObject:GetCombatUID()
 
-	local displayId, subDisplayId = instanceObject:GetDisplay()
+	local mainAttribute, subAttribute = Details:GetDisplayTypeFromBreakdownWindow()
 
 	---@type actorname
 	local playerName = lastSelectedPlayerPerSegment[combatUID]
 
 	if (playerName) then
 		---@type actor
-		local playerObject = combatObject:GetActor(displayId, playerName)
+		local playerObject = combatObject:GetActor(mainAttribute, playerName)
 		return playerObject
 	else
 		---@type actor
-		local playerObject = combatObject:GetActor(displayId, lastSelectedPlayerName)
+		local playerObject = combatObject:GetActor(mainAttribute, lastSelectedPlayerName)
 		if (playerObject) then
 			lastSelectedPlayerPerSegment[combatUID] = playerObject:Name()
 			return playerObject
 		else
-			playerObject = combatObject:GetActor(displayId, Details.playername)
+			playerObject = combatObject:GetActor(mainAttribute, Details.playername)
 			if (playerObject) then
 				lastSelectedPlayerPerSegment[combatUID] = playerObject:Name()
 				return playerObject
@@ -84,7 +88,7 @@ local getActorToShowInBreakdownWindow = function(combatObject)
 
 			--get the top player from the combat display and subDisplay and select it
 			---@type actor
-			local actorObject = instanceObject:GetActorBySubDisplayAndRank(displayId, subDisplayId, 1)
+			local actorObject = instanceObject:GetActorBySubDisplayAndRank(mainAttribute, subAttribute, 1)
 			if (actorObject) then
 				lastSelectedPlayerPerSegment[combatUID] = actorObject:Name()
 				return actorObject
@@ -310,9 +314,9 @@ local createPlayerScrollBox = function(breakdownWindowFrame, breakdownSideMenu, 
 	--header setup
 	local headerTable = {
 		{text = "", width = 20},
-		{text = Loc["Player Name"], width = 100},
-		{text = Loc["iLvL"], width = 30},
-		{text = Loc["WCL Parse"], width = 60},
+		{text = "Player Name", width = 100},
+		{text = "iLvL", width = 30},
+		{text = "WCL Parse", width = 60},
 	}
 	local headerOptions = {
 		padding = 2,
@@ -362,7 +366,7 @@ local createPlayerScrollBox = function(breakdownWindowFrame, breakdownSideMenu, 
 
 		local className = detailsFramework:CreateLabel(OTTFrame, "", "GameFontNormal")
 		className.textcolor = {.95, .8, .2, 0}
-		className.textsize = 13
+		className.textsize = 9
 
 		local itemLevelText = detailsFramework:CreateLabel(OTTFrame, "", "GameFontNormal")
 		itemLevelText.textcolor = {1, 1, 1, .7}
@@ -631,7 +635,7 @@ function breakdownWindowPlayerList.CreatePlayerListFrame()
 		PixelUtil.SetPoint(pluginHeaderFrame, "topright", breakdownSideMenu, "topright", -2, -0)
 		pluginHeaderFrame:SetHeight(sectionHeaderHeight)
 			--plugins header label
-			local titleBarPlugins_TitleLabel = detailsFramework:CreateLabel(pluginHeaderFrame, Loc["Plugins"], 12, "DETAILS_HEADER_YELLOW", "GameFontHighlightLeft", "pluginsLabel", nil, "overlay")
+			local titleBarPlugins_TitleLabel = detailsFramework:CreateLabel(pluginHeaderFrame, "Plugins", 12, "DETAILS_HEADER_YELLOW", "GameFontHighlightLeft", "pluginsLabel", nil, "overlay")
 			PixelUtil.SetPoint(titleBarPlugins_TitleLabel, "center", pluginHeaderFrame , "center", 0, 0)
 			PixelUtil.SetPoint(titleBarPlugins_TitleLabel, "top", pluginHeaderFrame , "top", 0, -5)
 
@@ -643,7 +647,7 @@ function breakdownWindowPlayerList.CreatePlayerListFrame()
 			--player selection header label
 			--converting from detailsFramework:NewLabel to detailsFramework:CreateLabel
 			--local titleBarTools_TitleLabel = detailsFramework:NewLabel(titleBarPlayerSeparator, titleBarPlayerSeparator, nil, "titulo", "Players", "GameFontHighlightLeft", 12, {227/255, 186/255, 4/255})
-			local titleBarTools_TitleLabel = detailsFramework:CreateLabel(playerSelectionHeaderFrame, Loc["Select Player"], 12, "DETAILS_HEADER_YELLOW", "GameFontHighlightLeft", "playersLabel", nil, "overlay")
+			local titleBarTools_TitleLabel = detailsFramework:CreateLabel(playerSelectionHeaderFrame, "Select Player", 12, "DETAILS_HEADER_YELLOW", "GameFontHighlightLeft", "playersLabel", nil, "overlay")
 			PixelUtil.SetPoint(titleBarTools_TitleLabel, "center", playerSelectionHeaderFrame , "center", 0, 0)
 			PixelUtil.SetPoint(titleBarTools_TitleLabel, "top", playerSelectionHeaderFrame , "top", 0, -5)
 
@@ -651,7 +655,7 @@ function breakdownWindowPlayerList.CreatePlayerListFrame()
 		local segmentSelectionHeaderFrame = CreateFrame("frame", nil, breakdownSideMenu, "BackdropTemplate")
 		segmentSelectionHeaderFrame:SetHeight(sectionHeaderHeight)
 			--segment selection header label
-			local titleBarSegment_TitleLabel = detailsFramework:CreateLabel(segmentSelectionHeaderFrame, Loc["Select Segment"], 12, "DETAILS_HEADER_YELLOW", "GameFontHighlightLeft", "segmentsLabel", nil, "overlay")
+			local titleBarSegment_TitleLabel = detailsFramework:CreateLabel(segmentSelectionHeaderFrame, "Select Segment", 12, "DETAILS_HEADER_YELLOW", "GameFontHighlightLeft", "segmentsLabel", nil, "overlay")
 			PixelUtil.SetPoint(titleBarSegment_TitleLabel, "center", segmentSelectionHeaderFrame , "center", 0, 0)
 			PixelUtil.SetPoint(titleBarSegment_TitleLabel, "top", segmentSelectionHeaderFrame , "top", 0, -5)
 
