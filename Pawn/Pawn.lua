@@ -1,13 +1,13 @@
 ﻿-- Pawn by Vger-Azjol-Nerub
 -- www.vgermods.com
--- © 2006-2024 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
+-- © 2006-2025 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
 
 --
 -- Main non-UI code
 ------------------------------------------------------------
 
-PawnVersion = 2.1007
+PawnVersion = 2.1009
 
 -- Pawn requires this version of VgerCore:
 local PawnVgerCoreVersionRequired = 1.18
@@ -808,8 +808,8 @@ function PawnSetDefaultKeybindings()
 		local CurrentBindingSet = GetCurrentBindingSet()
 		if CurrentBindingSet == 1 or CurrentBindingSet == 2 then
 			SaveBindings(CurrentBindingSet)
-		-- else
-		--	VgerCore.Fail("GetCurrentBindingSet() returned unexpected value: " .. tostring(CurrentBindingSet))
+		else
+			VgerCore.Fail("GetCurrentBindingSet() returned unexpected value: " .. tostring(CurrentBindingSet))
 		end
 	end
 
@@ -2392,7 +2392,7 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 			if Stats["MinDamage"] then WeaponStats = WeaponStats + 1 end
 			if Stats["MaxDamage"] then WeaponStats = WeaponStats + 1 end
 			if Stats["Speed"] then WeaponStats = WeaponStats + 1 end
-			-- VgerCore.Assert(WeaponStats == 0 or WeaponStats == 3, "Pawn couldn't read speed and damage stats from " .. ItemName .. " (" .. GetLocale() .. " " .. GetBuildInfo() .. ") and needs an update.")
+			VgerCore.Assert(WeaponStats == 0 or WeaponStats == 3, "Pawn couldn't read speed and damage stats from " .. ItemName .. " (" .. GetLocale() .. " " .. GetBuildInfo() .. ") and needs an update.")
 		end
 	end
 
@@ -2867,7 +2867,7 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 		else
 			-- This error case is acceptable if we're calculating data FOR the gems themselves.  (In that case, normalization will be off.)
 			-- If it happens at any other time, we'd want to know about it.
-			-- VgerCore.Assert(NoNormalization, "Item value calculation will be incomplete because we don't have best gem data and thus can't calculate values for sockets. /console scriptErrors 1 can help discover why.")
+			VgerCore.Assert(NoNormalization, "Item value calculation will be incomplete because we don't have best gem data and thus can't calculate values for sockets. /console scriptErrors 1 can help discover why.")
 		end
 	end
 
