@@ -31,8 +31,6 @@ local STRATA_INDICES ={
 }
 
 local BLACKLISTED_EVENTS = {
-	["ACHIEVEMENT_EARNED"] = false,
-	["CRITERIA_EARNED"] = true,
 	["LOOT_ITEM_ROLL_WON"] = true,
 	["NEW_RECIPE_LEARNED"] = true,
 	["QUEST_TURNED_IN"] = true,
@@ -409,7 +407,7 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 								type = "execute",
 								name = L["CHANGELOG_FULL"],
 								func = function()
-									showLinkCopyPopup("https://github.com/ls-/ls_Toasts/blob/classic/master/CHANGELOG.md")
+									showLinkCopyPopup("https://github.com/ls-/ls_Toasts/blob/classic_era/master/CHANGELOG.md")
 								end,
 							},
 						},
@@ -426,20 +424,8 @@ E:RegisterEvent("ADDON_LOADED", function(arg1)
 	C.options.args.profiles.order = 100
 	C.options.args.profiles.desc = nil
 
-	-- 檢查成就關閉或開啟
-	if C.db.profile.types.achievement and C.db.profile.types.achievement.enabled then
-		BLACKLISTED_EVENTS.ACHIEVEMENT_EARNED = true
-		BLACKLISTED_EVENTS.CRITERIA_EARNED = true
-	else
-		BLACKLISTED_EVENTS.ACHIEVEMENT_EARNED = false
-		BLACKLISTED_EVENTS.CRITERIA_EARNED = false
-	end
-
 	for event in next, BLACKLISTED_EVENTS do
-		-- 關閉時使用內建的通知視窗
-		if event and BLACKLISTED_EVENTS[event] then
-			P:Call(AlertFrame.UnregisterEvent, AlertFrame, event)
-		end
+		P:Call(AlertFrame.UnregisterEvent, AlertFrame, event)
 	end
 
 	hooksecurefunc(AlertFrame, "RegisterEvent", function(self, event)

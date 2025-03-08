@@ -53,21 +53,9 @@ E:RegisterSkin("elv", {
 })
 
 E:RegisterSkin("elv-legacy", {
-	name = "ElvUI (經典)",
+	name = "ElvUI (Legacy)",
 	template = "elv",
 	bg = {
-		archaeology = {
-			color = {1, 1, 1},
-			texture = "Interface\\AddOns\\ls_Toasts\\assets\\legacy\\toast-bg-archaeology",
-			tex_coords = {1 / 256, 225 / 256, 1 / 64, 49 / 64},
-			tile = false,
-		},
-		collection = {
-			color = {1, 1, 1},
-			texture = "Interface\\AddOns\\ls_Toasts\\assets\\legacy\\toast-bg-collection",
-			tex_coords = {1 / 256, 225 / 256, 1 / 64, 49 / 64},
-			tile = false,
-		},
 		default = {
 			color = {1, 1, 1},
 			texture = "Interface\\AddOns\\ls_Toasts\\assets\\legacy\\toast-bg-default",
@@ -80,23 +68,11 @@ E:RegisterSkin("elv-legacy", {
 			tex_coords = {1 / 256, 225 / 256, 1 / 64, 49 / 64},
 			tile = false,
 		},
-		store = {
-			color = {1, 1, 1},
-			texture = "Interface\\AddOns\\ls_Toasts\\assets\\legacy\\toast-bg-store",
-			tex_coords = {1 / 256, 225 / 256, 1 / 64, 49 / 64},
-			tile = false,
-		},
-		transmog = {
-			color = {1, 1, 1},
-			texture = "Interface\\AddOns\\ls_Toasts\\assets\\legacy\\toast-bg-transmog",
-			tex_coords = {1 / 256, 225 / 256, 1 / 64, 49 / 64},
-			tile = false,
-		},
 	},
 })
 
 E:RegisterSkin("elv-no-art", {
-	name = "ElvUI (無背景圖)",
+	name = "ElvUI (No Artwork)",
 	template = "elv",
 	text_bg = {
 		hidden = true,
@@ -118,7 +94,7 @@ E:RegisterSkin("elv-no-art", {
 })
 
 E:RegisterSkin("elv-twotone", {
-	name = "ElvUI (雙色調)",
+	name = "ElvUI (Two Tone)",
 	template = "elv",
 	title = {
 		color = {0.15, 0.15, 0.15},
