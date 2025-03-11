@@ -1,4 +1,4 @@
-## Interface: 11506, 40402, 110007, 110100
+## Interface: 110100, 40402, 11506
 ## Title: Dominos Progress
 ## Title-zhCN: Dominos 进度条模块
 ## Notes: Progress bars of all sorts
@@ -6,11 +6,6 @@
 ## Author: Tuller
 ## Dependencies: Dominos
 ## IconTexture: Interface/AddOns/Dominos/Dominos
-
-## Title-zhTW: |cff00CCFF[快捷列]|r 達美樂-經驗條
-## Notes-zhTW: Dominos Progress |n|n經驗、聲望、神器、榮譽等各種經驗值的進度條。
-## Category-zhTW: 快捷列
-
 localization.xml
 config.lua
 main.lua

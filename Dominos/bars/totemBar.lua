@@ -40,10 +40,8 @@ end)
 
 function TotemBar:GetDefaults()
     return {
-        point = 'BOTTOM',
-		x = 371,
-		y = 104,
-		spacing = 2
+        point = 'CENTER',
+        spacing = 2
     }
 end
 

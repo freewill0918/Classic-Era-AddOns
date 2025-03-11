@@ -76,6 +76,3 @@ L.TotemBarDisplayName = "Totem Bar"
 L.Updated = 'Updated to v%s'
 L.VehicleBarDisplayName = HUD_EDIT_MODE_VEHICLE_LEAVE_BUTTON_LABEL or BINDING_NAME_VEHICLEEXIT
 L.WrongBuildWarning = "You're running a %s version for %s on a %s server. Things may not work"
-
--- 自行加入
-L.AddonName = "Dominos"

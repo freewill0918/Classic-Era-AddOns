@@ -15,11 +15,10 @@ function Addon.ActionBar:OnCreateMenu(menu)
                 {value = -1, text = _G.DISABLE}
             }
 
-            local l = LibStub('AceLocale-3.0'):GetLocale('Dominos')
-			for i = 1, numBars do
+            for i = 1, numBars do
                 dropdownItems[i + 1] = {
                     value = i,
-                    text = l.ActionBarDisplayName:format(i)
+                    text = ('Action Bar %d'):format(i)
                 }
             end
 

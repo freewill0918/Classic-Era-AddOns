@@ -87,25 +87,18 @@ function ProgressBar:GetDefaults()
 		padW = 2,
 		padH = 2,
 		spacing = 1,
-		height = 6,
 		texture = 'blizzard',
 		font = 'Friz Quadrata TT',
 		display = {
 			label = true,
 			value = true,
 			max = true,
-			percent = true,
 			bonus = true
 		},
 		displayLayer = 'BACKGROUND',
-		alwaysShowText = false,
+		alwaysShowText = true,
 		lockMode = true
 	}
-end
-
-function ProgressBar:GetDisplayName()
-	local L = LibStub("AceLocale-3.0"):GetLocale("Dominos-Progress")
-	return L.Progress
 end
 
 --[[ events ]]--

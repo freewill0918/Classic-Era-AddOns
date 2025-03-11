@@ -26,9 +26,9 @@ function ExtraAbilityBar:ThemeBar(enable)
         local button = ExtraActionBarFrame and ExtraActionBarFrame.button
         if button then
             if enable then
-                Addon:GetModule('ButtonThemer'):Register(button, L.ExtraBarDisplayName)
+                Addon:GetModule('ButtonThemer'):Register(button, 'Extra Bar')
             else
-                Addon:GetModule('ButtonThemer'):Unregister(button, L.ExtraBarDisplayName)
+                Addon:GetModule('ButtonThemer'):Unregister(button, 'Extra Bar')
             end
         end
     end
@@ -39,11 +39,11 @@ function ExtraAbilityBar:ThemeBar(enable)
             if button then
                 if enable then
                     Addon:GetModule('ButtonThemer'):Register(
-                        button, L.ExtraBarDisplayName, {Icon = button.Icon}
+                        button, 'Extra Bar', {Icon = button.Icon}
                     )
                 else
                     Addon:GetModule('ButtonThemer'):Unregister(
-                        button, L.ExtraBarDisplayName
+                        button, 'Extra Bar'
                     )
                 end
             end
@@ -56,7 +56,7 @@ function ExtraAbilityBar:GetDefaults()
         point = 'BOTTOM',
         displayLayer = 'HIGH',
         x = 0,
-        y = 164,
+        y = 160,
         showInPetBattleUI = true,
         showInOverrideUI = true
     }
@@ -149,7 +149,7 @@ end
 function ExtraAbilityBarModule:Unload()
     if self.frame then
         self.frame:Free()
-		self.frame = nil
+        self.frame = nil
     end
 end
 

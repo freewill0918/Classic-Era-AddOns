@@ -60,11 +60,8 @@ end
 
 function StanceBar:GetDefaults()
     return {
-        point = 'BOTTOM',
-		x = 371,
-		y = 104,
-		columns = 3,
-		fadeAlpha = 0.2
+        point = 'CENTER',
+        spacing = 2
     }
 end
 
@@ -80,12 +77,12 @@ function StanceBar:OnAttachButton(button)
     button.HotKey:SetAlpha(self:ShowingBindingText() and 1 or 0)
     button:Show()
 
-    Addon:GetModule('ButtonThemer'):Register(button, L.ClassBarDisplayName)
+    Addon:GetModule('ButtonThemer'):Register(button, 'Class Bar')
     Addon:GetModule('Tooltips'):Register(button)
 end
 
 function StanceBar:OnDetachButton(button)
-    Addon:GetModule('ButtonThemer'):Unregister(button, L.ClassBarDisplayName)
+    Addon:GetModule('ButtonThemer'):Unregister(button, 'Class Bar')
     Addon:GetModule('Tooltips'):Unregister(button)
 end
 
@@ -184,7 +181,7 @@ function StanceBarModule:Unload()
 
     if self.bar then
         self.bar:Free()
-		self.bar = nil
+        self.bar = nil
     end
 end
 
