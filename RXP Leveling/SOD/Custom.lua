@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #version 10
 #classic
-#group RestedXP SoD Preparation
+#group SoD Preparation
 #name QuestDB
 #internal
 step
@@ -11,9 +11,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #classic
 #include QuestDB
-#group RestedXP SoD Preparation
-
-#name RestedXP Total XP prepared
+#group SoD Preparation
+#name Total XP prepared
 #hidewindow
 step
 + So far the experienced you have prepared is:
@@ -27,7 +26,7 @@ step
 RXPGuides.RegisterGuide([[
 #version 1
 #classic
-#group RestedXP SoD Preparation
+#group SoD Preparation
 #name !How to Use This Guide
 #hidewindow
 step
@@ -43,7 +42,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #classic
 << Horde
-#group RestedXP SoD Preparation
+#group SoD Preparation
 #subgroup Preparation guide
 #title 1 - 20 Questlog prep - Eastern Kingdoms
 #name 1 - 20 Questlog prep - Eastern Kingdoms (H)
@@ -875,7 +874,6 @@ step
 .requires quest,8554
 .goto Stranglethorn Vale,27.04,77.17,0
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nixxrax|r
-
 >>|cRXP_WARN_If you didn't get|r |T133974:0|t[Barbecued Buzzard Wings] |cRXP_WARN_earlier (and none of your group members do either), then skip this step. You need 10 wings in total to summon|r |cRXP_ENEMY_Negolash|r
 .vendor >>Buy |cRXP_BUY_Junglevine Wine|r from |cRXP_FRIENDLY_Nixxrax|r
 .collect 4457,10 
@@ -942,7 +940,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #classic
 << Horde
-#group RestedXP SoD Preparation
+#group SoD Preparation
 #subgroup Preparation guide
 #title 2 - 20 Questlog prep - Kalimdor
 #name 2 - 20 Questlog prep - Kalimdor (H)
@@ -2207,7 +2205,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #classic
 << Horde
-#group RestedXP SoD Preparation
+#group SoD Preparation
 #subgroup Preparation guide
 #title 3 - 20 Questlog prep - Kalimdor (H)
 #name 3 - 20 Questlog prep - Dungeons and shopping
@@ -2787,7 +2785,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #classic
 << Alliance
-#group RestedXP SoD Preparation
+#group SoD Preparation
 #subgroup Preparation guide
 #title 1 - 20 Questlog prep - Eastern Kingdoms
 #name 1 - 20 Questlog prep - Eastern Kingdoms (A)
@@ -3690,7 +3688,6 @@ step
 .requires quest,8554
 .goto Stranglethorn Vale,27.04,77.17,0
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nixxrax|r
-
 >>|cRXP_WARN_If you didn't get|r |T133974:0|t[Barbecued Buzzard Wings] |cRXP_WARN_earlier (and none of your group members do either), then skip this step. You need 10 wings in total to summon|r |cRXP_ENEMY_Negolash|r
 .vendor >>Buy |cRXP_BUY_Junglevine Wine|r from |cRXP_FRIENDLY_Nixxrax|r
 .collect 4457,10 
@@ -3757,7 +3754,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #classic
 << Alliance
-#group RestedXP SoD Preparation
+#group SoD Preparation
 #subgroup Preparation guide
 #title 2 - 20 Questlog prep - Kalimdor
 #name 2 - 20 Questlog prep - Kalimdor (A)
@@ -5019,7 +5016,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #classic
 << Alliance
-#group RestedXP SoD Preparation
+#group SoD Preparation
 #subgroup Preparation guide
 #title 3 - 20 Questlog prep - Kalimdor
 #name 3 - 20 Questlog prep - Dungeons and shopping (A)

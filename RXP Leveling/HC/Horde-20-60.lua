@@ -3,9 +3,9 @@ RXPGuides.RegisterGuide([[
 #classic
 << Horde
 #name 35-37 Desolace Horde
-#version 21
-#group RestedXP Survival Guide (H)
-#subgroup RXP Survival Guide 30-40
+#version 23
+#group Survival Guide (H)
+#subgroup Survival Guide 30-40
 #next 37-39 Northern Stranglethorn
 step
 .goto Stonetalon Mountains,46.00,60.50
@@ -80,18 +80,19 @@ step
 step
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felgur|r and |cRXP_FRIENDLY_Gurda|r
 .accept 1365 >> Accept Khan Dez'hepah
+.target +Felgur Twocuts
 .goto Desolace,56.19,59.56
 .accept 1368 >> Accept Gelkis Alliance
+.target +Gurda Wildmane
 .goto Desolace,56.29,59.67
-.target Felgur Twocuts
-.target Gurda Wildmane
 step
+#loop
+.goto Desolace,73.20,41.80,0
+.goto Desolace,73.00,46.80,0
+.goto Desolace,74.80,48.80,0
 .goto Desolace,73.20,41.80,60,0
 .goto Desolace,73.00,46.80,60,0
 .goto Desolace,74.80,48.80,60,0
-.goto Desolace,73.20,41.80,0
-.goto Desolace,73.00,46.80,0
-.goto Desolace,74.80,48.80
 >>Kill |cRXP_ENEMY_Khan Dez'hepah|r. Loot him for his |cRXP_LOOT_Head|r
 >>|cRXP_WARN_He has 3 different spawn locations in the camp|r
 .complete 1365,1 
@@ -103,27 +104,26 @@ step
 .mob Hatefury Shadowstalker
 step
 #loop
-.line Desolace,75.26,27.91,76.77,27.73,77.54,26.68,78.20,25.63,78.90,24.60,78.74,23.15,79.33,20.96,79.69,18.92,79.36,16.18,77.43,15.44,75.96,15.89,74.52,15.66,72.81,16.83,71.58,17.94,71.50,20.22,72.36,21.23,73.04,22.41,73.09,24.41,73.79,25.72,75.26,27.91
-.goto Desolace,75.26,27.91,25,0
-.goto Desolace,76.77,27.73,25,0
-.goto Desolace,77.54,26.68,25,0
-.goto Desolace,78.20,25.63,25,0
-.goto Desolace,78.90,24.60,25,0
-.goto Desolace,78.74,23.15,25,0
-.goto Desolace,79.33,20.96,25,0
-.goto Desolace,79.69,18.92,25,0
-.goto Desolace,79.36,16.18,25,0
-.goto Desolace,77.43,15.44,25,0
-.goto Desolace,75.96,15.89,25,0
-.goto Desolace,74.52,15.66,25,0
-.goto Desolace,72.81,16.83,25,0
-.goto Desolace,71.58,17.94,25,0
-.goto Desolace,71.50,20.22,25,0
-.goto Desolace,72.36,21.23,25,0
-.goto Desolace,73.04,22.41,25,0
-.goto Desolace,73.09,24.41,25,0
-.goto Desolace,73.79,25.72,25,0
-.goto Desolace,75.26,27.91,25,0
+.goto Desolace,75.26,27.91,0
+.goto Desolace,75.26,27.91,60,0
+.goto Desolace,76.77,27.73,60,0
+.goto Desolace,77.54,26.68,60,0
+.goto Desolace,78.20,25.63,60,0
+.goto Desolace,78.90,24.60,60,0
+.goto Desolace,78.74,23.15,60,0
+.goto Desolace,79.33,20.96,60,0
+.goto Desolace,79.69,18.92,60,0
+.goto Desolace,79.36,16.18,60,0
+.goto Desolace,77.43,15.44,60,0
+.goto Desolace,75.96,15.89,60,0
+.goto Desolace,74.52,15.66,60,0
+.goto Desolace,72.81,16.83,60,0
+.goto Desolace,71.58,17.94,60,0
+.goto Desolace,71.50,20.22,60,0
+.goto Desolace,72.36,21.23,60,0
+.goto Desolace,73.04,22.41,60,0
+.goto Desolace,73.09,24.41,60,0
+.goto Desolace,73.79,25.72,60,0
 >>Kill |cRXP_ENEMY_Hatefury Satyrs|r. Prioritize killing the |cRXP_ENEMY_Hatefury Rogues|r
 .complete 1434,1 
 .mob +Hatefury Rogue
@@ -135,27 +135,26 @@ step
 .mob +Hatefury Hellcaller
 step
 #loop
-.line Desolace,75.26,27.91,76.77,27.73,77.54,26.68,78.20,25.63,78.90,24.60,78.74,23.15,79.33,20.96,79.69,18.92,79.36,16.18,77.43,15.44,75.96,15.89,74.52,15.66,72.81,16.83,71.58,17.94,71.50,20.22,72.36,21.23,73.04,22.41,73.09,24.41,73.79,25.72,75.26,27.91
-.goto Desolace,75.26,27.91,25,0
-.goto Desolace,76.77,27.73,25,0
-.goto Desolace,77.54,26.68,25,0
-.goto Desolace,78.20,25.63,25,0
-.goto Desolace,78.90,24.60,25,0
-.goto Desolace,78.74,23.15,25,0
-.goto Desolace,79.33,20.96,25,0
-.goto Desolace,79.69,18.92,25,0
-.goto Desolace,79.36,16.18,25,0
-.goto Desolace,77.43,15.44,25,0
-.goto Desolace,75.96,15.89,25,0
-.goto Desolace,74.52,15.66,25,0
-.goto Desolace,72.81,16.83,25,0
-.goto Desolace,71.58,17.94,25,0
-.goto Desolace,71.50,20.22,25,0
-.goto Desolace,72.36,21.23,25,0
-.goto Desolace,73.04,22.41,25,0
-.goto Desolace,73.09,24.41,25,0
-.goto Desolace,73.79,25.72,25,0
-.goto Desolace,75.26,27.91,25,0
+.goto Desolace,75.26,27.91,0
+.goto Desolace,75.26,27.91,60,0
+.goto Desolace,76.77,27.73,60,0
+.goto Desolace,77.54,26.68,60,0
+.goto Desolace,78.20,25.63,60,0
+.goto Desolace,78.90,24.60,60,0
+.goto Desolace,78.74,23.15,60,0
+.goto Desolace,79.33,20.96,60,0
+.goto Desolace,79.69,18.92,60,0
+.goto Desolace,79.36,16.18,60,0
+.goto Desolace,77.43,15.44,60,0
+.goto Desolace,75.96,15.89,60,0
+.goto Desolace,74.52,15.66,60,0
+.goto Desolace,72.81,16.83,60,0
+.goto Desolace,71.58,17.94,60,0
+.goto Desolace,71.50,20.22,60,0
+.goto Desolace,72.36,21.23,60,0
+.goto Desolace,73.04,22.41,60,0
+.goto Desolace,73.09,24.41,60,0
+.goto Desolace,73.79,25.72,60,0
 >>Kill |cRXP_ENEMY_Hatefury Shadowstalkers|r. Loot them for a |cRXP_LOOT_Scalp|r
 .complete 1481,1 
 .mob Hatefury Shadowstalker
@@ -196,6 +195,8 @@ step
 .accept 5561 >> Accept Kodo Roundup
 .target Smeed Scrabblescrew
 step
+#loop
+.goto Desolace,69.60,77.85,0
 .goto Desolace,67.90,73.59,60,0
 .goto Desolace,67.86,75.80,60,0
 .goto Desolace,66.26,75.70,60,0
@@ -205,7 +206,7 @@ step
 .goto Desolace,72.20,78.35,60,0
 .goto Desolace,70.95,75.09,60,0
 .goto Desolace,73.36,73.37,60,0
-.goto Desolace,69.60,77.85
+.goto Desolace,69.60,77.85,60,0
 >>Kill |cRXP_ENEMY_Magram Centaur|r. Loot them for their |cRXP_LOOT_Ears|r
 .complete 1366,1 
 .mob Magram Outrunner
@@ -215,6 +216,8 @@ step
 .mob Magram Marauder
 .mob Magram Wrangler
 step
+#loop
+.goto Desolace,69.60,77.85,0
 .goto Desolace,67.90,73.59,60,0
 .goto Desolace,67.86,75.80,60,0
 .goto Desolace,66.26,75.70,60,0
@@ -224,7 +227,7 @@ step
 .goto Desolace,72.20,78.35,60,0
 .goto Desolace,70.95,75.09,60,0
 .goto Desolace,73.36,73.37,60,0
-.goto Desolace,69.60,77.85
+.goto Desolace,69.60,77.85,60,0
 >>Continue grinding |cRXP_ENEMY_Magram Centaur|r until your reputation with the |cRXP_FRIENDLY_Gelkis Centaur|r is Friendly
 .reputation 92,Friendly
 .mob Magram Outrunner
@@ -234,6 +237,7 @@ step
 .mob Magram Marauder
 .mob Magram Wrangler
 step << !Warrior !Hunter !Rogue !Druid !Shaman
+#loop
 .goto Desolace,67.90,73.59,60,0
 .goto Desolace,67.86,75.80,60,0
 .goto Desolace,66.26,75.70,60,0
@@ -243,7 +247,7 @@ step << !Warrior !Hunter !Rogue !Druid !Shaman
 .goto Desolace,72.20,78.35,60,0
 .goto Desolace,70.95,75.09,60,0
 .goto Desolace,73.36,73.37,60,0
-.goto Desolace,69.60,77.85
+.goto Desolace,69.60,77.85,60,0
 .xp 35+45000 >> Grind to level 35 45000+/67100
 .mob Magram Outrunner
 .mob Magram Scout
@@ -268,6 +272,8 @@ step
 .target Ancient Kodo
 .target Smeed Scrabblescrew
 step
+#loop
+.goto Desolace,53.31,61.24,0
 .goto Desolace,54.42,63.79,30,0
 .goto Desolace,54.38,62.87,30,0
 .goto Desolace,53.31,61.24,30,0
@@ -280,7 +286,6 @@ step
 .goto Desolace,49.70,57.15,30,0
 .goto Desolace,48.90,58.86,30,0
 .goto Desolace,48.98,60.05,30,0
-.goto Desolace,53.31,61.24
 >>Loot the |cRXP_LOOT_Kodo Bones|r on the ground around the Kodo Graveyard
 >>|cRXP_WARN_Be careful as high level|r |cRXP_ENEMY_Kodos|r |cRXP_WARN_can spawn after looting the|r |cRXP_LOOT_Kodo Bones|r << !Rogue !Druid
 >>|cRXP_WARN_Be careful as high level|r |cRXP_ENEMY_Kodos|r |cRXP_WARN_can spawn after looting the|r |cRXP_LOOT_Kodo Bones|r|cRXP_WARN_. Immediately stealthing will often prevent them from attacking you|r << Rogue/Druid
@@ -288,8 +293,8 @@ step
 step
 #loop
 .goto Desolace,53.96,61.10,0
-.waypoint Desolace,53.96,61.10,50,0
-.waypoint Desolace,60.87,61.85,20,0
+.goto Desolace,53.96,61.10,50,0
+.goto Desolace,60.87,61.85,20,0
 >>Use the |T132488:0|t[Kodo Kombobulator] on |cRXP_FRIENDLY_Kodos|r, then escort them to |cRXP_FRIENDLY_Smeed|r
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Kodo|r after each trip to progress the quest
 .complete 5561,1 
@@ -311,7 +316,9 @@ step
 .target Uthek the Wise
 step
 #completewith next
-.goto Desolace,25.26,71.61,150 >>Travel to Shadowprey Village
+.goto Desolace,27.07,75.74,100,0
+.goto Desolace,26.09,74.49,60,0
+.subzone 2408 >>Travel to Shadowprey Village
 step
 .goto Desolace,25.80,68.20
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taiga|r
@@ -333,37 +340,18 @@ step
 .fp Shadowprey Village >> Get the Shadowprey Village flight path
 .target Thalon
 step << Warlock/Druid/Shaman
-#ah
 #loop
-.line Desolace,24.3,77.4,23.3,77.1,22.4,75.1,20.7,75.0,20.0,73.6,19.8,76.1,17.9,76.3,18.7,77.2,24.3,77.4,23.3,77.1,22.4,75.1,20.7,75.0,20.0,73.6,19.8,76.1,17.9,76.3,18.7,77.2,24.3,77.4,23.3,77.1,22.4,75.1,20.7,75.0,20.0,73.6,19.8,76.1,17.9,76.3,18.7,77.2,24.3,77.4
-.goto Desolace,24.30,77.40,25,0
-.goto Desolace,23.30,77.10,25,0
-.goto Desolace,22.40,75.10,25,0
-.goto Desolace,20.70,75.00,25,0
-.goto Desolace,20.00,73.60,25,0
-.goto Desolace,19.80,76.10,25,0
-.goto Desolace,17.90,76.30,25,0
-.goto Desolace,18.70,77.20,25,0
-.goto Desolace,24.30,77.40,25,0
-.goto Desolace,23.30,77.10,25,0
-.goto Desolace,22.40,75.10,25,0
-.goto Desolace,20.70,75.00,25,0
-.goto Desolace,20.00,73.60,25,0
-.goto Desolace,19.80,76.10,25,0
-.goto Desolace,17.90,76.30,25,0
-.goto Desolace,18.70,77.20,25,0
-.goto Desolace,24.30,77.40,25,0
-.goto Desolace,23.30,77.10,25,0
-.goto Desolace,22.40,75.10,25,0
-.goto Desolace,20.70,75.00,25,0
-.goto Desolace,20.00,73.60,25,0
-.goto Desolace,19.80,76.10,25,0
-.goto Desolace,17.90,76.30,25,0
-.goto Desolace,18.70,77.20,25,0
-.goto Desolace,24.30,77.40,25,0
+.goto Desolace,24.30,77.40,0
+.goto Desolace,24.30,77.40,40,0
+.goto Desolace,23.30,77.10,40,0
+.goto Desolace,22.40,75.10,40,0
+.goto Desolace,20.70,75.00,40,0
+.goto Desolace,20.00,73.60,40,0
+.goto Desolace,19.80,76.10,40,0
+.goto Desolace,17.90,76.30,40,0
+.goto Desolace,18.70,77.20,40,0
 >>Click |cRXP_PICK_Shellfish Traps|r to loot their |cRXP_LOOT_Shellfish|r
 >>|cRXP_WARN_The droprates may be low|r
-.use 5996 >>Drink an |T134797:0|t[Elixir of Water Breathing]
 .collect 13545,10 
 .mob Drysnap Crawler
 .mob Drysnap Pincer
@@ -377,32 +365,15 @@ step << Warlock/Druid/Shaman
 step << !Warlock !Druid !Shaman
 #ah
 #loop
-.line Desolace,24.3,77.4,23.3,77.1,22.4,75.1,20.7,75.0,20.0,73.6,19.8,76.1,17.9,76.3,18.7,77.2,24.3,77.4,23.3,77.1,22.4,75.1,20.7,75.0,20.0,73.6,19.8,76.1,17.9,76.3,18.7,77.2,24.3,77.4,23.3,77.1,22.4,75.1,20.7,75.0,20.0,73.6,19.8,76.1,17.9,76.3,18.7,77.2,24.3,77.4
-.goto Desolace,24.30,77.40,25,0
-.goto Desolace,23.30,77.10,25,0
-.goto Desolace,22.40,75.10,25,0
-.goto Desolace,20.70,75.00,25,0
-.goto Desolace,20.00,73.60,25,0
-.goto Desolace,19.80,76.10,25,0
-.goto Desolace,17.90,76.30,25,0
-.goto Desolace,18.70,77.20,25,0
-.goto Desolace,24.30,77.40,25,0
-.goto Desolace,23.30,77.10,25,0
-.goto Desolace,22.40,75.10,25,0
-.goto Desolace,20.70,75.00,25,0
-.goto Desolace,20.00,73.60,25,0
-.goto Desolace,19.80,76.10,25,0
-.goto Desolace,17.90,76.30,25,0
-.goto Desolace,18.70,77.20,25,0
-.goto Desolace,24.30,77.40,25,0
-.goto Desolace,23.30,77.10,25,0
-.goto Desolace,22.40,75.10,25,0
-.goto Desolace,20.70,75.00,25,0
-.goto Desolace,20.00,73.60,25,0
-.goto Desolace,19.80,76.10,25,0
-.goto Desolace,17.90,76.30,25,0
-.goto Desolace,18.70,77.20,25,0
-.goto Desolace,24.30,77.40,25,0
+.goto Desolace,24.30,77.40,0
+.goto Desolace,24.30,77.40,40,0
+.goto Desolace,23.30,77.10,40,0
+.goto Desolace,22.40,75.10,40,0
+.goto Desolace,20.70,75.00,40,0
+.goto Desolace,20.00,73.60,40,0
+.goto Desolace,19.80,76.10,40,0
+.goto Desolace,17.90,76.30,40,0
+.goto Desolace,18.70,77.20,40,0
 >>Click |cRXP_PICK_Shellfish Traps|r to loot their |cRXP_LOOT_Shellfish|r
 >>|cRXP_WARN_The droprates may be low|r
 .use 5996 >>Drink an |T134797:0|t[Elixir of Water Breathing]
@@ -410,12 +381,19 @@ step << !Warlock !Druid !Shaman
 .mob Drysnap Crawler
 .mob Drysnap Pincer
 .itemcount 5996,1
+step << Warlock/Druid/Shaman
+.goto Desolace,22.44,73.13
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jinar'Zillen|r
+.turnin 5421 >> Turn in Fish in a Bucket |cRXP_WARN_TWICE|r to receive 2 |T133892:0|t[|cRXP_LOOT_Bloodbelly Fish|r]
+.collect 13546,2 
+.target Jinar'Zillen
+.itemcount 13545,10 
 step << !Warlock !Druid !Shaman
 #ah
 .goto Desolace,22.44,73.13
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jinar'Zillen|r
+.turnin 5421 >> Turn in Fish in a Bucket |cRXP_WARN_TWICE|r to receive 2 |T133892:0|t[|cRXP_LOOT_Bloodbelly Fish|r]
 .collect 13546,2 
-.turnin 5421 >> Turn in Fish in a Bucket
 .target Jinar'Zillen
 .itemcount 13545,10 
 step << Hunter
@@ -433,8 +411,9 @@ step
 .turnin 5501 >> Turn in Bone Collector
 .target Bibbly F'utzbuckle
 step
-#completewith next
-.use 6436 >> Use the |T134095:0|t[Burning Gem] to kill |cRXP_ENEMY_Burning Blade members|r
+#completewith DemonSpirit
+.use 6436 >> Kill |cRXP_ENEMY_Burning Blade members|r
+>>|cRXP_WARN_Use the|r |T134095:0|t[Burning Gem] |cRXP_WARN_to get the killing blow (100 damage per tick|r
 .complete 1435,1 
 step
 .goto Desolace,55.20,30.10
@@ -443,31 +422,27 @@ step
 .mob Burning Blade Seer
 step
 #completewith next
-.use 6436 >> Use the |T134095:0|t[Burning Gem] to kill |cRXP_ENEMY_Burning Blade members|r
-.complete 1435,1 
-.mob Burning Blade Augur
-.mob Burning Blade Adept
-.mob Burning Blade Reaver
-.mob Burning Blade Felsworn
-.mob Burning Blade Shadowmage
+.goto Desolace,55.31,27.55,12 >>Enter the large building
 step
-.goto Desolace,55.31,27.55,12,0
+#label DemonSpirit
 .goto Desolace,54.62,27.54,10,0
 .goto Desolace,54.43,27.22,10,0
 .goto Desolace,54.93,26.67
->>Enter the larger building, then use the |T136248:0|t[Demon Pick] on the |cRXP_PICK_Hand of Iruxos Crystal|r
->>Kill the |cRXP_ENEMY_Demon Spirit|r after it spawns. Loot it for his |cRXP_LOOT_Box|r
+>>|cRXP_WARN_Use the|r |T136248:0|t[Demon Pick] |cRXP_WARN_on the|r |cRXP_PICK_Hand of Iruxos Crystal|r
+>>Kill the |cRXP_ENEMY_Demon Spirit|r after it spawns. Loot it for the |cRXP_LOOT_Demon Box|r
 .complete 5381,1 
 .mob Demon Spirit
 step
+#loop
+.goto Desolace,56.82,29.95,0
 .goto Desolace,55.58,28.70,50,0
 .goto Desolace,56.82,29.95,50,0
 .goto Desolace,57.21,27.86,50,0
 .goto Desolace,57.62,26.30,50,0
 .goto Desolace,57.26,22.39,50,0
 .goto Desolace,56.41,21.57,50,0
-.goto Desolace,56.82,29.95
-.use 6436 >> Finish using the |T134095:0|t[Burning Gem] to kill |cRXP_ENEMY_Burning Blade members|r
+.use 6436 >> Kill |cRXP_ENEMY_Burning Blade members|r
+>>|cRXP_WARN_Use the|r |T134095:0|t[Burning Gem] |cRXP_WARN_to get the killing blow (100 damage per tick|r
 .complete 1435,1 
 .mob Burning Blade Augur
 .mob Burning Blade Adept
@@ -487,7 +462,8 @@ step
 step << !Warlock !Druid !Shaman
 #ah
 #completewith next
-.use 5996 >>Drink an |T134797:0|t[Elixir of Water Breathing]
+.aura 7178 >>|cRXP_WARN_Drink an|r |T134797:0|t[Elixir of Water Breathing]
+.use 5996
 .itemcount 5996,1
 step
 #completewith Rackmore
@@ -509,31 +485,35 @@ step
 #completewith Rackmore
 >>Kill |cRXP_ENEMY_Slitherblade Naga|r, |cRXP_ENEMY_Myrmidons|r, and |cRXP_ENEMY_Sorceresses|r
 .complete 6143,1 
+.mob +Slitherblade Myrmidon
 .complete 6143,2 
+.mob +Slitherblade Naga
 .complete 6143,3 
-.mob Slitherblade Myrmidon
-.mob Slitherblade Naga
-.mob Slitherblade Sorceress
+.mob +Slitherblade Sorceress
 step
 #label ClamMeat
+#loop
+.goto Desolace,32.97,28.58,0
 .goto Desolace,34.12,30.74,40,0
 .goto Desolace,31.96,30.60,40,0
 .goto Desolace,32.98,28.57,40,0
 .goto Desolace,35.36,25.03,40,0
 .goto Desolace,34.34,23.11,40,0
-.goto Desolace,32.97,28.58
->>Loot the |cRXP_PICK_Giant Softshell Clams|r for their |cRXP_LOOT_Meat|r
+.goto Desolace,32.97,28.58,40,0
+.use 15874 >>Loot the |cRXP_PICK_Giant Softshell Clams|r on the ocean floor. Open them for their |cRXP_LOOT_Meat|r
 >>|cRXP_ENEMY_Enraged Reef Crawlers|r |cRXP_WARN_can also drop the|r |cRXP_PICK_Giant Softshell Clams|r
 .complete 6142,1 
 .mob Enraged Reef Crawler
 step
 #label SilverKey
+#loop
+.goto Desolace,31.96,30.60,0
 .goto Desolace,34.12,30.74,40,0
 .goto Desolace,31.96,30.60,40,0
 .goto Desolace,32.98,28.57,40,0
 .goto Desolace,35.36,25.03,40,0
 .goto Desolace,34.34,23.11,40,0
-.goto Desolace,32.97,28.58
+.goto Desolace,32.97,28.58,40,0
 >>Kill |cRXP_ENEMY_Drysnap Pincers|r and |cRXP_ENEMY_Cralwers|r. Loot them for the |cRXP_LOOT_Silver Key|r
 .complete 6161,1 
 .mob Drysnap Pincer
@@ -552,17 +532,16 @@ step
 .mob Lord Kragaru
 step
 #loop
-.line Desolace,28.48,11.14,27.24,10.26,27.81,7.83,27.87,5.71,28.66,6.74,30.07,6.86,30.96,7.87,30.33,8.98,29.99,11.23,28.48,11.14
-.goto Desolace,28.48,11.14,25,0
-.goto Desolace,27.24,10.26,25,0
-.goto Desolace,27.81,7.83,25,0
-.goto Desolace,27.87,5.71,25,0
-.goto Desolace,28.66,6.74,25,0
-.goto Desolace,30.07,6.86,25,0
-.goto Desolace,30.96,7.87,25,0
-.goto Desolace,30.33,8.98,25,0
-.goto Desolace,29.99,11.23,25,0
-.goto Desolace,28.48,11.14,25,0
+.goto Desolace,28.48,11.14,0
+.goto Desolace,28.48,11.14,50,0
+.goto Desolace,27.24,10.26,50,0
+.goto Desolace,27.81,7.83,50,0
+.goto Desolace,27.87,5.71,50,0
+.goto Desolace,28.66,6.74,50,0
+.goto Desolace,30.07,6.86,50,0
+.goto Desolace,30.96,7.87,50,0
+.goto Desolace,30.33,8.98,50,0
+.goto Desolace,29.99,11.23,50,0
 >>Kill |cRXP_ENEMY_Slitherblade Nagas|r. Loot them for the |cRXP_LOOT_Golden Key|r
 .complete 6161,2 
 step
@@ -574,47 +553,45 @@ step
 #completewith next
 >>Kill |cRXP_ENEMY_Slitherblade Naga|r, |cRXP_ENEMY_Myrmidons|r, and |cRXP_ENEMY_Sorceresses|r
 .complete 6143,1 
+.mob +Slitherblade Myrmidon
 .complete 6143,2 
+.mob +Slitherblade Naga
 .complete 6143,3 
-.mob Slitherblade Myrmidon
-.mob Slitherblade Naga
-.mob Slitherblade Sorceress
+.mob +Slitherblade Sorceress
 step
 #loop
-.line Desolace,28.48,11.14,27.24,10.26,27.81,7.83,27.87,5.71,28.66,6.74,30.07,6.86,30.96,7.87,30.33,8.98,29.99,11.23,28.48,11.14
-.goto Desolace,28.48,11.14,25,0
-.goto Desolace,27.24,10.26,25,0
-.goto Desolace,27.81,7.83,25,0
-.goto Desolace,27.87,5.71,25,0
-.goto Desolace,28.66,6.74,25,0
-.goto Desolace,30.07,6.86,25,0
-.goto Desolace,30.96,7.87,25,0
-.goto Desolace,30.33,8.98,25,0
-.goto Desolace,29.99,11.23,25,0
-.goto Desolace,28.48,11.14,25,0
+.goto Desolace,28.48,11.14,0
+.goto Desolace,28.48,11.14,50,0
+.goto Desolace,27.24,10.26,50,0
+.goto Desolace,27.81,7.83,50,0
+.goto Desolace,27.87,5.71,50,0
+.goto Desolace,28.66,6.74,50,0
+.goto Desolace,30.07,6.86,50,0
+.goto Desolace,30.96,7.87,50,0
+.goto Desolace,30.33,8.98,50,0
+.goto Desolace,29.99,11.23,50,0
 >>Kill |cRXP_ENEMY_Slitherblade Oracles|r. Loot them for an |cRXP_LOOT_Oracle Crystal|r
 >>|cRXP_ENEMY_Slitherblade Oracles|r |cRXP_WARN_share spawns with other|r |cRXP_ENEMY_Slitherblade Nagas|r|cRXP_WARN_; you may have to kill them|r
 .complete 1482,1 
 .mob Slitherblade Oracle
 step
 #loop
-.line Desolace,32.41,23.00,34.99,21.73,36.86,20.16,39.13,18.74,40.44,20.40,37.70,20.85,36.64,23.40,34.67,24.12,32.41,23.00
-.goto Desolace,32.41,23.00,25,0
-.goto Desolace,34.99,21.73,25,0
-.goto Desolace,36.86,20.16,25,0
-.goto Desolace,39.13,18.74,25,0
-.goto Desolace,40.44,20.40,25,0
-.goto Desolace,37.70,20.85,25,0
-.goto Desolace,36.64,23.40,25,0
-.goto Desolace,34.67,24.12,25,0
-.goto Desolace,32.41,23.00,25,0
+.goto Desolace,32.41,23.00,0
+.goto Desolace,32.41,23.00,60,0
+.goto Desolace,34.99,21.73,60,0
+.goto Desolace,36.86,20.16,60,0
+.goto Desolace,39.13,18.74,60,0
+.goto Desolace,40.44,20.40,60,0
+.goto Desolace,37.70,20.85,60,0
+.goto Desolace,36.64,23.40,60,0
+.goto Desolace,34.67,24.12,60,0
 >>Kill |cRXP_ENEMY_Slitherblade Naga|r, |cRXP_ENEMY_Myrmidons|r, and |cRXP_ENEMY_Sorceresses|r
 .complete 6143,1 
+.mob +Slitherblade Myrmidon
 .complete 6143,2 
+.mob +Slitherblade Naga
 .complete 6143,3 
-.mob Slitherblade Myrmidon
-.mob Slitherblade Naga
-.mob Slitherblade Sorceress
+.mob +Slitherblade Sorceress
 step
 .goto Desolace,38.88,27.16
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tReturn to |cRXP_FRIENDLY_Azore|r
@@ -626,11 +603,24 @@ step
 step
 .goto Desolace,52.24,53.44
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tReturn to |cRXP_FRIENDLY_Maurin|r
-.turnin 1482 >> Turn in The Corrupter
-.accept 1484 >> Accept The Corrupter
 .turnin 1435 >> Turn in The Burning of Spirits
+.turnin 1482 >> Turn in The Corrupter
+.timer 30,The Corrupter RP
 .target Maurin Bonesplitter
 step
+.goto Desolace,52.24,53.44
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tReturn to |cRXP_FRIENDLY_Maurin|r
+>>|cRXP_WARN_Wait for the RP to finish|r
+.accept 1484 >> Accept The Corrupter
+.target Maurin Bonesplitter
+step << Warlock/Druid/Shaman
+.goto Desolace,55.41,55.80
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nataka|r
+.accept 5386 >> Accept Catch of the Day
+.turnin 5386 >> Turn in Catch of the Day
+.target Nataka Longhorn
+.itemcount 13546,2 
+step << !Warlock !Druid !Shaman
 #ah
 .goto Desolace,55.41,55.80
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nataka|r
@@ -646,6 +636,8 @@ step
 .accept 1436 >> Accept Alliance Relations
 .target Takata Steelblade
 step
+#loop
+.goto Desolace,73.67,72.90,0
 .goto Desolace,69.22,77.24,30,0
 .goto Desolace,70.01,78.60,30,0
 .goto Desolace,70.92,75.43,30,0
@@ -661,6 +653,11 @@ step
 .accept 1373 >> Accept Ongeku
 .target Uthek the Wise
 step
+#completewith DesolaceEnd
+.goto Desolace,27.07,75.74,100,0
+.goto Desolace,26.09,74.49,60,0
+.subzone 2408 >>Travel to Shadowprey Village
+step
 .goto Desolace,25.10,72.20
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Roon|r
 .accept 5763 >> Accept Hunting in Stranglethorn
@@ -672,10 +669,11 @@ step << Hunter
 .stable >> Stable your pet. You will tame a |cRXP_ENEMY_Scorpashi Lasher|r shortly
 .target Aboda
 step << Hunter
+#loop
+.goto Desolace,42.45,70.19,0
 .goto Desolace,38.24,74.30,50,0
 .goto Desolace,42.45,70.19,50,0
 .goto Desolace,43.34,60.43,50,0
-.goto Desolace,42.45,70.19
 .cast 1515 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Scorpashi Lasher|r to tame it|r
 .train 16831 >>|cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 5)]
 .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Click here for more info about pet training|r
@@ -701,6 +699,9 @@ step
 .turnin 6142 >> Turn in Clam Bait
 .target Mai'Lahii
 step
+#optional
+#label DesolaceEnd
+step
 #completewith next
 .hs >> Hearth to Thunder Bluff
 .use 6948
@@ -715,11 +716,6 @@ step
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor|r
 .accept 1136 >> Accept Frostmaw
 .target Melor Stonehoof
-
-
-
-
-
 step << !Undead 
 .goto Thunder Bluff,34.42,46.93
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sage|r
@@ -819,8 +815,8 @@ step << Shaman
 step << Rogue
 .goto Orgrimmar,43.90,54.65
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormok|r
-.train 8691 >> Train your class spells
 >>|T132273:0|t[Instant Poison Rank 3] |cRXP_WARN_requires 160 skill in Poisons!|r
+.train 8691 >> Train your class spells
 .target Ormok
 .xp <36,1
 .xp >38,1

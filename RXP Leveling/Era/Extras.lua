@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #xprate >1.99
 #name 24-26 Southern Barrens
 #version 23
-#group RestedXP Horde 22-30
+#group Horde 22-30
 #next 26-28 Ashenvale;26-28 SoD Ashenvale
 step << Rogue/Shaman
 .goto The Barrens,45.58,59.04

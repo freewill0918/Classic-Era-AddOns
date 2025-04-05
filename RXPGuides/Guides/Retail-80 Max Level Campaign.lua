@@ -5,10 +5,11 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Campaign (80)
+#subgroup 11.0 Max Level Campaign (80)
 #name a) Against the Current
 #displayname |cRXP_WARN_Chapter 1|r - Against the Current
 #next b) Ties That Bird
+#subweight 6
 
 step
     .isOnQuest 84365
@@ -241,10 +242,11 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Campaign (80)
+#subgroup 11.0 Max Level Campaign (80)
 #name b) Ties That Bird
 #displayname |cRXP_WARN_Chapter 2|r - Ties That Bird
 #next c) News from Below
+#subweight 6
 
 step
     .goto 2339,31.54,59.68
@@ -629,10 +631,11 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Campaign (80)
+#subgroup 11.0 Max Level Campaign (80)
 #name c) News from Below
 #displayname |cRXP_WARN_Chapter 3|r - News from Below
 #next d) The Machines to War
+#subweight 6
 
 
 step
@@ -892,7 +895,7 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Campaign (80)
+#subgroup 11.0 Max Level Campaign (80)
 #name d) The Machines to War
 #displayname |cRXP_WARN_Chapter 4|r - The Machines to War
 #next e) A Light in the Dark
@@ -906,7 +909,7 @@ step
 step
     #completewith TravelToRingingDeepsMysteriousSignal
     #label AMysteriousSignalA
-    .goto 2214,56.27,74.92,0,0
+    .goto 2214,52.11,74.92,0,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Speaker Brinthe|r
     .turnin 79022 >>Turn in A Mysterious Signal
     .target High Speaker Brinthe
@@ -922,67 +925,67 @@ step
     #requires TakePortalAzjkahetMysteriousSignal
     #label TravelToRingingDeepsMysteriousSignal
     .goto 2255,65.65,20.88,80,0
-    .goto 2214,50.15,67.61
+    .goto 2214,45.99,67.61
     .zone 2214 >>Travel to The Ringing Deeps
 step
     #requires AMysteriousSignalA
-    .goto 2214,56.27,74.92
+    .goto 2214,52.11,74.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Speaker Brinthe|r
     .turnin 79022 >>Turn in A Mysterious Signal
     .target High Speaker Brinthe
     .accept 79023 >>Accept Small Friend, Big Plans
 step
-    .goto 2214,56.3,74.9
+    .goto 2214,52.14,74.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ZZ-01-47|r
     .complete 79023,1 --1/1 Introduce yourself to ZZ-01-47
     .skipgossipid 120640
     .target ZZ-01-47
 step
-    .goto 2214,56.27,74.93
+    .goto 2214,52.11,74.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Speaker Brinthe|r
     .turnin 79023 >>Turn in Small Friend, Big Plans
     .target High Speaker Brinthe
     .accept 79024 >>Accept Factory Recon
 step
-    .goto 2214,56.3,74.9
+    .goto 2214,52.14,74.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ZZ-01-47|r
     .complete 79024,1 --1/1 Command ZZ-01-47 to Scout the Facility
     .skipgossipid 121305
     .target ZZ-01-47
 step
-    .goto 2214,57.95,75.88
+    .goto 2214,53.79,75.88
     >>Use |T135788:0|t[Turbo Boost] and click on the |cRXP_PICK_Pipe Grate|r
     .complete 79024,2 --1/1 Pipe Grate Entered
     .timer 3,Roleplay Duration
 step
-    .goto 2214,58.02,76.92
+    .goto 2214,53.86,76.92
     #title |cFFFCDC00Follow the Arrow|r
     >>Use |T135788:0|t[Turbo Boost]
     .complete 79024,3 --Scout the Darkfuse leader
 step
-    .goto 2214,56.53,77.6
+    .goto 2214,52.37,77.6
     #title |cFFFCDC00Follow the Arrow|r
     >>Use |T135788:0|t[Turbo Boost]
     .complete 79024,4 --Scout the Manufacturing Bay
 step
-    .goto 2214,57.22,77.71,15,0
-    .goto 2214,57.21,78.36
+    .goto 2214,53.06,77.71,15,0
+    .goto 2214,53.05,78.36
     >>Click on |cRXP_PICK_Sewer Grate|r
     .complete 79024,5 --1/1 Sneak through the pipes
     .timer 3,Roleplay Duration
 step
-    .goto 2214,58.13,79.78
+    .goto 2214,53.97,79.78
     #title |cFFFCDC00Follow the Arrow|r
     .complete 79024,6 --Scout the Cargo Bay
 step
-    .goto 2214,58.32,76.50
+    .goto 2214,54.16,76.50
     >>Use |T135788:0|t[Turbo Boost] and click on the |cRXP_PICK_Pipe Grate|r
     .complete 79024,7 --1/1 Exit back through the Pipe
 step
     >>|cRXP_WARN_Leave the Vehicle|r
     .complete 79024,8 --Return to Brinthe
 step
-    .goto 2214,56.27,74.92
+    .goto 2214,52.11,74.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Speaker Brinthe|r
     .turnin 79024 >>Turn in Factory Recon
     .target High Speaker Brinthe
@@ -990,31 +993,31 @@ step
 step
     #completewith next
     #title Enter House
-    .goto 2214,47.12,33.83,10 >>Enter the House
+    .goto 2214,42.96,33.83,10 >>Enter the House
 step
-    .goto 2214,47.10,34.23
+    .goto 2214,42.94,34.23
     #title |cFFFCDC00Follow the Arrow|r
     .complete 79217,1 --Meet Brinthe at her home in Gundargaz
 step
-    .goto 2214,47.10,34.23
+    .goto 2214,42.94,34.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Speaker Brinthe|r
     .turnin 79217 >>Turn in Back to Base
     .target High Speaker Brinthe
     .accept 79025 >>Accept A Plan Comes Together
 step
-    .goto 2214,47.08,34.21
+    .goto 2214,42.92,34.21
     >>Click on |cRXP_PICK_Deactivated War Golem|r
     .complete 79025,1 --1/1 Point out the Golem Factory
 step
-    .goto 2214,47.08,34.23
+    .goto 2214,42.92,34.23
     >>Click on |cRXP_PICK_Deactivated War Golem|r
     .complete 79025,2 --1/1 Point out the Waterworks
 step
-    .goto 2214,47.07,34.24
+    .goto 2214,42.91,34.24
     >>Click on |cRXP_PICK_Deactivated War Golem|r
     .complete 79025,3 --1/1 Point out the Shadowvein Extraction Site
 step
-    .goto 2214,47.10,34.23
+    .goto 2214,42.94,34.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Speaker Brinthe|r
     .turnin 79025 >>Turn in A Plan Comes Together
     .target High Speaker Brinthe
@@ -1022,15 +1025,15 @@ step
 step
     #completewith next
     .isOnQuest 79324
-    .goto 2214,47.11,33.86,10 >>Leave the House
+    .goto 2214,42.95,33.86,10 >>Leave the House
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dagran Thaurissan II|r and |cRXP_FRIENDLY_"Zee-Zee"|r
     .turnin 79324 >>Turn in To the Waterworks
     .accept 79026 >>Accept Putting the Works in Waterworks
-    .goto 2214,47.30,42.38
+    .goto 2214,43.14,42.38
     .target +Dagran Thaurissan II
     .accept 79027 >>Accept Elemental Trepidation
-    .goto 2214,47.28,42.38
+    .goto 2214,43.12,42.38
     .target +"Zee-Zee"
 step
     #completewith 2/2 Waterwheels Activated
@@ -1039,28 +1042,28 @@ step
     .mob Disturbed Kelp
     .mob Disrupted Slime
 step
-    .goto 2214,48.41,46.06
+    .goto 2214,44.25,46.06
     >>Click on the |cRXP_PICK_Congealed Wax|r |cRXP_WARN_twice.|r
     .complete 79026,1,1 --2/2 Waterwheels Activated
 step
     #label 2/2 Waterwheels Activated
-    .goto 2214,45.43,46.33
+    .goto 2214,41.27,46.33
     >>Click on the |cRXP_PICK_Congealed Wax|r |cRXP_WARN_twice.|r
     .complete 79026,1,2 --2/2 Waterwheels Activated
 step
     #loop
-    .goto 2214,46.29,44.06,25,0
-    .goto 2214,47.48,43.38,25,0
-    .goto 2214,48.31,43.46,25,0
-    .goto 2214,47.99,45.61,25,0
-    .goto 2214,47.19,46.85,25,0
+    .goto 2214,42.13,44.06,25,0
+    .goto 2214,43.32,43.38,25,0
+    .goto 2214,44.15,43.46,25,0
+    .goto 2214,43.83,45.61,25,0
+    .goto 2214,43.03,46.85,25,0
     >>Kill |cRXP_ENEMY_Disturbed Kelp|r and |cRXP_ENEMY_Disrupted Slime.|r
     .complete 79027,1 --Defeat Elementals (100%)
     .mob Disturbed Kelp
     .mob Disrupted Slime
 step
-    .goto 2214,46.23,48.09,10,0
-    .goto 2214,46.35,48.68
+    .goto 2214,42.07,48.09,10,0
+    .goto 2214,42.19,48.68
     >>Enter the Delve: |cRXP_WARN_Waterworks|r
     .isOnQuest 79026
     .complete 79026,2 --Delve Entered
@@ -1270,88 +1273,88 @@ step
     .zone 2214 >>Collect Rewards then click on your player frame and select "leave delve"
     .target Leave-O-Bot 7000
 step
-    .goto 2214,47.24,42.36
+    .goto 2214,43.08,42.36
     >>Click on the |cRXP_PICK_Waterworks Primary Activation.|r
     .complete 79026,5 --1/1 Main Drain Restored
 step
-    .goto 2214,47.30,42.38
+    .goto 2214,43.14,42.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dagran Thaurissan II|r
     .turnin 79027 >>Turn in Elemental Trepidation
     .turnin 79026 >>Turn in Putting the Works in Waterworks
     .accept 79325 >>Accept Shadowvein Extraction
     .target Dagran Thaurissan II
 step
-    .goto 2214,55.69,41.09
+    .goto 2214,51.53,41.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ZZ-01-47|r
     .turnin 79325 >>Turn in Shadowvein Extraction
     .target ZZ-01-47
     .accept 79028 >>Accept We Require More Minerals
     .timer 16,Roleplay Duration
 step
-    .goto 2214,55.69,41.11
+    .goto 2214,51.53,41.11
     >>Wait for the Roleplay.
     .complete 79028,1 --1/1 Listen to Dagran's Report
 step
     .isOnQuest 79028
-    .goto 2214,56.42,36.99
+    .goto 2214,52.26,36.99
     .cast 451809 >>Click on the |cRXP_PICK_Power Substation Console|r
     .timer 19,RP
 step
     >>Wait infront of the Pipe Room
     .complete 79028,2 --1/1
-    .goto 2214,56.09,37.23
+    .goto 2214,51.93,37.23
 step
     #completewith next
     .isOnQuest 79028
-    .goto 2214,55.67,37.29,10 >>Enter the Pipe Room
+    .goto 2214,51.51,37.29,10 >>Enter the Pipe Room
     .timer 17,RP
 step
     #title |cFFFCDC00Wait for the Roleplay.|r
     .complete 79028,3 --1/1 Pipe Room Located
-    .goto 2214,55.67,37.28
+    .goto 2214,51.51,37.28
 step
     #loop
-    .goto 2214,55.67,37.29,8,0
-    .goto 2214,55.67,36.95,8,0
-    .goto 2214,55.92,36.57,8,0
+    .goto 2214,51.51,37.29,8,0
+    .goto 2214,51.51,36.95,8,0
+    .goto 2214,51.76,36.57,8,0
     .link https://gyazo.com/c13935fb0ec1a58e7a863c7508b45032 >>Click here for the Solution.
     >>Middle -> Bottom -> Top
     .complete 79028,4 --1/1 Supply Water to the Shadowvein Boilers
 step
-    .goto 2214,55.98,37.24,10,0
-    .goto 2214,56.42,36.97
+    .goto 2214,51.82,37.24,10,0
+    .goto 2214,52.26,36.97
     >>Click on the |cRXP_PICK_Power Substation Console|r
     .complete 79028,5 --1/1 Power Substation Restarted
 step
     .isOnQuest 79028
     #title Leave House
-    .goto 2214,56.35,38.79,10 >>Leave the House
+    .goto 2214,52.19,38.79,10 >>Leave the House
 step
-    .goto 2214,55.98,39.28
+    .goto 2214,51.82,39.28
     >>Use the |cRXP_WARN_ExtraActionButton|r near the |cRXP_FRIENDLY_Cleaned Crusher|r
     .complete 79028,6,1 --5/5 Infested Crushers Decontaminated
     .mob Infested Discharge
 step
-    .goto 2214,56.78,39.42
+    .goto 2214,52.62,39.42
     >>Use the |cRXP_WARN_ExtraActionButton|r near the |cRXP_FRIENDLY_Cleaned Crusher|r
     .complete 79028,6,2 --5/5 Infested Crushers Decontaminated
     .mob Infested Discharge
 step
-    .goto 2214,58.76,38.19
+    .goto 2214,54.60,38.19
     >>Use the |cRXP_WARN_ExtraActionButton|r near the |cRXP_FRIENDLY_Cleaned Crusher|r
     .complete 79028,6,3 --5/5 Infested Crushers Decontaminated
     .mob Infested Discharge
 step
-    .goto 2214,59.56,40.27
+    .goto 2214,55.40,40.27
     >>Use the |cRXP_WARN_ExtraActionButton|r near the |cRXP_FRIENDLY_Cleaned Crusher|r
     .complete 79028,6,4 --5/5 Infested Crushers Decontaminated
     .mob Infested Discharge
 step
-    .goto 2214,59.28,41.01
+    .goto 2214,55.12,41.01
     >>Click on the |cRXP_PICK_Mining Cart Track|r
     .complete 79028,7 --1/1 Mining Cart Track Cleared
 step
-    .goto 2214,59.28,42.12
+    .goto 2214,55.12,42.12
     >>Use the |cRXP_WARN_ExtraActionButton|r near the |cRXP_FRIENDLY_Cleaned Crusher|r
     .complete 79028,6,5 --5/5 Infested Crushers Decontaminated
     .mob Infested Discharge
@@ -1363,13 +1366,13 @@ step
 step
     .isOnQuest 80145
     #title Enter Mine
-    .goto 2214,58.55,35.9,10 >> Enter the Mine
+    .goto 2214,54.39,35.9,10 >> Enter the Mine
 step
-    .goto 2214,58.57,33.91
+    .goto 2214,54.41,33.91
     >>Click on the |cRXP_PICK_Activation Lever|r
     .complete 80145,1 --1/1 Cave Crushers activated
 step
-    .goto 2214,58.69,33.74
+    .goto 2214,54.53,33.74
     >>Kill |cRXP_ENEMY_Magma Serpent|r
     .complete 80145,2 --1/1 Magma Serpent defeated
     .mob Magma Serpent
@@ -1379,29 +1382,29 @@ step
     .target ZZ
     .skipgossipid 121561
 step
-    .goto 2214,58.66,33.89
+    .goto 2214,54.50,33.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ZZ-01-47|r
     .turnin 80145 >>Turn in The Motherlode
     .target ZZ-01-47
     .accept 80517 >>Accept Back to Where it Began
 step
     #completewith next
-    .goto 2214,58.7,33.55
+    .goto 2214,54.54,33.55
     .deathskip >> Die in the Lava and respawn at the Spirit Healer
 step
-    .goto 2214,56.27,74.92
+    .goto 2214,52.11,74.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Speaker Brinthe|r
     .turnin 80517 >>Turn in Back to Where it Began
     .target High Speaker Brinthe
     .accept 79029 >>Accept It's Sabotage
 step
     #loop
-    .goto 2214,57.63,76.94,30,0
-    .goto 2214,58.81,77.07,30,0
-    .goto 2214,59.4,78.43,30,0
-    .goto 2214,58.95,79.47,30,0
-    .goto 2214,58.17,78.71,30,0
-    .goto 2214,57.48,77.93,30,0
+    .goto 2214,53.47,76.94,30,0
+    .goto 2214,54.65,77.07,30,0
+    .goto 2214,55.24,78.43,30,0
+    .goto 2214,54.79,79.47,30,0
+    .goto 2214,54.01,78.71,30,0
+    .goto 2214,53.32,77.93,30,0
     >>Click on |cRXP_PICK_Goblin Battery,|r |cRXP_PICK_Kegs|r, |cRXP_PICK_Derelict Golem|r and |cRXP_PICK_Grill Racks.|r Kill the incoming |cRXP_ENEMY_enemies.|r
     .complete 79029,1 --Mayhem Caused (100%)
     .mob Irritated Salvager
@@ -1411,20 +1414,20 @@ step
 step
     .isOnQuest 79029
     #title Enter House
-    .goto 2214,56.88,77.62,10 >>Enter the House
+    .goto 2214,52.72,77.62,10 >>Enter the House
 step
-    .goto 2214,56.06,77.62
+    .goto 2214,51.90,77.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brinthe|r
     .complete 79029,2 --1/1 Speak to Brinthe
     .target Brinthe
     .skipgossipid 121606
 step
-    .goto 2214,56.28,78.02
+    .goto 2214,52.12,78.02
     >>Kill |cRXP_ENEMY_Supervisor Radlock|r for additional damage move him into the fire laser.
     .complete 79029,3 --1/1 Facility Activated and Secured
     .mob Supervisor Radlock
 step
-    .goto 2214,56.06,77.62
+    .goto 2214,51.90,77.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Speaker Brinthe|r
     .turnin 79029 >>Turn in It's Sabotage
     .target High Speaker Brinthe
@@ -1443,10 +1446,11 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Campaign (80)
+#subgroup 11.0 Max Level Campaign (80)
 #name e) A Light in the Dark
 #displayname |cRXP_WARN_Chapter 5|r - A Light in the Dark
 #next z) Lingering Shadows
+#subweight 6
 
 
 step
@@ -1462,12 +1466,12 @@ step
     .goto 2339,49.78,71.69,30,0
     .goto 2339,49.78,71.69,30,0
     .goto 2339,37.7,74.39,30,0
-    .goto 2214,39.98,32.58,30,0
-    .goto 2214,39.7,31.54,30,0
-    .goto 2214,39.87,29.79,30,0
-    .goto 2214,41.5,28.33,30,0
-    .goto 2214,42.28,28.33,30,0
-    .goto 2214,40.54,24.36,30 >>Go to Hallowfall
+    .goto 2214,35.82,32.58,30,0
+    .goto 2214,35.54,31.54,30,0
+    .goto 2214,35.71,29.79,30,0
+    .goto 2214,37.34,28.33,30,0
+    .goto 2214,38.12,28.33,30,0
+    .goto 2214,36.38,24.36,30 >>Go to Hallowfall
 step
     .goto 2215,71.64,59.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Steelstrike|r
@@ -1640,9 +1644,10 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Storylines (80)
+#subgroup Miscellaneous Storylines (80)
 #name z) Lingering Shadows
 #displayname Lingering Shadows
+#subweight 4.5
 
 step
     .goto 2339,42.36,26.88
@@ -1793,17 +1798,17 @@ step
     .accept 82696 >>Accept Ringing in the Deeps
 --Travel
 step
-    .goto 2214,58.74,64.70
+    .goto 2214,54.58,64.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r |cRXP_WARN_in Ringing Deeps|r.
     .turnin 82696 >>Turn in Ringing in the Deeps
     .target Orweyna
 step
-    .goto 2214,58.46,64.71
+    .goto 2214,54.30,64.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r
     .accept 82697 >>Accept Good Help These Days
     .target Monte Gazlowe
 step
-    .goto 2214,62.52,75.04
+    .goto 2214,58.36,75.04
     >>Kill |cRXP_ENEMY_Haxle Drillbit|r. Loot them for |T134939:0|t[|cRXP_LOOT_Opportunity Work Permit|r].
     .complete 82697,1 --1/1 Opportunity Work Permit taken
     .mob Haxle Drillbit
@@ -1811,10 +1816,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r and |cRXP_FRIENDLY_Orweyna|r.
     .turnin 82697 >>Turn in Good Help These Days
     .accept 82699 >>Accept Hey, What's Going On?
-    .goto 2214,64.57,79.77
+    .goto 2214,60.41,79.77
     .target +Monte Gazlowe
     .accept 82698 >>Accept Haywired and Hostile
-    .goto 2214,64.46,79.77
+    .goto 2214,60.30,79.77
     .target +Orweyna
 step
     #completewith Question Harried Workers
@@ -1822,60 +1827,60 @@ step
     .complete 82698,1 --4/4 Haywire Excavator slain
     .mob Haywire Excavator
 step
-    .goto 2214,62.36,82.41
+    .goto 2214,58.20,82.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harried Worker|r
     .complete 82699,1,1 --4/4 Question Harried Workers
     .mob Harried Worker
     .skipgossipid 123125
 step
-    .goto 2214,61.78,82.4
+    .goto 2214,57.62,82.4
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Oil Barrel|r. |cRXP_WARN_|cRXP_ENEMY_Activated Remnants|r will spawn|r.
     .complete 82699,2,1 --6/6 Used Fuel Drum examined
     .mob Activated Remnants
 step
-    .goto 2214,62.58,83.88
+    .goto 2214,58.42,83.88
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Oil Barrel|r. |cRXP_WARN_|cRXP_ENEMY_Activated Remnants|r will spawn|r.
     .complete 82699,2,2 --6/6 Used Fuel Drum examined
     .mob Activated Remnants
 step
-    .goto 2214,61.46,84.72
+    .goto 2214,57.30,84.72
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Oil Barrel|r. |cRXP_WARN_|cRXP_ENEMY_Activated Remnants|r will spawn|r.
     .complete 82699,2,3 --6/6 Used Fuel Drum examined
     .mob Activated Remnants
 step
-    .goto 2214,61.26,85.11
+    .goto 2214,57.10,85.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harried Worker|r
     .complete 82699,1,2 --4/4 Question Harried Workers
     .mob Harried Worker
     .skipgossipid 123125
 step
-    .goto 2214,62.01,87.83
+    .goto 2214,57.85,87.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harried Worker|r
     .complete 82699,1,3 --4/4 Question Harried Workers
     .mob Harried Worker
     .skipgossipid 123125
 step
-    .goto 2214,62.27,88.25
+    .goto 2214,58.11,88.25
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Oil Barrel|r. |cRXP_WARN_|cRXP_ENEMY_Activated Remnants|r will spawn|r.
     .complete 82699,2,4 --6/6 Used Fuel Drum examined
     .mob Activated Remnants
 step
-    .goto 2214,62.14,89.46
+    .goto 2214,57.98,89.46
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Oil Barrel|r. |cRXP_WARN_|cRXP_ENEMY_Activated Remnants|r will spawn|r.
     .complete 82699,2,5 --6/6 Used Fuel Drum examined
     .mob Activated Remnants
 step
     #label Question Harried Workers
-    .goto 2214,61.63,90.31
+    .goto 2214,57.47,90.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harried Worker|r
     .complete 82699,1,4 --4/4 Question Harried Workers
     .mob Harried Worker
     .skipgossipid 123125
 step
     #completewith next
-    .goto 2214,60.85,90.37,30,0
-    .goto 2214,61.05,92.26,40,0
-    .goto 2214,59.94,91.3,40,0
+    .goto 2214,56.69,90.37,30,0
+    .goto 2214,56.89,92.26,40,0
+    .goto 2214,55.78,91.3,40,0
     .goto 2214,60.68,88
     >>Kill |cRXP_ENEMY_Haywire Excavator|r. |cRXP_WARN_It's important that you don't skip them|r.
     .complete 82698,1 --4/4 Haywire Excavator slain
@@ -1887,36 +1892,36 @@ step
     .mob Activated Remnants
 step
     #loop
-    .goto 2214,60.18,81.9,40,0
-    .goto 2214,62.57,84.2,40,0
-    .goto 2214,61.8,85.97,40,0
-    .goto 2214,61.96,90.34,40,0
-    .goto 2214,60.79,90.41,40,0
-    .goto 2214,61.06,92.33,40,0
-    .goto 2214,59.92,91.43,40,0
+    .goto 2214,56.02,81.9,40,0
+    .goto 2214,58.41,84.2,40,0
+    .goto 2214,57.64,85.97,40,0
+    .goto 2214,57.80,90.34,40,0
+    .goto 2214,56.63,90.41,40,0
+    .goto 2214,56.90,92.33,40,0
+    .goto 2214,55.76,91.43,40,0
     >>Kill |cRXP_ENEMY_Haywire Excavator|r. |cRXP_WARN_It's important that you don't skip them|r.
     .complete 82698,1 --4/4 Haywire Excavator slain
     .mob Haywire Excavator
 step
-    .goto 2214,60.39,87.12
+    .goto 2214,56.23,87.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renzik "The Shiv"|r |cRXP_WARN_on the house|r.
     .turnin 82699 >>Turn in Hey, What's Going On?
     .target Renzik "The Shiv"
     .turnin 82698 >>Turn in Haywired and Hostile
     .accept 82700 >>Accept Built to Blast
 step
-    .goto 2214,58.42,86.41
+    .goto 2214,54.26,86.41
     >>Kill |cRXP_ENEMY_Haywire MEK IV|r
     .complete 82700,1 --1/1 Haywire MEK IV slain
     .mob Haywire MEK IV
 step
-    .goto 2214,64.46,79.76
+    .goto 2214,60.30,79.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r
     .turnin 82700 >>Turn in Built to Blast
     .target Orweyna
     .accept 82701 >>Accept Bat Versus World
 step
-    .goto 2214,64.46,79.76
+    .goto 2214,60.30,79.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r
     .complete 82701,1 --1/1 Speak to Orweyna
     .skipgossipid 123172 
@@ -1930,35 +1935,35 @@ step
     *|cRXP_WARN_Be aware that goblins will try to kill you|r.
     .complete 82701,2,1 --4/4 "Listen In" to Gather Intel
 step
-    .goto 2214,63.1,80.78
+    .goto 2214,58.94,80.78
     >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r. 
     *Use |T252188:0|t[Listen In] |cRXP_WARN_on the Bridge near the Circle|r.
     *Use |T132320:0|t[Sneak] |cRXP_WARN_to avoid detection|r
     *|cRXP_WARN_Be aware that goblins will try to kill you|r.
     .complete 82701,2,2 --4/4 "Listen In" to Gather Intel
 step
-    .goto 2214,63.46,78.82
+    .goto 2214,59.30,78.82
     >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r. 
     *Use |T252188:0|t[Listen In] |cRXP_WARN_near the building near the Circle|r.
     *Use |T132320:0|t[Sneak] |cRXP_WARN_to avoid detection|r
     *|cRXP_WARN_Be aware that goblins will try to kill you|r.
     .complete 82701,2,3 --4/4 "Listen In" to Gather Intel
 step
-    .goto 2214,65.49,77.27
+    .goto 2214,61.33,77.27
     >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r. 
     *Use |T252188:0|t[Listen In] |cRXP_WARN_near the building near the Circle|r.
     *Use |T132320:0|t[Sneak] |cRXP_WARN_to avoid detection|r
     *|cRXP_WARN_Be aware that goblins will try to kill you|r.
     .complete 82701,2,4 ----4/4 "Listen In" to Gather Intel
 step
-    .goto 2214,66.68,78.42
+    .goto 2214,62.52,78.42
     >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r. 
     *Use |T252188:0|t[Listen In] |cRXP_WARN_near the Cave Wall|r.
     *Use |T132320:0|t[Sneak] |cRXP_WARN_to avoid detection|r
     *|cRXP_WARN_Be aware that goblins will try to kill you|r.
     .complete 82701,3 --1/1 Listen In at the Cave Wall
 step
-    .goto 2214,60.99,86.47
+    .goto 2214,56.83,86.47
     >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r.
     *Use |T252188:0|t[Listen In] |cRXP_WARN_on the building near the circle|r.
     *|cRXP_WARN_Dodge the obstacles in the sky to avoid getting stunned|r.
@@ -1966,16 +1971,16 @@ step
     .mob Blinding Glowmite
     .mob Hazardous Heli
 step
-    .goto 2214,60.64,86.81
+    .goto 2214,56.48,86.81
     >>Use the |T252188:0|t[|cRXP_WARN_ExtraActionButton|r].
     .complete 82701,5 --1/1 Find Information
 step
-    .goto 2214,64.46,79.75
+    .goto 2214,60.30,79.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r
     .turnin 82701 >>Turn in Bat Versus World
     .target Orweyna
 step
-    .goto 2214,64.57,79.76
+    .goto 2214,60.41,79.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r
     .accept 82702 >>Accept Found Friends
     .target Monte Gazlowe
@@ -2003,9 +2008,10 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Storylines (80)
+#subgroup Miscellaneous Storylines (80)
 #name f) Story Mode: Queen Ansurek
 #displayname Story Mode: Queen Ansurek
+#subweight 4.5
 
 step
     .goto 2339,31.62,63.16
@@ -2180,10 +2186,11 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Storylines (80)
+#subgroup Miscellaneous Storylines (80)
 #name g) Siren Isle Campaign
 #next h) Fate of the Kirn Tor
 #displayname Siren Isle Campaign
+#subweight 4.5
 
 --WEEK 1 CAMPAIGN START
 
@@ -2413,9 +2420,8 @@ step
     .goto 2369,71.09,44.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angorla|r
     .turnin 84725 >>Turn in The Circlet Calls
-    .target Angorla
-    .accept 86174 >>Accept Special Assignment: Storm's a Brewin'
     .accept 84726 >>Accept Uncovered Mysteries
+    .target Angorla
 
 --CONTRUBUTION
 
@@ -2702,10 +2708,10 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Storylines (80)
-#name h) Siren Isle Weeklies
+#subgroup Dailies and Weeklies (80)
+#name a) Siren Isle Weeklies
 #displayname Siren Isle Weeklies
-
+#subweight -2
 step
     #loop
     .goto 2369,69.29,43.48,10,0
@@ -3196,93 +3202,16 @@ step
     .target Stellin Verasa
 ]])
 
+-- Fate of the Kirin Tor 1
 RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Storylines (80)
-#name h) Storm Daillies Inguide
-#displayname Siren Isle Daillies
-#internal
-
--- storm daillies storms brewin
-step
-    .goto 2369,43.75,23.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regald Hornfyre|r
-    .accept 84241 >>Accept Shoreline Stand
-    .target Regald Hornfyre
-step
-    .goto 2375,60.61,15.00
-    .complete 84241,3 --1/1 Use the Singing Tablet to enter the Forgotten Tomb (Optional)
-step
-    .goto 2375,52.76,35.16
-    >>Kill |cRXP_ENEMY_Tide-Champion Korval|r
-    .complete 84241,2 --1/1 Tide-Champion Korval slain
-    .mob Tide-Champion Korval
-step
-    .goto 2369,49.01,16.72
-    >>Kill |cRXP_ENEMY_Brinebound Wraith|r
-    .complete 84241,1 --15/15 Brinebound Wraith slain
-    .mob Brinebound Wraith
-step
-    .goto 2369,43.73,23.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regald Hornfyre|r
-    .turnin 84241 >>Turn in Shoreline Stand
-    .target Regald Hornfyre
-    .complete 85113,3 --Storm threats eliminated (100%)
-step
-    .goto 2369,63.45,66.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sally Boltwrench|r
-    .accept 84225 >>Accept Eggstinction
-    .target Sally Boltwrench
-step
-    .goto 2369,60.52,73.65
-    .complete 84225,2 --12/12 Spawning Cluth destroyed using equipment
-step
-    .goto 2369,57.12,71.07
-    .complete 84225,1 --12/12 Seafury Eggtenders
-step
-    .goto 2369,63.49,66.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sally Boltwrench|r
-    .turnin 84225 >>Turn in Eggstinction
-    .target Sally Boltwrench
-]])
-
-RXPGuides.RegisterGuide([[
-#df
-#version 1
-#group RestedXP The War Within
-#subgroup Max Level Storylines (80)
-#name h) Siren Isle Crocodile
-#internal
-
-step
-    .goto 2369,71.01,48.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Starving Snapdragon Runt|r
-    .accept 86482 >>Accept A Lifeline
-    .target Starving Snapdragon Runt
-step
-    .goto 2369,71.24,47.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zexel Fingersnap|r
-    .complete 86482,1 --1/1 Speak to Zexel Fingersnap
-    .target Zexel Fingersnap
-    .complete 86482,2 --1/1 Kaja'Cola-braised Meat Aquired
-    .skipgossipid 131423
-step
-    .goto 2369,70.98,48.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Starving Snapdragon Runt|r
-    .turnin 86482 >>Turn in A Lifeline
-    .target Starving Snapdragon Runt
-]])
-
--- Fate of the Kirin Tor
-RXPGuides.RegisterGuide([[
-#df
-#version 1
-#group RestedXP The War Within
-#subgroup Max Level Storylines (80)
-#name h) Fate of the Kirin Tor
-#displayname Fate of the Kirin Tor
+#subgroup 11.0.7 Fate of the Kirin Tor (80)
+#name a) Arcane Desolation
+#displayname |cRXP_WARN_Chapter 1|r - Arcane Desolation
+#next b) Strength Amidst Ruins
+#subweight 5
 
 step
     .isQuestAvailable 82702
@@ -3545,10 +3474,24 @@ step
     .target Kalecgos
     .accept 83643 >>Accept Somehow We Survived
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r and |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
     .turnin 83643 >>Turn in Somehow We Survived
     .goto 2248,30.99,57.80
     .target +Kalecgos
+]])
+
+-- Fate of the Kirin Tor 2
+RXPGuides.RegisterGuide([[
+#df
+#version 1
+#group RestedXP The War Within
+#subgroup 11.0.7 Fate of the Kirin Tor (80)
+#name b) Strength Amidst Ruins
+#displayname |cRXP_WARN_Chapter 2|r - Strength Amidst Ruins
+#subweight 5
+
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
     .accept 83723 >>Accept A Helping Hand
     .goto 2248,30.97,57.73
     .target +Lady Jaina Proudmoore
