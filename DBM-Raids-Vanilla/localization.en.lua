@@ -1570,11 +1570,23 @@ L:SetGeneralLocalization({
 
 L = DBM:GetModLocalization("Balnazzar")
 
+L:SetMiscLocalization{
+	OtherPlayer = "another player", -- Use with AUTO_SPEC_WARN_TEXTS.moveto ("$spell - move to >%%s<")
+	Tick = "Tick"
+}
 
 L = DBM:GetModLocalization("Solistrasza")
 
 
 L = DBM:GetModLocalization("Beatrix")
+
+L:SetMiscLocalization{
+	YellFroggers1 = "break their ranks",
+	YellFroggers2 = "Ready your lances",
+	CannonMistress = "Cannon Mistress Lind", -- TODO: can we automatically get the localized name?
+	Footmen = "Footmen",
+	Horses = "Horses"
+}
 
 
 L = DBM:GetModLocalization("RebornCouncil")
@@ -1588,14 +1600,17 @@ L = DBM:GetModLocalization("LillianVoss")
 
 L = DBM:GetModLocalization("Beastmaster")
 
+L:SetOptionLocalization({
+	TimerMark = "Show timer for next Enervate/Enkindle marks (with count)",
+})
+
+L:SetTimerLocalization({
+	TimerMark	= "Mark %d",
+})
+
 
 L = DBM:GetModLocalization("Mason")
 
-
-L = DBM:GetModLocalization("ScarletDatamine")
-L:SetGeneralLocalization{
-	name = "Datamined Mechanics"
-}
 
 L = DBM:GetModLocalization("SE_Trash")
 L:SetGeneralLocalization{

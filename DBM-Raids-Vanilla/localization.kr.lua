@@ -1544,3 +1544,55 @@ L:SetGeneralLocalization({
 --  Emperor Dagran Thaurissan (3049) --
 ---------------------------
 --L= DBM:GetModLocalization(2670)
+
+-----------------------------
+--  Scarlet Enclave (SoD)  --
+-----------------------------
+-- This mostly relies on the new auto-generated locales for boss names from encounter data.
+-- Only add name localization if the name in locale.generated.lua is inconsistent with the commonly used name in the language.
+
+L = DBM:GetModLocalization("Balnazzar")
+
+
+L = DBM:GetModLocalization("Solistrasza")
+
+
+L = DBM:GetModLocalization("Beatrix")
+
+L:SetMiscLocalization{
+	OtherPlayer = "다른 사람" -- Use with AUTO_SPEC_WARN_TEXTS.moveto ("$spell - move to >%%s<")
+}
+
+
+L = DBM:GetModLocalization("RebornCouncil")
+
+
+L = DBM:GetModLocalization("Caldoran")
+
+
+L = DBM:GetModLocalization("LillianVoss")
+
+
+L = DBM:GetModLocalization("Beastmaster")
+
+L:SetOptionLocalization({
+	TimerMark = "다음 무기력/점화 징표 타이머 바 보기 (횟수 포함)",
+})
+
+L:SetTimerLocalization({
+	TimerMark	= "징표 %d",
+})
+
+
+L = DBM:GetModLocalization("Mason")
+
+
+L = DBM:GetModLocalization("ScarletDatamine")
+L:SetGeneralLocalization{
+	name = "데이터 수집된 스킬 패턴"
+}
+
+L = DBM:GetModLocalization("SE_Trash")
+L:SetGeneralLocalization{
+	name = "붉은십자군 초소 일반몹"
+}
