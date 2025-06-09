@@ -5,9 +5,9 @@
 
 local addonName = ...;
 local L = LibStub("AceLocale-3.0"):GetLocale("NovaInstanceTracker");
-local maxRecordsKept = 300;
-local maxTradesKept = 1000;
-NIT.maxRecordsShown = 300;
+local maxRecordsKept = 250;
+local maxTradesKept = 300;
+NIT.maxRecordsShown = 250;
 
 NIT.options = {
 	name =  "",
